@@ -14,6 +14,7 @@ import java.util.Set;
 
 public class DateFormatFix {
     public static String getBestDateTimePattern(Context context, Locale locale, String skeleton) {
+        //Log.d("DateFormatFix", "getBestDateTimePattern() - skeleton: " + skeleton);
         String format;
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
@@ -24,8 +25,10 @@ public class DateFormatFix {
             // - remove leading non-skeleton chars
             // - use the count of letters in skeleton to inflate the pattern
             // example: skeleton="yyyyMMMdd" + format="EEEE, MMMM d, y" -> "MMM dd, yyyy
-            SimpleDateFormat simpleDateFormat = (SimpleDateFormat) SimpleDateFormat.getDateInstance(SimpleDateFormat.LONG, locale);
+            SimpleDateFormat simpleDateFormat = (SimpleDateFormat) SimpleDateFormat.getDateInstance(SimpleDateFormat.FULL, locale);
             format = simpleDateFormat.toLocalizedPattern();
+
+            //Log.d("DateFormatFix", "localized pattern: " + format);
 
             Set<Character> excludedChars = new HashSet<>();
             HashMap<Character, Integer> includedChars = new HashMap<>();
@@ -75,7 +78,7 @@ public class DateFormatFix {
             format = normalizedFormat;
 
             if (!excludedChars.isEmpty()) {
-                StringBuilder sb = new StringBuilder("[");
+                StringBuilder sb = new StringBuilder();
                 Iterator<Character> it = excludedChars.iterator();
 
                 while (it.hasNext()) {
@@ -86,12 +89,15 @@ public class DateFormatFix {
                     }
                 }
 
-                sb.append("][^\\w]*\\s*");
-                format = format.replaceAll(sb.toString(), "");
+
+                format = format.replaceAll("[" + sb.toString() + "][^\\w]*|[^\\w]*[" + sb.toString() + "][^\\w ]*", "");
             }
             // [d][^\w]*\s*
             // [d][^\w]?\s*
+            // better: [d][^\w]*|[^\w]*[d][^\w ]*
         }
+
+        //Log.d("DateFormatFix", "final pattern: " + format);
 
         return format;
     }
