@@ -35,7 +35,7 @@
         android:gravity="bottom">
 
         <Button
-            android:id="@+id/button3"
+            android:id="@android:id/button3"
             style="?attr/buttonBarNeutralButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
@@ -48,13 +48,13 @@
             android:visibility="invisible" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@android:id/button2"
             style="?attr/buttonBarNegativeButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <Button
-            android:id="@+id/button1"
+            android:id="@android:id/button1"
             style="?attr/buttonBarPositiveButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />

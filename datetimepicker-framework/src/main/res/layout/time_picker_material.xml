@@ -20,6 +20,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
     <include
         layout="@layout/time_picker_header_material"
@@ -34,4 +35,59 @@
         android:layout_marginTop="@dimen/timepicker_radial_picker_top_margin"
         android:layout_marginStart="@dimen/timepicker_radial_picker_horizontal_margin"
         android:layout_marginEnd="@dimen/timepicker_radial_picker_horizontal_margin" />
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/input_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/dialog_padding_material"
+        android:paddingRight="@dimen/dialog_padding_material"
+        android:paddingStart="@dimen/dialog_padding_material"
+        android:paddingEnd="@dimen/dialog_padding_material"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:includeFontPadding="false"
+        android:fontFamily="sans-serif-medium"
+        android:textSize="34sp"
+        android:textColor="@android:color/white"
+        android:text="@string/time_picker_header_text"/>
+    <android.widget.TextInputTimePickerView
+        android:id="@+id/input_mode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="?attr/dialogPreferredPadding"
+        android:paddingRight="?attr/dialogPreferredPadding"
+        android:paddingStart="?attr/dialogPreferredPadding"
+        android:paddingEnd="?attr/dialogPreferredPadding"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageButton
+            android:id="@+id/toggle_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:padding="12dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:tint="?attr/colorControlNormal"
+            app:srcCompat="@drawable/btn_keyboard_key_material"
+            android:contentDescription="@string/time_picker_text_input_mode_description" />
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+        <ViewStub
+            android:id="@id/buttonPanel"
+            android:layout="@layout/alert_dialog_button_bar_material"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layoutDirection="locale" />
+    </LinearLayout>
+
 </LinearLayout>

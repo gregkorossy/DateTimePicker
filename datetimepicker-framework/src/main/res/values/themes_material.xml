@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.AppCompat.DateTimePicker">
+        <!-- NumberPicker style-->
+        <item name="numberPickerStyle">@style/Widget.Material.NumberPicker</item>
+
+        <!-- CalendarView style-->
+        <item name="android:calendarViewStyle">@style/Widget.Material.CalendarView</item>
+
+        <!-- TimePicker style -->
+        <item name="timePickerStyle">@style/Widget.Material.TimePicker</item>
+
+        <!-- TimePicker dialog theme
+        <item name="timePickerDialogTheme">@style/ThemeOverlay.Material.Dialog.TimePicker</item> -->
+
+        <!-- DatePicker style -->
+        <item name="datePickerStyle">@style/Widget.Material.DatePicker</item>
+
+        <!-- DatePicker dialog theme -->
+        <item name="datePickerDialogTheme">@style/ThemeOverlay.Material.Dialog.DatePicker</item>
+    </style>
+
+    <style name="Theme.AppCompat.Light.DateTimePicker">
+        <!-- NumberPicker style-->
+        <item name="numberPickerStyle">@style/Widget.Material.Light.NumberPicker</item>
+
+        <!-- CalendarView style-->
+        <item name="calendarViewStyle">@style/Widget.Material.Light.CalendarView</item>
+
+        <!-- TimePicker style -->
+        <item name="timePickerStyle">@style/Widget.Material.Light.TimePicker</item>
+
+        <!-- TimePicker dialog theme
+        <item name="timePickerDialogTheme">@style/ThemeOverlay.Material.Dialog.TimePicker</item> -->
+
+        <!-- DatePicker style -->
+        <item name="datePickerStyle">@style/Widget.Material.Light.DatePicker</item>
+
+        <!-- DatePicker dialog theme -->
+        <item name="datePickerDialogTheme">@style/ThemeOverlay.Material.Dialog.DatePicker</item>
+    </style>
+</resources>

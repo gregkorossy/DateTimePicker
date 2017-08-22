@@ -38,7 +38,8 @@
         android:ellipsize="none"
         android:gravity="right"
         android:focusable="true"
-        android:nextFocusForward="@+id/minutes" />
+        android:pointerIcon="hand"
+        android:nextFocusForward="@id/minutes" />
 
     <TextView
         android:id="@+id/separator"
@@ -64,7 +65,8 @@
         android:ellipsize="none"
         android:gravity="left"
         android:focusable="true"
-        android:nextFocusForward="@+id/am_label" />
+        android:pointerIcon="hand"
+        android:nextFocusForward="@id/am_label" />
 
     <!-- The layout alignment of this view will switch between toRightOf
          @id/minutes and toLeftOf @id/hours depending on the locale. -->
@@ -88,10 +90,10 @@
             android:paddingBottom="8dp"
             android:layout_marginBottom="-8dp"
             android:textAppearance="@style/TextAppearance.Material.TimePicker.AmPmLabel"
-            android:lines="1"
+            android:singleLine="true"
             android:ellipsize="none"
             android:focusable="true"
-            android:background="?android:attr/selectableItemBackground"
+            android:background="?selectableItemBackground"
             android:includeFontPadding="false"
             android:nextFocusForward="@+id/pm_label"
             android:button="@null" />
@@ -104,10 +106,10 @@
             android:paddingTop="8dp"
             android:paddingBottom="8dp"
             android:textAppearance="@style/TextAppearance.Material.TimePicker.AmPmLabel"
-            android:lines="1"
+            android:singleLine="true"
             android:ellipsize="none"
             android:focusable="true"
-            android:background="?android:attr/selectableItemBackground"
+            android:background="?selectableItemBackground"
             android:includeFontPadding="false"
             android:button="@null" />
     </RadioGroup>

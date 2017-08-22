@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <attr name="disabledAlpha" format="float" />
+    <!-- NumberPicker style. -->
+    <attr name="numberPickerStyle" format="reference" />
+
+    <!-- The CalendarView style. -->
+    <attr name="calendarViewStyle" format="reference" />
+
     <!-- The TimePicker style. -->
     <attr name="timePickerStyle" format="reference" />
 
@@ -182,5 +188,30 @@
         <attr name="weekSeparatorLineColor" format="color|reference" />
         <!-- @deprecated Drawable for the vertical bar shown at the beginning and at the end of the selected date. -->
         <attr name="selectedDateVerticalBar" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="NumberPicker">
+        <!-- @hide Color for the solid color background if such for optimized rendering. -->
+        <attr name="solidColor" format="color|reference" />
+        <!-- @hide The divider for making the selection area. -->
+        <attr name="selectionDivider" format="reference" />
+        <!-- @hide The height of the selection divider. -->
+        <attr name="selectionDividerHeight" format="dimension" />
+        <!-- @hide The distance between the two selection dividers. -->
+        <attr name="selectionDividersDistance" format="dimension" />
+        <!-- @hide The min height of the NumberPicker. -->
+        <attr name="internalMinHeight" format="dimension" />
+        <!-- @hide The max height of the NumberPicker. -->
+        <attr name="internalMaxHeight" format="dimension" />
+        <!-- @hide The min width of the NumberPicker. -->
+        <attr name="internalMinWidth" format="dimension" />
+        <!-- @hide The max width of the NumberPicker. -->
+        <attr name="internalMaxWidth" format="dimension" />
+        <!-- @hide The layout of the number picker. -->
+        <attr name="internalLayout" />
+        <!-- @hide The drawable for pressed virtual (increment/decrement) buttons. -->
+        <attr name="virtualButtonPressedDrawable" format="reference"/>
+        <!-- @hide If true then the selector wheel is hidden until the picker has focus. -->
+        <attr name="hideWheelUntilFocused" format="boolean"/>
     </declare-styleable>
 </resources>

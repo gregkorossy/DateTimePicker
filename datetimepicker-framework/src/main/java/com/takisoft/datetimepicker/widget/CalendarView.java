@@ -82,7 +82,7 @@ public class CalendarView extends FrameLayout {
     }
 
     public CalendarView(@NonNull Context context, @Nullable AttributeSet attrs) {
-        this(context, attrs, android.R.attr.calendarViewStyle);
+        this(context, attrs, R.attr.calendarViewStyle);
     }
 
     public CalendarView(@NonNull Context context, @Nullable AttributeSet attrs,

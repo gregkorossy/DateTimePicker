@@ -29,7 +29,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.accessibility.AccessibilityManager;
-import com.takisoft.datetimepicker.widget.CalendarView;
 import android.widget.ImageButton;
 
 import com.takisoft.datetimepicker.R;
@@ -151,7 +150,7 @@ class DayPickerView extends ViewGroup {
                     ATTRS_TEXT_COLOR, 0, monthTextAppearanceResId);
             final ColorStateList monthColor = ta.getColorStateList(0);
             if (monthColor != null) {
-                if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     mPrevButton.setImageTintList(monthColor);
                     mNextButton.setImageTintList(monthColor);
                 }
@@ -220,7 +219,7 @@ class DayPickerView extends ViewGroup {
     }
 
     @Override
-    public void onRtlPropertiesChanged( int layoutDirection) {
+    public void onRtlPropertiesChanged(int layoutDirection) {
         super.onRtlPropertiesChanged(layoutDirection);
 
         requestLayout();

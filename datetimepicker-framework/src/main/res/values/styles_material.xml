@@ -1,43 +1,147 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Widget" />
+
+    <style name="Widget.Material" />
+
+    <style name="Widget.Material.NumberPicker" parent="Widget.NumberPicker">
+        <item name="internalLayout">@layout/number_picker_material</item>
+        <item name="solidColor">@android:color/transparent</item>
+        <item name="selectionDivider">@drawable/number_picker_divider_material</item>
+        <item name="selectionDividerHeight">2dp</item>
+        <item name="selectionDividersDistance">48dp</item>
+        <item name="internalMinWidth">64dp</item>
+        <item name="internalMaxHeight">180dp</item>
+        <item name="virtualButtonPressedDrawable">?attr/selectableItemBackground</item>
+    </style>
+
+    <style name="Widget.Material.CalendarView" parent="Widget.CalendarView">
+        <item name="calendarViewMode">material</item>
+        <item name="monthTextAppearance">@style/TextAppearance.Material.Widget.Calendar.Month</item>
+        <item name="weekDayTextAppearance">@style/TextAppearance.Material.Widget.Calendar.DayOfWeek</item>
+        <item name="dateTextAppearance">@style/TextAppearance.Material.Widget.Calendar.Day</item>
+        <item name="daySelectorColor">?attr/colorControlActivated</item>
+        <item name="dayHighlightColor">?attr/colorControlHighlight</item>
+    </style>
+
+    <style name="Widget.Material.TimePicker">
+        <item name="timePickerMode">@integer/time_picker_mode_material</item>
+        <item name="legacyLayout">@layout/time_picker_legacy_material</item>
+        <!-- Attributes for new-style TimePicker. -->
+        <item name="internalLayout">@layout/time_picker_material</item>
+        <item name="headerTextColor">@color/primary_text_secondary_when_activated_material</item>
+        <item name="headerBackground">#ff555555</item>
+        <item name="numbersTextColor">@color/primary_text_inverse_when_activated_material</item><!-- ?textColorPrimaryActivated -->
+        <item name="numbersInnerTextColor">@color/secondary_text_inverse_when_activated_material</item><!-- ?textColorSecondaryActivated -->
+        <item name="numbersSelectorColor">?attr/colorControlActivated</item>
+        <item name="numbersBackgroundColor">#ff555555</item>
+        <item name="amPmTextColor">?android:attr/textColorSecondary</item>
+    </style>
+
+    <style name="Widget.Material.DatePicker">
+        <item name="datePickerMode">@integer/date_picker_mode_material</item>
+        <!--<item name="legacyLayout">@layout/date_picker_legacy_holo</item>-->
+        <item name="calendarViewShown">true</item>
+        <!-- Attributes for new-style DatePicker. -->
+        <item name="internalLayout">@layout/date_picker_material</item>
+        <item name="headerTextColor">@color/primary_text_secondary_when_activated_material</item>
+        <item name="headerBackground">#ff555555</item>
+    </style>
+
+    <style name="Widget.Material.Light.CalendarView" parent="Widget.Material.CalendarView" />
+    <style name="Widget.Material.Light.NumberPicker" parent="Widget.Material.NumberPicker"/>
+
+    <style name="Widget.Material.Light.TimePicker" parent="Widget.Material.TimePicker">
+        <item name="headerTextColor">@color/primary_text_secondary_when_activated_material_inverse
+        </item>
+        <item name="headerBackground">?attr/colorAccent</item>
+        <item name="numbersBackgroundColor">#ffeeeeee</item>
+    </style>
+
+    <style name="Widget.Material.Light.DatePicker" parent="Widget.Material.DatePicker">
+        <item name="headerTextColor">@color/primary_text_secondary_when_activated_material_inverse
+        </item>
+        <item name="headerBackground">?attr/colorAccent</item>
+    </style>
+
+    <style name="DatePickerDialog.Material" parent="@style/AlertDialog.AppCompat">
+        <item name="showTitle">false</item>
+    </style>
+
+    <style name="TimePickerDialog.Material" parent="@style/AlertDialog.AppCompat">
+        <item name="showTitle">false</item>
+    </style>
+
+    <style name="ThemeOverlay.Material.Dialog.DatePicker" parent="@style/ThemeOverlay.AppCompat.Dialog">
+        <item name="alertDialogStyle">@style/DatePickerDialog.Material</item>
+    </style>
+
+    <style name="ThemeOverlay.Material.Dialog.TimePicker" parent="@style/ThemeOverlay.AppCompat.Dialog">
+        <item name="alertDialogStyle">@style/TimePickerDialog.Material</item>
+    </style>
+
+    <!-- TextAppearance -->
+
+    <style name="TextAppearance.Material.NumberPicker" parent="@style/TextAppearance.AppCompat.Body1"/>
+
     <style name="TextAppearance.Material.Widget.Calendar.Day" parent="@style/TextAppearance.AppCompat.Caption"><!-- TextAppearance.Material.Caption -->
-        <item name="android:textColor">@color/primary_text_inverse_when_activated_material</item> <!-- ?attr/textColorPrimaryActivated -->
+        <item name="android:textColor">@color/primary_text_inverse_when_activated_material
+        </item> <!-- ?attr/textColorPrimaryActivated -->
     </style>
 
     <style name="TextAppearance.Material.Widget.Calendar.DayOfWeek" parent="@style/TextAppearance.AppCompat.Caption" /><!-- TextAppearance.Material.Caption -->
     <style name="TextAppearance.Material.Widget.Calendar.Month" parent="@style/TextAppearance.AppCompat.Body2" /><!-- TextAppearance.Material.Body2 -->
 
+    <style name="TextAppearance.Material.TimePicker.InputHeader" parent="@style/TextAppearance.AppCompat.Display1"> <!-- TextAppearance.Material -->
+        <!--<item name="android:textSize">@dimen/text_size_display_1_material</item>-->
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:fontFamily" tools:ignore="NewApi">sans-serif-medium</item>
+    </style>
+
+    <style name="TextAppearance.Material.TimePicker.InputField" parent="@style/TextAppearance.AppCompat"> <!-- TextAppearance.Material -->
+        <item name="android:textSize">@dimen/timepicker_edit_text_size</item>
+    </style>
+
     <style name="TextAppearance.Material.TimePicker.TimeLabel" parent="@style/TextAppearance.AppCompat"><!-- TextAppearance.Material -->
         <item name="android:textSize">@dimen/timepicker_time_label_size</item>
-        <item name="android:textColor">@color/primary_text_secondary_when_activated_material_inverse</item> <!-- @color/primary_text_secondary_when_activated_material_inverse -->
+        <item name="android:textColor">
+            @color/primary_text_secondary_when_activated_material_inverse
+        </item> <!-- @color/primary_text_secondary_when_activated_material_inverse -->
     </style>
 
     <style name="TextAppearance.Material.TimePicker.AmPmLabel" parent="@style/TextAppearance.AppCompat.Button"><!-- TextAppearance.Material.Button -->
         <item name="android:textSize">@dimen/timepicker_ampm_label_size</item>
-        <item name="android:textColor">@color/primary_text_secondary_when_activated_material_inverse</item> <!-- @color/primary_text_secondary_when_activated_material_inverse -->
+        <item name="android:textColor">
+            @color/primary_text_secondary_when_activated_material_inverse
+        </item> <!-- @color/primary_text_secondary_when_activated_material_inverse -->
     </style>
 
     <style name="TextAppearance.Material.DatePicker.YearLabel" parent="@style/TextAppearance.AppCompat"><!-- TextAppearance.Material -->
-        <item name="android:textColor">@color/primary_text_secondary_when_activated_material_inverse</item> <!-- @color/primary_text_secondary_when_activated_material_inverse -->
+        <item name="android:textColor">
+            @color/primary_text_secondary_when_activated_material_inverse
+        </item> <!-- @color/primary_text_secondary_when_activated_material_inverse -->
         <item name="android:textSize">@dimen/date_picker_year_label_size</item>
-        <item name="fontFamily">sans-serif-medium</item>
+        <item name="android:fontFamily" tools:ignore="NewApi">sans-serif-medium</item>
     </style>
 
     <style name="TextAppearance.Material.DatePicker.DateLabel" parent="@style/TextAppearance.AppCompat"><!-- TextAppearance.Material -->
-        <item name="android:textColor">@color/primary_text_secondary_when_activated_material_inverse</item> <!-- @color/primary_text_secondary_when_activated_material_inverse -->
+        <item name="android:textColor">
+            @color/primary_text_secondary_when_activated_material_inverse
+        </item> <!-- @color/primary_text_secondary_when_activated_material_inverse -->
         <item name="android:textSize">@dimen/date_picker_date_label_size</item>
-        <item name="fontFamily">sans-serif-medium</item>
+        <item name="android:fontFamily" tools:ignore="NewApi">sans-serif-medium</item>
     </style>
 
     <style name="TextAppearance.Material.DatePicker.List.YearLabel" parent="@style/TextAppearance.AppCompat"><!-- TextAppearance.Material -->
-        <item name="android:textColor">?android:attr/textColorPrimary</item> <!-- ?attr/textColorPrimary -->
+        <item name="android:textColor">?android:attr/textColorPrimary
+        </item> <!-- ?attr/textColorPrimary -->
         <item name="android:textSize">@dimen/datepicker_list_year_label_size</item>
-        <item name="fontFamily">sans-serif</item>
+        <item name="android:fontFamily" tools:ignore="NewApi">sans-serif</item>
     </style>
 
     <style name="TextAppearance.Material.DatePicker.List.YearLabel.Activated">
         <item name="android:textColor">?attr/colorControlActivated</item>
         <item name="android:textSize">@dimen/datepicker_list_year_activated_label_size</item>
-        <item name="fontFamily">sans-serif-medium</item>
+        <item name="android:fontFamily" tools:ignore="NewApi">sans-serif-medium</item>
     </style>
 </resources>

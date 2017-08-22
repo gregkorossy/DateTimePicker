@@ -21,4 +21,7 @@
     <string name="date_picker_next_month_button">NEXT</string>
     <string name="select_day">DAY</string>
     <string name="select_year">YEAR</string>
+
+    <string name="time_picker_header_text">Set time</string>
+    <string name="time_picker_text_input_mode_description">Switch to text input mode for the time input.</string>
 </resources>
