@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <attr name="disabledAlpha" format="float" />
     <!-- The TimePicker style. -->
     <attr name="timePickerStyle" format="reference" />
 

@@ -58,6 +58,7 @@ class DayPickerViewPager extends ViewPager {
         //populate();
         try {
             Method populate = ViewPager.class.getDeclaredMethod("populate");
+            populate.setAccessible(true);
             populate.invoke(this);
         } catch (NoSuchMethodException e) {
             e.printStackTrace();

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="TextAppearance.Material.Widget.Calendar.Day" parent="@style/TextAppearance.AppCompat.Caption"><!-- TextAppearance.Material.Caption -->
-        <item name="android:textColor">?attr/colorAccent</item> <!-- ?attr/textColorPrimaryActivated -->
+        <item name="android:textColor">@color/primary_text_inverse_when_activated_material</item> <!-- ?attr/textColorPrimaryActivated -->
     </style>
 
     <style name="TextAppearance.Material.Widget.Calendar.DayOfWeek" parent="@style/TextAppearance.AppCompat.Caption" /><!-- TextAppearance.Material.Caption -->
@@ -9,28 +9,28 @@
 
     <style name="TextAppearance.Material.TimePicker.TimeLabel" parent="@style/TextAppearance.AppCompat"><!-- TextAppearance.Material -->
         <item name="android:textSize">@dimen/timepicker_time_label_size</item>
-        <item name="android:textColor">@color/datepicker_default_normal_text_color_material_dark</item> <!-- @color/primary_text_secondary_when_activated_material_inverse -->
+        <item name="android:textColor">@color/primary_text_secondary_when_activated_material_inverse</item> <!-- @color/primary_text_secondary_when_activated_material_inverse -->
     </style>
 
     <style name="TextAppearance.Material.TimePicker.AmPmLabel" parent="@style/TextAppearance.AppCompat.Button"><!-- TextAppearance.Material.Button -->
         <item name="android:textSize">@dimen/timepicker_ampm_label_size</item>
-        <item name="android:textColor">@color/datepicker_default_normal_text_color_material_dark</item> <!-- @color/primary_text_secondary_when_activated_material_inverse -->
+        <item name="android:textColor">@color/primary_text_secondary_when_activated_material_inverse</item> <!-- @color/primary_text_secondary_when_activated_material_inverse -->
     </style>
 
     <style name="TextAppearance.Material.DatePicker.YearLabel" parent="@style/TextAppearance.AppCompat"><!-- TextAppearance.Material -->
-        <item name="android:textColor">@color/datepicker_default_normal_text_color_material_dark</item> <!-- @color/primary_text_secondary_when_activated_material_inverse -->
+        <item name="android:textColor">@color/primary_text_secondary_when_activated_material_inverse</item> <!-- @color/primary_text_secondary_when_activated_material_inverse -->
         <item name="android:textSize">@dimen/date_picker_year_label_size</item>
         <item name="fontFamily">sans-serif-medium</item>
     </style>
 
     <style name="TextAppearance.Material.DatePicker.DateLabel" parent="@style/TextAppearance.AppCompat"><!-- TextAppearance.Material -->
-        <item name="android:textColor">@color/datepicker_default_normal_text_color_material_dark</item> <!-- @color/primary_text_secondary_when_activated_material_inverse -->
+        <item name="android:textColor">@color/primary_text_secondary_when_activated_material_inverse</item> <!-- @color/primary_text_secondary_when_activated_material_inverse -->
         <item name="android:textSize">@dimen/date_picker_date_label_size</item>
         <item name="fontFamily">sans-serif-medium</item>
     </style>
 
     <style name="TextAppearance.Material.DatePicker.List.YearLabel" parent="@style/TextAppearance.AppCompat"><!-- TextAppearance.Material -->
-        <item name="android:textColor">@color/datepicker_default_normal_text_color_material_light</item> <!-- ?attr/textColorPrimary -->
+        <item name="android:textColor">?android:attr/textColorPrimary</item> <!-- ?attr/textColorPrimary -->
         <item name="android:textSize">@dimen/datepicker_list_year_label_size</item>
         <item name="fontFamily">sans-serif</item>
     </style>

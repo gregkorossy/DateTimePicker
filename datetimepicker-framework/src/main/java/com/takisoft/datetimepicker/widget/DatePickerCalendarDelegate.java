@@ -70,9 +70,9 @@ class DatePickerCalendarDelegate extends DatePicker.AbstractDatePickerDelegate {
     private static final int[] ATTRS_DISABLED_ALPHA = new int[]{
             android.R.attr.disabledAlpha};
 
-    private SimpleDateFormat mYearFormat;
-    private SimpleDateFormat mMonthDayFormat;
-    private SimpleDateFormat mAccessibilityEventFormat;
+    private java.text.Format mYearFormat;
+    private java.text.Format mMonthDayFormat;
+    private java.text.Format mAccessibilityEventFormat;
 
 
     // Top-level container.
@@ -199,6 +199,7 @@ class DatePickerCalendarDelegate extends DatePicker.AbstractDatePickerDelegate {
         setCurrentView(VIEW_MONTH_DAY);
     }
 
+    // FIXME this is not good because it will return true only if the said 'state' is the only selector on the color
     private boolean colorHasState(ColorStateList color, int... state) {
         return color.getColorForState(state, Integer.MIN_VALUE) != Integer.MIN_VALUE;
     }
@@ -321,10 +322,15 @@ class DatePickerCalendarDelegate extends DatePicker.AbstractDatePickerDelegate {
         }
 
         // Update the date formatter.
-        final String datePattern = DateFormat.getBestDateTimePattern(locale, "EMMMd");
-        mMonthDayFormat = new SimpleDateFormat(datePattern, locale);
-        mMonthDayFormat.setContext(DisplayContext.CAPITALIZATION_FOR_STANDALONE);
-        mYearFormat = new SimpleDateFormat("y", locale);
+        final String datePattern = DateFormatFix.getBestDateTimePattern(mContext, locale, "EMMMd");
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            mMonthDayFormat = new SimpleDateFormat(datePattern, locale);
+            ((SimpleDateFormat)mMonthDayFormat).setContext(DisplayContext.CAPITALIZATION_FOR_STANDALONE);
+            mYearFormat = new SimpleDateFormat("y", locale);
+        }else{
+            mMonthDayFormat = new java.text.SimpleDateFormat(datePattern, locale);
+            mYearFormat = new java.text.SimpleDateFormat("y", locale);
+        }
 
         // Clear out the lazily-initialized accessibility event formatter.
         mAccessibilityEventFormat = null;
@@ -351,7 +357,10 @@ class DatePickerCalendarDelegate extends DatePicker.AbstractDatePickerDelegate {
             final long millis = mCurrentDate.getTimeInMillis();
             final int flags = DateUtils.FORMAT_SHOW_DATE | DateUtils.FORMAT_SHOW_YEAR;
             final String fullDateText = DateUtils.formatDateTime(mContext, millis, flags);
-            mAnimator.announceForAccessibility(fullDateText);
+
+            if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                mAnimator.announceForAccessibility(fullDateText); // FIXME we need this on pre-16 devices
+            }
         }
     }
 
@@ -366,8 +375,9 @@ class DatePickerCalendarDelegate extends DatePicker.AbstractDatePickerDelegate {
                     mAnimator.setDisplayedChild(VIEW_MONTH_DAY);
                     mCurrentView = viewIndex;
                 }
-
-                mAnimator.announceForAccessibility(mSelectDay);
+                if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                    mAnimator.announceForAccessibility(mSelectDay); // FIXME we need this on pre-16 devices
+                }
                 break;
             case VIEW_YEAR:
                 final int year = mCurrentDate.get(Calendar.YEAR);
@@ -389,8 +399,9 @@ class DatePickerCalendarDelegate extends DatePicker.AbstractDatePickerDelegate {
                     mAnimator.setDisplayedChild(VIEW_YEAR);
                     mCurrentView = viewIndex;
                 }
-
-                mAnimator.announceForAccessibility(mSelectYear);
+                if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                    mAnimator.announceForAccessibility(mSelectYear); // FIXME we need this on pre-16 devices
+                }
                 break;
         }
     }

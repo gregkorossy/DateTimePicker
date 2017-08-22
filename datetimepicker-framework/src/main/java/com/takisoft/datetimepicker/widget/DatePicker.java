@@ -191,6 +191,8 @@ public class DatePicker extends FrameLayout {
             mMode = requestedMode;
         }
 
+        mMode = MODE_CALENDAR;
+
         switch (mMode) {
             case MODE_CALENDAR:
                 mDelegate = createCalendarUIDelegate(context, attrs, defStyleAttr, defStyleRes);

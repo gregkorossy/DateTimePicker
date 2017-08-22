@@ -4,7 +4,7 @@ android {
     compileSdkVersion 26
     buildToolsVersion "26.0.1"
     defaultConfig {
-        applicationId "com.takisoft.datetimepicker"
+        applicationId "com.takisoft.datetimepicker.sample"
         minSdkVersion 14
         targetSdkVersion 26
         versionCode 1
@@ -33,6 +33,6 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.0'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.0'
 
-    implementation project(':datetimepicker')
+    //implementation project(':datetimepicker')
     implementation project(':datetimepicker-framework')
 }

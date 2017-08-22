@@ -18,12 +18,15 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:id="@+id/date_picker_header"
               android:layout_width="match_parent"
+    android:background="?colorAccent"
               android:layout_height="wrap_content"
               android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingLeft="?attr/dialogPreferredPadding"
+        android:paddingRight="?attr/dialogPreferredPadding"
         android:paddingStart="?attr/dialogPreferredPadding"
         android:paddingEnd="?attr/dialogPreferredPadding"
         android:paddingTop="16dp"
@@ -38,12 +41,14 @@
             android:layout_height="wrap_content"
             android:focusable="true"
             android:includeFontPadding="false"
+            android:layout_marginLeft="-8dp"
+            android:layout_marginRight="-8dp"
             android:layout_marginStart="-8dp"
             android:layout_marginEnd="-8dp"
             android:layout_marginTop="-8dp"
             android:layout_marginBottom="-8dp"
             android:padding="8dp"
-            android:background="?attr/selectableItemBackground"
+            android:background="?selectableItemBackground"
             android:textAppearance="@style/TextAppearance.Material.DatePicker.YearLabel"
             android:nextFocusForward="@+id/prev" />
 

@@ -72,7 +72,7 @@
     </LinearLayout>
 
     <!-- calendar view -->
-    <CalendarView
+    <com.takisoft.datetimepicker.widget.CalendarView
         android:id="@+id/calendar_view"
         android:layout_width="245dip"
         android:layout_height="280dip"

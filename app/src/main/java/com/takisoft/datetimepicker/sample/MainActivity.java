@@ -1,13 +1,13 @@
-package com.takisoft.datetimepicker;
+package com.takisoft.datetimepicker.sample;
 
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.format.DateFormat;
 import android.util.Log;
+import android.widget.Toast;
 
-import com.android.datetimepicker.date.DatePickerDialog;
-import com.android.datetimepicker.time.TimePickerDialog;
+import com.takisoft.datetimepicker.DatePickerDialog;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -16,6 +16,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Locale;
 import java.util.Set;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -41,16 +42,22 @@ public class MainActivity extends AppCompatActivity {
 
 
         findViewById(R.id.btnDateFragment)
-                .setOnClickListener(view -> DatePickerDialog
-                        .newInstance(null, cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DATE))
-                        .show(getFragmentManager(), null)
+                .setOnClickListener(view -> {
+                            /*DatePickerDialog
+                                    .newInstance(null, cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DATE))
+                                    .show(getFragmentManager(), null);*/
+                            DatePickerDialog dpd = new DatePickerDialog(MainActivity.this, (view1, year, month, dayOfMonth) -> {
+                                Toast.makeText(MainActivity.this, year + "-" + String.format("%02d", month + 1) + "-" + String.format("%02d", dayOfMonth), Toast.LENGTH_SHORT).show();
+                            }, cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DATE));
+                            dpd.show();
+                        }
                 );
 
-        findViewById(R.id.btnTimeFragment)
+        /*findViewById(R.id.btnTimeFragment)
                 .setOnClickListener(view -> TimePickerDialog
                         .newInstance(null, cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE), true)
                         .show(getFragmentManager(), null)
-                );
+                );*/
     }
 
     public static String getBestDateTimePattern(Locale locale, String skeleton) {

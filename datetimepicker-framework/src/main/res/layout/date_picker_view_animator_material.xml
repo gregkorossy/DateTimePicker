@@ -14,8 +14,7 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
-<com.android.internal.widget.DialogViewAnimator xmlns:android="http://schemas.android.com/apk/res/android"
+<com.takisoft.datetimepicker.widget.internal.DialogViewAnimator xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/animator"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -35,4 +34,4 @@
         android:layout_height="match_parent"
         android:scrollIndicators="bottom" />
 
-</com.android.internal.widget.DialogViewAnimator>
+</com.takisoft.datetimepicker.widget.internal.DialogViewAnimator>

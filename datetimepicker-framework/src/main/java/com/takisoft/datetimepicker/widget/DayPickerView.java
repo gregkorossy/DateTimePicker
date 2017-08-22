@@ -151,8 +151,10 @@ class DayPickerView extends ViewGroup {
                     ATTRS_TEXT_COLOR, 0, monthTextAppearanceResId);
             final ColorStateList monthColor = ta.getColorStateList(0);
             if (monthColor != null) {
-                mPrevButton.setImageTintList(monthColor);
-                mNextButton.setImageTintList(monthColor);
+                if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    mPrevButton.setImageTintList(monthColor);
+                    mNextButton.setImageTintList(monthColor);
+                }
             }
             ta.recycle();
         }
