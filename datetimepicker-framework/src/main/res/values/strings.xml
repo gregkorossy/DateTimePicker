@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">DateTimePicker</string>
+    <!-- DO NOT TRANSLATE -->
+    <string name="time_placeholder">--</string>
+
+    <!-- DO NOT TRANSLATE -->
+    <string name="radial_numbers_typeface">sans-serif</string>
+    <!-- DO NOT TRANSLATE -->
+    <string name="sans_serif">sans-serif</string>
+
+    <!-- DO NOT TRANSLATE -->
+    <string name="date_picker_month_typeface">sans-serif-medium</string>
+    <!-- DO NOT TRANSLATE -->
+    <string name="date_picker_day_of_week_typeface">sans-serif-medium</string>
+    <!-- DO NOT TRANSLATE -->
+    <string name="date_picker_day_typeface">sans-serif-medium</string>
+
+    <string name="date_picker_prev_month_button">PREV</string>
+    <string name="date_picker_next_month_button">NEXT</string>
+</resources>

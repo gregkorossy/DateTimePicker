@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- New TimePicker dimensions. -->
+    <dimen name="timepicker_left_side_width">250dip</dimen>
+
+    <!-- Material time picker dimensions. -->
+    <!-- Text size for the time picker header HH:MM label. This value is large
+         enough that we don't need to use scaled pixels, dp is fine. -->
+    <dimen name="timepicker_time_label_size">48dp</dimen>
+    <dimen name="timepicker_ampm_label_size">16sp</dimen>
+    <dimen name="timepicker_am_top_padding">8dp</dimen>
+    <dimen name="timepicker_pm_top_padding">3dp</dimen>
+    <!-- Radial picker is small until we hit sw380dp-land. -->
+    <dimen name="timepicker_radial_picker_dimen">180dp</dimen>
+    <dimen name="timepicker_radial_picker_top_margin">16dp</dimen>
+    <dimen name="timepicker_radial_picker_horizontal_margin">24dp</dimen>
+
+    <!-- Used by RadialTimePicker in clock-style TimePicker. -->
+    <dimen name="timepicker_text_inset_normal">22dp</dimen>
+    <!-- Landscape inset is small until we hit sw380dp-land. -->
+    <dimen name="timepicker_text_inset_inner">46dp</dimen>
+    <dimen name="timepicker_text_size_normal">14sp</dimen>
+    <dimen name="timepicker_text_size_inner">12sp</dimen>
+
+    <!-- Used by Material-style SimpleMonthView -->
+    <dimen name="date_picker_month_height">40dp</dimen>
+    <dimen name="date_picker_day_of_week_height">14dp</dimen>
+    <dimen name="date_picker_day_height">32dp</dimen>
+    <dimen name="date_picker_day_width">46dp</dimen>
+    <dimen name="date_picker_day_selector_radius">16dp</dimen>
+    <dimen name="day_picker_padding_horizontal">18dp</dimen>
+    <dimen name="day_picker_padding_top">0dp</dimen>
+    <dimen name="day_picker_button_margin_top">-8dp</dimen>
+</resources>
