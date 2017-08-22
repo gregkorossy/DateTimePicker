@@ -32,7 +32,6 @@ import android.util.AttributeSet;
 import android.util.SparseArray;
 import android.view.View;
 import android.view.accessibility.AccessibilityEvent;
-import android.widget.CalendarView;
 import android.widget.FrameLayout;
 import android.widget.NumberPicker;
 

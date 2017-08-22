@@ -81,7 +81,7 @@
              {@deprecated No longer displayed.} -->
         <attr name="yearListSelectorColor" format="color" />
 
-        <!-- @hide Whether this time picker is being displayed within a dialog,
+        <!-- Whether this time picker is being displayed within a dialog,
              in which case it may ignore the requested time picker mode due to
              space considerations. -->
         <attr name="dialogMode" format="boolean" />

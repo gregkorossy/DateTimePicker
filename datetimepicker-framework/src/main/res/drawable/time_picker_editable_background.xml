@@ -21,12 +21,12 @@
             <item android:gravity="bottom"
                   android:height="10dp">
                 <shape android:shape="line"
-                       android:tint="?attr/textColorPrimaryInverse">
-                    <stroke android:color="@color/white"
+                       android:tint="?android:attr/textColorPrimaryInverse">
+                    <stroke android:color="@android:color/white"
                             android:width="2dp" />
                 </shape>
             </item>
         </layer-list>
     </item>
-    <item android:drawable="@color/transparent" />
+    <item android:drawable="@android:color/transparent" />
 </selector>

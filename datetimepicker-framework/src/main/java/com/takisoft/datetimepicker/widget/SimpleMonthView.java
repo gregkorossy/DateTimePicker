@@ -269,7 +269,7 @@ class SimpleMonthView extends View {
         final TypedArray ta = getContext().obtainStyledAttributes(null,
                 R.styleable.TextAppearance, 0, resId);
 
-        final String fontFamily = ta.getString(com.android.internal.R.styleable.TextAppearance_fontFamily);
+        final String fontFamily = ta.getString(R.styleable.TextAppearance_fontFamily);
         if (fontFamily != null) {
             p.setTypeface(Typeface.create(fontFamily, Typeface.NORMAL));
         }

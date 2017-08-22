@@ -21,30 +21,34 @@ import android.content.res.ColorStateList;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
+import android.graphics.drawable.Drawable;
 import android.icu.text.DisplayContext;
 import android.icu.text.SimpleDateFormat;
-import java.util.Calendar;
-//import android.icu.util.Calendar;
+import android.os.Build;
 import android.os.Parcelable;
 import android.support.annotation.Nullable;
 import android.text.format.DateFormat;
 import android.text.format.DateUtils;
 import android.util.AttributeSet;
-import android.util.StateSet;
 import android.view.HapticFeedbackConstants;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.accessibility.AccessibilityEvent;
-import com.takisoft.datetimepicker.widget.DayPickerView.OnDaySelectedListener;
 import android.widget.TextView;
 import android.widget.ViewAnimator;
-import com.takisoft.datetimepicker.widget.YearPickerView.OnYearSelectedListener;
 
 import com.takisoft.datetimepicker.R;
+import com.takisoft.datetimepicker.util.DateFormatFix;
+import com.takisoft.datetimepicker.util.StateSet;
+import com.takisoft.datetimepicker.widget.DayPickerView.OnDaySelectedListener;
+import com.takisoft.datetimepicker.widget.YearPickerView.OnYearSelectedListener;
 
+import java.util.Calendar;
 import java.util.Locale;
+
+//import android.icu.util.Calendar;
 
 /**
  * A delegate for picking up a date (day / month / year).
@@ -61,10 +65,10 @@ class DatePickerCalendarDelegate extends DatePicker.AbstractDatePickerDelegate {
 
     private static final int ANIMATION_DURATION = 300;
 
-    private static final int[] ATTRS_TEXT_COLOR = new int[] {
-            com.android.internal.R.attr.textColor};
-    private static final int[] ATTRS_DISABLED_ALPHA = new int[] {
-            com.android.internal.R.attr.disabledAlpha};
+    private static final int[] ATTRS_TEXT_COLOR = new int[]{
+            android.R.attr.textColor};
+    private static final int[] ATTRS_DISABLED_ALPHA = new int[]{
+            android.R.attr.disabledAlpha};
 
     private SimpleDateFormat mYearFormat;
     private SimpleDateFormat mMonthDayFormat;
@@ -99,7 +103,7 @@ class DatePickerCalendarDelegate extends DatePicker.AbstractDatePickerDelegate {
     private int mFirstDayOfWeek = USE_LOCALE;
 
     public DatePickerCalendarDelegate(DatePicker delegator, Context context, AttributeSet attrs,
-            int defStyleAttr, int defStyleRes) {
+                                      int defStyleAttr, int defStyleRes) {
         super(delegator, context);
 
         final Locale locale = mCurrentLocale;
@@ -135,8 +139,7 @@ class DatePickerCalendarDelegate extends DatePicker.AbstractDatePickerDelegate {
         // that override the "real" header text color.
         ColorStateList headerTextColor = null;
 
-        @SuppressWarnings("deprecation")
-        final int monthHeaderTextAppearance = a.getResourceId(
+        @SuppressWarnings("deprecation") final int monthHeaderTextAppearance = a.getResourceId(
                 R.styleable.DatePicker_headerMonthTextAppearance, 0);
         if (monthHeaderTextAppearance != 0) {
             final TypedArray textAppearance = mContext.obtainStyledAttributes(null,
@@ -156,17 +159,23 @@ class DatePickerCalendarDelegate extends DatePicker.AbstractDatePickerDelegate {
         }
 
         // Set up header background, if available.
-        if (a.hasValueOrEmpty(R.styleable.DatePicker_headerBackground)) {
-            header.setBackground(a.getDrawable(R.styleable.DatePicker_headerBackground));
+        //if (a.hasValueOrEmpty(R.styleable.DatePicker_headerBackground)) {
+        Drawable headerBg = a.getDrawable(R.styleable.DatePicker_headerBackground);
+        if (headerBg != null) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                header.setBackground(headerBg);
+            } else {
+                header.setBackgroundDrawable(headerBg);
+            }
         }
 
         a.recycle();
 
         // Set up picker container.
-        mAnimator = (ViewAnimator) mContainer.findViewById(R.id.animator);
+        mAnimator = mContainer.findViewById(R.id.animator);
 
         // Set up day picker view.
-        mDayPickerView = (DayPickerView) mAnimator.findViewById(R.id.date_picker_day_picker);
+        mDayPickerView = mAnimator.findViewById(R.id.date_picker_day_picker);
         mDayPickerView.setFirstDayOfWeek(mFirstDayOfWeek);
         mDayPickerView.setMinDate(mMinDate.getTimeInMillis());
         mDayPickerView.setMaxDate(mMaxDate.getTimeInMillis());
@@ -174,7 +183,7 @@ class DatePickerCalendarDelegate extends DatePicker.AbstractDatePickerDelegate {
         mDayPickerView.setOnDaySelectedListener(mOnDaySelectedListener);
 
         // Set up year picker view.
-        mYearPickerView = (YearPickerView) mAnimator.findViewById(R.id.date_picker_year_picker);
+        mYearPickerView = mAnimator.findViewById(R.id.date_picker_year_picker);
         mYearPickerView.setRange(mMinDate, mMaxDate);
         mYearPickerView.setYear(mCurrentDate.get(Calendar.YEAR));
         mYearPickerView.setOnYearSelectedListener(mOnYearSelectedListener);
@@ -190,6 +199,10 @@ class DatePickerCalendarDelegate extends DatePicker.AbstractDatePickerDelegate {
         setCurrentView(VIEW_MONTH_DAY);
     }
 
+    private boolean colorHasState(ColorStateList color, int... state) {
+        return color.getColorForState(state, Integer.MIN_VALUE) != Integer.MIN_VALUE;
+    }
+
     /**
      * The legacy text color might have been poorly defined. Ensures that it
      * has an appropriate activated state, using the selected state if one
@@ -197,17 +210,18 @@ class DatePickerCalendarDelegate extends DatePicker.AbstractDatePickerDelegate {
      *
      * @param color a legacy text color, or {@code null}
      * @return a color state list with an appropriate activated state, or
-     *         {@code null} if a valid activated state could not be generated
+     * {@code null} if a valid activated state could not be generated
      */
     @Nullable
     private ColorStateList applyLegacyColorFixes(@Nullable ColorStateList color) {
-        if (color == null || color.hasState(android.R.attr.state_activated)) {
+        if (color == null || colorHasState(color, android.R.attr.state_activated)) { // color.hasState(android.R.attr.state_activated)
             return color;
         }
 
         final int activatedColor;
         final int defaultColor;
-        if (color.hasState(android.R.attr.state_selected)) {
+
+        if (colorHasState(color, android.R.attr.state_selected)) { // color.hasState(android.R.attr.state_selected)
             activatedColor = color.getColorForState(StateSet.get(
                     StateSet.VIEW_STATE_ENABLED | StateSet.VIEW_STATE_SELECTED), 0);
             defaultColor = color.getColorForState(StateSet.get(
@@ -226,8 +240,8 @@ class DatePickerCalendarDelegate extends DatePicker.AbstractDatePickerDelegate {
             return null;
         }
 
-        final int[][] stateSet = new int[][] {{ android.R.attr.state_activated }, {}};
-        final int[] colors = new int[] { activatedColor, defaultColor };
+        final int[][] stateSet = new int[][]{{android.R.attr.state_activated}, {}};
+        final int[] colors = new int[]{activatedColor, defaultColor};
         return new ColorStateList(stateSet, colors);
     }
 
@@ -383,7 +397,7 @@ class DatePickerCalendarDelegate extends DatePicker.AbstractDatePickerDelegate {
 
     @Override
     public void init(int year, int monthOfYear, int dayOfMonth,
-            DatePicker.OnDateChangedListener callBack) {
+                     DatePicker.OnDateChangedListener callBack) {
         mCurrentDate.set(Calendar.YEAR, year);
         mCurrentDate.set(Calendar.MONTH, monthOfYear);
         mCurrentDate.set(Calendar.DAY_OF_MONTH, dayOfMonth);
@@ -595,7 +609,7 @@ class DatePickerCalendarDelegate extends DatePicker.AbstractDatePickerDelegate {
     @Override
     public void onPopulateAccessibilityEvent(AccessibilityEvent event) {
         if (mAccessibilityEventFormat == null) {
-            final String pattern = DateFormat.getBestDateTimePattern(mCurrentLocale, "EMMMMdy");
+            final String pattern = DateFormatFix.getBestDateTimePattern(mContext, mCurrentLocale, "EMMMMdy");
             mAccessibilityEventFormat = new SimpleDateFormat(pattern);
         }
         final CharSequence text = mAccessibilityEventFormat.format(mCurrentDate.getTime());
@@ -629,6 +643,6 @@ class DatePickerCalendarDelegate extends DatePicker.AbstractDatePickerDelegate {
     }
 
     private void tryVibrate() {
-        mDelegator.performHapticFeedback(HapticFeedbackConstants.CALENDAR_DATE);
+        // FIXME mDelegator.performHapticFeedback(HapticFeedbackConstants.CALENDAR_DATE);
     }
 }

@@ -69,7 +69,7 @@ class DayPickerPagerAdapter extends PagerAdapter {
         mCalendarViewId = calendarViewId;
 
         final TypedArray ta = context.obtainStyledAttributes(new int[] {
-                com.android.internal.R.attr.colorControlHighlight});
+                android.R.attr.colorControlHighlight});
         mDayHighlightColor = ta.getColorStateList(0);
         ta.recycle();
     }

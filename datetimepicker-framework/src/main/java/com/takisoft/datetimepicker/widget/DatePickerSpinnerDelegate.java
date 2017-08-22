@@ -31,13 +31,13 @@ import android.view.View;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.CalendarView;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.NumberPicker;
 import android.widget.NumberPicker.OnValueChangeListener;
 import android.widget.TextView;
 
+import com.takisoft.datetimepicker.R;
 import com.takisoft.datetimepicker.util.DateFormatFix;
 import com.takisoft.datetimepicker.widget.DatePicker.AbstractDatePickerDelegate;
 
@@ -113,18 +113,18 @@ class DatePickerSpinnerDelegate extends AbstractDatePickerDelegate {
         setCurrentLocale(Locale.getDefault());
 
         final TypedArray attributesArray = context.obtainStyledAttributes(attrs,
-                com.android.internal.R.styleable.DatePicker, defStyleAttr, defStyleRes);
-        boolean spinnersShown = attributesArray.getBoolean(com.android.internal.R.styleable.DatePicker_spinnersShown,
+                R.styleable.DatePicker, defStyleAttr, defStyleRes);
+        boolean spinnersShown = attributesArray.getBoolean(R.styleable.DatePicker_spinnersShown,
                 DEFAULT_SPINNERS_SHOWN);
         boolean calendarViewShown = attributesArray.getBoolean(
-                com.android.internal.R.styleable.DatePicker_calendarViewShown, DEFAULT_CALENDAR_VIEW_SHOWN);
-        int startYear = attributesArray.getInt(com.android.internal.R.styleable.DatePicker_startYear,
+                R.styleable.DatePicker_calendarViewShown, DEFAULT_CALENDAR_VIEW_SHOWN);
+        int startYear = attributesArray.getInt(R.styleable.DatePicker_startYear,
                 DEFAULT_START_YEAR);
-        int endYear = attributesArray.getInt(com.android.internal.R.styleable.DatePicker_endYear, DEFAULT_END_YEAR);
-        String minDate = attributesArray.getString(com.android.internal.R.styleable.DatePicker_minDate);
-        String maxDate = attributesArray.getString(com.android.internal.R.styleable.DatePicker_maxDate);
+        int endYear = attributesArray.getInt(R.styleable.DatePicker_endYear, DEFAULT_END_YEAR);
+        String minDate = attributesArray.getString(R.styleable.DatePicker_minDate);
+        String maxDate = attributesArray.getString(R.styleable.DatePicker_maxDate);
         int layoutResourceId = attributesArray.getResourceId(
-                com.android.internal.R.styleable.DatePicker_legacyLayout, com.android.internal.R.layout.date_picker_legacy);
+                R.styleable.DatePicker_legacyLayout, R.layout.date_picker_legacy);
         attributesArray.recycle();
 
         LayoutInflater inflater = (LayoutInflater) context
@@ -167,10 +167,10 @@ class DatePickerSpinnerDelegate extends AbstractDatePickerDelegate {
             }
         };
 
-        mSpinners = mDelegator.findViewById(com.android.internal.R.id.pickers);
+        mSpinners = mDelegator.findViewById(R.id.pickers);
 
         // calendar view day-picker
-        mCalendarView = mDelegator.findViewById(com.android.internal.R.id.calendar_view);
+        mCalendarView = mDelegator.findViewById(R.id.calendar_view);
         mCalendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             public void onSelectedDayChange(CalendarView view, int year, int month, int monthDay) {
                 setDate(year, month, monthDay);
@@ -180,26 +180,26 @@ class DatePickerSpinnerDelegate extends AbstractDatePickerDelegate {
         });
 
         // day
-        mDaySpinner = mDelegator.findViewById(com.android.internal.R.id.day);
+        mDaySpinner = mDelegator.findViewById(R.id.day);
         mDaySpinner.setFormatter(sTwoDigitFormatter);
         mDaySpinner.setOnLongPressUpdateInterval(100);
         mDaySpinner.setOnValueChangedListener(onChangeListener);
-        mDaySpinnerInput = mDaySpinner.findViewById(com.android.internal.R.id.numberpicker_input);
+        mDaySpinnerInput = mDaySpinner.findViewById(R.id.numberpicker_input);
 
         // month
-        mMonthSpinner = mDelegator.findViewById(com.android.internal.R.id.month);
+        mMonthSpinner = mDelegator.findViewById(R.id.month);
         mMonthSpinner.setMinValue(0);
         mMonthSpinner.setMaxValue(mNumberOfMonths - 1);
         mMonthSpinner.setDisplayedValues(mShortMonths);
         mMonthSpinner.setOnLongPressUpdateInterval(200);
         mMonthSpinner.setOnValueChangedListener(onChangeListener);
-        mMonthSpinnerInput = mMonthSpinner.findViewById(com.android.internal.R.id.numberpicker_input);
+        mMonthSpinnerInput = mMonthSpinner.findViewById(R.id.numberpicker_input);
 
         // year
-        mYearSpinner = mDelegator.findViewById(com.android.internal.R.id.year);
+        mYearSpinner = mDelegator.findViewById(R.id.year);
         mYearSpinner.setOnLongPressUpdateInterval(100);
         mYearSpinner.setOnValueChangedListener(onChangeListener);
-        mYearSpinnerInput = mYearSpinner.findViewById(com.android.internal.R.id.numberpicker_input);
+        mYearSpinnerInput = mYearSpinner.findViewById(R.id.numberpicker_input);
 
         // show only what the user required but make sure we
         // show something and the spinners have higher priority
@@ -617,26 +617,27 @@ class DatePickerSpinnerDelegate extends AbstractDatePickerDelegate {
         } else {
             imeOptions = EditorInfo.IME_ACTION_DONE;
         }
-        TextView input = (TextView) spinner.findViewById(com.android.internal.R.id.numberpicker_input);
+        TextView input = (TextView) spinner.findViewById(R.id.numberpicker_input);
         input.setImeOptions(imeOptions);
     }
 
     private void setContentDescriptions() {
-        // Day
-        trySetContentDescription(mDaySpinner, com.android.internal.R.id.increment,
-                com.android.internal.R.string.date_picker_increment_day_button);
-        trySetContentDescription(mDaySpinner, com.android.internal.R.id.decrement,
-                com.android.internal.R.string.date_picker_decrement_day_button);
+        // FIXME this is needed for accessibility
+        /*// Day
+        trySetContentDescription(mDaySpinner, R.id.increment,
+                R.string.date_picker_increment_day_button);
+        trySetContentDescription(mDaySpinner, R.id.decrement,
+                R.string.date_picker_decrement_day_button);
         // Month
-        trySetContentDescription(mMonthSpinner, com.android.internal.R.id.increment,
-                com.android.internal.R.string.date_picker_increment_month_button);
-        trySetContentDescription(mMonthSpinner, com.android.internal.R.id.decrement,
-                com.android.internal.R.string.date_picker_decrement_month_button);
+        trySetContentDescription(mMonthSpinner, R.id.increment,
+                R.string.date_picker_increment_month_button);
+        trySetContentDescription(mMonthSpinner, R.id.decrement,
+                R.string.date_picker_decrement_month_button);
         // Year
-        trySetContentDescription(mYearSpinner, com.android.internal.R.id.increment,
-                com.android.internal.R.string.date_picker_increment_year_button);
-        trySetContentDescription(mYearSpinner, com.android.internal.R.id.decrement,
-                com.android.internal.R.string.date_picker_decrement_year_button);
+        trySetContentDescription(mYearSpinner, R.id.increment,
+                R.string.date_picker_increment_year_button);
+        trySetContentDescription(mYearSpinner, R.id.decrement,
+                R.string.date_picker_decrement_year_button);*/
     }
 
     private void trySetContentDescription(View root, int viewId, int contDescResId) {
