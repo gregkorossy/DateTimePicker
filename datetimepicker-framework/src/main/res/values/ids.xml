@@ -2,4 +2,6 @@
 <resources>
     <!-- THIS IS A PLACEHOLDER NOW, WE NEED A CUSTOM NumberPicker class + layout...-->
     <item type="id" name="numberpicker_input" />
+    <item type="id" name="increment" />
+    <item type="id" name="decrement" />
 </resources>

@@ -17,6 +17,7 @@
 package com.takisoft.datetimepicker.widget;
 
 import android.content.Context;
+import android.os.Build;
 import android.support.annotation.StyleRes;
 import android.util.AttributeSet;
 
@@ -35,7 +36,12 @@ class CalendarViewMaterialDelegate extends CalendarView.AbstractCalendarViewDele
                                         int defStyleAttr, int defStyleRes) {
         super(delegator, context);
 
-        mDayPickerView = new DayPickerView(context, attrs, defStyleAttr, defStyleRes);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            mDayPickerView = new DayPickerView(context, attrs, defStyleAttr, defStyleRes);
+        } else {
+            mDayPickerView = new DayPickerView(context, attrs, defStyleAttr);
+        }
+
         mDayPickerView.setOnDaySelectedListener(mOnDaySelectedListener);
 
         delegator.addView(mDayPickerView);

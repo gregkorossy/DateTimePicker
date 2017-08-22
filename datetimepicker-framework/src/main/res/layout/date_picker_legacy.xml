@@ -37,7 +37,7 @@
         android:gravity="center">
 
         <!-- Month -->
-        <NumberPicker
+        <com.takisoft.datetimepicker.widget.NumberPicker
             android:id="@+id/month"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -48,7 +48,7 @@
             />
 
         <!-- Day -->
-        <NumberPicker
+        <com.takisoft.datetimepicker.widget.NumberPicker
             android:id="@+id/day"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -59,7 +59,7 @@
             />
 
         <!-- Year -->
-        <NumberPicker
+        <com.takisoft.datetimepicker.widget.NumberPicker
             android:id="@+id/year"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

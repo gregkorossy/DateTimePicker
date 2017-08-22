@@ -23,7 +23,6 @@ import android.os.Build;
 import android.os.Parcelable;
 import android.text.InputType;
 import android.text.TextUtils;
-import android.text.format.DateFormat;
 import android.text.format.DateUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -33,8 +32,7 @@ import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.NumberPicker;
-import android.widget.NumberPicker.OnValueChangeListener;
+import com.takisoft.datetimepicker.widget.NumberPicker.OnValueChangeListener;
 import android.widget.TextView;
 
 import com.takisoft.datetimepicker.R;

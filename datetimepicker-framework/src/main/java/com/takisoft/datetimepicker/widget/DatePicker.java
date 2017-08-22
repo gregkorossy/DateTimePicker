@@ -20,8 +20,6 @@ import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
-import java.util.Calendar;
-//import android.icu.util.Calendar;
 import android.icu.util.TimeZone;
 import android.os.Build;
 import android.os.Parcel;
@@ -33,13 +31,15 @@ import android.util.SparseArray;
 import android.view.View;
 import android.view.accessibility.AccessibilityEvent;
 import android.widget.FrameLayout;
-import android.widget.NumberPicker;
 
 import com.takisoft.datetimepicker.R;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
+import java.util.Calendar;
 import java.util.Locale;
+
+//import android.icu.util.Calendar;
 
 /**
  * Provides a widget for selecting a date.
@@ -84,10 +84,10 @@ import java.util.Locale;
 public class DatePicker extends FrameLayout {
     /**
      * Presentation mode for the Holo-style date picker that uses a set of
-     * {@link android.widget.NumberPicker}s.
+     * {@link NumberPicker}s.
      *
-     * @see #getMode()
      * @hide Visible for testing only.
+     * @see #getMode()
      */
     public static final int MODE_SPINNER = 1;
 
@@ -95,15 +95,18 @@ public class DatePicker extends FrameLayout {
      * Presentation mode for the Material-style date picker that uses a
      * calendar.
      *
-     * @see #getMode()
      * @hide Visible for testing only.
+     * @see #getMode()
      */
     public static final int MODE_CALENDAR = 2;
 
-    /** @hide */
+    /**
+     * @hide
+     */
     @IntDef({MODE_SPINNER, MODE_CALENDAR})
     @Retention(RetentionPolicy.SOURCE)
-    public @interface DatePickerMode {}
+    public @interface DatePickerMode {
+    }
 
     private /*final*/ DatePickerDelegate mDelegate;
 
@@ -118,11 +121,11 @@ public class DatePicker extends FrameLayout {
         /**
          * Called upon a date change.
          *
-         * @param view The view associated with this listener.
-         * @param year The year that was set.
+         * @param view        The view associated with this listener.
+         * @param year        The year that was set.
          * @param monthOfYear The month that was set (0-11) for compatibility
-         *            with {@link java.util.Calendar}.
-         * @param dayOfMonth The day of the month that was set.
+         *                    with {@link java.util.Calendar}.
+         * @param dayOfMonth  The day of the month that was set.
          */
         void onDateChanged(DatePicker view, int year, int monthOfYear, int dayOfMonth);
     }
@@ -175,7 +178,7 @@ public class DatePicker extends FrameLayout {
         }*/
     }
 
-    private void attrHandler(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes){
+    private void attrHandler(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         final TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.DatePicker,
                 defStyleAttr, defStyleRes);
         final boolean isDialogMode = a.getBoolean(R.styleable.DatePicker_dialogMode, false);
@@ -209,19 +212,19 @@ public class DatePicker extends FrameLayout {
     }
 
     private DatePickerDelegate createSpinnerUIDelegate(Context context, AttributeSet attrs,
-            int defStyleAttr, int defStyleRes) {
+                                                       int defStyleAttr, int defStyleRes) {
         return new DatePickerSpinnerDelegate(this, context, attrs, defStyleAttr, defStyleRes);
     }
 
     private DatePickerDelegate createCalendarUIDelegate(Context context, AttributeSet attrs,
-            int defStyleAttr, int defStyleRes) {
+                                                        int defStyleAttr, int defStyleRes) {
         return new DatePickerCalendarDelegate(this, context, attrs, defStyleAttr,
                 defStyleRes);
     }
 
     /**
      * @return the picker's presentation mode, one of {@link #MODE_CALENDAR} or
-     *         {@link #MODE_SPINNER}
+     * {@link #MODE_SPINNER}
      * @attr ref android.R.styleable#DatePicker_datePickerMode
      * @hide Visible for testing only.
      */
@@ -234,11 +237,11 @@ public class DatePicker extends FrameLayout {
      * Initialize the state. If the provided values designate an inconsistent
      * date the values are normalized before updating the spinners.
      *
-     * @param year The initial year.
-     * @param monthOfYear The initial month <strong>starting from zero</strong>.
-     * @param dayOfMonth The initial day of the month.
+     * @param year                  The initial year.
+     * @param monthOfYear           The initial month <strong>starting from zero</strong>.
+     * @param dayOfMonth            The initial day of the month.
      * @param onDateChangedListener How user is notified date is changed by
-     *            user, can be null.
+     *                              user, can be null.
      */
     public void init(int year, int monthOfYear, int dayOfMonth,
                      OnDateChangedListener onDateChangedListener) {
@@ -248,8 +251,8 @@ public class DatePicker extends FrameLayout {
     /**
      * Update the current date.
      *
-     * @param year The year.
-     * @param month The month which is <strong>starting from zero</strong>.
+     * @param year       The year.
+     * @param month      The month which is <strong>starting from zero</strong>.
      * @param dayOfMonth The day of the month.
      */
     public void updateDate(int year, int month, int dayOfMonth) {
@@ -379,7 +382,8 @@ public class DatePicker extends FrameLayout {
      * Sets the first day of week.
      *
      * @param firstDayOfWeek The first day of the week conforming to the
-     *            {@link CalendarView} APIs.
+     *                       {@link CalendarView} APIs.
+     * @attr ref android.R.styleable#DatePicker_firstDayOfWeek
      * @see Calendar#SUNDAY
      * @see Calendar#MONDAY
      * @see Calendar#TUESDAY
@@ -387,8 +391,6 @@ public class DatePicker extends FrameLayout {
      * @see Calendar#THURSDAY
      * @see Calendar#FRIDAY
      * @see Calendar#SATURDAY
-     *
-     * @attr ref android.R.styleable#DatePicker_firstDayOfWeek
      */
     public void setFirstDayOfWeek(int firstDayOfWeek) {
         if (firstDayOfWeek < Calendar.SUNDAY || firstDayOfWeek > Calendar.SATURDAY) {
@@ -401,7 +403,8 @@ public class DatePicker extends FrameLayout {
      * Gets the first day of week.
      *
      * @return The first day of the week conforming to the {@link CalendarView}
-     *         APIs.
+     * APIs.
+     * @attr ref android.R.styleable#DatePicker_firstDayOfWeek
      * @see Calendar#SUNDAY
      * @see Calendar#MONDAY
      * @see Calendar#TUESDAY
@@ -409,8 +412,6 @@ public class DatePicker extends FrameLayout {
      * @see Calendar#THURSDAY
      * @see Calendar#FRIDAY
      * @see Calendar#SATURDAY
-     *
-     * @attr ref android.R.styleable#DatePicker_firstDayOfWeek
      */
     public int getFirstDayOfWeek() {
         return mDelegate.getFirstDayOfWeek();
@@ -441,10 +442,10 @@ public class DatePicker extends FrameLayout {
      * to {@code calendar}.
      *
      * @return the calendar view
+     * @throws UnsupportedOperationException if called when the picker is
+     *                                       displayed in {@code calendar} mode
      * @see #getCalendarViewShown()
      * @deprecated Not supported by Material-style {@code calendar} mode
-     * @throws UnsupportedOperationException if called when the picker is
-     *         displayed in {@code calendar} mode
      */
     @Deprecated
     public CalendarView getCalendarView() {
@@ -530,27 +531,35 @@ public class DatePicker extends FrameLayout {
         void updateDate(int year, int month, int dayOfMonth);
 
         int getYear();
+
         int getMonth();
+
         int getDayOfMonth();
 
         void setFirstDayOfWeek(int firstDayOfWeek);
+
         int getFirstDayOfWeek();
 
         void setMinDate(long minDate);
+
         Calendar getMinDate();
 
         void setMaxDate(long maxDate);
+
         Calendar getMaxDate();
 
         void setEnabled(boolean enabled);
+
         boolean isEnabled();
 
         CalendarView getCalendarView();
 
         void setCalendarViewShown(boolean shown);
+
         boolean getCalendarViewShown();
 
         void setSpinnersShown(boolean shown);
+
         boolean getSpinnersShown();
 
         void setValidationCallback(ValidationCallback callback);
@@ -558,9 +567,11 @@ public class DatePicker extends FrameLayout {
         void onConfigurationChanged(Configuration newConfig);
 
         Parcelable onSaveInstanceState(Parcelable superState);
+
         void onRestoreInstanceState(Parcelable state);
 
         boolean dispatchPopulateAccessibilityEvent(AccessibilityEvent event);
+
         void onPopulateAccessibilityEvent(AccessibilityEvent event);
     }
 
@@ -624,7 +635,7 @@ public class DatePicker extends FrameLayout {
             private final int mListPositionOffset;
 
             public SavedState(Parcelable superState, int year, int month, int day, long minDate,
-                    long maxDate) {
+                              long maxDate) {
                 this(superState, year, month, day, minDate, maxDate, 0, 0, 0);
             }
 
@@ -632,7 +643,7 @@ public class DatePicker extends FrameLayout {
              * Constructor called from {@link DatePicker#onSaveInstanceState()}
              */
             public SavedState(Parcelable superState, int year, int month, int day, long minDate,
-                    long maxDate, int currentView, int listPosition, int listPositionOffset) {
+                              long maxDate, int currentView, int listPosition, int listPositionOffset) {
                 super(superState);
                 mSelectedYear = year;
                 mSelectedMonth = month;
