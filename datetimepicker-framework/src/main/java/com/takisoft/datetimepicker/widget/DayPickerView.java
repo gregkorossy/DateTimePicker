@@ -72,7 +72,7 @@ class DayPickerView extends ViewGroup {
     }
 
     public DayPickerView(Context context, @Nullable AttributeSet attrs) {
-        this(context, attrs, android.R.attr.calendarViewStyle);
+        this(context, attrs, R.attr.calendarViewStyle);
     }
 
     public DayPickerView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
