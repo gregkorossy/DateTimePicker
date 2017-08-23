@@ -640,7 +640,11 @@ class DatePickerCalendarDelegate extends DatePicker.AbstractDatePickerDelegate {
     public void onPopulateAccessibilityEvent(AccessibilityEvent event) {
         if (mAccessibilityEventFormat == null) {
             final String pattern = DateFormatFix.getBestDateTimePattern(mContext, mCurrentLocale, "EMMMMdy");
-            mAccessibilityEventFormat = new SimpleDateFormat(pattern);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                mAccessibilityEventFormat = new SimpleDateFormat(pattern);
+            } else {
+                mAccessibilityEventFormat = new java.text.SimpleDateFormat(pattern, mCurrentLocale);
+            }
         }
         final CharSequence text = mAccessibilityEventFormat.format(mCurrentDate.getTime());
         event.getText().add(text);
