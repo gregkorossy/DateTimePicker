@@ -19,7 +19,6 @@ package com.takisoft.datetimepicker.widget;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
-import android.graphics.Color;
 import android.os.Build;
 import android.support.annotation.IdRes;
 import android.support.annotation.LayoutRes;
@@ -31,6 +30,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.takisoft.datetimepicker.R;
 import com.takisoft.datetimepicker.util.Utils;
 import com.takisoft.datetimepicker.widget.SimpleMonthView.OnDayClickListener;
 
@@ -79,16 +79,9 @@ class DayPickerPagerAdapter extends PagerAdapter {
         mLayoutResId = layoutResId;
         mCalendarViewId = calendarViewId;
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            final TypedArray ta = context.obtainStyledAttributes(new int[]{
-                    android.R.attr.colorControlHighlight});
-
-            mDayHighlightColor = ta.getColorStateList(0);
-            ta.recycle();
-        } else {
-            // FIXME needs value from resources (should copy things from Android res folder's "colorControlHighlight" item)
-            mDayHighlightColor = new ColorStateList(new int[][]{new int[]{}}, new int[]{Utils.multiplyAlphaComponent(Color.WHITE, .26f)});
-        }
+        final TypedArray ta = context.obtainStyledAttributes(new int[]{R.attr.colorControlHighlight});
+        mDayHighlightColor = ta.getColorStateList(0);
+        ta.recycle();
     }
 
     public void setRange(@NonNull Calendar min, @NonNull Calendar max) {

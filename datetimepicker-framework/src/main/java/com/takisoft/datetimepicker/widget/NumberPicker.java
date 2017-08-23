@@ -37,6 +37,7 @@ import android.support.v4.view.ViewCompat;
 import android.support.v4.view.accessibility.AccessibilityEventCompat;
 import android.support.v4.view.accessibility.AccessibilityNodeInfoCompat;
 import android.support.v4.view.accessibility.AccessibilityRecordCompat;
+import android.support.v7.content.res.AppCompatResources;
 import android.text.InputFilter;
 import android.text.InputType;
 import android.text.Spanned;
@@ -68,6 +69,7 @@ import android.widget.TextView;
 
 import com.takisoft.datetimepicker.R;
 import com.takisoft.datetimepicker.util.StateSet;
+import com.takisoft.datetimepicker.util.Utils;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -641,8 +643,9 @@ public class NumberPicker extends LinearLayout {
 
         mSolidColor = attributesArray.getColor(R.styleable.NumberPicker_solidColor, 0);
 
-        final Drawable selectionDivider = attributesArray.getDrawable(
-                R.styleable.NumberPicker_selectionDivider);
+        //final Drawable selectionDivider = attributesArray.getDrawable(R.styleable.NumberPicker_selectionDivider);
+        final Drawable selectionDivider = Utils.getDrawable(context, attributesArray, R.styleable.NumberPicker_selectionDivider, R.attr.colorControlNormal);
+
         if (selectionDivider != null) {
             selectionDivider.setCallback(this);
             DrawableCompat.setLayoutDirection(selectionDivider, ViewCompat.getLayoutDirection(this));
