@@ -19,11 +19,11 @@
         android:state_enabled="false"
         android:state_activated="true"
         android:color="?android:attr/textColorSecondaryInverse"
-        android:alpha="?attr/disabledAlpha" />
+        android:alpha="?android:attr/disabledAlpha" />
     <item
         android:state_enabled="false"
         android:color="?android:attr/textColorSecondary"
-        android:alpha="?attr/disabledAlpha" />
+        android:alpha="?android:attr/disabledAlpha" />
     <item
         android:state_activated="true"
         android:color="?android:attr/textColorSecondaryInverse" />
