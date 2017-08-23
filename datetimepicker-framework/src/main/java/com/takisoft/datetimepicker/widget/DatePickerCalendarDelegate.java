@@ -41,6 +41,7 @@ import android.widget.ViewAnimator;
 import com.takisoft.datetimepicker.R;
 import com.takisoft.datetimepicker.util.DateFormatFix;
 import com.takisoft.datetimepicker.util.StateSet;
+import com.takisoft.datetimepicker.util.Utils;
 import com.takisoft.datetimepicker.widget.DayPickerView.OnDaySelectedListener;
 import com.takisoft.datetimepicker.widget.YearPickerView.OnYearSelectedListener;
 
@@ -149,7 +150,8 @@ class DatePickerCalendarDelegate extends DatePicker.AbstractDatePickerDelegate {
         }
 
         if (headerTextColor == null) {
-            headerTextColor = a.getColorStateList(R.styleable.DatePicker_headerTextColor);
+            //headerTextColor = a.getColorStateList(R.styleable.DatePicker_headerTextColor);
+            headerTextColor = Utils.getColorStateList(context, a, R.styleable.DatePicker_headerTextColor);
         }
 
         if (headerTextColor != null) {

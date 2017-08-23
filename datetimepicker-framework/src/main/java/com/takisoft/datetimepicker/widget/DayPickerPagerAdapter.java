@@ -18,8 +18,8 @@ package com.takisoft.datetimepicker.widget;
 
 import android.content.Context;
 import android.content.res.ColorStateList;
-import android.content.res.Resources;
 import android.content.res.TypedArray;
+import android.graphics.Color;
 import android.os.Build;
 import android.support.annotation.IdRes;
 import android.support.annotation.LayoutRes;
@@ -69,46 +69,25 @@ class DayPickerPagerAdapter extends PagerAdapter {
     private int mFirstDayOfWeek;
 
     private ColorStateList fixedDayTextColors;
+    private Context mContext;
 
     public DayPickerPagerAdapter(@NonNull Context context, @LayoutRes int layoutResId,
                                  @IdRes int calendarViewId) {
+        this.mContext = context;
+
         mInflater = LayoutInflater.from(context);
         mLayoutResId = layoutResId;
         mCalendarViewId = calendarViewId;
 
-        final TypedArray ta = context.obtainStyledAttributes(new int[]{
-                android.R.attr.colorControlHighlight});
-        mDayHighlightColor = ta.getColorStateList(0);
-        ta.recycle();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            final TypedArray ta = context.obtainStyledAttributes(new int[]{
+                    android.R.attr.colorControlHighlight});
 
-
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
-            // start of FIX for red text color from TextAppearance.Material.Widget.Calendar.Day
-            final Resources.Theme theme = context.getTheme();
-
-            TypedArray arr = context.obtainStyledAttributes(new int[]{android.R.attr.disabledAlpha});
-            final float disabledAlpha = arr.getFloat(0, .3f);
-            arr.recycle();
-
-            final int textColorPrimary = Utils.getColor(context, theme, android.R.attr.textColorPrimary);
-            final int textColorPrimaryInverse = Utils.getColor(context, theme, android.R.attr.textColorPrimaryInverse);
-            final int textColorPrimaryDisabled = Utils.multiplyAlphaComponent(textColorPrimary, disabledAlpha);
-            final int textColorPrimaryInverseDisabled = Utils.multiplyAlphaComponent(textColorPrimaryInverse, disabledAlpha);
-
-            fixedDayTextColors = new ColorStateList(
-                    new int[][]{
-                            new int[]{android.R.attr.state_activated, -android.R.attr.state_enabled},
-                            new int[]{-android.R.attr.state_enabled},
-                            new int[]{android.R.attr.state_activated},
-                            new int[]{}
-                    },
-                    new int[]{
-                            textColorPrimaryInverseDisabled,
-                            textColorPrimaryDisabled,
-                            textColorPrimaryInverse,
-                            textColorPrimary
-                    });
-            // end of FIX
+            mDayHighlightColor = ta.getColorStateList(0);
+            ta.recycle();
+        } else {
+            // FIXME needs value from resources (should copy things from Android res folder's "colorControlHighlight" item)
+            mDayHighlightColor = new ColorStateList(new int[][]{new int[]{}}, new int[]{Utils.multiplyAlphaComponent(Color.WHITE, .26f)});
         }
     }
 
@@ -209,6 +188,13 @@ class DayPickerPagerAdapter extends PagerAdapter {
 
     void setDayTextAppearance(int resId) {
         mDayTextAppearance = resId;
+
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
+            TypedArray a = mContext.obtainStyledAttributes(resId, new int[]{android.R.attr.textColor});
+            fixedDayTextColors = Utils.getColorStateList(mContext, a, 0);
+            a.recycle();
+        }
+
         notifyDataSetChanged();
     }
 

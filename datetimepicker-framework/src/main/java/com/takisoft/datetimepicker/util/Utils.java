@@ -1,12 +1,14 @@
 package com.takisoft.datetimepicker.util;
 
 import android.content.Context;
-import android.content.res.Resources;
+import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
-import android.util.TypedValue;
+import android.os.Build;
+import android.support.annotation.Nullable;
+import android.support.v7.content.res.AppCompatResources;
 
 public class Utils {
-    public static int getColor(Context context, Resources.Theme theme, int resId) {
+    /*public static int getColor(Context context, Resources.Theme theme, int resId) {
         TypedArray arr = null;
         try {
             TypedValue typedValue = new TypedValue();
@@ -24,6 +26,16 @@ public class Utils {
             }
         }
         return -1;
+    }*/
+
+    @Nullable
+    public static ColorStateList getColorStateList(Context context, TypedArray original, int index) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            return original.getColorStateList(index);
+        }
+
+        int resId = original.getResourceId(index, 0);
+        return AppCompatResources.getColorStateList(context, resId);
     }
 
     public static int multiplyAlphaComponent(int color, float alphaMod) {
