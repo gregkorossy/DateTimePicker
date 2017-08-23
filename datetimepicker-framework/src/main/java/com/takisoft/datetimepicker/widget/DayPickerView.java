@@ -77,7 +77,7 @@ class DayPickerView extends ViewGroup {
 
     public DayPickerView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        attrHandler(context, attrs, defStyleAttr, 0);
+        attrHandler(context, attrs, defStyleAttr, R.style.Widget_Material_CalendarView);
     }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)

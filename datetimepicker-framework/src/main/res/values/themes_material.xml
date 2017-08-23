@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="Theme.AppCompat.DateTimePicker">
-        <!-- NumberPicker style-->
+        <!-- NumberPicker style -->
         <item name="numberPickerStyle">@style/Widget.Material.NumberPicker</item>
 
-        <!-- CalendarView style-->
+        <!-- CalendarView style -->
         <item name="calendarViewStyle">@style/Widget.Material.CalendarView</item>
 
         <!-- TimePicker style -->
