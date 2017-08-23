@@ -85,8 +85,9 @@
     <style name="TextAppearance.Material.NumberPicker" parent="@style/TextAppearance.AppCompat.Body1"/>
 
     <style name="TextAppearance.Material.Widget.Calendar.Day" parent="@style/TextAppearance.AppCompat.Caption"><!-- TextAppearance.Material.Caption -->
-        <item name="android:textColor">@color/primary_text_inverse_when_activated_material
-        </item> <!-- ?attr/textColorPrimaryActivated -->
+        <item name="android:textColor">@color/primary_text_inverse_when_activated_material</item>
+        <!--<item name="android:textColor">@color/primary_text_inverse_when_activated_material
+        </item>  ?attr/textColorPrimaryActivated -->
     </style>
 
     <style name="TextAppearance.Material.Widget.Calendar.DayOfWeek" parent="@style/TextAppearance.AppCompat.Caption" /><!-- TextAppearance.Material.Caption -->

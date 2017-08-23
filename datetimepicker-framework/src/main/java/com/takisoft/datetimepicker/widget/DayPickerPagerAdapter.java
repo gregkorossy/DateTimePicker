@@ -16,21 +16,27 @@
 
 package com.takisoft.datetimepicker.widget;
 
+import android.content.Context;
+import android.content.res.ColorStateList;
+import android.content.res.Resources;
+import android.content.res.TypedArray;
+import android.os.Build;
 import android.support.annotation.IdRes;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.content.Context;
-import android.content.res.ColorStateList;
-import android.content.res.TypedArray;
-import java.util.Calendar;
-// TODO import android.icu.util.Calendar;
 import android.support.v4.view.PagerAdapter;
 import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.takisoft.datetimepicker.util.Utils;
 import com.takisoft.datetimepicker.widget.SimpleMonthView.OnDayClickListener;
+
+import java.util.Calendar;
+
+// TODO import android.icu.util.Calendar;
 
 /**
  * An adapter for a list of {@link com.takisoft.datetimepicker.widget.SimpleMonthView} items.
@@ -62,16 +68,48 @@ class DayPickerPagerAdapter extends PagerAdapter {
     private int mCount;
     private int mFirstDayOfWeek;
 
+    private ColorStateList fixedDayTextColors;
+
     public DayPickerPagerAdapter(@NonNull Context context, @LayoutRes int layoutResId,
-            @IdRes int calendarViewId) {
+                                 @IdRes int calendarViewId) {
         mInflater = LayoutInflater.from(context);
         mLayoutResId = layoutResId;
         mCalendarViewId = calendarViewId;
 
-        final TypedArray ta = context.obtainStyledAttributes(new int[] {
+        final TypedArray ta = context.obtainStyledAttributes(new int[]{
                 android.R.attr.colorControlHighlight});
         mDayHighlightColor = ta.getColorStateList(0);
         ta.recycle();
+
+
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
+            // start of FIX for red text color from TextAppearance.Material.Widget.Calendar.Day
+            final Resources.Theme theme = context.getTheme();
+
+            TypedArray arr = context.obtainStyledAttributes(new int[]{android.R.attr.disabledAlpha});
+            final float disabledAlpha = arr.getFloat(0, .3f);
+            arr.recycle();
+
+            final int textColorPrimary = Utils.getColor(context, theme, android.R.attr.textColorPrimary);
+            final int textColorPrimaryInverse = Utils.getColor(context, theme, android.R.attr.textColorPrimaryInverse);
+            final int textColorPrimaryDisabled = Utils.multiplyAlphaComponent(textColorPrimary, disabledAlpha);
+            final int textColorPrimaryInverseDisabled = Utils.multiplyAlphaComponent(textColorPrimaryInverse, disabledAlpha);
+
+            fixedDayTextColors = new ColorStateList(
+                    new int[][]{
+                            new int[]{android.R.attr.state_activated, -android.R.attr.state_enabled},
+                            new int[]{-android.R.attr.state_enabled},
+                            new int[]{android.R.attr.state_activated},
+                            new int[]{}
+                    },
+                    new int[]{
+                            textColorPrimaryInverseDisabled,
+                            textColorPrimaryDisabled,
+                            textColorPrimaryInverse,
+                            textColorPrimary
+                    });
+            // end of FIX
+        }
     }
 
     public void setRange(@NonNull Calendar min, @NonNull Calendar max) {
@@ -213,11 +251,15 @@ class DayPickerPagerAdapter extends PagerAdapter {
     public Object instantiateItem(ViewGroup container, int position) {
         final View itemView = mInflater.inflate(mLayoutResId, container, false);
 
-        final SimpleMonthView v = (SimpleMonthView) itemView.findViewById(mCalendarViewId);
+        final SimpleMonthView v = itemView.findViewById(mCalendarViewId);
         v.setOnDayClickListener(mOnDayClickListener);
         v.setMonthTextAppearance(mMonthTextAppearance);
         v.setDayOfWeekTextAppearance(mDayOfWeekTextAppearance);
         v.setDayTextAppearance(mDayTextAppearance);
+
+        if (fixedDayTextColors != null && mCalendarTextColor == null) {
+            v.setDayTextColor(fixedDayTextColors);
+        }
 
         if (mDaySelectorColor != null) {
             v.setDaySelectorColor(mDaySelectorColor);

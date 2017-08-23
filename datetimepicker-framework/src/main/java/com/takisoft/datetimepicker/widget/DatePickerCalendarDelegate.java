@@ -25,12 +25,11 @@ import android.graphics.drawable.Drawable;
 import android.icu.text.DisplayContext;
 import android.icu.text.SimpleDateFormat;
 import android.os.Build;
+import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.annotation.Nullable;
-import android.text.format.DateFormat;
 import android.text.format.DateUtils;
 import android.util.AttributeSet;
-import android.view.HapticFeedbackConstants;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -199,9 +198,26 @@ class DatePickerCalendarDelegate extends DatePicker.AbstractDatePickerDelegate {
         setCurrentView(VIEW_MONTH_DAY);
     }
 
-    // FIXME this is not good because it will return true only if the said 'state' is the only selector on the color
-    private boolean colorHasState(ColorStateList color, int... state) {
-        return color.getColorForState(state, Integer.MIN_VALUE) != Integer.MIN_VALUE;
+    private boolean colorHasState(ColorStateList color, int state) {
+        Parcel parcel = Parcel.obtain();
+        color.writeToParcel(parcel, 0);
+
+        // hack from ColorStateList.hasState(...)
+        final int specCount = parcel.readInt();
+        for (int specIndex = 0; specIndex < specCount; specIndex++) {
+            final int[] states = parcel.createIntArray();
+            final int stateCount = states.length;
+            for (int stateIndex = 0; stateIndex < stateCount; stateIndex++) {
+                if (states[stateIndex] == state || states[stateIndex] == ~state) {
+                    return true;
+                }
+            }
+        }
+        return false;
+
+        // this is not good because it will return true only if the said 'state' is the only selector on the color
+        // int[] states = new int[]{state};
+        // return color.getColorForState(states, Integer.MIN_VALUE) != Integer.MIN_VALUE && color.getColorForState(states, Integer.MAX_VALUE) != Integer.MAX_VALUE;
     }
 
     /**
@@ -234,6 +250,7 @@ class DatePickerCalendarDelegate extends DatePicker.AbstractDatePickerDelegate {
             final TypedArray ta = mContext.obtainStyledAttributes(ATTRS_DISABLED_ALPHA);
             final float disabledAlpha = ta.getFloat(0, 0.30f);
             defaultColor = multiplyAlphaComponent(activatedColor, disabledAlpha);
+            ta.recycle();
         }
 
         if (activatedColor == 0 || defaultColor == 0) {
@@ -323,11 +340,11 @@ class DatePickerCalendarDelegate extends DatePicker.AbstractDatePickerDelegate {
 
         // Update the date formatter.
         final String datePattern = DateFormatFix.getBestDateTimePattern(mContext, locale, "EMMMd");
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             mMonthDayFormat = new SimpleDateFormat(datePattern, locale);
-            ((SimpleDateFormat)mMonthDayFormat).setContext(DisplayContext.CAPITALIZATION_FOR_STANDALONE);
+            ((SimpleDateFormat) mMonthDayFormat).setContext(DisplayContext.CAPITALIZATION_FOR_STANDALONE);
             mYearFormat = new SimpleDateFormat("y", locale);
-        }else{
+        } else {
             mMonthDayFormat = new java.text.SimpleDateFormat(datePattern, locale);
             mYearFormat = new java.text.SimpleDateFormat("y", locale);
         }
@@ -358,7 +375,7 @@ class DatePickerCalendarDelegate extends DatePicker.AbstractDatePickerDelegate {
             final int flags = DateUtils.FORMAT_SHOW_DATE | DateUtils.FORMAT_SHOW_YEAR;
             final String fullDateText = DateUtils.formatDateTime(mContext, millis, flags);
 
-            if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
                 mAnimator.announceForAccessibility(fullDateText); // FIXME we need this on pre-16 devices
             }
         }
@@ -375,7 +392,7 @@ class DatePickerCalendarDelegate extends DatePicker.AbstractDatePickerDelegate {
                     mAnimator.setDisplayedChild(VIEW_MONTH_DAY);
                     mCurrentView = viewIndex;
                 }
-                if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
                     mAnimator.announceForAccessibility(mSelectDay); // FIXME we need this on pre-16 devices
                 }
                 break;
@@ -399,7 +416,7 @@ class DatePickerCalendarDelegate extends DatePicker.AbstractDatePickerDelegate {
                     mAnimator.setDisplayedChild(VIEW_YEAR);
                     mCurrentView = viewIndex;
                 }
-                if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
                     mAnimator.announceForAccessibility(mSelectYear); // FIXME we need this on pre-16 devices
                 }
                 break;

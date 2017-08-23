@@ -25,7 +25,7 @@
         <item name="numberPickerStyle">@style/Widget.Material.Light.NumberPicker</item>
 
         <!-- CalendarView style-->
-        <item name="calendarViewStyle">@style/Widget.Material.Light.CalendarView</item>
+        <item name="android:calendarViewStyle">@style/Widget.Material.Light.CalendarView</item>
 
         <!-- TimePicker style -->
         <item name="timePickerStyle">@style/Widget.Material.Light.TimePicker</item>
