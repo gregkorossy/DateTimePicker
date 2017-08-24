@@ -32,6 +32,7 @@ import android.widget.TextView;
 import com.takisoft.datetimepicker.R;
 
 import java.util.Calendar;
+import java.util.Locale;
 
 //import android.icu.util.Calendar;
 
@@ -211,7 +212,7 @@ class YearPickerView extends ListView {
                 v.setActivated(activated);
             }
 
-            v.setText(Integer.toString(year));
+            v.setText(String.format(Locale.getDefault(), "%d", year)); // FIXME Locale from external source instead of default
             return v;
         }
 
