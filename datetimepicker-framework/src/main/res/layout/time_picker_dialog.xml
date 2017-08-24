@@ -17,7 +17,7 @@
 */
 -->
 
-<TimePicker xmlns:android="http://schemas.android.com/apk/res/android"
+<com.takisoft.datetimepicker.widget.TimePicker xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/timePicker"
     android:layout_gravity="center_horizontal"

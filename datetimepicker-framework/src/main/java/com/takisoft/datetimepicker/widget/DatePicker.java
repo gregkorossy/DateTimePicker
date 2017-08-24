@@ -33,6 +33,7 @@ import android.view.accessibility.AccessibilityEvent;
 import android.widget.FrameLayout;
 
 import com.takisoft.datetimepicker.R;
+import com.takisoft.datetimepicker.util.Utils;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -44,14 +45,14 @@ import java.util.Locale;
 /**
  * Provides a widget for selecting a date.
  * <p>
- * When the {@link R.styleable#DatePicker_dtp_datePickerMode} attribute is
+ * When the {@link R.styleable#DatePicker_datePickerMode} attribute is
  * set to {@code spinner}, the date can be selected using year, month, and day
  * spinners or a {@link CalendarView}. The set of spinners and the calendar
  * view are automatically synchronized. The client can customize whether only
  * the spinners, or only the calendar view, or both to be displayed.
  * </p>
  * <p>
- * When the {@link R.styleable#DatePicker_dtp_datePickerMode} attribute is
+ * When the {@link R.styleable#DatePicker_datePickerMode} attribute is
  * set to {@code calendar}, the month and day can be selected using a
  * calendar-style view while the year can be selected separately using a list.
  * </p>
@@ -140,7 +141,7 @@ public class DatePicker extends FrameLayout {
 
     public DatePicker(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        attrHandler(context, attrs, defStyleAttr, 0);
+        attrHandler(context, attrs, defStyleAttr, Utils.isLightTheme(context) ? R.style.Widget_Material_Light_DatePicker : R.style.Widget_Material_DatePicker);
     }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
@@ -354,7 +355,8 @@ public class DatePicker extends FrameLayout {
         return mDelegate.isEnabled();
     }
 
-    /* /** @hide *
+    /* FIXME accessibility
+    /** @hide *
     // @Override
     public boolean dispatchPopulateAccessibilityEventInternal(AccessibilityEvent event) {
         return mDelegate.dispatchPopulateAccessibilityEvent(event);
@@ -421,7 +423,7 @@ public class DatePicker extends FrameLayout {
      * Returns whether the {@link CalendarView} is shown.
      * <p>
      * <strong>Note:</strong> This method returns {@code false} when the
-     * {@link R.styleable#DatePicker_dtp_datePickerMode} attribute is set
+     * {@link R.styleable#DatePicker_datePickerMode} attribute is set
      * to {@code calendar}.
      *
      * @return {@code true} if the calendar view is shown
@@ -438,7 +440,7 @@ public class DatePicker extends FrameLayout {
      * <p>
      * <strong>Note:</strong> This method throws an
      * {@link UnsupportedOperationException} when the
-     * {@link R.styleable#DatePicker_dtp_datePickerMode} attribute is set
+     * {@link R.styleable#DatePicker_datePickerMode} attribute is set
      * to {@code calendar}.
      *
      * @return the calendar view
@@ -456,7 +458,7 @@ public class DatePicker extends FrameLayout {
      * Sets whether the {@link CalendarView} is shown.
      * <p>
      * <strong>Note:</strong> Calling this method has no effect when the
-     * {@link R.styleable#DatePicker_dtp_datePickerMode} attribute is set
+     * {@link R.styleable#DatePicker_datePickerMode} attribute is set
      * to {@code calendar}.
      *
      * @param shown {@code true} to show the calendar view, {@code false} to
@@ -472,7 +474,7 @@ public class DatePicker extends FrameLayout {
      * Returns whether the spinners are shown.
      * <p>
      * <strong>Note:</strong> his method returns {@code false} when the
-     * {@link R.styleable#DatePicker_dtp_datePickerMode} attribute is set
+     * {@link R.styleable#DatePicker_datePickerMode} attribute is set
      * to {@code calendar}.
      *
      * @return {@code true} if the spinners are shown
@@ -487,7 +489,7 @@ public class DatePicker extends FrameLayout {
      * Sets whether the spinners are shown.
      * <p>
      * Calling this method has no effect when the
-     * {@link R.styleable#DatePicker_dtp_datePickerMode} attribute is set
+     * {@link R.styleable#DatePicker_datePickerMode} attribute is set
      * to {@code calendar}.
      *
      * @param shown {@code true} to show the spinners, {@code false} to hide

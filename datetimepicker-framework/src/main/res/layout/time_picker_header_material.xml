@@ -26,7 +26,7 @@
 
     <!-- The hour should always be to the left of the separator,
          regardless of the current locale's layout direction. -->
-    <com.android.internal.widget.NumericTextView
+    <com.takisoft.datetimepicker.widget.internal.NumericTextView
         android:id="@+id/hours"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -53,7 +53,7 @@
 
     <!-- The minutes should always be to the left of the separator,
          regardless of the current locale's layout direction. -->
-    <com.android.internal.widget.NumericTextView
+    <com.takisoft.datetimepicker.widget.internal.NumericTextView
         android:id="@+id/minutes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -25,7 +25,6 @@ import android.graphics.drawable.Drawable;
 import android.icu.text.DisplayContext;
 import android.icu.text.SimpleDateFormat;
 import android.os.Build;
-import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.annotation.Nullable;
 import android.text.format.DateUtils;
@@ -200,28 +199,6 @@ class DatePickerCalendarDelegate extends DatePicker.AbstractDatePickerDelegate {
         setCurrentView(VIEW_MONTH_DAY);
     }
 
-    private boolean colorHasState(ColorStateList color, int state) {
-        Parcel parcel = Parcel.obtain();
-        color.writeToParcel(parcel, 0);
-
-        // hack from ColorStateList.hasState(...)
-        final int specCount = parcel.readInt();
-        for (int specIndex = 0; specIndex < specCount; specIndex++) {
-            final int[] states = parcel.createIntArray();
-            final int stateCount = states.length;
-            for (int stateIndex = 0; stateIndex < stateCount; stateIndex++) {
-                if (states[stateIndex] == state || states[stateIndex] == ~state) {
-                    return true;
-                }
-            }
-        }
-        return false;
-
-        // this is not good because it will return true only if the said 'state' is the only selector on the color
-        // int[] states = new int[]{state};
-        // return color.getColorForState(states, Integer.MIN_VALUE) != Integer.MIN_VALUE && color.getColorForState(states, Integer.MAX_VALUE) != Integer.MAX_VALUE;
-    }
-
     /**
      * The legacy text color might have been poorly defined. Ensures that it
      * has an appropriate activated state, using the selected state if one
@@ -233,14 +210,14 @@ class DatePickerCalendarDelegate extends DatePicker.AbstractDatePickerDelegate {
      */
     @Nullable
     private ColorStateList applyLegacyColorFixes(@Nullable ColorStateList color) {
-        if (color == null || colorHasState(color, android.R.attr.state_activated)) { // color.hasState(android.R.attr.state_activated)
+        if (color == null || Utils.colorHasState(color, android.R.attr.state_activated)) { // color.hasState(android.R.attr.state_activated)
             return color;
         }
 
         final int activatedColor;
         final int defaultColor;
 
-        if (colorHasState(color, android.R.attr.state_selected)) { // color.hasState(android.R.attr.state_selected)
+        if (Utils.colorHasState(color, android.R.attr.state_selected)) { // color.hasState(android.R.attr.state_selected)
             activatedColor = color.getColorForState(StateSet.get(
                     StateSet.VIEW_STATE_ENABLED | StateSet.VIEW_STATE_SELECTED), 0);
             defaultColor = color.getColorForState(StateSet.get(

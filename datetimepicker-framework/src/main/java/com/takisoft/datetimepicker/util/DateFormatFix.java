@@ -25,7 +25,7 @@ public class DateFormatFix {
             // - remove leading non-skeleton chars
             // - use the count of letters in skeleton to inflate the pattern
             // example: skeleton="yyyyMMMdd" + format="EEEE, MMMM d, y" -> "MMM dd, yyyy
-            SimpleDateFormat simpleDateFormat = (SimpleDateFormat) SimpleDateFormat.getDateInstance(SimpleDateFormat.FULL, locale);
+            SimpleDateFormat simpleDateFormat = (SimpleDateFormat) SimpleDateFormat.getDateTimeInstance(SimpleDateFormat.FULL, SimpleDateFormat.FULL, locale);
             format = simpleDateFormat.toLocalizedPattern();
 
             //Log.d("DateFormatFix", "localized pattern: " + format);

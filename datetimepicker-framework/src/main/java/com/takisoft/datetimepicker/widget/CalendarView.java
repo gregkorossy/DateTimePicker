@@ -34,6 +34,7 @@ import android.util.Log;
 import android.widget.FrameLayout;
 
 import com.takisoft.datetimepicker.R;
+import com.takisoft.datetimepicker.util.Utils;
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -88,7 +89,7 @@ public class CalendarView extends FrameLayout {
     public CalendarView(@NonNull Context context, @Nullable AttributeSet attrs,
                         @AttrRes int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        attrHandler(context, attrs, defStyleAttr, 0);
+        attrHandler(context, attrs, defStyleAttr, Utils.isLightTheme(context) ? R.style.Widget_Material_Light_CalendarView : R.style.Widget_Material_CalendarView);
     }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)

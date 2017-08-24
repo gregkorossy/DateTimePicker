@@ -24,6 +24,50 @@
     <string name="number_picker_increment_button">UP</string>
     <string name="number_picker_decrement_button">DOWN</string>
 
+    <!-- Label for the time picker hour input field. [CHAR LIMIT=20] -->
+    <string name="time_picker_hour_label">hour</string>
+    <!-- Label for the time picker minute input field. [CHAR LIMIT=20] -->
+    <string name="time_picker_minute_label">minute</string>
+    <!-- The title for the time picker dialog. [CHAR LIMIT=NONE] -->
     <string name="time_picker_header_text">Set time</string>
+    <!-- Error shown to the user if they type in invalid hour or minute in the time picker. [CHAR LIMIT=NONE] -->
+    <string name="time_picker_input_error">Enter a valid time</string>
+    <!-- Label shown to the user in time picker to let them know that should type in time. [CHAR LIMIT=NONE] -->
+    <string name="time_picker_prompt_label">Type in time</string>
+    <!-- Accessibility string used for describing the button in time picker that changes the dialog to text input mode. [CHAR LIMIT=NONE] -->
     <string name="time_picker_text_input_mode_description">Switch to text input mode for the time input.</string>
+    <!-- Accessibility string used for describing the button in time picker that changes the dialog to circular clock mode. [CHAR LIMIT=NONE] -->
+    <string name="time_picker_radial_mode_description">Switch to clock mode for the time input.</string>
+
+    <!--
+         Content description for the hour selector in the time picker, which displays
+         selectable hours of the day along the inside edge of a circle, as in an analog clock.
+         [CHAR LIMIT=50]
+    -->
+    <string name="hour_picker_description">Hours circular slider</string>
+    <!--
+         Content description for the minute selector in the time picker, which displays
+         selectable five-minute intervals along the inside edge of a circle, as in an analog clock.
+         [CHAR LIMIT=50]
+    -->
+    <string name="minute_picker_description">Minutes circular slider</string>
+    <!-- Accessibility announcement for hour circular picker [CHAR LIMIT=NONE] -->
+    <string name="select_hours">Select hours</string>
+    <!-- Accessibility announcement for minute circular picker [CHAR LIMIT=NONE] -->
+    <string name="select_minutes">Select minutes</string>
+
+    <!-- TimePicker - accessibility support -->
+    <!-- Description of the button to increase the TimePicker's minute value. [CHAR LIMIT=NONE] -->
+    <string name="time_picker_increment_minute_button">Increase minute</string>
+    <!-- Description of the button to decrease the TimePicker's minute value. [CHAR LIMIT=NONE] -->
+    <string name="time_picker_decrement_minute_button">Decrease minute</string>
+    <!-- Description of the button to increase the TimePicker's hour value. [CHAR LIMIT=NONE] -->
+    <string name="time_picker_increment_hour_button">Increase hour</string>
+    <!-- Description of the button to decrease the TimePicker's hour value. [CHAR LIMIT=NONE] -->
+    <string name="time_picker_decrement_hour_button">Decrease hour</string>
+    <!-- Description of the button to increase the TimePicker's set PM value. [CHAR LIMIT=NONE] -->
+    <string name="time_picker_increment_set_pm_button">Set PM</string>
+    <!-- Description of the button to decrease the TimePicker's set AM value. [CHAR LIMIT=NONE] -->
+    <string name="time_picker_decrement_set_am_button">Set AM</string>
+
 </resources>

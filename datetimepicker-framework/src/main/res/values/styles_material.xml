@@ -103,6 +103,11 @@
         <item name="android:textSize">@dimen/timepicker_edit_text_size</item>
     </style>
 
+    <style name="TextAppearance.Material.TimePicker.PromptLabel" parent="@style/TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/timepicker_text_size_normal</item>
+        <item name="android:fontFamily" tools:ignore="NewApi">sans-serif-medium</item>
+    </style>
+
     <style name="TextAppearance.Material.TimePicker.TimeLabel" parent="@style/TextAppearance.AppCompat"><!-- TextAppearance.Material -->
         <item name="android:textSize">@dimen/timepicker_time_label_size</item>
         <item name="android:textColor">

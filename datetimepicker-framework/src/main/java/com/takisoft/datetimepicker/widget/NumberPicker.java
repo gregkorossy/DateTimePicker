@@ -607,7 +607,7 @@ public class NumberPicker extends LinearLayout {
      */
     public NumberPicker(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        attrHandler(context, attrs, defStyleAttr, R.style.Widget_Material_NumberPicker);
+        attrHandler(context, attrs, defStyleAttr, Utils.isLightTheme(context) ? R.style.Widget_Material_Light_NumberPicker : R.style.Widget_Material_NumberPicker);
     }
 
     /**

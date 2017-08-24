@@ -32,6 +32,7 @@ import android.view.accessibility.AccessibilityManager;
 import android.widget.ImageButton;
 
 import com.takisoft.datetimepicker.R;
+import com.takisoft.datetimepicker.util.Utils;
 
 import java.util.Calendar;
 import java.util.Locale;
@@ -77,7 +78,7 @@ class DayPickerView extends ViewGroup {
 
     public DayPickerView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        attrHandler(context, attrs, defStyleAttr, R.style.Widget_Material_CalendarView);
+        attrHandler(context, attrs, defStyleAttr, Utils.isLightTheme(context) ? R.style.Widget_Material_Light_CalendarView : R.style.Widget_Material_CalendarView);
     }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)

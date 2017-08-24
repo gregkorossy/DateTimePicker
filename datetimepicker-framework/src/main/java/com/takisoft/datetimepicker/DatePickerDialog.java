@@ -16,18 +16,19 @@
 
 package com.takisoft.datetimepicker;
 
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.annotation.StyleRes;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.support.annotation.StyleRes;
 import android.support.v7.app.AlertDialog;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+
 import com.takisoft.datetimepicker.widget.DatePicker;
 import com.takisoft.datetimepicker.widget.DatePicker.OnDateChangedListener;
 import com.takisoft.datetimepicker.widget.DatePicker.ValidationCallback;
@@ -63,7 +64,7 @@ public class DatePickerDialog extends AlertDialog implements OnClickListener,
     /**
      * Creates a new date picker dialog for the current date.
      *
-     * @param context the parent context
+     * @param context    the parent context
      * @param themeResId the resource ID of the theme against which to inflate
      *                   this dialog, or {@code 0} to use the parent
      *                   {@code context}'s default alert dialog theme
@@ -76,41 +77,41 @@ public class DatePickerDialog extends AlertDialog implements OnClickListener,
      * Creates a new date picker dialog for the specified date using the parent
      * context's default date picker dialog theme.
      *
-     * @param context the parent context
-     * @param listener the listener to call when the user sets the date
-     * @param year the initially selected year
-     * @param month the initially selected month (0-11 for compatibility with
-     *              {@link Calendar#MONTH})
+     * @param context    the parent context
+     * @param listener   the listener to call when the user sets the date
+     * @param year       the initially selected year
+     * @param month      the initially selected month (0-11 for compatibility with
+     *                   {@link Calendar#MONTH})
      * @param dayOfMonth the initially selected day of month (1-31, depending
      *                   on month)
      */
     public DatePickerDialog(@NonNull Context context, @Nullable OnDateSetListener listener,
-            int year, int month, int dayOfMonth) {
+                            int year, int month, int dayOfMonth) {
         this(context, 0, listener, null, year, month, dayOfMonth);
     }
 
     /**
      * Creates a new date picker dialog for the specified date.
      *
-     * @param context the parent context
-     * @param themeResId the resource ID of the theme against which to inflate
-     *                   this dialog, or {@code 0} to use the parent
-     *                   {@code context}'s default alert dialog theme
-     * @param listener the listener to call when the user sets the date
-     * @param year the initially selected year
+     * @param context     the parent context
+     * @param themeResId  the resource ID of the theme against which to inflate
+     *                    this dialog, or {@code 0} to use the parent
+     *                    {@code context}'s default alert dialog theme
+     * @param listener    the listener to call when the user sets the date
+     * @param year        the initially selected year
      * @param monthOfYear the initially selected month of the year (0-11 for
      *                    compatibility with {@link Calendar#MONTH})
-     * @param dayOfMonth the initially selected day of month (1-31, depending
-     *                   on month)
+     * @param dayOfMonth  the initially selected day of month (1-31, depending
+     *                    on month)
      */
     public DatePickerDialog(@NonNull Context context, @StyleRes int themeResId,
-            @Nullable OnDateSetListener listener, int year, int monthOfYear, int dayOfMonth) {
+                            @Nullable OnDateSetListener listener, int year, int monthOfYear, int dayOfMonth) {
         this(context, themeResId, listener, null, year, monthOfYear, dayOfMonth);
     }
 
     private DatePickerDialog(@NonNull Context context, @StyleRes int themeResId,
-            @Nullable OnDateSetListener listener, @Nullable Calendar calendar, int year,
-            int monthOfYear, int dayOfMonth) {
+                             @Nullable OnDateSetListener listener, @Nullable Calendar calendar, int year,
+                             int monthOfYear, int dayOfMonth) {
         super(context, resolveDialogTheme(context, themeResId));
 
         final Context themeContext = getContext();
@@ -120,7 +121,7 @@ public class DatePickerDialog extends AlertDialog implements OnClickListener,
 
         setButton(BUTTON_POSITIVE, themeContext.getString(android.R.string.ok), this);
         setButton(BUTTON_NEGATIVE, themeContext.getString(android.R.string.cancel), this);
-        //setButtonPanelLayoutHint(LAYOUT_HINT_SIDE);
+        // FIXME ? setButtonPanelLayoutHint(LAYOUT_HINT_SIDE);
 
         if (calendar != null) {
             year = calendar.get(Calendar.YEAR);
@@ -135,11 +136,15 @@ public class DatePickerDialog extends AlertDialog implements OnClickListener,
         mDateSetListener = listener;
     }
 
-    static @StyleRes int resolveDialogTheme(@NonNull Context context, @StyleRes int themeResId) {
+    static @StyleRes
+    int resolveDialogTheme(@NonNull Context context, @StyleRes int themeResId) {
         if (themeResId == 0) {
             final TypedValue outValue = new TypedValue();
-            context.getTheme().resolveAttribute(R.attr.datePickerDialogTheme, outValue, true);
-            return outValue.resourceId;
+            if (context.getTheme().resolveAttribute(R.attr.datePickerDialogTheme, outValue, true)) {
+                return outValue.resourceId;
+            } else {
+                return R.style.ThemeOverlay_Material_Dialog_DatePicker;
+            }
         } else {
             return themeResId;
         }
@@ -190,9 +195,9 @@ public class DatePickerDialog extends AlertDialog implements OnClickListener,
     /**
      * Sets the current date.
      *
-     * @param year the year
-     * @param month the month (0-11 for compatibility with
-     *              {@link Calendar#MONTH})
+     * @param year       the year
+     * @param month      the month (0-11 for compatibility with
+     *                   {@link Calendar#MONTH})
      * @param dayOfMonth the day of month (1-31, depending on month)
      */
     public void updateDate(int year, int month, int dayOfMonth) {
@@ -232,10 +237,10 @@ public class DatePickerDialog extends AlertDialog implements OnClickListener,
      */
     public interface OnDateSetListener {
         /**
-         * @param view the picker associated with the dialog
-         * @param year the selected year
-         * @param month the selected month (0-11 for compatibility with
-         *              {@link Calendar#MONTH})
+         * @param view       the picker associated with the dialog
+         * @param year       the selected year
+         * @param month      the selected month (0-11 for compatibility with
+         *                   {@link Calendar#MONTH})
          * @param dayOfMonth th selected day of the month (1-31, depending on
          *                   month)
          */

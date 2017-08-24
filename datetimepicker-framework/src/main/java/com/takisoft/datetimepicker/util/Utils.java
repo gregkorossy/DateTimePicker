@@ -5,9 +5,13 @@ import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
+import android.os.Parcel;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.graphics.drawable.DrawableCompat;
 import android.support.v7.content.res.AppCompatResources;
+
+import com.takisoft.datetimepicker.R;
 
 public class Utils {
     /*public static int getColor(Context context, Resources.Theme theme, int resId) {
@@ -29,6 +33,36 @@ public class Utils {
         }
         return -1;
     }*/
+
+    public static boolean colorHasState(ColorStateList color, int state) {
+        Parcel parcel = Parcel.obtain();
+        color.writeToParcel(parcel, 0);
+
+        // hack from ColorStateList.hasState(...)
+        final int specCount = parcel.readInt();
+        for (int specIndex = 0; specIndex < specCount; specIndex++) {
+            final int[] states = parcel.createIntArray();
+            final int stateCount = states.length;
+            for (int stateIndex = 0; stateIndex < stateCount; stateIndex++) {
+                if (states[stateIndex] == state || states[stateIndex] == ~state) {
+                    return true;
+                }
+            }
+        }
+        return false;
+
+        // this is not good because it will return true only if the said 'state' is the only selector on the color
+        // int[] states = new int[]{state};
+        // return color.getColorForState(states, Integer.MIN_VALUE) != Integer.MIN_VALUE && color.getColorForState(states, Integer.MAX_VALUE) != Integer.MAX_VALUE;
+    }
+
+    public static boolean isLightTheme(@NonNull Context context) {
+        TypedArray typedArray = context.getTheme().obtainStyledAttributes(new int[]{R.attr.isLightTheme});
+        boolean isLightTheme = typedArray.getBoolean(0, false);
+        typedArray.recycle();
+
+        return isLightTheme;
+    }
 
     @Nullable
     public static ColorStateList getColorStateList(Context context, TypedArray original, int index) {

@@ -41,7 +41,7 @@
 
             <!-- The hour should always be to the left of the separator,
                  regardless of the current locale's layout direction. -->
-            <com.android.internal.widget.NumericTextView
+            <com.takisoft.datetimepicker.widget.internal.NumericTextView
                 android:id="@+id/hours"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -64,7 +64,7 @@
 
             <!-- The minutes should always be to the right of the separator,
                  regardless of the current locale's layout direction. -->
-            <com.android.internal.widget.NumericTextView
+            <com.takisoft.datetimepicker.widget.internal.NumericTextView
                 android:id="@+id/minutes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -138,7 +138,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <android.widget.RadialTimePickerView
+        <com.takisoft.datetimepicker.widget.RadialTimePickerView
             android:id="@+id/radial_picker"
             android:layout_width="@dimen/timepicker_radial_picker_dimen"
             android:layout_height="@dimen/timepicker_radial_picker_dimen"
@@ -150,7 +150,7 @@
             android:layout_marginEnd="@dimen/timepicker_radial_picker_horizontal_margin"
             android:layoutDirection="locale" />
 
-        <android.widget.TextInputTimePickerView
+        <com.takisoft.datetimepicker.widget.TextInputTimePickerView
             android:id="@+id/input_mode"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -174,9 +174,8 @@
                 android:layout_marginEnd="12dp"
                 android:padding="12dp"
                 android:background="?attr/selectableItemBackgroundBorderless"
-                android:tint="?attr/colorControlNormal"
                 app:srcCompat="@drawable/btn_keyboard_key_material"
-                android:contentDescription="@string/time_picker_text_input_mode_description" />
+                android:contentDescription="@string/time_picker_text_input_mode_description" /> <!-- android:tint="?attr/colorControlNormal" -->
             <Space
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

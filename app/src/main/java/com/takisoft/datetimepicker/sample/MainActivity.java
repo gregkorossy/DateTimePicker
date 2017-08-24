@@ -8,6 +8,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.takisoft.datetimepicker.DatePickerDialog;
+import com.takisoft.datetimepicker.TimePickerDialog;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -53,11 +54,17 @@ public class MainActivity extends AppCompatActivity {
                         }
                 );
 
-        /*findViewById(R.id.btnTimeFragment)
-                .setOnClickListener(view -> TimePickerDialog
+        findViewById(R.id.btnTimeFragment)
+                .setOnClickListener(view -> {
+                        /*TimePickerDialog
                         .newInstance(null, cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE), true)
-                        .show(getFragmentManager(), null)
-                );*/
+                        .show(getFragmentManager(), null);*/
+                            TimePickerDialog tpd = new TimePickerDialog(MainActivity.this, (view1, hourOfDay, minute) -> {
+                                Toast.makeText(MainActivity.this, String.format("%02d", hourOfDay) + ":" + String.format("%02d", minute), Toast.LENGTH_SHORT).show();
+                            }, cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE), true);
+                            tpd.show();
+                        }
+                );
     }
 
     public static String getBestDateTimePattern(Locale locale, String skeleton) {
