@@ -27,6 +27,8 @@ import android.icu.text.SimpleDateFormat;
 import android.os.Build;
 import android.os.Parcelable;
 import android.support.annotation.Nullable;
+import android.support.v4.view.LayoutInflaterCompat;
+import android.support.v7.content.res.AppCompatResources;
 import android.text.format.DateUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -118,8 +120,7 @@ class DatePickerCalendarDelegate extends DatePicker.AbstractDatePickerDelegate {
         final Resources res = mDelegator.getResources();
         final TypedArray a = mContext.obtainStyledAttributes(attrs,
                 R.styleable.DatePicker, defStyleAttr, defStyleRes);
-        final LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(
-                Context.LAYOUT_INFLATER_SERVICE);
+        final LayoutInflater inflater = LayoutInflater.from(context);
         final int layoutResourceId = a.getResourceId(
                 R.styleable.DatePicker_internalLayout, R.layout.date_picker_material);
 

@@ -51,6 +51,7 @@ import com.takisoft.datetimepicker.R;
 import com.takisoft.datetimepicker.util.DateFormatFix;
 import com.takisoft.datetimepicker.util.FakeDateTimeFormat;
 import com.takisoft.datetimepicker.util.StateSet;
+import com.takisoft.datetimepicker.util.Utils;
 
 import java.text.NumberFormat;
 import java.util.Calendar;
@@ -284,7 +285,7 @@ class SimpleMonthView extends View {
         p.setTextSize(ta.getDimensionPixelSize(
                 R.styleable.TextAppearance_android_textSize, (int) p.getTextSize()));
 
-        final ColorStateList textColor = ta.getColorStateList(R.styleable.TextAppearance_android_textColor);
+        final ColorStateList textColor = Utils.getColorStateList(getContext(), ta, R.styleable.TextAppearance_android_textColor);
         if (textColor != null) {
             final int enabledColor = textColor.getColorForState(ENABLED_STATE_SET, 0);
             p.setColor(enabledColor);

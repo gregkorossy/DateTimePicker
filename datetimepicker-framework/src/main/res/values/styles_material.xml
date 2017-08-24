@@ -110,30 +110,30 @@
 
     <style name="TextAppearance.Material.TimePicker.TimeLabel" parent="@style/TextAppearance.AppCompat"><!-- TextAppearance.Material -->
         <item name="android:textSize">@dimen/timepicker_time_label_size</item>
-        <item name="android:textColor">
+        <!--<item name="android:textColor">
             @color/primary_text_secondary_when_activated_material_inverse
-        </item> <!-- @color/primary_text_secondary_when_activated_material_inverse -->
+        </item>  @color/primary_text_secondary_when_activated_material_inverse -->
     </style>
 
     <style name="TextAppearance.Material.TimePicker.AmPmLabel" parent="@style/TextAppearance.AppCompat.Button"><!-- TextAppearance.Material.Button -->
         <item name="android:textSize">@dimen/timepicker_ampm_label_size</item>
-        <item name="android:textColor">
+        <!--<item name="android:textColor">
             @color/primary_text_secondary_when_activated_material_inverse
-        </item> <!-- @color/primary_text_secondary_when_activated_material_inverse -->
+        </item>  @color/primary_text_secondary_when_activated_material_inverse -->
     </style>
 
     <style name="TextAppearance.Material.DatePicker.YearLabel" parent="@style/TextAppearance.AppCompat"><!-- TextAppearance.Material -->
-        <item name="android:textColor">
+        <!--<item name="android:textColor">
             @color/primary_text_secondary_when_activated_material_inverse
-        </item> <!-- @color/primary_text_secondary_when_activated_material_inverse -->
+        </item>  @color/primary_text_secondary_when_activated_material_inverse -->
         <item name="android:textSize">@dimen/date_picker_year_label_size</item>
         <item name="android:fontFamily" tools:ignore="NewApi">sans-serif-medium</item>
     </style>
 
     <style name="TextAppearance.Material.DatePicker.DateLabel" parent="@style/TextAppearance.AppCompat"><!-- TextAppearance.Material -->
-        <item name="android:textColor">
+        <!--<item name="android:textColor">
             @color/primary_text_secondary_when_activated_material_inverse
-        </item> <!-- @color/primary_text_secondary_when_activated_material_inverse -->
+        </item>  @color/primary_text_secondary_when_activated_material_inverse -->
         <item name="android:textSize">@dimen/date_picker_date_label_size</item>
         <item name="android:fontFamily" tools:ignore="NewApi">sans-serif-medium</item>
     </style>
