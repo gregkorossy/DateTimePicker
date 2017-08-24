@@ -29,6 +29,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.graphics.drawable.DrawableCompat;
 import android.support.v4.view.ViewCompat;
 import android.support.v4.view.accessibility.AccessibilityNodeInfoCompat;
+import android.support.v7.content.res.AppCompatResources;
 import android.text.SpannableStringBuilder;
 import android.text.format.DateUtils;
 import android.text.style.TtsSpan;
@@ -196,13 +197,13 @@ class TimePickerClockDelegate extends TimePicker.AbstractTimePickerDelegate {
         if (timeHeaderTextAppearance != 0) {
             final TypedArray textAppearance = mContext.obtainStyledAttributes(null,
                     ATTRS_TEXT_COLOR, 0, timeHeaderTextAppearance);
-            final ColorStateList legacyHeaderTextColor = textAppearance.getColorStateList(0);
+            final ColorStateList legacyHeaderTextColor = Utils.getColorStateList(mContext, textAppearance, 0);//textAppearance.getColorStateList(0);
             headerTextColor = applyLegacyColorFixes(legacyHeaderTextColor);
             textAppearance.recycle();
         }
 
         if (headerTextColor == null) {
-            headerTextColor = a.getColorStateList(R.styleable.TimePicker_headerTextColor);
+            headerTextColor = Utils.getColorStateList(mContext, a, R.styleable.TimePicker_headerTextColor);//a.getColorStateList(R.styleable.TimePicker_headerTextColor);
         }
 
         mTextInputPickerHeader = mainView.findViewById(R.id.input_header);
@@ -249,7 +250,7 @@ class TimePickerClockDelegate extends TimePicker.AbstractTimePickerDelegate {
         Drawable wrapped = DrawableCompat.wrap(drawable);
 
         TypedArray arr = context.obtainStyledAttributes(new int[]{R.attr.colorControlNormal});
-        ColorStateList tintList = arr.getColorStateList(0);
+        ColorStateList tintList = Utils.getColorStateList(mContext, arr, 0);//arr.getColorStateList(0);
         arr.recycle();
 
         if (tintList != null) {
@@ -281,13 +282,30 @@ class TimePickerClockDelegate extends TimePicker.AbstractTimePickerDelegate {
         initialize(currentHour, currentMinute, mIs24Hour, HOUR_INDEX);
     }
 
+    private Drawable tintDrawable(Drawable drawable){
+        // start of FIX - tinting the drawable manually because the android:tint attribute crashes the app
+        Drawable wrapped = DrawableCompat.wrap(drawable);
+
+        TypedArray arr = mContext.obtainStyledAttributes(new int[]{R.attr.colorControlNormal});
+        ColorStateList tintList = Utils.getColorStateList(mContext, arr, 0); // arr.getColorStateList(0);
+        arr.recycle();
+
+        if (tintList != null) {
+            DrawableCompat.setTintList(wrapped, tintList);
+        }
+
+        return wrapped;
+        // end of FIX
+    }
+
     private void toggleRadialPickerMode() {
         if (mRadialPickerModeEnabled) {
             mRadialTimePickerView.setVisibility(View.GONE);
             mRadialTimePickerHeader.setVisibility(View.GONE);
             mTextInputPickerHeader.setVisibility(View.VISIBLE);
             mTextInputPickerView.setVisibility(View.VISIBLE);
-            mRadialTimePickerModeButton.setImageResource(R.drawable.btn_clock_material);
+            //mRadialTimePickerModeButton.setImageResource(R.drawable.btn_clock_material);
+            mRadialTimePickerModeButton.setImageDrawable(tintDrawable(AppCompatResources.getDrawable(mContext, R.drawable.btn_clock_material))); // fixing tinting
             mRadialTimePickerModeButton.setContentDescription(
                     mRadialTimePickerModeEnabledDescription);
             mRadialPickerModeEnabled = false;
@@ -296,7 +314,8 @@ class TimePickerClockDelegate extends TimePicker.AbstractTimePickerDelegate {
             mRadialTimePickerHeader.setVisibility(View.VISIBLE);
             mTextInputPickerHeader.setVisibility(View.GONE);
             mTextInputPickerView.setVisibility(View.GONE);
-            mRadialTimePickerModeButton.setImageResource(R.drawable.btn_keyboard_key_material);
+            //mRadialTimePickerModeButton.setImageResource(R.drawable.btn_keyboard_key_material);
+            mRadialTimePickerModeButton.setImageDrawable(tintDrawable(AppCompatResources.getDrawable(mContext, R.drawable.btn_keyboard_key_material))); // fixing tinting
             mRadialTimePickerModeButton.setContentDescription(
                     mTextInputPickerModeEnabledDescription);
             updateTextInputPicker();

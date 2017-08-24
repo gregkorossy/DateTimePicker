@@ -430,10 +430,8 @@ public class RadialTimePickerView extends View {
         final TypedArray a = getContext().obtainStyledAttributes(attrs,
                 R.styleable.TimePicker, defStyleAttr, defStyleRes);
 
-        final ColorStateList numbersTextColor = a.getColorStateList(
-                R.styleable.TimePicker_numbersTextColor);
-        final ColorStateList numbersInnerTextColor = a.getColorStateList(
-                R.styleable.TimePicker_numbersInnerTextColor);
+        final ColorStateList numbersTextColor = Utils.getColorStateList(context, a, R.styleable.TimePicker_numbersTextColor); //a.getColorStateList(R.styleable.TimePicker_numbersTextColor);
+        final ColorStateList numbersInnerTextColor = Utils.getColorStateList(context, a, R.styleable.TimePicker_numbersInnerTextColor); //a.getColorStateList(R.styleable.TimePicker_numbersInnerTextColor);
         mTextColor[HOURS] = numbersTextColor == null ?
                 ColorStateList.valueOf(MISSING_COLOR) : numbersTextColor;
         mTextColor[HOURS_INNER] = numbersInnerTextColor == null ?
@@ -441,8 +439,7 @@ public class RadialTimePickerView extends View {
         mTextColor[MINUTES] = mTextColor[HOURS];
 
         // Set up various colors derived from the selector "activated" state.
-        final ColorStateList selectorColors = a.getColorStateList(
-                R.styleable.TimePicker_numbersSelectorColor);
+        final ColorStateList selectorColors = Utils.getColorStateList(context, a, R.styleable.TimePicker_numbersSelectorColor); //a.getColorStateList(R.styleable.TimePicker_numbersSelectorColor);
         final int selectorActivatedColor;
         if (selectorColors != null) {
             final int[] stateSetEnabledActivated = StateSet.get(
