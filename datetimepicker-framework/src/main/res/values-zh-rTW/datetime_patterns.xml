@@ -1,0 +1,7 @@
+<resources>
+    <string name="datetime_MMMMy">y年M月</string>
+    <string name="datetime_EMMMMdy">y年M月d日 EEE</string>
+    <string name="datetime_EMMMd">M月d日 EEE</string>
+    <string name="datetime_Hm">HH:mm</string>
+    <string name="datetime_hm">ah:mm</string>
+</resources>

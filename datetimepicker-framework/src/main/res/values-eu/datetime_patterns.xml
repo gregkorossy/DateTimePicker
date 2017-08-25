@@ -1,0 +1,7 @@
+<resources>
+    <string name="datetime_MMMMy">y(\'e\')\'ko\' MMMM</string>
+    <string name="datetime_EMMMMdy">y(\'e\')\'ko\' MMMM d, EEE</string>
+    <string name="datetime_EMMMd">MMM d, EEE</string>
+    <string name="datetime_Hm">HH:mm</string>
+    <string name="datetime_hm">h:mm a</string>
+</resources>

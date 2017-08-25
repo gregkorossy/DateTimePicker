@@ -27,8 +27,6 @@ import android.icu.text.SimpleDateFormat;
 import android.os.Build;
 import android.os.Parcelable;
 import android.support.annotation.Nullable;
-import android.support.v4.view.LayoutInflaterCompat;
-import android.support.v7.content.res.AppCompatResources;
 import android.text.format.DateUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -41,7 +39,6 @@ import android.widget.ViewAnimator;
 
 import com.takisoft.datetimepicker.R;
 import com.takisoft.datetimepicker.util.DateFormatFix;
-import com.takisoft.datetimepicker.util.FakeDateTimeFormat;
 import com.takisoft.datetimepicker.util.StateSet;
 import com.takisoft.datetimepicker.util.Utils;
 import com.takisoft.datetimepicker.widget.DayPickerView.OnDaySelectedListener;
@@ -326,11 +323,7 @@ class DatePickerCalendarDelegate extends DatePicker.AbstractDatePickerDelegate {
             ((SimpleDateFormat) mMonthDayFormat).setContext(DisplayContext.CAPITALIZATION_FOR_STANDALONE);
             mYearFormat = new SimpleDateFormat("y", locale);
         } else {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
-                mMonthDayFormat = new java.text.SimpleDateFormat(datePattern, locale);
-            } else {
-                mMonthDayFormat = new FakeDateTimeFormat(mContext, FakeDateTimeFormat.EMMMd, locale);
-            }
+            mMonthDayFormat = new java.text.SimpleDateFormat(datePattern, locale);
             mYearFormat = new java.text.SimpleDateFormat("y", locale);
         }
 
@@ -626,11 +619,7 @@ class DatePickerCalendarDelegate extends DatePicker.AbstractDatePickerDelegate {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                 mAccessibilityEventFormat = new SimpleDateFormat(pattern);
             } else {
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
-                    mAccessibilityEventFormat = new java.text.SimpleDateFormat(pattern, mCurrentLocale);
-                } else {
-                    mAccessibilityEventFormat = new FakeDateTimeFormat(mContext, FakeDateTimeFormat.EMMMMdy, mCurrentLocale);
-                }
+                mAccessibilityEventFormat = new java.text.SimpleDateFormat(pattern, mCurrentLocale);
                 //mAccessibilityEventFormat = new java.text.SimpleDateFormat(pattern, mCurrentLocale);
             }
         }

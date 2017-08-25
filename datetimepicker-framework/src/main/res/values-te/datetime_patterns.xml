@@ -1,0 +1,7 @@
+<resources>
+    <string name="datetime_MMMMy">MMMM y</string>
+    <string name="datetime_EMMMMdy">d, MMMM y, EEE</string>
+    <string name="datetime_EMMMd">EEE, d MMM</string>
+    <string name="datetime_Hm">HH:mm</string>
+    <string name="datetime_hm">h:mm a</string>
+</resources>

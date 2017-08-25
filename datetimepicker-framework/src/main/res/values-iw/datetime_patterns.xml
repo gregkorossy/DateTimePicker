@@ -1,0 +1,7 @@
+<resources>
+    <string name="datetime_MMMMy">MMMM y</string>
+    <string name="datetime_EMMMMdy">EEE, d בMMMM y</string>
+    <string name="datetime_EMMMd">EEE, d בMMM</string>
+    <string name="datetime_Hm">H:mm</string>
+    <string name="datetime_hm">h:mm a</string>
+</resources>

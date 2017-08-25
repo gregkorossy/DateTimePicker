@@ -49,7 +49,6 @@ import android.view.accessibility.AccessibilityNodeInfo;
 
 import com.takisoft.datetimepicker.R;
 import com.takisoft.datetimepicker.util.DateFormatFix;
-import com.takisoft.datetimepicker.util.FakeDateTimeFormat;
 import com.takisoft.datetimepicker.util.StateSet;
 import com.takisoft.datetimepicker.util.Utils;
 
@@ -220,13 +219,7 @@ class SimpleMonthView extends View {
             formatter.setContext(DisplayContext.CAPITALIZATION_FOR_STANDALONE);
             mMonthYearLabel = formatter.format(mCalendar.getTime());
         } else {
-            java.text.Format formatter;// = new java.text.SimpleDateFormat(format, mLocale);
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
-                formatter = new java.text.SimpleDateFormat(format, mLocale);
-            } else {
-                formatter = new FakeDateTimeFormat(getContext(), MONTH_YEAR_FORMAT, mLocale);
-            }
-
+            java.text.Format formatter = new java.text.SimpleDateFormat(format, mLocale);
             mMonthYearLabel = formatter.format(mCalendar.getTime());
         }
     }

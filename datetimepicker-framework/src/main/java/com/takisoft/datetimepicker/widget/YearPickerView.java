@@ -213,6 +213,7 @@ class YearPickerView extends ListView {
             }
 
             v.setText(String.format(Locale.getDefault(), "%d", year)); // FIXME Locale from external source instead of default
+            //v.setText(Integer.toString(year));
             return v;
         }
 
