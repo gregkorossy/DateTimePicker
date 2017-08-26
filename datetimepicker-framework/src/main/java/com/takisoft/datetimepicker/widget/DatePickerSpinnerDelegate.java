@@ -21,6 +21,7 @@ import android.content.res.Configuration;
 import android.content.res.TypedArray;
 import android.os.Build;
 import android.os.Parcelable;
+import android.support.annotation.NonNull;
 import android.text.InputType;
 import android.text.TextUtils;
 import android.text.format.DateUtils;
@@ -170,7 +171,7 @@ class DatePickerSpinnerDelegate extends AbstractDatePickerDelegate {
         // calendar view day-picker
         mCalendarView = mDelegator.findViewById(R.id.calendar_view);
         mCalendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
-            public void onSelectedDayChange(CalendarView view, int year, int month, int monthDay) {
+            public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int monthDay) {
                 setDate(year, month, monthDay);
                 updateSpinners();
                 notifyDateChanged();

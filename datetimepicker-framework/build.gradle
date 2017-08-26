@@ -11,7 +11,7 @@ android {
         versionName rootProject.libVersion
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        //vectorDrawables.useSupportLibrary = true
+        vectorDrawables.useSupportLibrary = true
     }
     buildTypes {
         release {
@@ -19,11 +19,15 @@ android {
             consumerProguardFiles 'proguard-rules.pro'
         }
     }
+
+    lintOptions {
+        abortOnError false
+    }
 }
 
 ext {
     bintrayRepo = 'maven'
-    bintrayName = 'com.takisoft.datetimepicker'
+    bintrayName = 'com.takisoft.fix:datetimepicker'
 
     publishedGroupId = 'com.takisoft.fix'
     libraryName = 'Material DateTimePickers'
@@ -54,3 +58,7 @@ dependencies {
 
 apply from: 'https://raw.githubusercontent.com/numetriclabz/jcenter/master/installv.gradle'
 apply from: 'https://raw.githubusercontent.com/numetriclabz/jcenter/master/bintrayv.gradle'
+
+javadoc.doFirst {
+    failOnError false
+}
