@@ -1,0 +1,25 @@
+<resources>
+    <string name="number_picker_increment_button">بڑھائیں</string>
+    <string name="number_picker_decrement_button">گھٹائیں</string>
+    <string name="time_picker_increment_minute_button">منٹ بڑھائیں</string>
+    <string name="time_picker_decrement_minute_button">منٹ گھٹائیں</string>
+    <string name="time_picker_increment_hour_button">گھنٹہ بڑھائیں</string>
+    <string name="time_picker_decrement_hour_button">گھنٹہ گھٹائیں</string>
+    <string name="time_picker_increment_set_pm_button">‏PM سیٹ کریں</string>
+    <string name="time_picker_decrement_set_am_button">قبل از دوپہر سیٹ کریں</string>
+    <string name="date_picker_prev_month_button">پچھلا مہینہ</string>
+    <string name="date_picker_next_month_button">اگلا مہینہ</string>
+    <string name="hour_picker_description">گھنٹوں کا سرکلر سلائیڈر</string>
+    <string name="minute_picker_description">منٹس سرکلر سلائیڈر</string>
+    <string name="select_hours">گھنٹے منتخب کریں</string>
+    <string name="select_minutes">منٹ منتخب کریں</string>
+    <string name="select_day">ماہ اور دن منتخب کریں</string>
+    <string name="select_year">سال منتخب کریں</string>
+    <string name="time_picker_hour_label">گھنٹہ</string>
+    <string name="time_picker_minute_label">منٹ</string>
+    <string name="time_picker_header_text">وقت سیٹ کریں</string>
+    <string name="time_picker_input_error">درست وقت درج کریں</string>
+    <string name="time_picker_prompt_label">وقت ٹائپ کریں</string>
+    <string name="time_picker_text_input_mode_description">وقت ان پٹ کے لیے ٹیکسٹ ان پٹ وضع پر سوئچ کریں۔</string>
+    <string name="time_picker_radial_mode_description">وقت ان پٹ کے لیے گھڑی و‏ضع پر سوئچ کریں۔</string>
+</resources>

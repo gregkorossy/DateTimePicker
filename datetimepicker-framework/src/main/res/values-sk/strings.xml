@@ -1,0 +1,25 @@
+<resources>
+    <string name="number_picker_increment_button">Zvýšiť</string>
+    <string name="number_picker_decrement_button">Znížiť</string>
+    <string name="time_picker_increment_minute_button">Pridať minútu</string>
+    <string name="time_picker_decrement_minute_button">Ubrať minútu</string>
+    <string name="time_picker_increment_hour_button">Pridať hodinu</string>
+    <string name="time_picker_decrement_hour_button">Ubrať hodinu</string>
+    <string name="time_picker_increment_set_pm_button">Nastaviť čas popoludní</string>
+    <string name="time_picker_decrement_set_am_button">Nastaviť čas AM</string>
+    <string name="date_picker_prev_month_button">Predchádzajúci mesiac</string>
+    <string name="date_picker_next_month_button">Nasledujúci mesiac</string>
+    <string name="hour_picker_description">Kruhový posúvač hodín</string>
+    <string name="minute_picker_description">Kruhový posúvač minút</string>
+    <string name="select_hours">Vyberte hodiny</string>
+    <string name="select_minutes">Vyberte minúty</string>
+    <string name="select_day">Vyberte mesiac a deň</string>
+    <string name="select_year">Vyberte rok</string>
+    <string name="time_picker_hour_label">hodina</string>
+    <string name="time_picker_minute_label">minúta</string>
+    <string name="time_picker_header_text">Nastaviť čas</string>
+    <string name="time_picker_input_error">Zadajte platný čas</string>
+    <string name="time_picker_prompt_label">Zadajte čas</string>
+    <string name="time_picker_text_input_mode_description">Ak chcete zadať čas, prepnite na textový režim vstupu</string>
+    <string name="time_picker_radial_mode_description">Ak chcete zadať čas, prepnite na režim hodín.</string>
+</resources>

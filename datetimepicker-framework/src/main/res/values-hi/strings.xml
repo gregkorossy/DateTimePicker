@@ -1,0 +1,25 @@
+<resources>
+    <string name="number_picker_increment_button">बढ़ाएं</string>
+    <string name="number_picker_decrement_button">कम करें</string>
+    <string name="time_picker_increment_minute_button">मिनट बढ़ाएं</string>
+    <string name="time_picker_decrement_minute_button">मिनट कम करें</string>
+    <string name="time_picker_increment_hour_button">घंटे बढ़ाएं</string>
+    <string name="time_picker_decrement_hour_button">घंटे कम करें</string>
+    <string name="time_picker_increment_set_pm_button">सायं सेट करें</string>
+    <string name="time_picker_decrement_set_am_button">प्रात: सेट करें</string>
+    <string name="date_picker_prev_month_button">पिछला महीना</string>
+    <string name="date_picker_next_month_button">अगला महीना</string>
+    <string name="hour_picker_description">घंटो का चक्राकार स्लाइडर</string>
+    <string name="minute_picker_description">मिनटों का चक्राकार स्लाइडर</string>
+    <string name="select_hours">घंटे चुनें</string>
+    <string name="select_minutes">मिनट चुनें</string>
+    <string name="select_day">माह और दिन चुनें</string>
+    <string name="select_year">वर्ष चुनें</string>
+    <string name="time_picker_hour_label">घंटा</string>
+    <string name="time_picker_minute_label">मिनट</string>
+    <string name="time_picker_header_text">समय सेट अप करें</string>
+    <string name="time_picker_input_error">मान्य समय डालें</string>
+    <string name="time_picker_prompt_label">समय लिखें</string>
+    <string name="time_picker_text_input_mode_description">समय इनपुट के लिए लेख इनपुट मोड पर जाएं.</string>
+    <string name="time_picker_radial_mode_description">समय इनपुट के लिए घड़ी मोड पर जाएं.</string>
+</resources>

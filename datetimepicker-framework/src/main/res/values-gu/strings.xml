@@ -1,0 +1,25 @@
+<resources>
+    <string name="number_picker_increment_button">વધારો</string>
+    <string name="number_picker_decrement_button">ઘટાડો</string>
+    <string name="time_picker_increment_minute_button">મિનિટ વધારો</string>
+    <string name="time_picker_decrement_minute_button">મિનિટ ઘટાડો</string>
+    <string name="time_picker_increment_hour_button">કલાક વધારો</string>
+    <string name="time_picker_decrement_hour_button">કલાક ઘટાડો</string>
+    <string name="time_picker_increment_set_pm_button">PM સેટ કરો</string>
+    <string name="time_picker_decrement_set_am_button">AM સેટ કરો</string>
+    <string name="date_picker_prev_month_button">પહેલાનો મહિનો</string>
+    <string name="date_picker_next_month_button">આગલો મહિનો</string>
+    <string name="hour_picker_description">કલાકનું વર્તુળાકાર સ્લાઇડર</string>
+    <string name="minute_picker_description">મિનિટનું વર્તુળાકાર સ્લાઇડર</string>
+    <string name="select_hours">કલાક પસંદ કરો</string>
+    <string name="select_minutes">મિનિટ પસંદ કરો</string>
+    <string name="select_day">મહિનો અને દિવસ પસંદ કરો</string>
+    <string name="select_year">વર્ષ પસંદ કરો</string>
+    <string name="time_picker_hour_label">કલાક</string>
+    <string name="time_picker_minute_label">મિનિટ</string>
+    <string name="time_picker_header_text">સમય સેટ કરો</string>
+    <string name="time_picker_input_error">એક માન્ય સમય દાખલ કરો</string>
+    <string name="time_picker_prompt_label">સમય લખો</string>
+    <string name="time_picker_text_input_mode_description">સમય દાખલ કરવા માટે ટેક્સ્ટ ઇનપુટ મોડમાં સ્વિચ કરો.</string>
+    <string name="time_picker_radial_mode_description">સમય દાખલ કરવા માટે ઘડિયાળ મોડમાં સ્વિચ કરો.</string>
+</resources>

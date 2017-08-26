@@ -1,0 +1,25 @@
+<resources>
+    <string name="number_picker_increment_button">Padidinti</string>
+    <string name="number_picker_decrement_button">Sumažinti</string>
+    <string name="time_picker_increment_minute_button">Padidinti minučių skaičių</string>
+    <string name="time_picker_decrement_minute_button">Sumažinti minučių skaičių</string>
+    <string name="time_picker_increment_hour_button">Padidinti valandų skaičių</string>
+    <string name="time_picker_decrement_hour_button">Sumažinti valandų skaičių</string>
+    <string name="time_picker_increment_set_pm_button">Nustatyti po pusiaudienio</string>
+    <string name="time_picker_decrement_set_am_button">Nustatyti prieš pusiaudienį</string>
+    <string name="date_picker_prev_month_button">Ankstesnis mėnuo</string>
+    <string name="date_picker_next_month_button">Kitas mėnuo</string>
+    <string name="hour_picker_description">Apskritas valandų šliaužiklis</string>
+    <string name="minute_picker_description">Apskritas minučių šliaužiklis</string>
+    <string name="select_hours">Pasirinkite valandas</string>
+    <string name="select_minutes">Pasirinkite minutes</string>
+    <string name="select_day">Pasirinkite mėnesį ir dieną</string>
+    <string name="select_year">Pasirinkite metus</string>
+    <string name="time_picker_hour_label">valanda</string>
+    <string name="time_picker_minute_label">minutė</string>
+    <string name="time_picker_header_text">Laiko nustatymas</string>
+    <string name="time_picker_input_error">Įveskite tinkamą laiką</string>
+    <string name="time_picker_prompt_label">Įveskite laiką</string>
+    <string name="time_picker_text_input_mode_description">Laiko įvestį pateikti perjungus į teksto įvesties režimą.</string>
+    <string name="time_picker_radial_mode_description">Laiko įvestį pateikti perjungus į laikrodžio režimą.</string>
+</resources>

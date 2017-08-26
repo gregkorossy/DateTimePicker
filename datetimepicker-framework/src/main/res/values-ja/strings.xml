@@ -1,0 +1,25 @@
+<resources>
+    <string name="number_picker_increment_button">進めます</string>
+    <string name="number_picker_decrement_button">戻します</string>
+    <string name="time_picker_increment_minute_button">1分進めます</string>
+    <string name="time_picker_decrement_minute_button">1分戻します</string>
+    <string name="time_picker_increment_hour_button">1時間進めます</string>
+    <string name="time_picker_decrement_hour_button">1時間戻します</string>
+    <string name="time_picker_increment_set_pm_button">午後に設定</string>
+    <string name="time_picker_decrement_set_am_button">午前に設定</string>
+    <string name="date_picker_prev_month_button">前月</string>
+    <string name="date_picker_next_month_button">翌月</string>
+    <string name="hour_picker_description">円形スライダー（時）</string>
+    <string name="minute_picker_description">円形スライダー（分）</string>
+    <string name="select_hours">時間を選択</string>
+    <string name="select_minutes">分を選択</string>
+    <string name="select_day">月と日を選択</string>
+    <string name="select_year">年を選択</string>
+    <string name="time_picker_hour_label">時</string>
+    <string name="time_picker_minute_label">分</string>
+    <string name="time_picker_header_text">時刻の設定</string>
+    <string name="time_picker_input_error">有効な時刻を入力してください</string>
+    <string name="time_picker_prompt_label">時刻を入力</string>
+    <string name="time_picker_text_input_mode_description">時刻をテキストで入力するモードに切り替えます。</string>
+    <string name="time_picker_radial_mode_description">時刻を時計で入力するモードに切り替えます。</string>
+</resources>

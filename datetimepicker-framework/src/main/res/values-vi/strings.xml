@@ -1,0 +1,25 @@
+<resources>
+    <string name="number_picker_increment_button">Tăng</string>
+    <string name="number_picker_decrement_button">Giảm</string>
+    <string name="time_picker_increment_minute_button">Tăng phút</string>
+    <string name="time_picker_decrement_minute_button">Giảm phút</string>
+    <string name="time_picker_increment_hour_button">Tăng giờ</string>
+    <string name="time_picker_decrement_hour_button">Giảm giờ</string>
+    <string name="time_picker_increment_set_pm_button">Đặt CH</string>
+    <string name="time_picker_decrement_set_am_button">Đặt SA</string>
+    <string name="date_picker_prev_month_button">Tháng trước</string>
+    <string name="date_picker_next_month_button">Tháng sau</string>
+    <string name="hour_picker_description">Thanh trượt giờ hình tròn</string>
+    <string name="minute_picker_description">Thanh trượt phút hình tròn</string>
+    <string name="select_hours">Chọn giờ</string>
+    <string name="select_minutes">Chọn phút</string>
+    <string name="select_day">Chọn tháng và ngày</string>
+    <string name="select_year">Chọn năm</string>
+    <string name="time_picker_hour_label">giờ</string>
+    <string name="time_picker_minute_label">phút</string>
+    <string name="time_picker_header_text">Đặt giờ</string>
+    <string name="time_picker_input_error">Nhập thời gian hợp lệ</string>
+    <string name="time_picker_prompt_label">Nhập thời gian</string>
+    <string name="time_picker_text_input_mode_description">Chuyển sang chế độ nhập văn bản để nhập thời gian.</string>
+    <string name="time_picker_radial_mode_description">Chuyển sang chế độ đồng hồ để nhập thời gian.</string>
+</resources>

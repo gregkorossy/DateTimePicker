@@ -1,0 +1,25 @@
+<resources>
+    <string name="number_picker_increment_button">زيادة</string>
+    <string name="number_picker_decrement_button">تقليل</string>
+    <string name="time_picker_increment_minute_button">زيادة الدقائق</string>
+    <string name="time_picker_decrement_minute_button">تقليل الدقائق</string>
+    <string name="time_picker_increment_hour_button">زيادة الساعات</string>
+    <string name="time_picker_decrement_hour_button">تقليل الساعات</string>
+    <string name="time_picker_increment_set_pm_button">تعيين المساء</string>
+    <string name="time_picker_decrement_set_am_button">تعيين الصباح</string>
+    <string name="date_picker_prev_month_button">الشهر السابق</string>
+    <string name="date_picker_next_month_button">الشهر التالي</string>
+    <string name="hour_picker_description">شريط التمرير الدائري للساعات</string>
+    <string name="minute_picker_description">شريط التمرير الدائري للدقائق</string>
+    <string name="select_hours">تحديد الساعات</string>
+    <string name="select_minutes">تحديد الدقائق</string>
+    <string name="select_day">تحديد الشهر واليوم</string>
+    <string name="select_year">تحديد العام</string>
+    <string name="time_picker_hour_label">ساعة</string>
+    <string name="time_picker_minute_label">دقيقة</string>
+    <string name="time_picker_header_text">تعيين الوقت</string>
+    <string name="time_picker_input_error">يُرجى إدخال وقت صالح</string>
+    <string name="time_picker_prompt_label">يُرجى تحديد الوقت</string>
+    <string name="time_picker_text_input_mode_description">يُرجى التبديل إلى وضع إدخال النص لإدخال الوقت.</string>
+    <string name="time_picker_radial_mode_description">يُرجى التبديل إلى وضع الساعة لإدخال الوقت.</string>
+</resources>

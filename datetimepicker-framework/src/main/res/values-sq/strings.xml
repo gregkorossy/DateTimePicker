@@ -1,0 +1,25 @@
+<resources>
+    <string name="number_picker_increment_button">Rrit</string>
+    <string name="number_picker_decrement_button">Pakëso</string>
+    <string name="time_picker_increment_minute_button">Rrit vlerat për minutë</string>
+    <string name="time_picker_decrement_minute_button">Pakëso vlerat për minutë</string>
+    <string name="time_picker_increment_hour_button">Rrit vlerat për orë</string>
+    <string name="time_picker_decrement_hour_button">Pakëso vlerat për orë</string>
+    <string name="time_picker_increment_set_pm_button">Cakto vlerat PM</string>
+    <string name="time_picker_decrement_set_am_button">Cakto vlerat AM</string>
+    <string name="date_picker_prev_month_button">Muaji i mëparshëm</string>
+    <string name="date_picker_next_month_button">Muaji i ardhshëm</string>
+    <string name="hour_picker_description">Rrëshqitësi rrethor i orëve</string>
+    <string name="minute_picker_description">Rrëshqitësi rrethor i minutave</string>
+    <string name="select_hours">Përzgjidh orët</string>
+    <string name="select_minutes">Përzgjidh minutat</string>
+    <string name="select_day">Përzgjidh muajin dhe ditën</string>
+    <string name="select_year">Përzgjidh vitin</string>
+    <string name="time_picker_hour_label">orë</string>
+    <string name="time_picker_minute_label">minutë</string>
+    <string name="time_picker_header_text">Vendos orën</string>
+    <string name="time_picker_input_error">Fut një kohë të vlefshme</string>
+    <string name="time_picker_prompt_label">Shkruaj kohën</string>
+    <string name="time_picker_text_input_mode_description">Kalo te modaliteti i hyrjes së tekstit për hyrjen e kohës.</string>
+    <string name="time_picker_radial_mode_description">Kalo te modaliteti i orës për hyrjen e kohës.</string>
+</resources>

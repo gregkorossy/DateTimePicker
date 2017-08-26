@@ -1,0 +1,25 @@
+<resources>
+    <string name="number_picker_increment_button">Verhogen</string>
+    <string name="number_picker_decrement_button">Verlagen</string>
+    <string name="time_picker_increment_minute_button">Hogere waarde voor minuten</string>
+    <string name="time_picker_decrement_minute_button">Lagere waarde voor minuten</string>
+    <string name="time_picker_increment_hour_button">Hogere waarde voor uren</string>
+    <string name="time_picker_decrement_hour_button">Lagere waarde voor uren</string>
+    <string name="time_picker_increment_set_pm_button">PM instellen</string>
+    <string name="time_picker_decrement_set_am_button">AM instellen</string>
+    <string name="date_picker_prev_month_button">Vorige maand</string>
+    <string name="date_picker_next_month_button">Volgende maand</string>
+    <string name="hour_picker_description">Ronde schuifregelaar voor uren</string>
+    <string name="minute_picker_description">Ronde schuifregelaar voor minuten</string>
+    <string name="select_hours">Uren selecteren</string>
+    <string name="select_minutes">Minuten selecteren</string>
+    <string name="select_day">Maand en dag selecteren</string>
+    <string name="select_year">Jaar selecteren</string>
+    <string name="time_picker_hour_label">uur</string>
+    <string name="time_picker_minute_label">minuut</string>
+    <string name="time_picker_header_text">Tijd instellen</string>
+    <string name="time_picker_input_error">Geef een geldige tijd op</string>
+    <string name="time_picker_prompt_label">Typ een tijd</string>
+    <string name="time_picker_text_input_mode_description">Schakel naar de tekstinvoermodus om de tijd in te voeren.</string>
+    <string name="time_picker_radial_mode_description">Schakel naar de klokmodus om de tijd in te voeren.</string>
+</resources>

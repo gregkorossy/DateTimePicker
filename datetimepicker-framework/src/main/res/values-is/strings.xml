@@ -1,0 +1,25 @@
+<resources>
+    <string name="number_picker_increment_button">Upp</string>
+    <string name="number_picker_decrement_button">Niður</string>
+    <string name="time_picker_increment_minute_button">Upp um mínútu</string>
+    <string name="time_picker_decrement_minute_button">Niður um mínútu</string>
+    <string name="time_picker_increment_hour_button">Upp um klukkustund</string>
+    <string name="time_picker_decrement_hour_button">Niður um klukkustund</string>
+    <string name="time_picker_increment_set_pm_button">Velja e.h.</string>
+    <string name="time_picker_decrement_set_am_button">Velja f.h.</string>
+    <string name="date_picker_prev_month_button">Fyrri mánuður</string>
+    <string name="date_picker_next_month_button">Næsti mánuður</string>
+    <string name="hour_picker_description">Valskífa fyrir klukkustundir</string>
+    <string name="minute_picker_description">Valskífa fyrir mínútur</string>
+    <string name="select_hours">Veldu klukkustundir</string>
+    <string name="select_minutes">Veldu mínútur</string>
+    <string name="select_day">Veldu mánuð og dag</string>
+    <string name="select_year">Veldu ár</string>
+    <string name="time_picker_hour_label">klst.</string>
+    <string name="time_picker_minute_label">mínúta</string>
+    <string name="time_picker_header_text">Stilla tíma</string>
+    <string name="time_picker_input_error">Færðu inn gildan tíma</string>
+    <string name="time_picker_prompt_label">Færðu inn tíma</string>
+    <string name="time_picker_text_input_mode_description">Skipta yfir í textastillingu til að færa inn tíma.</string>
+    <string name="time_picker_radial_mode_description">Skipta yfir í klukkustillingu til að færa inn tíma.</string>
+</resources>

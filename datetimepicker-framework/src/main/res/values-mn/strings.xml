@@ -1,0 +1,25 @@
+<resources>
+    <string name="number_picker_increment_button">Өсөх</string>
+    <string name="number_picker_decrement_button">Бууруулах</string>
+    <string name="time_picker_increment_minute_button">Минут өсгөх</string>
+    <string name="time_picker_decrement_minute_button">Минутыг бууруулах</string>
+    <string name="time_picker_increment_hour_button">Цаг өсгөх</string>
+    <string name="time_picker_decrement_hour_button">Цаг бууруулах</string>
+    <string name="time_picker_increment_set_pm_button">PM тохируулах</string>
+    <string name="time_picker_decrement_set_am_button">AM тохируулах</string>
+    <string name="date_picker_prev_month_button">Өмнөх сар</string>
+    <string name="date_picker_next_month_button">Дараагийн сар</string>
+    <string name="hour_picker_description">Цаг гүйлгэгч</string>
+    <string name="minute_picker_description">Минут гүйлгэгч</string>
+    <string name="select_hours">Цаг сонгоно уу</string>
+    <string name="select_minutes">Минут сонгоно уу</string>
+    <string name="select_day">Сар болон өдрийг сонгоно уу</string>
+    <string name="select_year">Жилийг сонгоно уу</string>
+    <string name="time_picker_hour_label">Цаг</string>
+    <string name="time_picker_minute_label">минут</string>
+    <string name="time_picker_header_text">Цаг тохируулах</string>
+    <string name="time_picker_input_error">Цагийг зөв оруулна уу</string>
+    <string name="time_picker_prompt_label">Хугацааг бичнэ үү</string>
+    <string name="time_picker_text_input_mode_description">Цагийг оруулахын тулд текст оруулах горимд шилжүүлнэ үү.</string>
+    <string name="time_picker_radial_mode_description">Цагийг оруулахын тулд цагийн горимд шилжүүлнэ үү.</string>
+</resources>

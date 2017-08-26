@@ -1,0 +1,25 @@
+<resources>
+    <string name="number_picker_increment_button">Αύξηση</string>
+    <string name="number_picker_decrement_button">Μείωση</string>
+    <string name="time_picker_increment_minute_button">Αύξηση λεπτού</string>
+    <string name="time_picker_decrement_minute_button">Μείωση λεπτού</string>
+    <string name="time_picker_increment_hour_button">Αύξηση ώρας</string>
+    <string name="time_picker_decrement_hour_button">Μείωση ώρας</string>
+    <string name="time_picker_increment_set_pm_button">Ορισμός ΜΜ</string>
+    <string name="time_picker_decrement_set_am_button">Ορισμός ΠΜ</string>
+    <string name="date_picker_prev_month_button">Προηγούμενος μήνας</string>
+    <string name="date_picker_next_month_button">Επόμενος μήνας</string>
+    <string name="hour_picker_description">Κυκλικό ρυθμιστικό ωρών</string>
+    <string name="minute_picker_description">Κυκλικό ρυθμιστικό λεπτών</string>
+    <string name="select_hours">Επιλογή ωρών</string>
+    <string name="select_minutes">Επιλογή λεπτών</string>
+    <string name="select_day">Επιλογή μήνα και ημέρας</string>
+    <string name="select_year">Επιλογή έτους</string>
+    <string name="time_picker_hour_label">ώρα</string>
+    <string name="time_picker_minute_label">λεπτό</string>
+    <string name="time_picker_header_text">Ορισμός ώρας</string>
+    <string name="time_picker_input_error">Εισαγάγετε μια έγκυρη ώρα</string>
+    <string name="time_picker_prompt_label">Πληκτρολογήστε την ώρα</string>
+    <string name="time_picker_text_input_mode_description">Κάντε εναλλαγή στη λειτουργία εισαγωγής κειμένου, για την εισαγωγή της ώρας.</string>
+    <string name="time_picker_radial_mode_description">Κάντε εναλλαγή στη λειτουργία ρολογιού, για την εισαγωγή της ώρας.</string>
+</resources>

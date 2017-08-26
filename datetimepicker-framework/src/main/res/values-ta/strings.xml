@@ -1,0 +1,25 @@
+<resources>
+    <string name="number_picker_increment_button">அதிகரி</string>
+    <string name="number_picker_decrement_button">குறை</string>
+    <string name="time_picker_increment_minute_button">நிமிடத்தை அதிகரி</string>
+    <string name="time_picker_decrement_minute_button">நிமிடத்தைக் குறை</string>
+    <string name="time_picker_increment_hour_button">மணிநேரத்தை அதிகரி</string>
+    <string name="time_picker_decrement_hour_button">மணிநேரத்தைக் குறை</string>
+    <string name="time_picker_increment_set_pm_button">PM ஐ அமை</string>
+    <string name="time_picker_decrement_set_am_button">AM ஐ அமை</string>
+    <string name="date_picker_prev_month_button">முந்தைய மாதம்</string>
+    <string name="date_picker_next_month_button">அடுத்த மாதம்</string>
+    <string name="hour_picker_description">மணிநேர வட்ட வடிவ ஸ்லைடர்</string>
+    <string name="minute_picker_description">நிமிடங்களுக்கான வட்டவடிவ ஸ்லைடர்</string>
+    <string name="select_hours">மணிநேரத்தைத் தேர்ந்தெடுக்கவும்</string>
+    <string name="select_minutes">நிமிடத்தைத் தேர்ந்தெடுக்கவும்</string>
+    <string name="select_day">மாதம் மற்றும் தேதியைத் தேர்ந்தெடுக்கவும்</string>
+    <string name="select_year">ஆண்டைத் தேர்ந்தெடுக்கவும்</string>
+    <string name="time_picker_hour_label">மணிநேரம்</string>
+    <string name="time_picker_minute_label">நிமிடம்</string>
+    <string name="time_picker_header_text">நேரத்தை அமை</string>
+    <string name="time_picker_input_error">சரியான நேரத்தை உள்ளிடவும்</string>
+    <string name="time_picker_prompt_label">நேரத்தை உள்ளிடவும்</string>
+    <string name="time_picker_text_input_mode_description">உரை உள்ளீட்டிற்காக, கடிகாரப் பயன்முறைக்கு மாற்றும்.</string>
+    <string name="time_picker_radial_mode_description">நேர உள்ளீட்டிற்காக, கடிகாரப் பயன்முறைக்கு மாற்றும்.</string>
+</resources>

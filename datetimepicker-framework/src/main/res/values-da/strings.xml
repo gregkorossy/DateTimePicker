@@ -1,0 +1,25 @@
+<resources>
+    <string name="number_picker_increment_button">Højere</string>
+    <string name="number_picker_decrement_button">Lavere</string>
+    <string name="time_picker_increment_minute_button">Forøg minuttal</string>
+    <string name="time_picker_decrement_minute_button">Sænk minuttal</string>
+    <string name="time_picker_increment_hour_button">Forøg timetal</string>
+    <string name="time_picker_decrement_hour_button">Sænk timetal</string>
+    <string name="time_picker_increment_set_pm_button">Indstil e.m.</string>
+    <string name="time_picker_decrement_set_am_button">Indstil f.m.</string>
+    <string name="date_picker_prev_month_button">Forrige måned</string>
+    <string name="date_picker_next_month_button">Næste måned</string>
+    <string name="hour_picker_description">Cirkulær timevælger</string>
+    <string name="minute_picker_description">Cirkulær minutvælger</string>
+    <string name="select_hours">Vælg timer</string>
+    <string name="select_minutes">Vælg minutter</string>
+    <string name="select_day">Vælg måned og dag</string>
+    <string name="select_year">Vælg år</string>
+    <string name="time_picker_hour_label">time</string>
+    <string name="time_picker_minute_label">minut</string>
+    <string name="time_picker_header_text">Angiv klokkeslæt</string>
+    <string name="time_picker_input_error">Angiv et gyldigt klokkeslæt</string>
+    <string name="time_picker_prompt_label">Angiv klokkeslæt</string>
+    <string name="time_picker_text_input_mode_description">Skift til teksttilstand for at angive klokkeslæt.</string>
+    <string name="time_picker_radial_mode_description">Skift til urtilstand for at angive klokkeslæt.</string>
+</resources>

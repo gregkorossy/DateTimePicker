@@ -1,0 +1,25 @@
+<resources>
+    <string name="number_picker_increment_button">เพิ่ม</string>
+    <string name="number_picker_decrement_button">ลด</string>
+    <string name="time_picker_increment_minute_button">เพิ่มนาที</string>
+    <string name="time_picker_decrement_minute_button">ลดนาที</string>
+    <string name="time_picker_increment_hour_button">เพิ่มชั่วโมง</string>
+    <string name="time_picker_decrement_hour_button">ลดชั่วโมง</string>
+    <string name="time_picker_increment_set_pm_button">ตั้งค่า PM</string>
+    <string name="time_picker_decrement_set_am_button">ตั้งค่า AM</string>
+    <string name="date_picker_prev_month_button">เดือนที่แล้ว</string>
+    <string name="date_picker_next_month_button">เดือนหน้า</string>
+    <string name="hour_picker_description">ตัวเลื่อนหมุนระบุชั่วโมง</string>
+    <string name="minute_picker_description">ตัวเลื่อนหมุนระบุนาที</string>
+    <string name="select_hours">เลือกชั่วโมง</string>
+    <string name="select_minutes">เลือกนาที</string>
+    <string name="select_day">เลือกเดือนและวัน</string>
+    <string name="select_year">เลือกปี</string>
+    <string name="time_picker_hour_label">ชั่วโมง</string>
+    <string name="time_picker_minute_label">นาที</string>
+    <string name="time_picker_header_text">ตั้งเวลา</string>
+    <string name="time_picker_input_error">ป้อนเวลาที่ถูกต้อง</string>
+    <string name="time_picker_prompt_label">พิมพ์เวลา</string>
+    <string name="time_picker_text_input_mode_description">สลับไปโหมดป้อนข้อความเพื่อป้อนเวลา</string>
+    <string name="time_picker_radial_mode_description">สลับไปโหมดนาฬิกาเพื่อป้อนเวลา</string>
+</resources>

@@ -1,0 +1,25 @@
+<resources>
+    <string name="number_picker_increment_button">Palielināt</string>
+    <string name="number_picker_decrement_button">Samazināt</string>
+    <string name="time_picker_increment_minute_button">Norādīt vēlākas minūtes</string>
+    <string name="time_picker_decrement_minute_button">Norādīt agrākas minūtes</string>
+    <string name="time_picker_increment_hour_button">Norādīt vēlāku stundu</string>
+    <string name="time_picker_decrement_hour_button">Norādīt agrāku stundu</string>
+    <string name="time_picker_increment_set_pm_button">Iestatīt pēcpusdienas laiku</string>
+    <string name="time_picker_decrement_set_am_button">Iestatīt priekšpusdienas laiku</string>
+    <string name="date_picker_prev_month_button">Iepriekšējais mēnesis</string>
+    <string name="date_picker_next_month_button">Nākamais mēnesis</string>
+    <string name="hour_picker_description">Stundu apļveida slīdnis</string>
+    <string name="minute_picker_description">Minūšu apļveida slīdnis</string>
+    <string name="select_hours">Atlasiet stundas.</string>
+    <string name="select_minutes">Atlasiet minūtes.</string>
+    <string name="select_day">Atlasiet mēnesi un dienu.</string>
+    <string name="select_year">Atlasiet gadu.</string>
+    <string name="time_picker_hour_label">stunda</string>
+    <string name="time_picker_minute_label">minūte</string>
+    <string name="time_picker_header_text">Laika iestatīšana</string>
+    <string name="time_picker_input_error">Ievadiet derīgu laiku.</string>
+    <string name="time_picker_prompt_label">Ierakstiet laiku</string>
+    <string name="time_picker_text_input_mode_description">Lai ievadītu laiku, ieslēdziet teksta ievades režīmu.</string>
+    <string name="time_picker_radial_mode_description">Lai ievadītu laiku, ieslēdziet pulksteņa režīmu.</string>
+</resources>

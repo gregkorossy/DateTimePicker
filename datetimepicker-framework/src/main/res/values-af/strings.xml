@@ -1,0 +1,25 @@
+<resources>
+    <string name="number_picker_increment_button">Vermeerder</string>
+    <string name="number_picker_decrement_button">Verminder</string>
+    <string name="time_picker_increment_minute_button">Vermeerder minuut</string>
+    <string name="time_picker_decrement_minute_button">Verminder minute</string>
+    <string name="time_picker_increment_hour_button">Vermeerder uur</string>
+    <string name="time_picker_decrement_hour_button">Verminder uur</string>
+    <string name="time_picker_increment_set_pm_button">Stel NM.</string>
+    <string name="time_picker_decrement_set_am_button">Stel VM.</string>
+    <string name="date_picker_prev_month_button">Vorige maand</string>
+    <string name="date_picker_next_month_button">Volgende maand</string>
+    <string name="hour_picker_description">Ure se sirkelglyer</string>
+    <string name="minute_picker_description">Minute se sirkelglyer</string>
+    <string name="select_hours">Kies ure</string>
+    <string name="select_minutes">Kies minute</string>
+    <string name="select_day">Kies maand en dag</string>
+    <string name="select_year">Kies jaar</string>
+    <string name="time_picker_hour_label">uur</string>
+    <string name="time_picker_minute_label">minuut</string>
+    <string name="time_picker_header_text">Stel tyd</string>
+    <string name="time_picker_input_error">Voer \'n geldige tyd in</string>
+    <string name="time_picker_prompt_label">Tik tyd in</string>
+    <string name="time_picker_text_input_mode_description">Skakel oor na teksmodus vir die tydinvoer.</string>
+    <string name="time_picker_radial_mode_description">Skakel oor na horlosiemodus vir die tydinvoer.</string>
+</resources>

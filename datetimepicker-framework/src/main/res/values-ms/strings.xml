@@ -1,0 +1,25 @@
+<resources>
+    <string name="number_picker_increment_button">Tingkatkan</string>
+    <string name="number_picker_decrement_button">Kurangkan</string>
+    <string name="time_picker_increment_minute_button">Tingkatkan minit</string>
+    <string name="time_picker_decrement_minute_button">Kurangkan minit</string>
+    <string name="time_picker_increment_hour_button">Tingkatkan jam</string>
+    <string name="time_picker_decrement_hour_button">Kurangkan jam</string>
+    <string name="time_picker_increment_set_pm_button">Tetapkan PM</string>
+    <string name="time_picker_decrement_set_am_button">Tetapkan AM</string>
+    <string name="date_picker_prev_month_button">Bulan sebelumnya</string>
+    <string name="date_picker_next_month_button">Bulan seterusnya</string>
+    <string name="hour_picker_description">Penggelangsar bulatan jam</string>
+    <string name="minute_picker_description">Penggelangsar bulatan minit</string>
+    <string name="select_hours">Pilih jam</string>
+    <string name="select_minutes">Pilih minit</string>
+    <string name="select_day">Pilih bulan dan hari</string>
+    <string name="select_year">Pilih tahun</string>
+    <string name="time_picker_hour_label">jam</string>
+    <string name="time_picker_minute_label">minit</string>
+    <string name="time_picker_header_text">Tetapkan masa</string>
+    <string name="time_picker_input_error">Masukkan masa yang sah</string>
+    <string name="time_picker_prompt_label">Taipkan masa</string>
+    <string name="time_picker_text_input_mode_description">Beralih ke mod input teks untuk input masa.</string>
+    <string name="time_picker_radial_mode_description">Beralih ke mod jam untuk input masa.</string>
+</resources>

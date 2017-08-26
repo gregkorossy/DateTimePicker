@@ -1,0 +1,25 @@
+<resources>
+    <string name="number_picker_increment_button">वाढवा</string>
+    <string name="number_picker_decrement_button">कमी करा</string>
+    <string name="time_picker_increment_minute_button">मिनिट वाढवा</string>
+    <string name="time_picker_decrement_minute_button">मिनिट कमी करा</string>
+    <string name="time_picker_increment_hour_button">तास वाढवा</string>
+    <string name="time_picker_decrement_hour_button">तास कमी करा</string>
+    <string name="time_picker_increment_set_pm_button">PM सेट करा</string>
+    <string name="time_picker_decrement_set_am_button">AM सेट करा</string>
+    <string name="date_picker_prev_month_button">मागील महिना</string>
+    <string name="date_picker_next_month_button">पुढील महिना</string>
+    <string name="hour_picker_description">तास परिपत्रक स्लायडर</string>
+    <string name="minute_picker_description">मिनिटे परिपत्रक स्लायडर</string>
+    <string name="select_hours">तास निवडा</string>
+    <string name="select_minutes">मिनिटे निवडा</string>
+    <string name="select_day">महिना आणि दिवस निवडा</string>
+    <string name="select_year">वर्ष निवडा</string>
+    <string name="time_picker_hour_label">तास</string>
+    <string name="time_picker_minute_label">मिनिट</string>
+    <string name="time_picker_header_text">वेळ सेट करा</string>
+    <string name="time_picker_input_error">वैध वेळ प्रविष्‍ट करा</string>
+    <string name="time_picker_prompt_label">वेळ टाइप करा</string>
+    <string name="time_picker_text_input_mode_description">वेळ इनपुटसाठी मजकूर इनपुट मोडवर स्विच करा.</string>
+    <string name="time_picker_radial_mode_description">वेळेच्या इनपुटसाठी घड्याळ मोडवर स्विच करा.</string>
+</resources>

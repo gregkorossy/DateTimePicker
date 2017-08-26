@@ -1,0 +1,25 @@
+<resources>
+    <string name="number_picker_increment_button">Increase</string>
+    <string name="number_picker_decrement_button">Decrease</string>
+    <string name="time_picker_increment_minute_button">Increase minute</string>
+    <string name="time_picker_decrement_minute_button">Decrease minute</string>
+    <string name="time_picker_increment_hour_button">Increase hour</string>
+    <string name="time_picker_decrement_hour_button">Decrease hour</string>
+    <string name="time_picker_increment_set_pm_button">Set p.m.</string>
+    <string name="time_picker_decrement_set_am_button">Set a.m.</string>
+    <string name="date_picker_prev_month_button">Previous month</string>
+    <string name="date_picker_next_month_button">Next month</string>
+    <string name="hour_picker_description">Hours circular slider</string>
+    <string name="minute_picker_description">Minutes circular slider</string>
+    <string name="select_hours">Select hours</string>
+    <string name="select_minutes">Select minutes</string>
+    <string name="select_day">Select month and day</string>
+    <string name="select_year">Select year</string>
+    <string name="time_picker_hour_label">hour</string>
+    <string name="time_picker_minute_label">minute</string>
+    <string name="time_picker_header_text">Set time</string>
+    <string name="time_picker_input_error">Enter a valid time</string>
+    <string name="time_picker_prompt_label">Type in time</string>
+    <string name="time_picker_text_input_mode_description">Switch to text input mode for the time input.</string>
+    <string name="time_picker_radial_mode_description">Switch to clock mode for the time input.</string>
+</resources>

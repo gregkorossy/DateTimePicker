@@ -1,0 +1,25 @@
+<resources>
+    <string name="number_picker_increment_button">Handitu</string>
+    <string name="number_picker_decrement_button">Txikitu</string>
+    <string name="time_picker_increment_minute_button">Aurreratu minutu bat</string>
+    <string name="time_picker_decrement_minute_button">Atzeratu minutu bat</string>
+    <string name="time_picker_increment_hour_button">Aurreratu ordu bat</string>
+    <string name="time_picker_decrement_hour_button">Atzeratu ordu bat</string>
+    <string name="time_picker_increment_set_pm_button">Ezarri PM</string>
+    <string name="time_picker_decrement_set_am_button">Ezarri AM</string>
+    <string name="date_picker_prev_month_button">Aurreko hilabetea</string>
+    <string name="date_picker_next_month_button">Hurrengo hilabetea</string>
+    <string name="hour_picker_description">Ordua aukeratzeko ikuspegi zirkularra</string>
+    <string name="minute_picker_description">Minutuak aukeratzeko ikuspegi zirkularra</string>
+    <string name="select_hours">Hautatu orduak</string>
+    <string name="select_minutes">Hautatu minutuak</string>
+    <string name="select_day">Hautatu hilabetea eta eguna</string>
+    <string name="select_year">Hautatu urtea</string>
+    <string name="time_picker_hour_label">orduak</string>
+    <string name="time_picker_minute_label">minutuak</string>
+    <string name="time_picker_header_text">Zehaztu ordua</string>
+    <string name="time_picker_input_error">Idatzi balio duen ordu bat</string>
+    <string name="time_picker_prompt_label">Idatzi ordua</string>
+    <string name="time_picker_text_input_mode_description">Aldatu testu modura ordua zehazteko.</string>
+    <string name="time_picker_radial_mode_description">Aldatu erloju modura ordua zehazteko.</string>
+</resources>

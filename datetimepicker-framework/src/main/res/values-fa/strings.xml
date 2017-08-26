@@ -1,0 +1,25 @@
+<resources>
+    <string name="number_picker_increment_button">افزایش</string>
+    <string name="number_picker_decrement_button">کاهش</string>
+    <string name="time_picker_increment_minute_button">افزایش دقیقه</string>
+    <string name="time_picker_decrement_minute_button">کاهش دقیقه</string>
+    <string name="time_picker_increment_hour_button">افزایش ساعت</string>
+    <string name="time_picker_decrement_hour_button">کاهش ساعت</string>
+    <string name="time_picker_increment_set_pm_button">تنظیم ب.ظ</string>
+    <string name="time_picker_decrement_set_am_button">تنظیم ق.ظ</string>
+    <string name="date_picker_prev_month_button">ماه قبل</string>
+    <string name="date_picker_next_month_button">ماه بعد</string>
+    <string name="hour_picker_description">لغزنده دایره‌ای ساعت</string>
+    <string name="minute_picker_description">لغزنده دایره‌ای دقیقه</string>
+    <string name="select_hours">انتخاب ساعت</string>
+    <string name="select_minutes">انتخاب دقیقه</string>
+    <string name="select_day">انتخاب ماه و روز</string>
+    <string name="select_year">انتخاب سال</string>
+    <string name="time_picker_hour_label">ساعت</string>
+    <string name="time_picker_minute_label">دقیقه</string>
+    <string name="time_picker_header_text">تنظیم زمان</string>
+    <string name="time_picker_input_error">زمان معتبری وارد کنید</string>
+    <string name="time_picker_prompt_label">زمان را تایپ کنید</string>
+    <string name="time_picker_text_input_mode_description">برای وارد کردن زمان، به حالت وارد کردن نوشتار تغییر وضعیت دهید.</string>
+    <string name="time_picker_radial_mode_description">برای وارد کردن زمان، به حالت ساعت تغییر وضعیت دهید.</string>
+</resources>

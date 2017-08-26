@@ -1,0 +1,25 @@
+<resources>
+    <string name="number_picker_increment_button">Khulisa</string>
+    <string name="number_picker_decrement_button">Yehlisa</string>
+    <string name="time_picker_increment_minute_button">Khulisa iminithi</string>
+    <string name="time_picker_decrement_minute_button">Yehlisa iminithi</string>
+    <string name="time_picker_increment_hour_button">Khulisa ihora</string>
+    <string name="time_picker_decrement_hour_button">Yehlisa ihora</string>
+    <string name="time_picker_increment_set_pm_button">Setha Ntambama</string>
+    <string name="time_picker_decrement_set_am_button">Setha Ekuseni</string>
+    <string name="date_picker_prev_month_button">Inyanga edlule</string>
+    <string name="date_picker_next_month_button">Inyanga ezayo</string>
+    <string name="hour_picker_description">Amahora weslayidi esiyindingilizi</string>
+    <string name="minute_picker_description">Amaminithi weslayidi esiyindingilizi</string>
+    <string name="select_hours">Khetha amahora</string>
+    <string name="select_minutes">Khetha amaminithi</string>
+    <string name="select_day">Khetha inyanga nosuku</string>
+    <string name="select_year">Khetha unyaka</string>
+    <string name="time_picker_hour_label">ihora</string>
+    <string name="time_picker_minute_label">minithi</string>
+    <string name="time_picker_header_text">Setha isikhathi</string>
+    <string name="time_picker_input_error">Faka igama elivumelekile</string>
+    <string name="time_picker_prompt_label">Thayipha isikhathi</string>
+    <string name="time_picker_text_input_mode_description">Shintshela kumodi yokufaka umbhalo ngokufaka isikhathi.</string>
+    <string name="time_picker_radial_mode_description">Shintshela kumodi yewashi ngokufakwa kwesikhathi.</string>
+</resources>

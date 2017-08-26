@@ -1,0 +1,25 @@
+<resources>
+    <string name="number_picker_increment_button">വർദ്ധിപ്പിക്കുക</string>
+    <string name="number_picker_decrement_button">കുറയ്‌ക്കുക</string>
+    <string name="time_picker_increment_minute_button">മിനിറ്റ് വർദ്ധിപ്പിക്കുക</string>
+    <string name="time_picker_decrement_minute_button">മിനിറ്റ് കുറയ്‌ക്കുക</string>
+    <string name="time_picker_increment_hour_button">മണിക്കൂർ വർദ്ധിപ്പിക്കുക</string>
+    <string name="time_picker_decrement_hour_button">മണിക്കൂർ കുറയ്‌ക്കുക</string>
+    <string name="time_picker_increment_set_pm_button">PM സജ്ജീകരിക്കുക</string>
+    <string name="time_picker_decrement_set_am_button">AM സജ്ജീകരിക്കുക</string>
+    <string name="date_picker_prev_month_button">മുമ്പത്തെ മാസം</string>
+    <string name="date_picker_next_month_button">അടുത്ത മാസം</string>
+    <string name="hour_picker_description">ചാക്രികമായി മണിക്കൂറുകൾ ദൃശ്യമാകുന്ന സ്ലൈഡർ</string>
+    <string name="minute_picker_description">ചാക്രികമായി മിനിറ്റുകൾ ദൃശ്യമാകുന്ന സ്ലൈഡർ</string>
+    <string name="select_hours">മണിക്കൂർ തിരഞ്ഞെടുക്കുക</string>
+    <string name="select_minutes">മിനിറ്റ് തിരഞ്ഞെടുക്കുക</string>
+    <string name="select_day">മാസവും ദിവസവും തിരഞ്ഞെടുക്കുക</string>
+    <string name="select_year">വർഷം തിരഞ്ഞെടുക്കുക</string>
+    <string name="time_picker_hour_label">മണി.</string>
+    <string name="time_picker_minute_label">മിനിറ്റ്</string>
+    <string name="time_picker_header_text">സമയം സജ്ജീകരിക്കുക</string>
+    <string name="time_picker_input_error">ശരിയായ സമയം ‌നൽകുക</string>
+    <string name="time_picker_prompt_label">സമയത്തിൽ ടൈപ്പുചെയ്യുക</string>
+    <string name="time_picker_text_input_mode_description">സമയം നൽകുന്നതിന് ടെക്സ്റ്റ് ഇൻപുട്ട് ‌മോ‌ഡിലേക്ക് ‌മാറുക.</string>
+    <string name="time_picker_radial_mode_description">‌സമയം നൽകുന്നതിന് ക്ലോക്ക് മോഡിലേക്ക് ‌മാറുക.</string>
+</resources>

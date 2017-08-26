@@ -1,0 +1,25 @@
+<resources>
+    <string name="number_picker_increment_button">გაზრდა</string>
+    <string name="number_picker_decrement_button">შემცირება</string>
+    <string name="time_picker_increment_minute_button">ერთი წუთით წინ</string>
+    <string name="time_picker_decrement_minute_button">წუთების შემცირება</string>
+    <string name="time_picker_increment_hour_button">საათის მომატება</string>
+    <string name="time_picker_decrement_hour_button">საათით უკან</string>
+    <string name="time_picker_increment_set_pm_button">PM-ის დაყენება</string>
+    <string name="time_picker_decrement_set_am_button">AM-ის დაყენება</string>
+    <string name="date_picker_prev_month_button">წინა თვე</string>
+    <string name="date_picker_next_month_button">მომდევნო თვე</string>
+    <string name="hour_picker_description">საათების წრიული სლაიდერი</string>
+    <string name="minute_picker_description">წუთების წრიული სლაიდერი</string>
+    <string name="select_hours">აირჩიეთ საათები</string>
+    <string name="select_minutes">აირჩიეთ წუთები</string>
+    <string name="select_day">აირჩიეთ თვე და რიცხვი</string>
+    <string name="select_year">აირჩიეთ წელი</string>
+    <string name="time_picker_hour_label">საათი</string>
+    <string name="time_picker_minute_label">წუთი</string>
+    <string name="time_picker_header_text">დროის დაყენება</string>
+    <string name="time_picker_input_error">შეიყვანეთ სწორი დრო</string>
+    <string name="time_picker_prompt_label">აკრიფეთ დრო</string>
+    <string name="time_picker_text_input_mode_description">დროის შეყვანისთვის ტექსტის შეყვანის რეჟიმზე გადართვა.</string>
+    <string name="time_picker_radial_mode_description">დროის შეყვანისთვის საათის რეჟიმზე გადართვა.</string>
+</resources>

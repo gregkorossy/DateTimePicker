@@ -1,0 +1,25 @@
+<resources>
+    <string name="number_picker_increment_button">Ավելացնել</string>
+    <string name="number_picker_decrement_button">Նվազեցնել</string>
+    <string name="time_picker_increment_minute_button">Աճեցնել րոպեն</string>
+    <string name="time_picker_decrement_minute_button">Նվազեցնել րոպեն</string>
+    <string name="time_picker_increment_hour_button">Աճեցնել ժամը</string>
+    <string name="time_picker_decrement_hour_button">Նվազեցնել ժամը</string>
+    <string name="time_picker_increment_set_pm_button">Դնել PM</string>
+    <string name="time_picker_decrement_set_am_button">Դնել AM</string>
+    <string name="date_picker_prev_month_button">Նախորդ ամիս</string>
+    <string name="date_picker_next_month_button">Հաջորդ ամիս</string>
+    <string name="hour_picker_description">Ժամերի ընտրություն թվատախտակից</string>
+    <string name="minute_picker_description">Րոպեների ընտրություն թվատախտակից</string>
+    <string name="select_hours">Ընտրեք ժամը</string>
+    <string name="select_minutes">Ընտրեք րոպեն</string>
+    <string name="select_day">Ընտրեք ամիսն ու օրը</string>
+    <string name="select_year">Ընտրեք տարին</string>
+    <string name="time_picker_hour_label">ժամ</string>
+    <string name="time_picker_minute_label">րոպե</string>
+    <string name="time_picker_header_text">Ժամը</string>
+    <string name="time_picker_input_error">Մուտքագրեք վավեր ժամ</string>
+    <string name="time_picker_prompt_label">Մուտքագրեք ժամը</string>
+    <string name="time_picker_text_input_mode_description">Ժամը մուտքագրելու համար միացրեք տեքստի մուտքագրման ռեժիմը:</string>
+    <string name="time_picker_radial_mode_description">Ժամը մուտքագրելու համար միացրեք ժամացույցի ռեժիմը:</string>
+</resources>

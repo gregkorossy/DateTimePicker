@@ -1,0 +1,25 @@
+<resources>
+    <string name="number_picker_increment_button">Suurendamine</string>
+    <string name="number_picker_decrement_button">Vähendamine</string>
+    <string name="time_picker_increment_minute_button">Minutite suurendamine</string>
+    <string name="time_picker_decrement_minute_button">Minutite vähendamine</string>
+    <string name="time_picker_increment_hour_button">Tundide suurendamine</string>
+    <string name="time_picker_decrement_hour_button">Tundide vähendamine</string>
+    <string name="time_picker_increment_set_pm_button">PM-i seadmine</string>
+    <string name="time_picker_decrement_set_am_button">AM-i seadmine</string>
+    <string name="date_picker_prev_month_button">Eelmine kuu</string>
+    <string name="date_picker_next_month_button">Järgmine kuu</string>
+    <string name="hour_picker_description">Ringikujuline tunniliugur</string>
+    <string name="minute_picker_description">Ringikujuline minutiliugur</string>
+    <string name="select_hours">Tundide valimine</string>
+    <string name="select_minutes">Minutite valimine</string>
+    <string name="select_day">Kuu ja päeva valimine</string>
+    <string name="select_year">Aasta valimine</string>
+    <string name="time_picker_hour_label">tund</string>
+    <string name="time_picker_minute_label">minut</string>
+    <string name="time_picker_header_text">Kellaaja määramine</string>
+    <string name="time_picker_input_error">Sisestage sobiv kellaaeg</string>
+    <string name="time_picker_prompt_label">Sisestage kellaaeg</string>
+    <string name="time_picker_text_input_mode_description">Aktiveerige kellaaja sisestamiseks tekstisisestusrežiim.</string>
+    <string name="time_picker_radial_mode_description">Aktiveerige kellaaja sisestamiseks kellarežiim.</string>
+</resources>

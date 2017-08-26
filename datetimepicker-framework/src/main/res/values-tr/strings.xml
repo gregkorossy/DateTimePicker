@@ -1,0 +1,25 @@
+<resources>
+    <string name="number_picker_increment_button">Artır</string>
+    <string name="number_picker_decrement_button">Azalt</string>
+    <string name="time_picker_increment_minute_button">Dakikayı artır</string>
+    <string name="time_picker_decrement_minute_button">Dakikayı azalt</string>
+    <string name="time_picker_increment_hour_button">Saati artır</string>
+    <string name="time_picker_decrement_hour_button">Saati azalt</string>
+    <string name="time_picker_increment_set_pm_button">ÖS değerini ayarla</string>
+    <string name="time_picker_decrement_set_am_button">ÖÖ değerini ayarla</string>
+    <string name="date_picker_prev_month_button">Önceki ay</string>
+    <string name="date_picker_next_month_button">Sonraki ay</string>
+    <string name="hour_picker_description">Saat kaydırma çemberi</string>
+    <string name="minute_picker_description">Dakika kaydırma çemberi</string>
+    <string name="select_hours">Saati seçin</string>
+    <string name="select_minutes">Dakikayı seçin</string>
+    <string name="select_day">Ayı ve günü seçin</string>
+    <string name="select_year">Yılı seçin</string>
+    <string name="time_picker_hour_label">saat</string>
+    <string name="time_picker_minute_label">dakika</string>
+    <string name="time_picker_header_text">Saati ayarlayın</string>
+    <string name="time_picker_input_error">Geçerli bir saat girin</string>
+    <string name="time_picker_prompt_label">Zamanı yazın</string>
+    <string name="time_picker_text_input_mode_description">Zaman girişi için metin girişi moduna geçin.</string>
+    <string name="time_picker_radial_mode_description">Zaman girişi için saat moduna geçin.</string>
+</resources>

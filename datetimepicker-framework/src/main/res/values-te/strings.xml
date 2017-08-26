@@ -1,0 +1,25 @@
+<resources>
+    <string name="number_picker_increment_button">పెంచు</string>
+    <string name="number_picker_decrement_button">తగ్గించు</string>
+    <string name="time_picker_increment_minute_button">నిమిషాన్ని పెంచు</string>
+    <string name="time_picker_decrement_minute_button">నిమిషాన్ని తగ్గించు</string>
+    <string name="time_picker_increment_hour_button">గంటను పెంచు</string>
+    <string name="time_picker_decrement_hour_button">గంటను తగ్గించు</string>
+    <string name="time_picker_increment_set_pm_button">PMని సెట్ చేయి</string>
+    <string name="time_picker_decrement_set_am_button">AMను సెట్ చేయండి</string>
+    <string name="date_picker_prev_month_button">మునుపటి నెల</string>
+    <string name="date_picker_next_month_button">తదుపరి నెల</string>
+    <string name="hour_picker_description">గంటల వృత్తాకార స్లయిడర్</string>
+    <string name="minute_picker_description">నిమిషాల వృత్తాకార స్లయిడర్</string>
+    <string name="select_hours">గంటలను ఎంచుకోండి</string>
+    <string name="select_minutes">నిమిషాలను ఎంచుకోండి</string>
+    <string name="select_day">నెల మరియు రోజును ఎంచుకోండి</string>
+    <string name="select_year">సంవత్సరాన్ని ఎంచుకోండి</string>
+    <string name="time_picker_hour_label">గంట</string>
+    <string name="time_picker_minute_label">నిమిషం</string>
+    <string name="time_picker_header_text">సమయాన్ని సెట్ చేయండి</string>
+    <string name="time_picker_input_error">చెల్లుబాటు అయ్యే సమయాన్ని నమోదు చేయండి</string>
+    <string name="time_picker_prompt_label">సమయంలో టైప్ చేయండి</string>
+    <string name="time_picker_text_input_mode_description">సమయాన్ని నమోదు చేయడం కోసం వచన నమోదు మోడ్‌కి మారండి.</string>
+    <string name="time_picker_radial_mode_description">సమయాన్ని నమోదు చేయడం కోసం గడియారం మోడ్‌కు మారండి.</string>
+</resources>

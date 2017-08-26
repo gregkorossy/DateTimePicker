@@ -1,0 +1,25 @@
+<resources>
+    <string name="number_picker_increment_button">වැඩි කරන්න</string>
+    <string name="number_picker_decrement_button">අඩු කරන්න</string>
+    <string name="time_picker_increment_minute_button">මිනිත්තුවක් වැඩි කරන්න</string>
+    <string name="time_picker_decrement_minute_button">මිනිත්තුව අඩු කරන්න</string>
+    <string name="time_picker_increment_hour_button">පැය වැඩිකරන්න</string>
+    <string name="time_picker_decrement_hour_button">පැය අඩුකරන්න</string>
+    <string name="time_picker_increment_set_pm_button">ප.ව.සකසන්න</string>
+    <string name="time_picker_decrement_set_am_button">පෙ.ව. සකස් කිරීම</string>
+    <string name="date_picker_prev_month_button">පෙර මාසය</string>
+    <string name="date_picker_next_month_button">ඊළඟ මාසය</string>
+    <string name="hour_picker_description">පැය කවාකාර සර්පනය</string>
+    <string name="minute_picker_description">මිනිත්තු කවාකාර සර්පනය</string>
+    <string name="select_hours">පැය තෝරන්න</string>
+    <string name="select_minutes">මිනිත්තු තෝරන්න</string>
+    <string name="select_day">මාසය සහ දිනය තෝරන්න</string>
+    <string name="select_year">වසර තෝරන්න</string>
+    <string name="time_picker_hour_label">පැය</string>
+    <string name="time_picker_minute_label">විනාඩිය</string>
+    <string name="time_picker_header_text">වේලාව සකසන්න</string>
+    <string name="time_picker_input_error">වලංගු වේලාවක් ඇතුළු කරන්න</string>
+    <string name="time_picker_prompt_label">වේලාව ටයිප් කරන්න</string>
+    <string name="time_picker_text_input_mode_description">වේලා ආදානය සඳහා ආදාන ප්‍රකාරය වෙත මාරු වෙන්න.</string>
+    <string name="time_picker_radial_mode_description">වේලා ආදානය සඳහා ඔරලෝසු ප්‍රකාරය වෙත මාරු වෙන්න.</string>
+</resources>

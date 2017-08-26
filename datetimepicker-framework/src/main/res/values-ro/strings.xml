@@ -1,0 +1,25 @@
+<resources>
+    <string name="number_picker_increment_button">Creșteți</string>
+    <string name="number_picker_decrement_button">Reduceți</string>
+    <string name="time_picker_increment_minute_button">Creșteți valoarea pentru minute</string>
+    <string name="time_picker_decrement_minute_button">Reduceți valoarea pentru minute</string>
+    <string name="time_picker_increment_hour_button">Creșteți valoarea pentru oră</string>
+    <string name="time_picker_decrement_hour_button">Reduceți valoarea pentru oră</string>
+    <string name="time_picker_increment_set_pm_button">Setați valoarea PM</string>
+    <string name="time_picker_decrement_set_am_button">Setați valoarea AM</string>
+    <string name="date_picker_prev_month_button">Luna trecută</string>
+    <string name="date_picker_next_month_button">Luna viitoare</string>
+    <string name="hour_picker_description">Selector circular pentru ore</string>
+    <string name="minute_picker_description">Selector circular pentru minute</string>
+    <string name="select_hours">Selectați orele</string>
+    <string name="select_minutes">Selectați minutele</string>
+    <string name="select_day">Selectați luna și ziua</string>
+    <string name="select_year">Selectați anul</string>
+    <string name="time_picker_hour_label">oră</string>
+    <string name="time_picker_minute_label">minut</string>
+    <string name="time_picker_header_text">Setați ora</string>
+    <string name="time_picker_input_error">Introduceți o oră validă</string>
+    <string name="time_picker_prompt_label">Introduceți ora</string>
+    <string name="time_picker_text_input_mode_description">Pentru a introduce ora, comutați la modul de introducere a textului.</string>
+    <string name="time_picker_radial_mode_description">Pentru a introduce ora, comutați la modul ceas.</string>
+</resources>

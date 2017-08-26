@@ -1,0 +1,25 @@
+<resources>
+    <string name="number_picker_increment_button">Ongeza</string>
+    <string name="number_picker_decrement_button">Punguza</string>
+    <string name="time_picker_increment_minute_button">Ongeza dakika</string>
+    <string name="time_picker_decrement_minute_button">Punguza dakika</string>
+    <string name="time_picker_increment_hour_button">Ongeza saa</string>
+    <string name="time_picker_decrement_hour_button">Punguza saa</string>
+    <string name="time_picker_increment_set_pm_button">Seti PM</string>
+    <string name="time_picker_decrement_set_am_button">Seti AM</string>
+    <string name="date_picker_prev_month_button">Mwezi uliopita</string>
+    <string name="date_picker_next_month_button">Mwezi ujao</string>
+    <string name="hour_picker_description">Kitelezi cha mviringo wa saa</string>
+    <string name="minute_picker_description">Kitelezi cha mviringo wa dakika</string>
+    <string name="select_hours">Chagua saa</string>
+    <string name="select_minutes">Chagua dakika</string>
+    <string name="select_day">Chagua mwezi na siku</string>
+    <string name="select_year">Chagua mwaka</string>
+    <string name="time_picker_hour_label">saa</string>
+    <string name="time_picker_minute_label">dakika</string>
+    <string name="time_picker_header_text">Weka saa</string>
+    <string name="time_picker_input_error">Weka muda sahihi</string>
+    <string name="time_picker_prompt_label">Andika wakati</string>
+    <string name="time_picker_text_input_mode_description">Badilisha iwe katika hali ya maandishi wakati wa kuweka muda.</string>
+    <string name="time_picker_radial_mode_description">Badilisha umbo liwe la saa ya mishale wakati wa kuweka muda.</string>
+</resources>

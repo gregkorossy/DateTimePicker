@@ -1,0 +1,25 @@
+<resources>
+    <string name="number_picker_increment_button">Öka</string>
+    <string name="number_picker_decrement_button">Minska</string>
+    <string name="time_picker_increment_minute_button">Öka minuter</string>
+    <string name="time_picker_decrement_minute_button">Minska minuter</string>
+    <string name="time_picker_increment_hour_button">Öka timmar</string>
+    <string name="time_picker_decrement_hour_button">Minska timmar</string>
+    <string name="time_picker_increment_set_pm_button">Ange em</string>
+    <string name="time_picker_decrement_set_am_button">Ange fm</string>
+    <string name="date_picker_prev_month_button">Föregående månad</string>
+    <string name="date_picker_next_month_button">Nästa månad</string>
+    <string name="hour_picker_description">Cirkelreglage för timmar</string>
+    <string name="minute_picker_description">Cirkelreglage för minuter</string>
+    <string name="select_hours">Välj timmar</string>
+    <string name="select_minutes">Välj minuter</string>
+    <string name="select_day">Välj månad och dag</string>
+    <string name="select_year">Välj år</string>
+    <string name="time_picker_hour_label">timme</string>
+    <string name="time_picker_minute_label">minut</string>
+    <string name="time_picker_header_text">Ange tid</string>
+    <string name="time_picker_input_error">Ange en giltig tid</string>
+    <string name="time_picker_prompt_label">Ange tid</string>
+    <string name="time_picker_text_input_mode_description">Byt till textinmatningsläget och ange tid.</string>
+    <string name="time_picker_radial_mode_description">Byt till klockläget och ange tid.</string>
+</resources>

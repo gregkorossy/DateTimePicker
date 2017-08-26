@@ -1,0 +1,25 @@
+<resources>
+    <string name="number_picker_increment_button">Увеличить</string>
+    <string name="number_picker_decrement_button">Уменьшить</string>
+    <string name="time_picker_increment_minute_button">На минуту вперед</string>
+    <string name="time_picker_decrement_minute_button">На минуту назад</string>
+    <string name="time_picker_increment_hour_button">На час вперед</string>
+    <string name="time_picker_decrement_hour_button">На час назад</string>
+    <string name="time_picker_increment_set_pm_button">Установить время после полудня</string>
+    <string name="time_picker_decrement_set_am_button">Установить время до полудня</string>
+    <string name="date_picker_prev_month_button">Прошлый месяц</string>
+    <string name="date_picker_next_month_button">Следующий месяц</string>
+    <string name="hour_picker_description">Выбор часов на циферблате</string>
+    <string name="minute_picker_description">Выбор минут на циферблате</string>
+    <string name="select_hours">Выберите часы</string>
+    <string name="select_minutes">Выберите минуты</string>
+    <string name="select_day">Выберите месяц и число</string>
+    <string name="select_year">Выберите год</string>
+    <string name="time_picker_hour_label">ч.</string>
+    <string name="time_picker_minute_label">мин.</string>
+    <string name="time_picker_header_text">Время</string>
+    <string name="time_picker_input_error">Указано недопустимое время.</string>
+    <string name="time_picker_prompt_label">Введите время</string>
+    <string name="time_picker_text_input_mode_description">Чтобы ввести время, перейдите в режим ввода текста.</string>
+    <string name="time_picker_radial_mode_description">Чтобы ввести время, перейдите в режим часов.</string>
+</resources>

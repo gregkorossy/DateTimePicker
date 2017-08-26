@@ -1,0 +1,25 @@
+<resources>
+    <string name="number_picker_increment_button">বাড়ান</string>
+    <string name="number_picker_decrement_button">কমান</string>
+    <string name="time_picker_increment_minute_button">মিনিট বাড়ান</string>
+    <string name="time_picker_decrement_minute_button">মিনিট কমান</string>
+    <string name="time_picker_increment_hour_button">ঘণ্টা বাড়ান</string>
+    <string name="time_picker_decrement_hour_button">ঘণ্টা কমান</string>
+    <string name="time_picker_increment_set_pm_button">PM সেট করুন</string>
+    <string name="time_picker_decrement_set_am_button">AM সেট করুন</string>
+    <string name="date_picker_prev_month_button">পূর্ববর্তী মাস</string>
+    <string name="date_picker_next_month_button">পরের মাস</string>
+    <string name="hour_picker_description">বৃত্তাকার ঘণ্টা নির্বাচকের স্লাইডার</string>
+    <string name="minute_picker_description">বৃত্তাকার মিনিট নির্বাচকের স্লাইডার</string>
+    <string name="select_hours">ঘণ্টা নির্বাচন করুন</string>
+    <string name="select_minutes">মিনিট নির্বাচন করুন</string>
+    <string name="select_day">মাস এবং দিন নির্বাচন করুন</string>
+    <string name="select_year">বছর নির্বাচন করুন</string>
+    <string name="time_picker_hour_label">ঘন্টা</string>
+    <string name="time_picker_minute_label">মিনিট</string>
+    <string name="time_picker_header_text">সময় সেট করুন</string>
+    <string name="time_picker_input_error">সঠিক সময় দিন</string>
+    <string name="time_picker_prompt_label">সময় টাইপ করুন</string>
+    <string name="time_picker_text_input_mode_description">সময় ইনপুট দেওয়ার জন্য পাঠ্য ইনপুট মোডে যান।</string>
+    <string name="time_picker_radial_mode_description">সময় ইনপুট দেওয়ার জন্য ঘড়ি মোডে যান।</string>
+</resources>

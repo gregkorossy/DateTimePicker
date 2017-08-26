@@ -1,0 +1,25 @@
+<resources>
+    <string name="number_picker_increment_button">Ko‘paytirish</string>
+    <string name="number_picker_decrement_button">Kamaytirish</string>
+    <string name="time_picker_increment_minute_button">Daqiqani ko‘paytirish</string>
+    <string name="time_picker_decrement_minute_button">Daqiqani kamaytirish</string>
+    <string name="time_picker_increment_hour_button">Soatni ko‘paytirish</string>
+    <string name="time_picker_decrement_hour_button">Soatni kamaytirish</string>
+    <string name="time_picker_increment_set_pm_button">PM o‘rnatish</string>
+    <string name="time_picker_decrement_set_am_button">AM o‘rnatish</string>
+    <string name="date_picker_prev_month_button">Avvalgi oy</string>
+    <string name="date_picker_next_month_button">Keyingi oy</string>
+    <string name="hour_picker_description">Doiradan soatni tanlang</string>
+    <string name="minute_picker_description">Doiradan daqiqani tanlang</string>
+    <string name="select_hours">Soatlarni tanlash</string>
+    <string name="select_minutes">Daqiqalarni tanlash</string>
+    <string name="select_day">Oy va kunni tanlash</string>
+    <string name="select_year">Yilni tanlash</string>
+    <string name="time_picker_hour_label">soat</string>
+    <string name="time_picker_minute_label">daqiqa</string>
+    <string name="time_picker_header_text">Vaqtni sozlash</string>
+    <string name="time_picker_input_error">Vaqt xato ko‘rsatilgan</string>
+    <string name="time_picker_prompt_label">Vaqtni kiriting</string>
+    <string name="time_picker_text_input_mode_description">Vaqtni kiritish uchun matn kiritish rejimiga o‘ting.</string>
+    <string name="time_picker_radial_mode_description">Vaqtni kiritish uchun soat rejimiga o‘ting.</string>
+</resources>

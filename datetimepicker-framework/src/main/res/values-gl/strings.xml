@@ -1,0 +1,25 @@
+<resources>
+    <string name="number_picker_increment_button">Aumentar</string>
+    <string name="number_picker_decrement_button">Reducir</string>
+    <string name="time_picker_increment_minute_button">Aumentar o minuto</string>
+    <string name="time_picker_decrement_minute_button">Reducir o minuto</string>
+    <string name="time_picker_increment_hour_button">Aumentar a hora</string>
+    <string name="time_picker_decrement_hour_button">Reducir a hora</string>
+    <string name="time_picker_increment_set_pm_button">Establecer PM</string>
+    <string name="time_picker_decrement_set_am_button">Establecer AM</string>
+    <string name="date_picker_prev_month_button">Mes anterior</string>
+    <string name="date_picker_next_month_button">Mes seguinte</string>
+    <string name="hour_picker_description">Control desprazable circular das horas</string>
+    <string name="minute_picker_description">Control desprazable circular dos minutos</string>
+    <string name="select_hours">Seleccionar horas</string>
+    <string name="select_minutes">Seleccionar minutos</string>
+    <string name="select_day">Seleccionar mes e día</string>
+    <string name="select_year">Seleccionar ano</string>
+    <string name="time_picker_hour_label">hora</string>
+    <string name="time_picker_minute_label">minuto</string>
+    <string name="time_picker_header_text">Definir hora</string>
+    <string name="time_picker_input_error">Introduce unha hora válida</string>
+    <string name="time_picker_prompt_label">Escribe a hora</string>
+    <string name="time_picker_text_input_mode_description">Cambia ao modo de entrada de texto para introducir a hora.</string>
+    <string name="time_picker_radial_mode_description">Cambiar ao modo de reloxo para introducir a hora.</string>
+</resources>

@@ -1,0 +1,25 @@
+<resources>
+    <string name="number_picker_increment_button">Verlängern</string>
+    <string name="number_picker_decrement_button">Verringern</string>
+    <string name="time_picker_increment_minute_button">Minuten verlängern</string>
+    <string name="time_picker_decrement_minute_button">Minuten verringern</string>
+    <string name="time_picker_increment_hour_button">Stunden verlängern</string>
+    <string name="time_picker_decrement_hour_button">Stunden verringern</string>
+    <string name="time_picker_increment_set_pm_button">Zeit festlegen</string>
+    <string name="time_picker_decrement_set_am_button">Zeit festlegen</string>
+    <string name="date_picker_prev_month_button">Vormonat</string>
+    <string name="date_picker_next_month_button">Nächster Monat</string>
+    <string name="hour_picker_description">Kreisförmiger Schieberegler für Stunden</string>
+    <string name="minute_picker_description">Kreisförmiger Schieberegler für Minuten</string>
+    <string name="select_hours">Stunden auswählen</string>
+    <string name="select_minutes">Minuten auswählen</string>
+    <string name="select_day">Monat und Tag auswählen</string>
+    <string name="select_year">Jahr auswählen</string>
+    <string name="time_picker_hour_label">Stunde</string>
+    <string name="time_picker_minute_label">Minute</string>
+    <string name="time_picker_header_text">Uhrzeit einstellen</string>
+    <string name="time_picker_input_error">Gib eine gültige Uhrzeit ein</string>
+    <string name="time_picker_prompt_label">Uhrzeit eingeben</string>
+    <string name="time_picker_text_input_mode_description">In den Texteingabemodus wechseln, um die Uhrzeit einzugeben.</string>
+    <string name="time_picker_radial_mode_description">In den Uhrzeitmodus wechseln, um die Uhrzeit einzugeben.</string>
+</resources>

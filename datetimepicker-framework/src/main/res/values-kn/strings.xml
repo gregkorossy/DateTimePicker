@@ -1,0 +1,25 @@
+<resources>
+    <string name="number_picker_increment_button">ಹೆಚ್ಚಿಸಿ</string>
+    <string name="number_picker_decrement_button">ಕಡಿಮೆ ಮಾಡಿ</string>
+    <string name="time_picker_increment_minute_button">ನಿಮಿಷವನ್ನು ಹೆಚ್ಚಿಸಿ</string>
+    <string name="time_picker_decrement_minute_button">ನಿಮಿಷವನ್ನು ಕಡಿಮೆ ಮಾಡಿ</string>
+    <string name="time_picker_increment_hour_button">ಗಂಟೆಯನ್ನು ಹೆಚ್ಚಿಸಿ</string>
+    <string name="time_picker_decrement_hour_button">ಗಂಟೆಯನ್ನು ಕಡಿಮೆ ಮಾಡಿ</string>
+    <string name="time_picker_increment_set_pm_button">PM ಹೊಂದಿಸು</string>
+    <string name="time_picker_decrement_set_am_button">AM ಹೊಂದಿಸಿ</string>
+    <string name="date_picker_prev_month_button">ಹಿಂದಿನ ತಿಂಗಳು</string>
+    <string name="date_picker_next_month_button">ಮುಂದಿನ ತಿಂಗಳು</string>
+    <string name="hour_picker_description">ಗಂಟೆಗಳ ವೃತ್ತಾಕಾರ ಸ್ಲೈಡರ್</string>
+    <string name="minute_picker_description">ನಿಮಿಷಗಳ ವೃತ್ತಾಕಾರ ಸ್ಲೈಡರ್</string>
+    <string name="select_hours">ಗಂಟೆಗಳನ್ನು ಆಯ್ಕೆಮಾಡಿ</string>
+    <string name="select_minutes">ನಿಮಿಷಗಳನ್ನು ಆಯ್ಕೆಮಾಡಿ</string>
+    <string name="select_day">ತಿಂಗಳು ಮತ್ತು ದಿನವನ್ನು ಆಯ್ಕೆಮಾಡಿ</string>
+    <string name="select_year">ವರ್ಷವನ್ನು ಆಯ್ಕೆಮಾಡಿ</string>
+    <string name="time_picker_hour_label">ಗಂಟೆ</string>
+    <string name="time_picker_minute_label">ನಿಮಿಷ</string>
+    <string name="time_picker_header_text">ಸಮಯವನ್ನು ಹೊಂದಿಸಿ</string>
+    <string name="time_picker_input_error">ಮಾನ್ಯವಾದ ಸಮಯವನ್ನು ನಮೂದಿಸಿ</string>
+    <string name="time_picker_prompt_label">ಸಮಯದಲ್ಲಿ ಟೈಪ್ ಮಾಡಿ</string>
+    <string name="time_picker_text_input_mode_description">ಸಮಯವನ್ನು ನಮೂದಿಸಲು ಪಠ್ಯದ ನಮೂನೆಗೆ ಬದಲಿಸಿ.</string>
+    <string name="time_picker_radial_mode_description">ಸಮಯವನ್ನು ನಮೂದಿಸಲು ಗಡಿಯಾರದ ನಮೂನೆಗೆ ಬದಲಿಸಿ.</string>
+</resources>

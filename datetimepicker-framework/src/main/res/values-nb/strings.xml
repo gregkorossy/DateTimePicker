@@ -1,0 +1,25 @@
+<resources>
+    <string name="number_picker_increment_button">Øk</string>
+    <string name="number_picker_decrement_button">Reduser</string>
+    <string name="time_picker_increment_minute_button">Øk minutter</string>
+    <string name="time_picker_decrement_minute_button">Reduser minutter</string>
+    <string name="time_picker_increment_hour_button">Øk timer</string>
+    <string name="time_picker_decrement_hour_button">Reduser timer</string>
+    <string name="time_picker_increment_set_pm_button">Angi p.m.</string>
+    <string name="time_picker_decrement_set_am_button">Angi a.m.</string>
+    <string name="date_picker_prev_month_button">Forrige måned</string>
+    <string name="date_picker_next_month_button">Neste måned</string>
+    <string name="hour_picker_description">Sirkulær glidebryter for timer</string>
+    <string name="minute_picker_description">Sirkulær glidebryter for minutter</string>
+    <string name="select_hours">Angi timer</string>
+    <string name="select_minutes">Angi minutter</string>
+    <string name="select_day">Velg måneden og dagen</string>
+    <string name="select_year">Velg året</string>
+    <string name="time_picker_hour_label">time</string>
+    <string name="time_picker_minute_label">minutt</string>
+    <string name="time_picker_header_text">Still klokken</string>
+    <string name="time_picker_input_error">Angi et gyldig klokkeslett</string>
+    <string name="time_picker_prompt_label">Skriv hva klokken er</string>
+    <string name="time_picker_text_input_mode_description">Bytt til tekstinndatamodus for tidsinndata.</string>
+    <string name="time_picker_radial_mode_description">Bytt til klokkemodus for tidsinndata.</string>
+</resources>

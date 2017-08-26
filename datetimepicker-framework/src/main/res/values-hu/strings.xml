@@ -1,0 +1,25 @@
+<resources>
+    <string name="number_picker_increment_button">Növelés</string>
+    <string name="number_picker_decrement_button">Csökkentés</string>
+    <string name="time_picker_increment_minute_button">Perc értékének növelése</string>
+    <string name="time_picker_decrement_minute_button">Perc értékének csökkentése</string>
+    <string name="time_picker_increment_hour_button">Óra értékének növelése</string>
+    <string name="time_picker_decrement_hour_button">Óra értékének csökkentése</string>
+    <string name="time_picker_increment_set_pm_button">Állítsa du. értékre</string>
+    <string name="time_picker_decrement_set_am_button">Állítsa de. értékre</string>
+    <string name="date_picker_prev_month_button">Előző hónap</string>
+    <string name="date_picker_next_month_button">Következő hónap</string>
+    <string name="hour_picker_description">Óra kör alakú csúszkája</string>
+    <string name="minute_picker_description">Perc kör alakú csúszkája</string>
+    <string name="select_hours">Óra kiválasztása</string>
+    <string name="select_minutes">Perc kiválasztása</string>
+    <string name="select_day">Válassza ki a hónapot és a napot</string>
+    <string name="select_year">Válassza ki az évet</string>
+    <string name="time_picker_hour_label">óra</string>
+    <string name="time_picker_minute_label">perc</string>
+    <string name="time_picker_header_text">Idő beállítása</string>
+    <string name="time_picker_input_error">Érvényes formátumban adja meg az időt</string>
+    <string name="time_picker_prompt_label">Adja meg az időt</string>
+    <string name="time_picker_text_input_mode_description">Időbevitelhez váltson szövegbeviteli módba.</string>
+    <string name="time_picker_radial_mode_description">Időbevitelhez váltson óramódba.</string>
+</resources>

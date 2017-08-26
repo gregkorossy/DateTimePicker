@@ -1,0 +1,25 @@
+<resources>
+    <string name="number_picker_increment_button">Dagdagan</string>
+    <string name="number_picker_decrement_button">Bawasan</string>
+    <string name="time_picker_increment_minute_button">Dagdagan ang minuto</string>
+    <string name="time_picker_decrement_minute_button">Bawasan ang minuto</string>
+    <string name="time_picker_increment_hour_button">Dagdagan ang oras</string>
+    <string name="time_picker_decrement_hour_button">Bawasan ang oras</string>
+    <string name="time_picker_increment_set_pm_button">Itakda ang PM</string>
+    <string name="time_picker_decrement_set_am_button">Itakda ang AM</string>
+    <string name="date_picker_prev_month_button">Nakaraang buwan</string>
+    <string name="date_picker_next_month_button">Susunod na buwan</string>
+    <string name="hour_picker_description">Pabilog na slider ng mga oras</string>
+    <string name="minute_picker_description">Pabilog na slider ng mga minuto</string>
+    <string name="select_hours">Pumili ng mga oras</string>
+    <string name="select_minutes">Pumili ng mga minuto</string>
+    <string name="select_day">Pumili ng buwan at araw</string>
+    <string name="select_year">Pumili ng taon</string>
+    <string name="time_picker_hour_label">oras</string>
+    <string name="time_picker_minute_label">minuto</string>
+    <string name="time_picker_header_text">Itakda ang oras</string>
+    <string name="time_picker_input_error">Maglagay ng wastong oras</string>
+    <string name="time_picker_prompt_label">I-type ang oras</string>
+    <string name="time_picker_text_input_mode_description">Lumipat sa pamamaraan ng pag-input ng text para sa input na oras.</string>
+    <string name="time_picker_radial_mode_description">Lumipat sa mode ng orasan para sa input na oras.</string>
+</resources>

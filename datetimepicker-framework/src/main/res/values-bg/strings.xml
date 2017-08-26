@@ -1,0 +1,25 @@
+<resources>
+    <string name="number_picker_increment_button">Увеличаване</string>
+    <string name="number_picker_decrement_button">Намаляване</string>
+    <string name="time_picker_increment_minute_button">Увеличаване на минутите</string>
+    <string name="time_picker_decrement_minute_button">Намаляване на минутите</string>
+    <string name="time_picker_increment_hour_button">Увеличаване на часовете</string>
+    <string name="time_picker_decrement_hour_button">Намаляване на часовете</string>
+    <string name="time_picker_increment_set_pm_button">Задаване на PM</string>
+    <string name="time_picker_decrement_set_am_button">Задаване на AM</string>
+    <string name="date_picker_prev_month_button">Предишен месец</string>
+    <string name="date_picker_next_month_button">Следващ месец</string>
+    <string name="hour_picker_description">Кръгов плъзгач за часовете</string>
+    <string name="minute_picker_description">Кръгов плъзгач за минутите</string>
+    <string name="select_hours">Избиране на часове</string>
+    <string name="select_minutes">Избиране на минути</string>
+    <string name="select_day">Избиране на месец и ден</string>
+    <string name="select_year">Избиране на година</string>
+    <string name="time_picker_hour_label">час</string>
+    <string name="time_picker_minute_label">минута</string>
+    <string name="time_picker_header_text">Задаване на час</string>
+    <string name="time_picker_input_error">Въведете валиден час</string>
+    <string name="time_picker_prompt_label">Въведете часа</string>
+    <string name="time_picker_text_input_mode_description">Превключете към режима за въвеждане на текст, за да въведете часа.</string>
+    <string name="time_picker_radial_mode_description">Превключете към режима за часовник, за да въведете часа.</string>
+</resources>

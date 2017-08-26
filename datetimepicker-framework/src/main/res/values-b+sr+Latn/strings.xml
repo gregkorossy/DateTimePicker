@@ -1,0 +1,25 @@
+<resources>
+    <string name="number_picker_increment_button">Povećavanje</string>
+    <string name="number_picker_decrement_button">Smanjivanje</string>
+    <string name="time_picker_increment_minute_button">Povećavanje minuta</string>
+    <string name="time_picker_decrement_minute_button">Smanjivanje minuta</string>
+    <string name="time_picker_increment_hour_button">Povećavanje sati</string>
+    <string name="time_picker_decrement_hour_button">Smanjivanje sati</string>
+    <string name="time_picker_increment_set_pm_button">Podesi po podne</string>
+    <string name="time_picker_decrement_set_am_button">Podesi pre podne</string>
+    <string name="date_picker_prev_month_button">Prethodni mesec</string>
+    <string name="date_picker_next_month_button">Sledeći mesec</string>
+    <string name="hour_picker_description">Kružni klizač za sate</string>
+    <string name="minute_picker_description">Kružni klizač za minute</string>
+    <string name="select_hours">Izaberite sate</string>
+    <string name="select_minutes">Izaberite minute</string>
+    <string name="select_day">Izaberite mesec i dan</string>
+    <string name="select_year">Izaberite godinu</string>
+    <string name="time_picker_hour_label">sat</string>
+    <string name="time_picker_minute_label">minut</string>
+    <string name="time_picker_header_text">Podešavanje vremena</string>
+    <string name="time_picker_input_error">Unesite važeće vreme</string>
+    <string name="time_picker_prompt_label">Unesite vreme</string>
+    <string name="time_picker_text_input_mode_description">Pređite u režim unosa teksta radi unosa vremena.</string>
+    <string name="time_picker_radial_mode_description">Pređite u režim sata radi unosa vremena.</string>
+</resources>

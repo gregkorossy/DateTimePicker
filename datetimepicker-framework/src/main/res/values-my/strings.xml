@@ -1,0 +1,25 @@
+<resources>
+    <string name="number_picker_increment_button">တိုးရန်</string>
+    <string name="number_picker_decrement_button">လျှော့ရန်</string>
+    <string name="time_picker_increment_minute_button">မိနစ်တိုးရန်</string>
+    <string name="time_picker_decrement_minute_button">မိနစ်လျော့ရန်</string>
+    <string name="time_picker_increment_hour_button">နာရီတိုးရန်</string>
+    <string name="time_picker_decrement_hour_button">နာရီလျော့ရန်</string>
+    <string name="time_picker_increment_set_pm_button">မွန်းလွဲပိုင်း သတ်မှတ်ရန်</string>
+    <string name="time_picker_decrement_set_am_button">မနက်ပိုင်းချိန် သတ်မှတ်ရန်</string>
+    <string name="date_picker_prev_month_button">ပြီးခဲ့သော လ</string>
+    <string name="date_picker_next_month_button">လာမည့် လ</string>
+    <string name="hour_picker_description">နာရီရွေးချက်စရာ</string>
+    <string name="minute_picker_description">မိနစ်လှည့်သော ရွေ့လျားတန်</string>
+    <string name="select_hours">နာရီများ ရွေးပါ</string>
+    <string name="select_minutes">မိနစ်များ ရွေးပါ</string>
+    <string name="select_day">လ နှင့် ရက် ရွေးပါ</string>
+    <string name="select_year">ခုနှစ်ကို ရွေးပါ</string>
+    <string name="time_picker_hour_label">နာရီ</string>
+    <string name="time_picker_minute_label">မိ​နစ်​</string>
+    <string name="time_picker_header_text">အချိန်သတ်မှတ်ရန်</string>
+    <string name="time_picker_input_error">မှန်ကန်သည့် အမည်တစ်ခု ထည့်ရန်</string>
+    <string name="time_picker_prompt_label">အချိန်ကို ထည့်ရန်</string>
+    <string name="time_picker_text_input_mode_description">အချိန်ထည့်သွင်းရန် စာသားထည့်သွင်းမှုမုဒ်သို့ ပြောင်းပါ။</string>
+    <string name="time_picker_radial_mode_description">အချိန်ထည့်သွင်းမှုအတွက် နာရီမုဒ်သို့ ပြောင်းပါ။</string>
+</resources>

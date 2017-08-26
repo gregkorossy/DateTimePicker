@@ -1,0 +1,25 @@
+<resources>
+    <string name="number_picker_increment_button">늘리기</string>
+    <string name="number_picker_decrement_button">줄이기</string>
+    <string name="time_picker_increment_minute_button">\'분\'을 늘립니다.</string>
+    <string name="time_picker_decrement_minute_button">\'분\'을 줄입니다.</string>
+    <string name="time_picker_increment_hour_button">\'시간\'을 늘립니다.</string>
+    <string name="time_picker_decrement_hour_button">\'시간\'을 줄입니다.</string>
+    <string name="time_picker_increment_set_pm_button">PM 설정</string>
+    <string name="time_picker_decrement_set_am_button">AM 설정</string>
+    <string name="date_picker_prev_month_button">지난달</string>
+    <string name="date_picker_next_month_button">다음 달</string>
+    <string name="hour_picker_description">시간 원형 슬라이더</string>
+    <string name="minute_picker_description">분 원형 슬라이더</string>
+    <string name="select_hours">시간 선택</string>
+    <string name="select_minutes">분 선택</string>
+    <string name="select_day">월/일 선택</string>
+    <string name="select_year">연도 선택</string>
+    <string name="time_picker_hour_label">시간</string>
+    <string name="time_picker_minute_label">분</string>
+    <string name="time_picker_header_text">시간 설정</string>
+    <string name="time_picker_input_error">올바른 시간을 입력하세요.</string>
+    <string name="time_picker_prompt_label">시간 입력</string>
+    <string name="time_picker_text_input_mode_description">시간 입력을 위해 텍스트 입력 모드로 전환합니다.</string>
+    <string name="time_picker_radial_mode_description">시간 입력을 위해 시계 모드로 전환합니다.</string>
+</resources>

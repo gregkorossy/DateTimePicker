@@ -1,0 +1,25 @@
+<resources>
+    <string name="number_picker_increment_button">הוסף</string>
+    <string name="number_picker_decrement_button">הפחת</string>
+    <string name="time_picker_increment_minute_button">הוספת דקה</string>
+    <string name="time_picker_decrement_minute_button">הפחת דקה</string>
+    <string name="time_picker_increment_hour_button">הוסף שעה</string>
+    <string name="time_picker_decrement_hour_button">הפחת שעה</string>
+    <string name="time_picker_increment_set_pm_button">‏הגדר PM</string>
+    <string name="time_picker_decrement_set_am_button">‏הגדר AM</string>
+    <string name="date_picker_prev_month_button">החודש הקודם</string>
+    <string name="date_picker_next_month_button">החודש הבא</string>
+    <string name="hour_picker_description">מחוון שעות מעגלי</string>
+    <string name="minute_picker_description">מחוון דקות מעגלי</string>
+    <string name="select_hours">בחר שעות</string>
+    <string name="select_minutes">בחר דקות</string>
+    <string name="select_day">בחר חודש ויום</string>
+    <string name="select_year">בחר שנה</string>
+    <string name="time_picker_hour_label">שעה</string>
+    <string name="time_picker_minute_label">דקה</string>
+    <string name="time_picker_header_text">הגדרת שעה</string>
+    <string name="time_picker_input_error">הזן שעה חוקית</string>
+    <string name="time_picker_prompt_label">מהי השעה הנכונה</string>
+    <string name="time_picker_text_input_mode_description">העבר למצב קלט טקסט לצורך הזנת השעה</string>
+    <string name="time_picker_radial_mode_description">העבר למצב שעון לצורך הזנת השעה</string>
+</resources>

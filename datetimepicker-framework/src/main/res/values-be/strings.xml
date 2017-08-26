@@ -1,0 +1,25 @@
+<resources>
+    <string name="number_picker_increment_button">Павялічыць</string>
+    <string name="number_picker_decrement_button">Паменшыць</string>
+    <string name="time_picker_increment_minute_button">Павялічыць лічбу хвілін.</string>
+    <string name="time_picker_decrement_minute_button">Паменшыць лічбу хвілін.</string>
+    <string name="time_picker_increment_hour_button">Павялічыць лічбу гадзін.</string>
+    <string name="time_picker_decrement_hour_button">Паменшыць лічбу гадзін.</string>
+    <string name="time_picker_increment_set_pm_button">Усталяваць час пасля паўдня</string>
+    <string name="time_picker_decrement_set_am_button">Усталяваць час да паўдня</string>
+    <string name="date_picker_prev_month_button">Папярэдні месяц</string>
+    <string name="date_picker_next_month_button">Наступны месяц</string>
+    <string name="hour_picker_description">Кругавы паўзунок гадзін</string>
+    <string name="minute_picker_description">Кругавы паўзунок хвілін</string>
+    <string name="select_hours">Выберыце гадзіны</string>
+    <string name="select_minutes">Выберыце хвіліны</string>
+    <string name="select_day">Выберыце месяц і дзень</string>
+    <string name="select_year">Выберыце год</string>
+    <string name="time_picker_hour_label">гадзіна</string>
+    <string name="time_picker_minute_label">хвіліна</string>
+    <string name="time_picker_header_text">Задаць час</string>
+    <string name="time_picker_input_error">Увядзіце дапушчальны час</string>
+    <string name="time_picker_prompt_label">Увядзіце час</string>
+    <string name="time_picker_text_input_mode_description">Пераключыцца на рэжым тэксту пры ўводзе часу.</string>
+    <string name="time_picker_radial_mode_description">Пераключыцца на рэжым гадзінніка пры ўводзе часу.</string>
+</resources>

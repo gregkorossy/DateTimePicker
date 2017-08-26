@@ -1,0 +1,25 @@
+<resources>
+    <string name="number_picker_increment_button">ጨምር</string>
+    <string name="number_picker_decrement_button">ቀንስ</string>
+    <string name="time_picker_increment_minute_button">ደቂቃ ጨምር</string>
+    <string name="time_picker_decrement_minute_button">ደቂቃ ቀንስ</string>
+    <string name="time_picker_increment_hour_button">ሰዓት ጨምር</string>
+    <string name="time_picker_decrement_hour_button">ሰዓት ቀንስ</string>
+    <string name="time_picker_increment_set_pm_button">PM አዘጋጅ</string>
+    <string name="time_picker_decrement_set_am_button">AM አዘጋጅ</string>
+    <string name="date_picker_prev_month_button">ያለፈው ወር</string>
+    <string name="date_picker_next_month_button">ቀጣይ ወር</string>
+    <string name="hour_picker_description">የሰዓታት ክብ ተንሸራታች</string>
+    <string name="minute_picker_description">የደቂቃዎች ክብ ተንሸራታች</string>
+    <string name="select_hours">ሰዓታትን ይምረጡ</string>
+    <string name="select_minutes">ደቂቃዎችን ይምረጡ</string>
+    <string name="select_day">ወር እና ቀን ይምረጡ</string>
+    <string name="select_year">ዓመት ይምረጡ</string>
+    <string name="time_picker_hour_label">ሰዓት</string>
+    <string name="time_picker_minute_label">ደቂቃ</string>
+    <string name="time_picker_header_text">ጊዜ አቀናብር</string>
+    <string name="time_picker_input_error">የሚሰራ ሰዓት ያስገቡ</string>
+    <string name="time_picker_prompt_label">ሰዓት ይተይቡ</string>
+    <string name="time_picker_text_input_mode_description">ለጊዜ ግቤቱ ወደ የጽሑፍ ግቤት ሁነታ ቀይር።</string>
+    <string name="time_picker_radial_mode_description">ለጊዜ ግቤቱ ወደ የሰዓት ሁነታ ቀይር።</string>
+</resources>

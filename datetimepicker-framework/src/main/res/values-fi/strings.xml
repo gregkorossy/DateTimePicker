@@ -1,0 +1,25 @@
+<resources>
+    <string name="number_picker_increment_button">Lisää</string>
+    <string name="number_picker_decrement_button">Vähennä</string>
+    <string name="time_picker_increment_minute_button">Lisää minuuttien määrää.</string>
+    <string name="time_picker_decrement_minute_button">Vähennä minuuttien määrää.</string>
+    <string name="time_picker_increment_hour_button">Lisää tuntien määrää.</string>
+    <string name="time_picker_decrement_hour_button">Vähennä tuntien määrää.</string>
+    <string name="time_picker_increment_set_pm_button">Aseta ip</string>
+    <string name="time_picker_decrement_set_am_button">Aseta ap</string>
+    <string name="date_picker_prev_month_button">Edellinen kuukausi</string>
+    <string name="date_picker_next_month_button">Seuraava kuukausi</string>
+    <string name="hour_picker_description">Tuntien ympyränmuotoinen liukusäädin</string>
+    <string name="minute_picker_description">Minuuttien ympyränmuotoinen liukusäädin</string>
+    <string name="select_hours">Valitse tunnit</string>
+    <string name="select_minutes">Valitse minuutit</string>
+    <string name="select_day">Valitse kuukausi ja päivä</string>
+    <string name="select_year">Valitse vuosi</string>
+    <string name="time_picker_hour_label">tunti</string>
+    <string name="time_picker_minute_label">minuutti</string>
+    <string name="time_picker_header_text">Aseta aika</string>
+    <string name="time_picker_input_error">Anna kelvollinen aika.</string>
+    <string name="time_picker_prompt_label">Kirjoita aika</string>
+    <string name="time_picker_text_input_mode_description">Vaihda ajan syöttämiseen tekstitilassa.</string>
+    <string name="time_picker_radial_mode_description">Vaihda ajan syöttämiseen kellotilassa.</string>
+</resources>

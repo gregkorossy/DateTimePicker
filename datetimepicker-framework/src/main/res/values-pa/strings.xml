@@ -1,0 +1,25 @@
+<resources>
+    <string name="number_picker_increment_button">ਵਧਾਓ</string>
+    <string name="number_picker_decrement_button">ਘਟਾਓ</string>
+    <string name="time_picker_increment_minute_button">ਮਿੰਟ ਵਧਾਓ</string>
+    <string name="time_picker_decrement_minute_button">ਮਿੰਟ ਘਟਾਓ</string>
+    <string name="time_picker_increment_hour_button">ਘੰਟੇ ਵਧਾਓ</string>
+    <string name="time_picker_decrement_hour_button">ਘੰਟੇ ਘਟਾਓ</string>
+    <string name="time_picker_increment_set_pm_button">PM ਸੈੱਟ ਕਰੋ</string>
+    <string name="time_picker_decrement_set_am_button">AM ਸੈੱਟ ਕਰੋ</string>
+    <string name="date_picker_prev_month_button">ਪਿਛਲੇ ਮਹੀਨੇ</string>
+    <string name="date_picker_next_month_button">ਅਗਲੇ ਮਹੀਨੇ</string>
+    <string name="hour_picker_description">ਘੰਟੇ ਸਰਕੁਲਰ ਸਲਾਈਡਰ</string>
+    <string name="minute_picker_description">ਮਿੰਟ ਸਰਕੁਲਰ ਸਲਾਈਡਰ</string>
+    <string name="select_hours">ਘੰਟੇ ਚੁਣੋ</string>
+    <string name="select_minutes">ਮਿੰਟ ਚੁਣੋ</string>
+    <string name="select_day">ਮਹੀਨਾ ਅਤੇ ਦਿਨ ਚੁਣੋ</string>
+    <string name="select_year">ਸਾਲ ਚੁਣੋ</string>
+    <string name="time_picker_hour_label">ਘੰਟਾ</string>
+    <string name="time_picker_minute_label">ਮਿੰਟ</string>
+    <string name="time_picker_header_text">ਸਮਾਂ ਸੈੱਟ ਕਰੋ</string>
+    <string name="time_picker_input_error">ਇੱਕ ਵੈਧ ਸਮਾਂ ਦਾਖਲ ਕਰੋ</string>
+    <string name="time_picker_prompt_label">ਸਮਾਂ ਟਾਈਪ ਕਰੋ</string>
+    <string name="time_picker_text_input_mode_description">ਸਮਾਂ ਇਨਪੁੱਟ ਕਰਨ ਲਈ ਲਿਖਤ ਇਨਪੁੱਟ ਮੋਡ \'ਤੇ ਬਦਲੀ ਕਰੋ।</string>
+    <string name="time_picker_radial_mode_description">ਸਮਾਂ ਇਨਪੁੱਟ ਕਰਨ ਲਈ ਘੜੀ ਮੋਡ \'ਤੇ ਬਦਲੀ ਕਰੋ।</string>
+</resources>

@@ -1,0 +1,25 @@
+<resources>
+    <string name="number_picker_increment_button">Арттыру</string>
+    <string name="number_picker_decrement_button">Азайту</string>
+    <string name="time_picker_increment_minute_button">Минут арттыру</string>
+    <string name="time_picker_decrement_minute_button">Минут арттыру</string>
+    <string name="time_picker_increment_hour_button">Сағат арттыру</string>
+    <string name="time_picker_decrement_hour_button">Сағат арттыру</string>
+    <string name="time_picker_increment_set_pm_button">КЕШКІ уақытты реттеу</string>
+    <string name="time_picker_decrement_set_am_button">ТАҢҒЫ уақытты реттеу</string>
+    <string name="date_picker_prev_month_button">Алдыңғы ай</string>
+    <string name="date_picker_next_month_button">Келесі ай</string>
+    <string name="hour_picker_description">Сағаттар айналымының қозғалтқышы</string>
+    <string name="minute_picker_description">Минут айналымын қозғалтқыш</string>
+    <string name="select_hours">Сағат таңдау</string>
+    <string name="select_minutes">Минут таңдау</string>
+    <string name="select_day">Ай мен күнді таңдау</string>
+    <string name="select_year">Жыл таңдау</string>
+    <string name="time_picker_hour_label">сағат</string>
+    <string name="time_picker_minute_label">минут</string>
+    <string name="time_picker_header_text">Уақытты реттеу</string>
+    <string name="time_picker_input_error">Жарамды уақыт мәліметін енгізіңіз</string>
+    <string name="time_picker_prompt_label">Уақытты енгізіңіз</string>
+    <string name="time_picker_text_input_mode_description">Уақытты енгізу үшін мәтін енгізу режиміне өтіңіз.</string>
+    <string name="time_picker_radial_mode_description">Уақытты енгізу үшін сағат режиміне өтіңіз.</string>
+</resources>

@@ -1,0 +1,25 @@
+<resources>
+    <string name="number_picker_increment_button">ເພີ່ມ</string>
+    <string name="number_picker_decrement_button">ປັບລົງ</string>
+    <string name="time_picker_increment_minute_button">ເພີ່ມນາທີ</string>
+    <string name="time_picker_decrement_minute_button">ປັບນາທີລົງ</string>
+    <string name="time_picker_increment_hour_button">ເພີ່ມຊົ່ວໂມງ</string>
+    <string name="time_picker_decrement_hour_button">ຫຼຸດຊົ່ວໂມງ</string>
+    <string name="time_picker_increment_set_pm_button">ຕັ້ງ PM</string>
+    <string name="time_picker_decrement_set_am_button">ຕັ້ງ AM</string>
+    <string name="date_picker_prev_month_button">​ເດືອນ​ແລ້ວ</string>
+    <string name="date_picker_next_month_button">ເດືອນ​ໜ້າ</string>
+    <string name="hour_picker_description">ໂຕໝຸນປັບຊົ່ວໂມງ</string>
+    <string name="minute_picker_description">ໂຕໝຸນປັບນາທີ</string>
+    <string name="select_hours">ເລືອກ​ຊົ່ວ​ໂມງ</string>
+    <string name="select_minutes">ເລືອກນາ​ທີ</string>
+    <string name="select_day">ເລືອກເດືອນ ແລະ ວັນ</string>
+    <string name="select_year">ເລືອກ​ປີ</string>
+    <string name="time_picker_hour_label">ຊົ່ວໂມງ</string>
+    <string name="time_picker_minute_label">ນາທີ</string>
+    <string name="time_picker_header_text">ຕັ້ງເວລາ</string>
+    <string name="time_picker_input_error">ລະບຸເວລາທີ່ຖືກຕ້ອງ</string>
+    <string name="time_picker_prompt_label">ພິມເວລາໃສ່</string>
+    <string name="time_picker_text_input_mode_description">ສະຫຼັບໄປໃຊ້ໂໝດປ້ອນຂໍ້ຄວາມສຳລັບການປ້ອນເວລາ.</string>
+    <string name="time_picker_radial_mode_description">ສະຫຼັບໄປໃຊ້ໂໝດໂມງສຳລັບການປ້ອນເວລາ.</string>
+</resources>
