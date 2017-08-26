@@ -20,14 +20,12 @@ import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
-import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Parcelable;
 import android.support.annotation.IntDef;
 import android.support.annotation.Nullable;
 import android.support.v4.graphics.drawable.DrawableCompat;
-import android.support.v4.view.ViewCompat;
 import android.support.v4.view.accessibility.AccessibilityNodeInfoCompat;
 import android.support.v7.content.res.AppCompatResources;
 import android.text.SpannableStringBuilder;
@@ -282,7 +280,7 @@ class TimePickerClockDelegate extends TimePicker.AbstractTimePickerDelegate {
         initialize(currentHour, currentMinute, mIs24Hour, HOUR_INDEX);
     }
 
-    private Drawable tintDrawable(Drawable drawable){
+    private Drawable tintDrawable(Drawable drawable) {
         // start of FIX - tinting the drawable manually because the android:tint attribute crashes the app
         Drawable wrapped = DrawableCompat.wrap(drawable);
 
@@ -313,6 +311,7 @@ class TimePickerClockDelegate extends TimePicker.AbstractTimePickerDelegate {
             mRadialTimePickerView.setVisibility(View.VISIBLE);
             mRadialTimePickerHeader.setVisibility(View.VISIBLE);
             mTextInputPickerHeader.setVisibility(View.GONE);
+            mTextInputPickerView.changeInputMethod(false);
             mTextInputPickerView.setVisibility(View.GONE);
             //mRadialTimePickerModeButton.setImageResource(R.drawable.btn_keyboard_key_material);
             mRadialTimePickerModeButton.setImageDrawable(tintDrawable(AppCompatResources.getDrawable(mContext, R.drawable.btn_keyboard_key_material))); // fixing tinting

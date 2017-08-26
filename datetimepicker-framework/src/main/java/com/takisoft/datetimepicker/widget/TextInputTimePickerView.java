@@ -19,12 +19,14 @@ package com.takisoft.datetimepicker.widget;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.os.Build;
+import android.os.IBinder;
 import android.support.v4.math.MathUtils;
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -89,7 +91,7 @@ public class TextInputTimePickerView extends RelativeLayout {
     }
 
     private void attrHandler(Context context, AttributeSet attrs, int defStyle,
-                             int defStyleRes){
+                             int defStyleRes) {
         inflate(context, R.layout.time_picker_text_input_material, this);
 
         mHourEditText = findViewById(R.id.input_hour);
@@ -101,10 +103,12 @@ public class TextInputTimePickerView extends RelativeLayout {
 
         mHourEditText.addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            }
 
             @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            }
 
             @Override
             public void afterTextChanged(Editable editable) {
@@ -114,10 +118,12 @@ public class TextInputTimePickerView extends RelativeLayout {
 
         mMinuteEditText.addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            }
 
             @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            }
 
             @Override
             public void afterTextChanged(Editable editable) {
@@ -144,8 +150,20 @@ public class TextInputTimePickerView extends RelativeLayout {
             }
 
             @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {}
+            public void onNothingSelected(AdapterView<?> adapterView) {
+            }
         });
+    }
+
+    void changeInputMethod(boolean show) {
+        InputMethodManager inputMethodManager = (InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+        IBinder token = getWindowToken();
+
+        if (inputMethodManager != null && token != null) {
+            if (!show) {
+                inputMethodManager.hideSoftInputFromWindow(token, InputMethodManager.HIDE_NOT_ALWAYS);
+            }
+        }
     }
 
     void setListener(OnValueTypedListener listener) {
@@ -153,9 +171,9 @@ public class TextInputTimePickerView extends RelativeLayout {
     }
 
     void setHourFormat(int maxCharLength) {
-        mHourEditText.setFilters(new InputFilter[] {
+        mHourEditText.setFilters(new InputFilter[]{
                 new InputFilter.LengthFilter(maxCharLength)});
-        mMinuteEditText.setFilters(new InputFilter[] {
+        mMinuteEditText.setFilters(new InputFilter[]{
                 new InputFilter.LengthFilter(maxCharLength)});
     }
 
@@ -185,7 +203,7 @@ public class TextInputTimePickerView extends RelativeLayout {
      * properties (leading zeroes, max digits) change.
      */
     void updateTextInputValues(int localizedHour, int minute, int amOrPm, boolean is24Hour,
-            boolean hourFormatStartsAtZero) {
+                               boolean hourFormatStartsAtZero) {
         final String format = "%d";
 
         mIs24Hour = is24Hour;
