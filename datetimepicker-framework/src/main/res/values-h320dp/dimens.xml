@@ -1,0 +1,4 @@
+<resources>
+    <dimen name="timepicker_text_inset_inner">58dp</dimen>
+    <dimen name="timepicker_radial_picker_dimen">224dp</dimen>
+</resources>

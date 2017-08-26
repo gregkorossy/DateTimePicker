@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- New TimePicker dimensions. -->
-    <dimen name="timepicker_left_side_width">250dip</dimen>
-
     <!-- Material time picker dimensions. -->
     <!-- Text size for the time picker header HH:MM label. This value is large
          enough that we don't need to use scaled pixels, dp is fine. -->

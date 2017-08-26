@@ -60,8 +60,8 @@
     <dimen name="picker_top_margin">16dip</dimen>
     <dimen name="picker_bottom_margin">16dip</dimen>
 
-    <item name="time_picker_column_start_material" format="integer" type="dimen">0</item>
-    <item name="time_picker_column_end_material" format="integer" type="dimen">1</item>
+    <!--<item name="time_picker_column_start_material" format="integer" type="dimen">0</item>
+    <item name="time_picker_column_end_material" format="integer" type="dimen">1</item>-->
 
     <dimen name="dialog_padding_material">24dp</dimen>
     <dimen name="dialog_padding_top_material">18dp</dimen>
