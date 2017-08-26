@@ -47,8 +47,10 @@ public class ExampleInstrumentedTest {
             Locale.setDefault(locale);
             String lang = locale.getLanguage();
             String country = locale.getCountry();
+            //String script = locale.getScript();
+            //String variant = locale.getVariant();
 
-            //Log.v("DateFormatFix", "locale: " + locale.toString() + ", lang: " + lang + ", country: " + country);
+            //Log.v("DateFormatFix", "locale: " + locale.toString() + ", lang: " + lang + ", country: " + country + ", script: " + script + ", variant: " + variant);
 
             if (lang.length() != 2) {
                 continue;
@@ -58,6 +60,20 @@ public class ExampleInstrumentedTest {
             if (!TextUtils.isEmpty(country) && country.length() == 2) {
                 qualifierSb.append("-r").append(country);
             }
+
+            /* alternative method; it will attach the scripts too, but it's probably not needed as
+               API 17 and earlier don't understand the "b+zh+CN+Hans" format
+            if (TextUtils.isEmpty(script)) {
+                if (!TextUtils.isEmpty(country) && country.length() == 2) {
+                    qualifierSb.append("-r").append(country);
+                }
+            } else {
+                if (!TextUtils.isEmpty(country) && country.length() == 2) {
+                    qualifierSb.append("+").append(country);
+                }
+                qualifierSb.append("+").append(script);
+            }
+             */
 
             String qualifier = qualifierSb.toString();
 
