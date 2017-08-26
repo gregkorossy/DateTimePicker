@@ -35,7 +35,7 @@
         android:background="?attr/selectableItemBackgroundBorderless"
         android:contentDescription="@string/date_picker_prev_month_button"
         android:visibility="invisible"
-        android:nextFocusForward="@+id/next"
+        android:nextFocusForward="@id/next"
         android:nextFocusDown="@+id/month_view" />
 
     <ImageButton

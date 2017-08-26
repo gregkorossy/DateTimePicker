@@ -64,6 +64,22 @@ public class Utils {
         return isLightTheme;
     }
 
+    public static Drawable tintDrawable(Context context, Drawable drawable, int tintAttr) {
+        // start of FIX - tinting the drawable manually because the android:tint attribute crashes the app
+        Drawable wrapped = DrawableCompat.wrap(drawable);
+
+        TypedArray arr = context.obtainStyledAttributes(new int[]{tintAttr});
+        ColorStateList tintList = Utils.getColorStateList(context, arr, 0);
+        arr.recycle();
+
+        if (tintList != null) {
+            DrawableCompat.setTintList(wrapped, tintList);
+        }
+
+        return wrapped;
+        // end of FIX
+    }
+
     @Nullable
     public static ColorStateList getColorStateList(Context context, TypedArray original, int index) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {

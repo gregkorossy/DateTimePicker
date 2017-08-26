@@ -24,6 +24,7 @@ import android.os.Build;
 import android.support.annotation.Nullable;
 import android.support.v4.view.ViewCompat;
 import android.support.v4.view.ViewPager;
+import android.support.v7.content.res.AppCompatResources;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -137,9 +138,11 @@ class DayPickerView extends ViewGroup {
 
         mPrevButton = findViewById(R.id.prev);
         mPrevButton.setOnClickListener(mOnClickListener);
+        mPrevButton.setImageDrawable(Utils.tintDrawable(getContext(), AppCompatResources.getDrawable(getContext(), R.drawable.ic_chevron_start), R.attr.colorControlNormal)); // fixing tinting
 
         mNextButton = findViewById(R.id.next);
         mNextButton.setOnClickListener(mOnClickListener);
+        mNextButton.setImageDrawable(Utils.tintDrawable(getContext(), AppCompatResources.getDrawable(getContext(), R.drawable.ic_chevron_end), R.attr.colorControlNormal)); // fixing tinting
 
         mViewPager = findViewById(R.id.day_picker_view_pager);
         mViewPager.setAdapter(mAdapter);
