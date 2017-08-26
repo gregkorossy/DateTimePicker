@@ -39,7 +39,7 @@
 
         <ViewStub
             android:id="@id/buttonPanel"
-            android:layout="@layout/alert_dialog_button_bar_material"
+            android:layout="@layout/picker_dialog_button_bar_material"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/day_picker_button_margin_top" />
