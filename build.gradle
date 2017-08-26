@@ -6,7 +6,7 @@ project.ext.supportLibraryVersion = '26.0.1'
 project.ext.supportLibraryVersionPrefix = '26.0.1'
 project.ext.supportLibraryVersionSuffix = ''
 
-project.ext.libVersion = '0.9.1'
+project.ext.libVersion = '1.0.0'
 
 buildscript {
     
@@ -28,7 +28,6 @@ allprojects {
     repositories {
         google()
         jcenter()
-        maven { url "http://dl.bintray.com/gericop/maven" }
     }
 }
 

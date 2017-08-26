@@ -1,1 +1,1 @@
-include ':app', ':datetimepicker-framework'
+include ':app', ':datetimepicker'

@@ -32,5 +32,5 @@ dependencies {
     implementation "com.android.support:appcompat-v7:${rootProject.supportLibraryVersion}"
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
 
-    implementation project(':datetimepicker-framework')
+    implementation project(':datetimepicker')
 }
