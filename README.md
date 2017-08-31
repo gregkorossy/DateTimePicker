@@ -4,6 +4,14 @@ This project is ported from the [Android framework](https://android.googlesource
 
 [ ![Download](https://api.bintray.com/packages/gericop/maven/com.takisoft.fix%3Adatetimepicker/images/download.svg) ](https://bintray.com/gericop/maven/com.takisoft.fix%3Adatetimepicker/_latestVersion)
 
+### Donation
+
+If you would like to support me, you may donate some small amount via PayPal.
+
+[ ![Buy me a coffee](https://raw.githubusercontent.com/Gericop/DateTimePicker/master/images/donate.png)](https://www.paypal.me/korossyg/0eur)
+
+---
+
 ## Setup
 **Add** this single line to your gradle file:
 ```gradle
@@ -34,3 +42,13 @@ Attribute | Description | Default (dark) / (light)
 `calendarViewStyle` | The `CalendarView`'s style | `Widget.Material.CalendarView` / `Widget.Material.Light.CalendarView`
 
 > Watch out **not to include** the `android:` prefix before the attribute names if you want to override them as it will not work. These attributes have been (re)defined for the project in order to be able to access the internal details, which means that they do not belong to the `android` namespace anymore.
+
+## Some pictures
+
+API 15 | API 26
+- | -
+![DatePicker](https://raw.githubusercontent.com/Gericop/DateTimePicker/master/images/api15_date.png) | ![DatePicker](https://raw.githubusercontent.com/Gericop/DateTimePicker/master/images/api26_date.png)
+![DatePicker](https://raw.githubusercontent.com/Gericop/DateTimePicker/master/images/api15_date_land.png) | ![DatePicker](https://raw.githubusercontent.com/Gericop/DateTimePicker/master/images/api26_date_land.png)
+![DatePicker](https://raw.githubusercontent.com/Gericop/DateTimePicker/master/images/api15_time_12h.png) | ![DatePicker](https://raw.githubusercontent.com/Gericop/DateTimePicker/master/images/api26_time_12h.png)
+![DatePicker](https://raw.githubusercontent.com/Gericop/DateTimePicker/master/images/api15_time_12h_land.png) | ![DatePicker](https://raw.githubusercontent.com/Gericop/DateTimePicker/master/images/api26_time_12h_land.png)
+
