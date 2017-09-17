@@ -15,7 +15,7 @@ If you would like to support me, you may donate some small amount via PayPal.
 ## Setup
 **Add** this single line to your gradle file:
 ```gradle
-compile 'com.takisoft.fix:datetimepicker:1.0.1'
+compile 'com.takisoft.fix:datetimepicker:1.0.2'
 ```
 And **use** one of the `Theme.AppCompat` themes (_or a custom one based on that_) as your `Activity`'s theme.
 
