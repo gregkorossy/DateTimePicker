@@ -119,7 +119,7 @@ class DatePickerCalendarDelegate extends DatePicker.AbstractDatePickerDelegate {
                 R.styleable.DatePicker, defStyleAttr, defStyleRes);
         final LayoutInflater inflater = LayoutInflater.from(context);
         final int layoutResourceId = a.getResourceId(
-                R.styleable.DatePicker_internalLayout, R.layout.date_picker_material);
+                R.styleable.DatePicker_dtp_internalLayout, R.layout.date_picker_material);
 
         // Set up and attach container.
         mContainer = (ViewGroup) inflater.inflate(layoutResourceId, mDelegator, false);
@@ -137,19 +137,9 @@ class DatePickerCalendarDelegate extends DatePicker.AbstractDatePickerDelegate {
         // that override the "real" header text color.
         ColorStateList headerTextColor = null;
 
-        @SuppressWarnings("deprecation") final int monthHeaderTextAppearance = a.getResourceId(
-                R.styleable.DatePicker_headerMonthTextAppearance, 0);
-        if (monthHeaderTextAppearance != 0) {
-            final TypedArray textAppearance = mContext.obtainStyledAttributes(null,
-                    ATTRS_TEXT_COLOR, 0, monthHeaderTextAppearance);
-            final ColorStateList legacyHeaderTextColor = textAppearance.getColorStateList(0);
-            headerTextColor = applyLegacyColorFixes(legacyHeaderTextColor);
-            textAppearance.recycle();
-        }
-
         if (headerTextColor == null) {
             //headerTextColor = a.getColorStateList(R.styleable.DatePicker_headerTextColor);
-            headerTextColor = Utils.getColorStateList(context, a, R.styleable.DatePicker_headerTextColor);
+            headerTextColor = Utils.getColorStateList(context, a, R.styleable.DatePicker_dtp_headerTextColor);
         }
 
         if (headerTextColor != null) {

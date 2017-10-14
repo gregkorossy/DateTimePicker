@@ -117,13 +117,12 @@ class DatePickerSpinnerDelegate extends AbstractDatePickerDelegate {
                 DEFAULT_SPINNERS_SHOWN);
         boolean calendarViewShown = attributesArray.getBoolean(
                 R.styleable.DatePicker_calendarViewShown, DEFAULT_CALENDAR_VIEW_SHOWN);
-        int startYear = attributesArray.getInt(R.styleable.DatePicker_startYear,
-                DEFAULT_START_YEAR);
-        int endYear = attributesArray.getInt(R.styleable.DatePicker_endYear, DEFAULT_END_YEAR);
+        int startYear = DEFAULT_START_YEAR;
+        int endYear = DEFAULT_END_YEAR;
         String minDate = attributesArray.getString(R.styleable.DatePicker_minDate);
         String maxDate = attributesArray.getString(R.styleable.DatePicker_maxDate);
         int layoutResourceId = attributesArray.getResourceId(
-                R.styleable.DatePicker_legacyLayout, R.layout.date_picker_legacy);
+                R.styleable.DatePicker_dtp_legacyLayout, R.layout.date_picker_legacy);
         attributesArray.recycle();
 
         LayoutInflater inflater = (LayoutInflater) context

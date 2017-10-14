@@ -147,7 +147,7 @@ class TimePickerClockDelegate extends TimePicker.AbstractTimePickerDelegate {
         mSelectHours = res.getString(R.string.select_hours);
         mSelectMinutes = res.getString(R.string.select_minutes);
 
-        final int layoutResourceId = a.getResourceId(R.styleable.TimePicker_internalLayout,
+        final int layoutResourceId = a.getResourceId(R.styleable.TimePicker_dtp_internalLayout,
                 R.layout.time_picker_material);
         final View mainView = inflater.inflate(layoutResourceId, delegator);
         mainView.setSaveFromParentEnabled(false);
@@ -190,18 +190,8 @@ class TimePickerClockDelegate extends TimePicker.AbstractTimePickerDelegate {
         // that override the "real" header text color.
         ColorStateList headerTextColor = null;
 
-        @SuppressWarnings("deprecation") final int timeHeaderTextAppearance = a.getResourceId(
-                R.styleable.TimePicker_headerTimeTextAppearance, 0);
-        if (timeHeaderTextAppearance != 0) {
-            final TypedArray textAppearance = mContext.obtainStyledAttributes(null,
-                    ATTRS_TEXT_COLOR, 0, timeHeaderTextAppearance);
-            final ColorStateList legacyHeaderTextColor = Utils.getColorStateList(mContext, textAppearance, 0);//textAppearance.getColorStateList(0);
-            headerTextColor = applyLegacyColorFixes(legacyHeaderTextColor);
-            textAppearance.recycle();
-        }
-
         if (headerTextColor == null) {
-            headerTextColor = Utils.getColorStateList(mContext, a, R.styleable.TimePicker_headerTextColor);//a.getColorStateList(R.styleable.TimePicker_headerTextColor);
+            headerTextColor = Utils.getColorStateList(mContext, a, R.styleable.TimePicker_dtp_headerTextColor);//a.getColorStateList(R.styleable.TimePicker_headerTextColor);
         }
 
         mTextInputPickerHeader = mainView.findViewById(R.id.input_header);

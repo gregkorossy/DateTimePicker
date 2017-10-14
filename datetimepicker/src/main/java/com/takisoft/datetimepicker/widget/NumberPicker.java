@@ -37,7 +37,6 @@ import android.support.v4.view.ViewCompat;
 import android.support.v4.view.accessibility.AccessibilityEventCompat;
 import android.support.v4.view.accessibility.AccessibilityNodeInfoCompat;
 import android.support.v4.view.accessibility.AccessibilityRecordCompat;
-import android.support.v7.content.res.AppCompatResources;
 import android.text.InputFilter;
 import android.text.InputType;
 import android.text.Spanned;
@@ -634,17 +633,17 @@ public class NumberPicker extends LinearLayout {
         final TypedArray attributesArray = context.obtainStyledAttributes(
                 attrs, R.styleable.NumberPicker, defStyleAttr, defStyleRes);
         final int layoutResId = attributesArray.getResourceId(
-                R.styleable.NumberPicker_internalLayout, R.layout.number_picker_material /*DEFAULT_LAYOUT_RESOURCE_ID*/);
+                R.styleable.NumberPicker_dtp_internalLayout, R.layout.number_picker_material /*DEFAULT_LAYOUT_RESOURCE_ID*/);
 
         mHasSelectorWheel = (layoutResId != DEFAULT_LAYOUT_RESOURCE_ID);
 
         mHideWheelUntilFocused = attributesArray.getBoolean(
-                R.styleable.NumberPicker_hideWheelUntilFocused, false);
+                R.styleable.NumberPicker_dtp_hideWheelUntilFocused, false);
 
-        mSolidColor = attributesArray.getColor(R.styleable.NumberPicker_solidColor, 0);
+        mSolidColor = attributesArray.getColor(R.styleable.NumberPicker_dtp_solidColor, 0);
 
         //final Drawable selectionDivider = attributesArray.getDrawable(R.styleable.NumberPicker_selectionDivider);
-        final Drawable selectionDivider = Utils.getDrawable(context, attributesArray, R.styleable.NumberPicker_selectionDivider, R.attr.colorControlNormal);
+        final Drawable selectionDivider = Utils.getDrawable(context, attributesArray, R.styleable.NumberPicker_dtp_selectionDivider, R.attr.colorControlNormal);
 
         if (selectionDivider != null) {
             selectionDivider.setCallback(this);
@@ -659,29 +658,29 @@ public class NumberPicker extends LinearLayout {
                 TypedValue.COMPLEX_UNIT_DIP, UNSCALED_DEFAULT_SELECTION_DIVIDER_HEIGHT,
                 getResources().getDisplayMetrics());
         mSelectionDividerHeight = attributesArray.getDimensionPixelSize(
-                R.styleable.NumberPicker_selectionDividerHeight, defSelectionDividerHeight);
+                R.styleable.NumberPicker_dtp_selectionDividerHeight, defSelectionDividerHeight);
 
         final int defSelectionDividerDistance = (int) TypedValue.applyDimension(
                 TypedValue.COMPLEX_UNIT_DIP, UNSCALED_DEFAULT_SELECTION_DIVIDERS_DISTANCE,
                 getResources().getDisplayMetrics());
         mSelectionDividersDistance = attributesArray.getDimensionPixelSize(
-                R.styleable.NumberPicker_selectionDividersDistance, defSelectionDividerDistance);
+                R.styleable.NumberPicker_dtp_selectionDividersDistance, defSelectionDividerDistance);
 
         mMinHeight = attributesArray.getDimensionPixelSize(
-                R.styleable.NumberPicker_internalMinHeight, SIZE_UNSPECIFIED);
+                R.styleable.NumberPicker_dtp_internalMinHeight, SIZE_UNSPECIFIED);
 
         mMaxHeight = attributesArray.getDimensionPixelSize(
-                R.styleable.NumberPicker_internalMaxHeight, SIZE_UNSPECIFIED);
+                R.styleable.NumberPicker_dtp_internalMaxHeight, SIZE_UNSPECIFIED);
         if (mMinHeight != SIZE_UNSPECIFIED && mMaxHeight != SIZE_UNSPECIFIED
                 && mMinHeight > mMaxHeight) {
             throw new IllegalArgumentException("minHeight > maxHeight");
         }
 
         mMinWidth = attributesArray.getDimensionPixelSize(
-                R.styleable.NumberPicker_internalMinWidth, SIZE_UNSPECIFIED);
+                R.styleable.NumberPicker_dtp_internalMinWidth, SIZE_UNSPECIFIED);
 
         mMaxWidth = attributesArray.getDimensionPixelSize(
-                R.styleable.NumberPicker_internalMaxWidth, SIZE_UNSPECIFIED);
+                R.styleable.NumberPicker_dtp_internalMaxWidth, SIZE_UNSPECIFIED);
         if (mMinWidth != SIZE_UNSPECIFIED && mMaxWidth != SIZE_UNSPECIFIED
                 && mMinWidth > mMaxWidth) {
             throw new IllegalArgumentException("minWidth > maxWidth");
@@ -690,7 +689,7 @@ public class NumberPicker extends LinearLayout {
         mComputeMaxWidth = (mMaxWidth == SIZE_UNSPECIFIED);
 
         mVirtualButtonPressedDrawable = attributesArray.getDrawable(
-                R.styleable.NumberPicker_virtualButtonPressedDrawable);
+                R.styleable.NumberPicker_dtp_virtualButtonPressedDrawable);
 
         attributesArray.recycle();
 

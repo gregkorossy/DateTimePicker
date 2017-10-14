@@ -104,7 +104,7 @@ class DayPickerView extends ViewGroup {
         final String maxDate = a.getString(R.styleable.CalendarView_maxDate);
 
         final int monthTextAppearanceResId = a.getResourceId(
-                R.styleable.CalendarView_monthTextAppearance,
+                R.styleable.CalendarView_dtp_monthTextAppearance,
                 R.style.TextAppearance_Material_Widget_Calendar_Month);
         final int dayOfWeekTextAppearanceResId = a.getResourceId(
                 R.styleable.CalendarView_weekDayTextAppearance,
@@ -114,7 +114,7 @@ class DayPickerView extends ViewGroup {
                 R.style.TextAppearance_Material_Widget_Calendar_Day);
 
         final ColorStateList daySelectorColor = a.getColorStateList(
-                R.styleable.CalendarView_daySelectorColor);
+                R.styleable.CalendarView_dtp_daySelectorColor);
 
         a.recycle();
 

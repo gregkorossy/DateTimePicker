@@ -24,7 +24,6 @@ import android.content.res.TypedArray;
 import android.os.Parcelable;
 import android.support.v4.view.MarginLayoutParamsCompat;
 import android.support.v4.view.ViewCompat;
-import android.text.format.DateFormat;
 import android.text.format.DateUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -84,7 +83,7 @@ class TimePickerSpinnerDelegate extends TimePicker.AbstractTimePickerDelegate {
         final TypedArray a = mContext.obtainStyledAttributes(
                 attrs, R.styleable.TimePicker, defStyleAttr, defStyleRes);
         final int layoutResourceId = a.getResourceId(
-                R.styleable.TimePicker_legacyLayout, R.layout.time_picker_legacy_material);
+                R.styleable.TimePicker_dtp_legacyLayout, R.layout.time_picker_legacy_material);
         a.recycle();
 
         final LayoutInflater inflater = LayoutInflater.from(mContext);

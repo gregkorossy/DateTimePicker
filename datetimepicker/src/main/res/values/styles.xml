@@ -5,19 +5,19 @@
     </style>
 
     <style name="Widget.CalendarView">
-        <item name="showWeekNumber">true</item>
+        <!--<item name="showWeekNumber">true</item>-->
         <item name="minDate">01/01/1900</item>
         <item name="maxDate">12/31/2100</item>
-        <item name="shownWeekCount">6</item>
+        <!--<item name="shownWeekCount">6</item>
         <item name="selectedWeekBackgroundColor">#330099FF</item>
         <item name="focusedMonthDateColor">#FFFFFFFF</item>
         <item name="unfocusedMonthDateColor">#66FFFFFF</item>
         <item name="weekNumberColor">#33FFFFFF</item>
-        <item name="weekSeparatorLineColor">#19FFFFFF</item>
+        <item name="weekSeparatorLineColor">#19FFFFFF</item>-->
         <!--<item name="selectedDateVerticalBar">@drawable/day_picker_week_view_dayline_holo</item>-->
         <item name="weekDayTextAppearance">@style/TextAppearance.Small.CalendarViewWeekDayView</item>
         <item name="dateTextAppearance">?android:attr/textAppearanceSmall</item>
-        <item name="calendarViewMode">holo</item>
+        <item name="dtp_calendarViewMode">holo</item>
     </style>
 
     <style name="Widget.NumberPicker">
@@ -34,7 +34,7 @@
 
     <style name="Widget.DatePicker">
         <item name="datePickerMode">spinner</item>
-        <item name="legacyLayout">@layout/date_picker_legacy</item>
+        <item name="dtp_legacyLayout">@layout/date_picker_legacy</item>
         <item name="calendarViewShown">false</item>
     </style>
 </resources>

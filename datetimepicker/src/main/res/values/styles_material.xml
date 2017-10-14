@@ -5,37 +5,36 @@
     <style name="Widget.Material" />
 
     <style name="Widget.Material.NumberPicker" parent="Widget.NumberPicker">
-        <item name="internalLayout">@layout/number_picker_material</item>
-        <item name="solidColor">@android:color/transparent</item>
-        <item name="selectionDivider">@drawable/number_picker_divider_material</item>
-        <item name="selectionDividerHeight">2dp</item>
-        <item name="selectionDividersDistance">48dp</item>
-        <item name="internalMinWidth">64dp</item>
-        <item name="internalMaxHeight">180dp</item>
-        <item name="virtualButtonPressedDrawable">?attr/selectableItemBackground</item>
+        <item name="dtp_internalLayout">@layout/number_picker_material</item>
+        <item name="dtp_solidColor">@android:color/transparent</item>
+        <item name="dtp_selectionDivider">@drawable/number_picker_divider_material</item>
+        <item name="dtp_selectionDividerHeight">2dp</item>
+        <item name="dtp_selectionDividersDistance">48dp</item>
+        <item name="dtp_internalMinWidth">64dp</item>
+        <item name="dtp_internalMaxHeight">180dp</item>
+        <item name="dtp_virtualButtonPressedDrawable">?attr/selectableItemBackground</item>
     </style>
 
     <style name="Widget.Material.CalendarView" parent="Widget.CalendarView">
-        <item name="calendarViewMode">material</item>
-        <item name="monthTextAppearance">@style/TextAppearance.Material.Widget.Calendar.Month</item>
+        <item name="dtp_calendarViewMode">material</item>
+        <item name="dtp_monthTextAppearance">@style/TextAppearance.Material.Widget.Calendar.Month</item>
         <item name="weekDayTextAppearance">@style/TextAppearance.Material.Widget.Calendar.DayOfWeek</item>
         <item name="dateTextAppearance">@style/TextAppearance.Material.Widget.Calendar.Day</item>
-        <item name="daySelectorColor">?attr/colorControlActivated</item>
-        <item name="dayHighlightColor">?attr/colorControlHighlight</item>
+        <item name="dtp_daySelectorColor">?attr/colorControlActivated</item>
+        <item name="dtp_dayHighlightColor">?attr/colorControlHighlight</item>
     </style>
 
     <style name="Widget.Material.TimePicker">
         <item name="timePickerMode">@integer/time_picker_mode_material</item>
-        <item name="legacyLayout">@layout/time_picker_legacy_material</item>
+        <item name="dtp_legacyLayout">@layout/time_picker_legacy_material</item>
         <!-- Attributes for new-style TimePicker. -->
-        <item name="internalLayout">@layout/time_picker_material</item>
-        <item name="headerTextColor">@color/primary_text_secondary_when_activated_material</item>
+        <item name="dtp_internalLayout">@layout/time_picker_material</item>
+        <item name="dtp_headerTextColor">@color/primary_text_secondary_when_activated_material</item>
         <item name="headerBackground">#ff555555</item>
         <item name="numbersTextColor">@color/primary_text_inverse_when_activated_material</item><!-- ?textColorPrimaryActivated -->
         <item name="numbersInnerTextColor">@color/secondary_text_inverse_when_activated_material</item><!-- ?textColorSecondaryActivated -->
         <item name="numbersSelectorColor">?attr/colorControlActivated</item>
         <item name="numbersBackgroundColor">#ff555555</item>
-        <item name="amPmTextColor">?android:attr/textColorSecondary</item>
     </style>
 
     <style name="Widget.Material.DatePicker">
@@ -43,8 +42,8 @@
         <!--<item name="legacyLayout">@layout/date_picker_legacy_holo</item>-->
         <item name="calendarViewShown">true</item>
         <!-- Attributes for new-style DatePicker. -->
-        <item name="internalLayout">@layout/date_picker_material</item>
-        <item name="headerTextColor">@color/primary_text_secondary_when_activated_material</item>
+        <item name="dtp_internalLayout">@layout/date_picker_material</item>
+        <item name="dtp_headerTextColor">@color/primary_text_secondary_when_activated_material</item>
         <item name="headerBackground">#ff555555</item>
     </style>
 
@@ -52,14 +51,14 @@
     <style name="Widget.Material.Light.NumberPicker" parent="Widget.Material.NumberPicker"/>
 
     <style name="Widget.Material.Light.TimePicker" parent="Widget.Material.TimePicker">
-        <item name="headerTextColor">@color/primary_text_secondary_when_activated_material_inverse
+        <item name="dtp_headerTextColor">@color/primary_text_secondary_when_activated_material_inverse
         </item>
         <item name="headerBackground">?attr/colorAccent</item>
         <item name="numbersBackgroundColor">#ffeeeeee</item>
     </style>
 
     <style name="Widget.Material.Light.DatePicker" parent="Widget.Material.DatePicker">
-        <item name="headerTextColor">@color/primary_text_secondary_when_activated_material_inverse
+        <item name="dtp_headerTextColor">@color/primary_text_secondary_when_activated_material_inverse
         </item>
         <item name="headerBackground">?attr/colorAccent</item>
     </style>

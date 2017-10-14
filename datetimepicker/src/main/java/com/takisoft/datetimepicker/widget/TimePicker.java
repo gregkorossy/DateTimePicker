@@ -134,7 +134,7 @@ public class TimePicker extends FrameLayout {
 
         final TypedArray a = context.obtainStyledAttributes(
                 attrs, R.styleable.TimePicker, defStyleAttr, defStyleRes);
-        final boolean isDialogMode = a.getBoolean(R.styleable.TimePicker_dialogMode, false);
+        final boolean isDialogMode = a.getBoolean(R.styleable.TimePicker_dtp_dialogMode, false);
         final int requestedMode = a.getInt(R.styleable.TimePicker_timePickerMode, MODE_SPINNER);
         a.recycle();
 
