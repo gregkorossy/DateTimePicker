@@ -116,6 +116,9 @@ class DayPickerView extends ViewGroup {
         final ColorStateList daySelectorColor = a.getColorStateList(
                 R.styleable.CalendarView_dtp_daySelectorColor);
 
+        final ColorStateList dayHighlightColor = a.getColorStateList(
+                R.styleable.CalendarView_dtp_dayHighlightColor);
+
         a.recycle();
 
         // Set up adapter.
@@ -125,6 +128,7 @@ class DayPickerView extends ViewGroup {
         mAdapter.setDayOfWeekTextAppearance(dayOfWeekTextAppearanceResId);
         mAdapter.setDayTextAppearance(dayTextAppearanceResId);
         mAdapter.setDaySelectorColor(daySelectorColor);
+        mAdapter.setDayHighlightColor(dayHighlightColor);
 
         final LayoutInflater inflater = LayoutInflater.from(context);
         final ViewGroup content = (ViewGroup) inflater.inflate(DEFAULT_LAYOUT, this, false);

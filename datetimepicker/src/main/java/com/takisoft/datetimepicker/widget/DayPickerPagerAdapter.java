@@ -79,9 +79,9 @@ class DayPickerPagerAdapter extends PagerAdapter {
         mLayoutResId = layoutResId;
         mCalendarViewId = calendarViewId;
 
-        final TypedArray ta = context.obtainStyledAttributes(new int[]{R.attr.colorControlHighlight});
+        /*final TypedArray ta = context.obtainStyledAttributes(new int[]{R.attr.colorControlHighlight});
         mDayHighlightColor = ta.getColorStateList(0);
-        ta.recycle();
+        ta.recycle();*/
     }
 
     public void setRange(@NonNull Calendar min, @NonNull Calendar max) {
@@ -162,6 +162,11 @@ class DayPickerPagerAdapter extends PagerAdapter {
 
     void setDaySelectorColor(ColorStateList selectorColor) {
         mDaySelectorColor = selectorColor;
+        notifyDataSetChanged();
+    }
+
+    void setDayHighlightColor(ColorStateList dayHighlightColor) {
+        mDayHighlightColor = dayHighlightColor;
         notifyDataSetChanged();
     }
 
