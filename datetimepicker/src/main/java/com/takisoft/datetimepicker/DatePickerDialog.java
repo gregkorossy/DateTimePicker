@@ -19,7 +19,9 @@ package com.takisoft.datetimepicker;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
+import android.icu.util.TimeZone;
 import android.os.Bundle;
+import android.support.annotation.ColorInt;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.annotation.StyleRes;
@@ -32,6 +34,7 @@ import android.widget.Button;
 import com.takisoft.datetimepicker.widget.DatePicker;
 import com.takisoft.datetimepicker.widget.DatePicker.OnDateChangedListener;
 import com.takisoft.datetimepicker.widget.DatePicker.ValidationCallback;
+import com.takisoft.datetimepicker.widget.NumberPicker;
 
 import java.util.Calendar;
 
@@ -202,6 +205,28 @@ public class DatePickerDialog extends AlertDialog implements OnClickListener,
      */
     public void updateDate(int year, int month, int dayOfMonth) {
         mDatePicker.updateDate(year, month, dayOfMonth);
+    }
+
+    /**
+     * Sets the minimal date supported by this {@link NumberPicker} in
+     * milliseconds since January 1, 1970 00:00:00 in
+     * {@link TimeZone#getDefault()} time zone.
+     *
+     * @param minDate The minimal supported date.
+     */
+    public void setMinDate(long minDate) {
+        mDatePicker.setMinDate(minDate);
+    }
+
+    /**
+     * Sets the maximal date supported by this {@link DatePicker} in
+     * milliseconds since January 1, 1970 00:00:00 in
+     * {@link TimeZone#getDefault()} time zone.
+     *
+     * @param maxDate The maximal supported date.
+     */
+    public void setMaxDate(long maxDate) {
+        mDatePicker.setMaxDate(maxDate);
     }
 
     @Override
