@@ -18,6 +18,7 @@ package com.takisoft.datetimepicker.widget;
 
 import android.annotation.TargetApi;
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
@@ -409,6 +410,42 @@ public class CalendarView extends FrameLayout {
     }
 
     /**
+     * Get day selector color.
+     *
+     * @return The day select color.
+     */
+    public ColorStateList getDaySelectorColor() {
+        return mDelegate.getDaySelectorColor();
+    }
+
+    /**
+     * Set day selector color.
+     *
+     * @param color The day select color.
+     */
+    public void setDaySelectorColor(ColorStateList color) {
+        mDelegate.setDaySelectorColor(color);
+    }
+
+    /**
+     * Get day highlight color.
+     *
+     * @return The day highlight color.
+     */
+    public ColorStateList getDayHighlightColor() {
+        return mDelegate.getDayHighlightColor();
+    }
+
+    /**
+     * Set day highlight color.
+     *
+     * @param color The day highlight color
+     */
+    public void setDayHighlightColor(ColorStateList color) {
+        mDelegate.setDayHighlightColor(color);
+    }
+
+    /**
      * Sets whether to show the week number.
      *
      * @param showWeekNumber True to show the week number.
@@ -587,6 +624,14 @@ public class CalendarView extends FrameLayout {
         void setMaxDate(long maxDate);
 
         long getMaxDate();
+
+        void setDaySelectorColor(ColorStateList color);
+
+        ColorStateList getDaySelectorColor();
+
+        void setDayHighlightColor(ColorStateList color);
+
+        ColorStateList getDayHighlightColor();
 
         void setShowWeekNumber(boolean showWeekNumber);
 

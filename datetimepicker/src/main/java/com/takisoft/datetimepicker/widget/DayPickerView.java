@@ -360,6 +360,22 @@ class DayPickerView extends ViewGroup {
         return mMaxDate.getTimeInMillis();
     }
 
+    public void setDaySelectorColor(ColorStateList color) {
+        mAdapter.setDaySelectorColor(color);
+    }
+
+    public ColorStateList getDaySelectorColor() {
+        return mAdapter.getDaySelectorColor();
+    }
+
+    public void setDayHighlightColor(ColorStateList color) {
+        mAdapter.setDayHighlightColor(color);
+    }
+
+    public ColorStateList getDayHighlightColor() {
+        return mAdapter.getDayHighlightColor();
+    }
+
     /**
      * Handles changes to date range.
      */

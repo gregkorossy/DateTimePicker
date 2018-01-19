@@ -491,6 +491,26 @@ class DatePickerCalendarDelegate extends DatePicker.AbstractDatePickerDelegate {
     }
 
     @Override
+    public void setDaySelectorColor(ColorStateList color) {
+        mDayPickerView.setDaySelectorColor(color);
+    }
+
+    @Override
+    public ColorStateList getDaySelectorColor() {
+        return mDayPickerView.getDaySelectorColor();
+    }
+
+    @Override
+    public void setDayHighlightColor(ColorStateList color) {
+        mDayPickerView.setDayHighlightColor(color);
+    }
+
+    @Override
+    public ColorStateList getDayHighlightColor() {
+        return mDayPickerView.getDayHighlightColor();
+    }
+
+    @Override
     public void setFirstDayOfWeek(int firstDayOfWeek) {
         mFirstDayOfWeek = firstDayOfWeek;
 

@@ -19,6 +19,7 @@ package com.takisoft.datetimepicker;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
+import android.content.res.ColorStateList;
 import android.icu.util.TimeZone;
 import android.os.Bundle;
 import android.support.annotation.ColorInt;
@@ -227,6 +228,24 @@ public class DatePickerDialog extends AlertDialog implements OnClickListener,
      */
     public void setMaxDate(long maxDate) {
         mDatePicker.setMaxDate(maxDate);
+    }
+
+    /**
+     * Set day selector color.
+     *
+     * @param color The day select color.
+     */
+    public void setDaySelectorColor(ColorStateList color) {
+        mDatePicker.setDaySelectorColor(color);
+    }
+
+    /**
+     * Set day highlight color.
+     *
+     * @param color The day highlight color.
+     */
+    public void setDayHighlightColor(ColorStateList color) {
+        mDatePicker.setDayHighlightColor(color);
     }
 
     @Override

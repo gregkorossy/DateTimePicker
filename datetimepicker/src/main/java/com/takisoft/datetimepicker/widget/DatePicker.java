@@ -18,12 +18,14 @@ package com.takisoft.datetimepicker.widget;
 
 import android.annotation.TargetApi;
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
 import android.icu.util.TimeZone;
 import android.os.Build;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.support.annotation.ColorInt;
 import android.support.annotation.IntDef;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
@@ -332,6 +334,42 @@ public class DatePicker extends FrameLayout {
     }
 
     /**
+     * Get day selector color.
+     *
+     * @return The day select color.
+     */
+    public ColorStateList getDaySelectorColor() {
+        return mDelegate.getDaySelectorColor();
+    }
+
+    /**
+     * Set day selector color.
+     *
+     * @param color The day select color.
+     */
+    public void setDaySelectorColor(ColorStateList color) {
+        mDelegate.setDaySelectorColor(color);
+    }
+
+    /**
+     * Get day highlight color.
+     *
+     * @return The day highlight color.
+     */
+    public ColorStateList getDayHighlightColor() {
+        return mDelegate.getDayHighlightColor();
+    }
+
+    /**
+     * Set day highlight color.
+     *
+     * @param color The day highlight color.
+     */
+    public void setDayHighlightColor(ColorStateList color) {
+        mDelegate.setDayHighlightColor(color);
+    }
+
+    /**
      * Sets the callback that indicates the current date is valid.
      *
      * @param callback the callback, may be null
@@ -549,6 +587,14 @@ public class DatePicker extends FrameLayout {
         void setMaxDate(long maxDate);
 
         Calendar getMaxDate();
+
+        void setDaySelectorColor(ColorStateList color);
+
+        ColorStateList getDaySelectorColor();
+
+        void setDayHighlightColor(ColorStateList color);
+
+        ColorStateList getDayHighlightColor();
 
         void setEnabled(boolean enabled);
 

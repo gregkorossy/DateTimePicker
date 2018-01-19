@@ -1,6 +1,8 @@
 package com.takisoft.datetimepicker.sample;
 
+import android.content.res.ColorStateList;
 import android.os.Bundle;
+import android.support.annotation.ColorRes;
 import android.support.v7.app.AppCompatActivity;
 import android.text.format.DateFormat;
 import android.widget.Toast;
@@ -41,8 +43,13 @@ public class MainActivity extends AppCompatActivity {
                             maxDate.set(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DATE));
                             long maxDateTimeInMillis = maxDate.getTimeInMillis();
 
+                            ColorStateList daySelectorColor = colorInt2ColorStateList(R.color.colorBlue);
+                            ColorStateList dayHighlightColor = colorInt2ColorStateList(R.color.overlay_dark_10);
+
                             dpd.setMinDate(minDateTimeInMillis);
                             dpd.setMaxDate(maxDateTimeInMillis);
+                            dpd.setDaySelectorColor(daySelectorColor);
+                            dpd.setDayHighlightColor(dayHighlightColor);
 
                             dpd.show();
                         }
@@ -59,5 +66,15 @@ public class MainActivity extends AppCompatActivity {
                             tpd.show();
                         }
                 );
+    }
+
+    /**
+     * Conversion Int format to ColorStateList format.
+     *
+     * @param color The color id of int format.
+     * @return The color ColorStateList of int format.
+     */
+    private ColorStateList colorInt2ColorStateList(@ColorRes int color) {
+        return ColorStateList.valueOf(getResources().getColor(color));
     }
 }

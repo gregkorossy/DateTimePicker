@@ -17,6 +17,7 @@
 package com.takisoft.datetimepicker.widget;
 
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
 import android.os.Build;
@@ -33,12 +34,12 @@ import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import com.takisoft.datetimepicker.widget.NumberPicker.OnValueChangeListener;
 import android.widget.TextView;
 
 import com.takisoft.datetimepicker.R;
 import com.takisoft.datetimepicker.util.DateFormatFix;
 import com.takisoft.datetimepicker.widget.DatePicker.AbstractDatePickerDelegate;
+import com.takisoft.datetimepicker.widget.NumberPicker.OnValueChangeListener;
 
 import java.text.DateFormatSymbols;
 import java.text.DecimalFormatSymbols;
@@ -341,6 +342,26 @@ class DatePickerSpinnerDelegate extends AbstractDatePickerDelegate {
         final Calendar maxDate = Calendar.getInstance();
         maxDate.setTimeInMillis(mCalendarView.getMaxDate());
         return maxDate;
+    }
+
+    @Override
+    public void setDaySelectorColor(ColorStateList color) {
+        mCalendarView.setDaySelectorColor(color);
+    }
+
+    @Override
+    public ColorStateList getDaySelectorColor() {
+        return mCalendarView.getDaySelectorColor();
+    }
+
+    @Override
+    public void setDayHighlightColor(ColorStateList color) {
+        mCalendarView.setDayHighlightColor(color);
+    }
+
+    @Override
+    public ColorStateList getDayHighlightColor() {
+        return mCalendarView.getDayHighlightColor();
     }
 
     @Override
