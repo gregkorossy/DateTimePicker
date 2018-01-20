@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
                             ColorDrawable headerBackground = new ColorDrawable(ContextCompat.getColor(getApplicationContext(), R.color.colorBlue));
                             ColorStateList yearHighlightColor = ColorStateList.valueOf(ContextCompat.getColor(getApplicationContext(), R.color.grey_900));
                             ColorStateList yearSelectorColor = ColorStateList.valueOf(ContextCompat.getColor(getApplicationContext(), R.color.colorBlue));
-//                            ColorStateList calendarTextColor = ColorStateList.valueOf(ContextCompat.getColor(getApplicationContext(), R.color.colorRedDark));
+                            ColorStateList chevronButtonColor = ColorStateList.valueOf(ContextCompat.getColor(getApplicationContext(), R.color.grey_900));
 
                             int headerNormalTextColor = ContextCompat.getColor(getApplicationContext(), R.color.material_text_color_white_secondary_text);
                             int headerSelectedTextColor = ContextCompat.getColor(getApplicationContext(), R.color.colorWhite);
@@ -71,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
                             dpd.setYearHighlightColor(yearHighlightColor);
                             dpd.setYearSelectorColor(yearSelectorColor);
                             dpd.setCalendarTextColor(calendarTextColor);
+                            dpd.setChevronButtonColor(chevronButtonColor);
                             dpd.setOnShowListener(dialog -> {
                                 dpd.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.colorBlue));
                                 dpd.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.colorBlue));

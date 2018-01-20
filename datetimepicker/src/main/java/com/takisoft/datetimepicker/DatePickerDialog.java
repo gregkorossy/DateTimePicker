@@ -293,6 +293,15 @@ public class DatePickerDialog extends AlertDialog implements OnClickListener,
         mDatePicker.setCalendarTextColor(color);
     }
 
+    /**
+     * Set chevron button color.
+     *
+     * @param color The chevron button color.
+     */
+    public void setChevronButtonColor(ColorStateList color) {
+        mDatePicker.setChevronButtonColor(color);
+    }
+
     @Override
     public Bundle onSaveInstanceState() {
         final Bundle state = super.onSaveInstanceState();

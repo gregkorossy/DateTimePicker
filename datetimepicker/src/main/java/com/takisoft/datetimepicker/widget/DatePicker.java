@@ -461,6 +461,15 @@ public class DatePicker extends FrameLayout {
     }
 
     /**
+     * Set chevron button color.
+     *
+     * @param color The chevron button color.
+     */
+    public void setChevronButtonColor(ColorStateList color) {
+        mDelegate.setChevronButtonColor(color);
+    }
+
+    /**
      * Sets the callback that indicates the current date is valid.
      *
      * @param callback the callback, may be null
@@ -706,6 +715,8 @@ public class DatePicker extends FrameLayout {
         void setCalendarTextColor(ColorStateList color);
 
         ColorStateList getCalendarTextColor();
+
+        void setChevronButtonColor(ColorStateList color);
 
         void setEnabled(boolean enabled);
 

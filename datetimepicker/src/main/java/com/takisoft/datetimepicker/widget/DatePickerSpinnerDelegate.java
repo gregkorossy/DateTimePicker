@@ -423,6 +423,12 @@ class DatePickerSpinnerDelegate extends AbstractDatePickerDelegate {
         return mCalendarView.getCalendarTextColor();
     }
 
+    // TODO: Not be used.
+    @Override
+    public void setChevronButtonColor(ColorStateList color) {
+
+    }
+
     @Override
     public void setEnabled(boolean enabled) {
         mDaySpinner.setEnabled(enabled);

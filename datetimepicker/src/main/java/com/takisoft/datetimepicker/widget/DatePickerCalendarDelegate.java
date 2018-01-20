@@ -576,6 +576,11 @@ class DatePickerCalendarDelegate extends DatePicker.AbstractDatePickerDelegate {
     }
 
     @Override
+    public void setChevronButtonColor(ColorStateList color) {
+        mDayPickerView.setChevronButtonColor(color);
+    }
+
+    @Override
     public void setFirstDayOfWeek(int firstDayOfWeek) {
         mFirstDayOfWeek = firstDayOfWeek;
 

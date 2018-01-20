@@ -360,6 +360,15 @@ class DayPickerView extends ViewGroup {
         return mMaxDate.getTimeInMillis();
     }
 
+    public void setChevronButtonColor(ColorStateList color) {
+        if (color != null) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                mNextButton.setImageTintList(color);
+                mPrevButton.setImageTintList(color);
+            }
+        }
+    }
+
     public void setCalendarTextColor(ColorStateList color) {
         mAdapter.setCalendarTextColor(color);
     }
