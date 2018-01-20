@@ -1,11 +1,8 @@
 package com.takisoft.datetimepicker.sample;
 
-import android.content.DialogInterface;
 import android.content.res.ColorStateList;
-import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.support.annotation.ColorRes;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -33,9 +30,6 @@ public class MainActivity extends AppCompatActivity {
 
         findViewById(R.id.btnDateFragment)
                 .setOnClickListener(view -> {
-                            /*DatePickerDialog
-                                    .newInstance(null, cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DATE))
-                                    .show(getFragmentManager(), null);*/
                             DatePickerDialog dpd = new DatePickerDialog(MainActivity.this, (datePicker, year, month, dayOfMonth) -> {
                                 Toast.makeText(MainActivity.this, String.format("%d", year) + "-" + String.format("%02d", month + 1) + "-" + String.format("%02d", dayOfMonth), Toast.LENGTH_SHORT).show();
                             }, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DATE));
@@ -48,18 +42,25 @@ public class MainActivity extends AppCompatActivity {
                             maxDate.set(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DATE));
                             long maxDateTimeInMillis = maxDate.getTimeInMillis();
 
-                            ColorStateList daySelectorColor = colorInt2ColorStateList(R.color.colorBlue);
-                            ColorStateList dayHighlightColor = colorInt2ColorStateList(R.color.overlay_dark_10);
+                            ColorStateList daySelectorColor = ColorStateList.valueOf(ContextCompat.getColor(getApplicationContext(), R.color.colorBlue));
+                            ColorStateList dayHighlightColor = ColorStateList.valueOf(ContextCompat.getColor(getApplicationContext(), R.color.overlay_dark_10));
                             ColorDrawable headerBackground = new ColorDrawable(ContextCompat.getColor(getApplicationContext(), R.color.colorBlue));
-                            ColorStateList yearSelectorColor = colorInt2ColorStateList(R.color.colorBlue);
-                            ColorStateList yearHighlightColor = colorInt2ColorStateList(R.color.grey_900);
+                            ColorStateList yearHighlightColor = ColorStateList.valueOf(ContextCompat.getColor(getApplicationContext(), R.color.grey_900));
+                            ColorStateList yearSelectorColor = ColorStateList.valueOf(ContextCompat.getColor(getApplicationContext(), R.color.colorBlue));
+//                            ColorStateList calendarTextColor = ColorStateList.valueOf(ContextCompat.getColor(getApplicationContext(), R.color.colorRedDark));
 
                             int headerNormalTextColor = ContextCompat.getColor(getApplicationContext(), R.color.material_text_color_white_secondary_text);
-                            int headerSelectedColor = ContextCompat.getColor(getApplicationContext(), R.color.colorWhite);
+                            int headerSelectedTextColor = ContextCompat.getColor(getApplicationContext(), R.color.colorWhite);
+                            final int[][] headerStateSet = new int[][]{{android.R.attr.state_activated}, {}};
+                            final int[] headerColors = new int[]{headerSelectedTextColor, headerNormalTextColor};
+                            ColorStateList headerTextColor = new ColorStateList(headerStateSet, headerColors);
 
-                            final int[][] stateSet = new int[][]{{android.R.attr.state_activated}, {}};
-                            final int[] colors = new int[]{headerSelectedColor, headerNormalTextColor};
-                            ColorStateList headerTextColor = new ColorStateList(stateSet, colors);
+                            int calendarNormalTextColor = ContextCompat.getColor(getApplicationContext(), R.color.grey_900);
+                            int calendarSelectedTextColor = ContextCompat.getColor(getApplicationContext(), R.color.colorWhite);
+                            int calendarUnEnabledTextColor = ContextCompat.getColor(getApplicationContext(), R.color.dark_gray);
+                            final int[][] calendarStateSet = new int[][]{{android.R.attr.state_activated}, {android.R.attr.state_enabled}, {}};
+                            final int[] calendarColors = new int[]{calendarSelectedTextColor, calendarNormalTextColor, calendarUnEnabledTextColor};
+                            ColorStateList calendarTextColor = new ColorStateList(calendarStateSet, calendarColors);
 
                             dpd.setMinDate(minDateTimeInMillis);
                             dpd.setMaxDate(maxDateTimeInMillis);
@@ -67,14 +68,12 @@ public class MainActivity extends AppCompatActivity {
                             dpd.setDayHighlightColor(dayHighlightColor);
                             dpd.setHeaderBackground(headerBackground);
                             dpd.setHeaderTextColor(headerTextColor);
-                            dpd.setYearSelectorColor(yearSelectorColor);
                             dpd.setYearHighlightColor(yearHighlightColor);
-                            dpd.setOnShowListener(new DialogInterface.OnShowListener() {
-                                @Override
-                                public void onShow(DialogInterface dialog) {
-                                    dpd.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.colorBlue));
-                                    dpd.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.colorBlue));
-                                }
+                            dpd.setYearSelectorColor(yearSelectorColor);
+                            dpd.setCalendarTextColor(calendarTextColor);
+                            dpd.setOnShowListener(dialog -> {
+                                dpd.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.colorBlue));
+                                dpd.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.colorBlue));
                             });
 
                             dpd.show();
@@ -92,15 +91,5 @@ public class MainActivity extends AppCompatActivity {
                             tpd.show();
                         }
                 );
-    }
-
-    /**
-     * Conversion Int format to ColorStateList format.
-     *
-     * @param color The color id of int format.
-     * @return The color ColorStateList of int format.
-     */
-    private ColorStateList colorInt2ColorStateList(@ColorRes int color) {
-        return ColorStateList.valueOf(getResources().getColor(color));
     }
 }

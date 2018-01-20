@@ -446,6 +446,24 @@ public class CalendarView extends FrameLayout {
     }
 
     /**
+     * Get calendar text color.
+     *
+     * @return The calendar text color.
+     */
+    public ColorStateList getCalendarTextColor() {
+        return mDelegate.getDayHighlightColor();
+    }
+
+    /**
+     * Set calendar text color.
+     *
+     * @param color The calendar text color.
+     */
+    public void setCalendarTextColor(ColorStateList color) {
+        mDelegate.setDayHighlightColor(color);
+    }
+
+    /**
      * Sets whether to show the week number.
      *
      * @param showWeekNumber True to show the week number.

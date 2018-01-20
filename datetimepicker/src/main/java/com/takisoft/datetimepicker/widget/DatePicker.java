@@ -443,6 +443,24 @@ public class DatePicker extends FrameLayout {
     }
 
     /**
+     * Get calendar text color.
+     *
+     * @return The calendar text color.
+     */
+    public ColorStateList getCalendarTextColor() {
+        return mDelegate.getCalendarTextColor();
+    }
+
+    /**
+     * Set calendar text color.
+     *
+     * @param color The calendar text color.
+     */
+    public void setCalendarTextColor(ColorStateList color) {
+        mDelegate.setCalendarTextColor(color);
+    }
+
+    /**
      * Sets the callback that indicates the current date is valid.
      *
      * @param callback the callback, may be null
@@ -684,6 +702,10 @@ public class DatePicker extends FrameLayout {
         void setDayHighlightColor(ColorStateList color);
 
         ColorStateList getDayHighlightColor();
+
+        void setCalendarTextColor(ColorStateList color);
+
+        ColorStateList getCalendarTextColor();
 
         void setEnabled(boolean enabled);
 

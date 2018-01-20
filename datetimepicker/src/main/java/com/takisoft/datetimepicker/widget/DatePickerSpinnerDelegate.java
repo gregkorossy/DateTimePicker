@@ -414,6 +414,16 @@ class DatePickerSpinnerDelegate extends AbstractDatePickerDelegate {
     }
 
     @Override
+    public void setCalendarTextColor(ColorStateList color) {
+        mCalendarView.setCalendarTextColor(color);
+    }
+
+    @Override
+    public ColorStateList getCalendarTextColor() {
+        return mCalendarView.getCalendarTextColor();
+    }
+
+    @Override
     public void setEnabled(boolean enabled) {
         mDaySpinner.setEnabled(enabled);
         mMonthSpinner.setEnabled(enabled);

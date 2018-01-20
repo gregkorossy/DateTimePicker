@@ -566,6 +566,16 @@ class DatePickerCalendarDelegate extends DatePicker.AbstractDatePickerDelegate {
     }
 
     @Override
+    public void setCalendarTextColor(ColorStateList color) {
+        mDayPickerView.setCalendarTextColor(color);
+    }
+
+    @Override
+    public ColorStateList getCalendarTextColor() {
+        return mDayPickerView.getCalendarTextColor();
+    }
+
+    @Override
     public void setFirstDayOfWeek(int firstDayOfWeek) {
         mFirstDayOfWeek = firstDayOfWeek;
 

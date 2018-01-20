@@ -284,6 +284,15 @@ public class DatePickerDialog extends AlertDialog implements OnClickListener,
         mDatePicker.setDayHighlightColor(color);
     }
 
+    /**
+     * Set calendar text color.
+     *
+     * @param color The calendar text color.
+     */
+    public void setCalendarTextColor(ColorStateList color) {
+        mDatePicker.setCalendarTextColor(color);
+    }
+
     @Override
     public Bundle onSaveInstanceState() {
         final Bundle state = super.onSaveInstanceState();
