@@ -21,6 +21,7 @@ import android.content.res.ColorStateList;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.icu.text.DisplayContext;
 import android.icu.text.SimpleDateFormat;
@@ -85,6 +86,12 @@ class DatePickerCalendarDelegate extends DatePicker.AbstractDatePickerDelegate {
     private ViewAnimator mAnimator;
     private DayPickerView mDayPickerView;
     private YearPickerView mYearPickerView;
+    private ViewGroup mHeaderViewGroup;
+
+    private Drawable mHeaderBackground;
+    private ColorStateList mHeaderTextColor;
+    private ColorStateList mYearSelectorColor;
+    private ColorStateList mYearHighlightColor;
 
     // Accessibility strings.
     private String mSelectDay;
@@ -126,10 +133,10 @@ class DatePickerCalendarDelegate extends DatePicker.AbstractDatePickerDelegate {
         mDelegator.addView(mContainer);
 
         // Set up header views.
-        final ViewGroup header = (ViewGroup) mContainer.findViewById(R.id.date_picker_header);
-        mHeaderYear = (TextView) header.findViewById(R.id.date_picker_header_year);
+        mHeaderViewGroup = (ViewGroup) mContainer.findViewById(R.id.date_picker_header);
+        mHeaderYear = (TextView) mHeaderViewGroup.findViewById(R.id.date_picker_header_year);
         mHeaderYear.setOnClickListener(mOnHeaderClickListener);
-        mHeaderMonthDay = (TextView) header.findViewById(R.id.date_picker_header_date);
+        mHeaderMonthDay = (TextView) mHeaderViewGroup.findViewById(R.id.date_picker_header_date);
         mHeaderMonthDay.setOnClickListener(mOnHeaderClickListener);
 
         // For the sake of backwards compatibility, attempt to extract the text
@@ -142,21 +149,12 @@ class DatePickerCalendarDelegate extends DatePicker.AbstractDatePickerDelegate {
             headerTextColor = Utils.getColorStateList(context, a, R.styleable.DatePicker_dtp_headerTextColor);
         }
 
-        if (headerTextColor != null) {
-            mHeaderYear.setTextColor(headerTextColor);
-            mHeaderMonthDay.setTextColor(headerTextColor);
-        }
+        setHeaderTextColor(headerTextColor);
 
         // Set up header background, if available.
         //if (a.hasValueOrEmpty(R.styleable.DatePicker_headerBackground)) {
         Drawable headerBg = a.getDrawable(R.styleable.DatePicker_headerBackground);
-        if (headerBg != null) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-                header.setBackground(headerBg);
-            } else {
-                header.setBackgroundDrawable(headerBg);
-            }
-        }
+        setHeaderBackground(headerBg);
 
         a.recycle();
 
@@ -488,6 +486,63 @@ class DatePickerCalendarDelegate extends DatePicker.AbstractDatePickerDelegate {
     @Override
     public Calendar getMaxDate() {
         return mMaxDate;
+    }
+
+    @Override
+    public void setYearSelectorColor(ColorStateList color) {
+        if (color != null) {
+            mYearSelectorColor = color;
+            mYearPickerView.setSelectorColor(color);
+        }
+    }
+
+    @Override
+    public ColorStateList getYearSelectorColor() {
+        return mYearSelectorColor;
+    }
+
+    @Override
+    public void setYearHighlightColor(ColorStateList color) {
+        if (color != null) {
+            mYearHighlightColor = color;
+            mYearPickerView.setHighlightColor(color);
+        }
+    }
+
+    @Override
+    public ColorStateList getYearHighlightColor() {
+        return mYearHighlightColor;
+    }
+
+    @Override
+    public void setHeaderTextColor(ColorStateList color) {
+        if (color != null) {
+            mHeaderTextColor = color;
+            mHeaderYear.setTextColor(color);
+            mHeaderMonthDay.setTextColor(color);
+        }
+    }
+
+    @Override
+    public ColorStateList getHeaderTextColor() {
+        return mHeaderTextColor;
+    }
+
+    @Override
+    public void setHeaderBackground(Drawable background) {
+        if (background != null) {
+            mHeaderBackground = background;
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                mHeaderViewGroup.setBackground(background);
+            } else {
+                mHeaderViewGroup.setBackgroundDrawable(background);
+            }
+        }
+    }
+
+    @Override
+    public Drawable getHeaderBackground() {
+        return mHeaderBackground;
     }
 
     @Override

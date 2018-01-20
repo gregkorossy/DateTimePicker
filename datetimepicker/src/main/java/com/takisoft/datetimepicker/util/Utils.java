@@ -10,6 +10,8 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.graphics.drawable.DrawableCompat;
 import android.support.v7.content.res.AppCompatResources;
+import android.view.View;
+import android.widget.TextView;
 
 import com.takisoft.datetimepicker.R;
 
@@ -118,6 +120,16 @@ public class Utils {
         }
 
         return drawable;
+    }
+
+    public static void setTextAppearance(Context context, View view, int resId) {
+        if (TextView.class.isInstance(view)) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                ((TextView) view).setTextAppearance(resId);
+            } else {
+                ((TextView) view).setTextAppearance(context, resId);
+            }
+        }
     }
 
     /*public static int multiplyAlphaComponent(int color, float alphaMod) {

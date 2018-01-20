@@ -1,8 +1,13 @@
 package com.takisoft.datetimepicker.sample;
 
+import android.content.DialogInterface;
 import android.content.res.ColorStateList;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.annotation.ColorRes;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.text.format.DateFormat;
 import android.widget.Toast;
@@ -31,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
                             /*DatePickerDialog
                                     .newInstance(null, cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DATE))
                                     .show(getFragmentManager(), null);*/
-                            DatePickerDialog dpd = new DatePickerDialog(MainActivity.this, (view1, year, month, dayOfMonth) -> {
+                            DatePickerDialog dpd = new DatePickerDialog(MainActivity.this, (datePicker, year, month, dayOfMonth) -> {
                                 Toast.makeText(MainActivity.this, String.format("%d", year) + "-" + String.format("%02d", month + 1) + "-" + String.format("%02d", dayOfMonth), Toast.LENGTH_SHORT).show();
                             }, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DATE));
 
@@ -45,11 +50,32 @@ public class MainActivity extends AppCompatActivity {
 
                             ColorStateList daySelectorColor = colorInt2ColorStateList(R.color.colorBlue);
                             ColorStateList dayHighlightColor = colorInt2ColorStateList(R.color.overlay_dark_10);
+                            ColorDrawable headerBackground = new ColorDrawable(ContextCompat.getColor(getApplicationContext(), R.color.colorBlue));
+                            ColorStateList yearSelectorColor = colorInt2ColorStateList(R.color.colorBlue);
+                            ColorStateList yearHighlightColor = colorInt2ColorStateList(R.color.grey_900);
+
+                            int headerNormalTextColor = ContextCompat.getColor(getApplicationContext(), R.color.material_text_color_white_secondary_text);
+                            int headerSelectedColor = ContextCompat.getColor(getApplicationContext(), R.color.colorWhite);
+
+                            final int[][] stateSet = new int[][]{{android.R.attr.state_activated}, {}};
+                            final int[] colors = new int[]{headerSelectedColor, headerNormalTextColor};
+                            ColorStateList headerTextColor = new ColorStateList(stateSet, colors);
 
                             dpd.setMinDate(minDateTimeInMillis);
                             dpd.setMaxDate(maxDateTimeInMillis);
                             dpd.setDaySelectorColor(daySelectorColor);
                             dpd.setDayHighlightColor(dayHighlightColor);
+                            dpd.setHeaderBackground(headerBackground);
+                            dpd.setHeaderTextColor(headerTextColor);
+                            dpd.setYearSelectorColor(yearSelectorColor);
+                            dpd.setYearHighlightColor(yearHighlightColor);
+                            dpd.setOnShowListener(new DialogInterface.OnShowListener() {
+                                @Override
+                                public void onShow(DialogInterface dialog) {
+                                    dpd.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.colorBlue));
+                                    dpd.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.colorBlue));
+                                }
+                            });
 
                             dpd.show();
                         }

@@ -20,6 +20,7 @@ import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Parcelable;
 import android.support.annotation.NonNull;
@@ -342,6 +343,54 @@ class DatePickerSpinnerDelegate extends AbstractDatePickerDelegate {
         final Calendar maxDate = Calendar.getInstance();
         maxDate.setTimeInMillis(mCalendarView.getMaxDate());
         return maxDate;
+    }
+
+    // TODO: Not be used.
+    @Override
+    public void setYearSelectorColor(ColorStateList color) {
+
+    }
+
+    // TODO: Not be used.
+    @Override
+    public ColorStateList getYearSelectorColor() {
+        return null;
+    }
+
+    // TODO: Not be used.
+    @Override
+    public void setYearHighlightColor(ColorStateList color) {
+
+    }
+
+    // TODO: Not be used.
+    @Override
+    public ColorStateList getYearHighlightColor() {
+        return null;
+    }
+
+    // TODO: Not be used.
+    @Override
+    public void setHeaderTextColor(ColorStateList color) {
+
+    }
+
+    // TODO: Not be used.
+    @Override
+    public ColorStateList getHeaderTextColor() {
+        return null;
+    }
+
+    // TODO: Not be used.
+    @Override
+    public void setHeaderBackground(Drawable background) {
+
+    }
+
+    // TODO: Not be used.
+    @Override
+    public Drawable getHeaderBackground() {
+        return null;
     }
 
     @Override

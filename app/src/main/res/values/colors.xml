@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--Theme colors-->
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
+    <!--Custom colors-->
     <color name="colorRedDark">#aa0707</color>
 
     <color name="colorBlue">#1093F5</color>
+    <color name="colorWhite">#ffffff</color>
+
     <color name="overlay_dark_10">#1A000000</color>
+
+    <color name="material_text_color_white_secondary_text">#8affffff</color>
+
+    <color name="grey_900">#212121</color>
 </resources>

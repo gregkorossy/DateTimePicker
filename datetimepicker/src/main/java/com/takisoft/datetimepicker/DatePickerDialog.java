@@ -20,9 +20,9 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.res.ColorStateList;
+import android.graphics.drawable.Drawable;
 import android.icu.util.TimeZone;
 import android.os.Bundle;
-import android.support.annotation.ColorInt;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.annotation.StyleRes;
@@ -228,6 +228,42 @@ public class DatePickerDialog extends AlertDialog implements OnClickListener,
      */
     public void setMaxDate(long maxDate) {
         mDatePicker.setMaxDate(maxDate);
+    }
+
+    /**
+     * Set year selector color.
+     *
+     * @param color The year selector color.
+     */
+    public void setYearSelectorColor(ColorStateList color) {
+        mDatePicker.setYearSelectorColor(color);
+    }
+
+    /**
+     * Set year highlight color.
+     *
+     * @param color The year highlight color.
+     */
+    public void setYearHighlightColor(ColorStateList color) {
+        mDatePicker.setYearHighlightColor(color);
+    }
+
+    /**
+     * Set header text color.
+     *
+     * @param color The header text color.
+     */
+    public void setHeaderTextColor(ColorStateList color) {
+        mDatePicker.setHeaderTextColor(color);
+    }
+
+    /**
+     * Set header background.
+     *
+     * @param background The header background.
+     */
+    public void setHeaderBackground(Drawable background) {
+        mDatePicker.setHeaderBackground(background);
     }
 
     /**
