@@ -89,6 +89,23 @@ public class MainActivity extends AppCompatActivity {
                             TimePickerDialog tpd = new TimePickerDialog(MainActivity.this, (view1, hourOfDay, minute) -> {
                                 Toast.makeText(MainActivity.this, String.format("%02d", hourOfDay) + ":" + String.format("%02d", minute), Toast.LENGTH_SHORT).show();
                             }, calendar.get(Calendar.HOUR_OF_DAY), calendar.get(Calendar.MINUTE), DateFormat.is24HourFormat(MainActivity.this));
+
+                            int headerBackgroundColor = ContextCompat.getColor(getApplicationContext(), R.color.colorBlue);
+
+                            int headerNormalTextColor = ContextCompat.getColor(getApplicationContext(), R.color.material_text_color_white_secondary_text);
+                            int headerSelectedTextColor = ContextCompat.getColor(getApplicationContext(), R.color.colorWhite);
+                            final int[][] headerStateSet = new int[][]{{android.R.attr.state_activated}, {}};
+                            final int[] headerColors = new int[]{headerSelectedTextColor, headerNormalTextColor};
+                            ColorStateList headerTextColor = new ColorStateList(headerStateSet, headerColors);
+
+
+                            tpd.setHeaderBackgroundColor(headerBackgroundColor);
+                            tpd.setHeaderTextColor(headerTextColor);
+                            tpd.setOnShowListener(dialog -> {
+                                tpd.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.colorBlue));
+                                tpd.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.colorBlue));
+                            });
+
                             tpd.show();
                         }
                 );

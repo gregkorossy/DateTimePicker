@@ -18,10 +18,12 @@ package com.takisoft.datetimepicker.widget;
 
 import android.annotation.TargetApi;
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
 import android.os.Build;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.support.annotation.ColorInt;
 import android.support.annotation.IntDef;
 import android.support.annotation.IntRange;
 import android.support.annotation.NonNull;
@@ -170,6 +172,24 @@ public class TimePicker extends FrameLayout {
                 }
             }
         });
+    }
+
+    /**
+     * Set header background color.
+     *
+     * @param color The header background color.
+     */
+    public void setHeaderBackgroundColor(@ColorInt int color) {
+        mDelegate.setHeaderBackgroundColor(color);
+    }
+
+    /**
+     * Set header text color.
+     *
+     * @param color The header text color.
+     */
+    public void setHeaderTextColor(ColorStateList color) {
+        mDelegate.setHeaderTextColor(color);
     }
 
     /**
@@ -384,6 +404,10 @@ public class TimePicker extends FrameLayout {
      * for the real behavior.
      */
     interface TimePickerDelegate {
+        void setHeaderBackgroundColor(@ColorInt int color);
+
+        void setHeaderTextColor(ColorStateList color);
+
         void setHour(@IntRange(from = 0, to = 23) int hour);
 
         int getHour();

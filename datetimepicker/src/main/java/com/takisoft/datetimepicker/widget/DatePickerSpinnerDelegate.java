@@ -345,49 +345,49 @@ class DatePickerSpinnerDelegate extends AbstractDatePickerDelegate {
         return maxDate;
     }
 
-    // TODO: Not be used.
+    // Not be used, because in DatePicker Spinner layout not have this value.
     @Override
     public void setYearSelectorColor(ColorStateList color) {
 
     }
 
-    // TODO: Not be used.
+    // Not be used, because in DatePicker Spinner layout not have this value.
     @Override
     public ColorStateList getYearSelectorColor() {
         return null;
     }
 
-    // TODO: Not be used.
+    // Not be used, because in DatePicker Spinner layout not have this value.
     @Override
     public void setYearHighlightColor(ColorStateList color) {
 
     }
 
-    // TODO: Not be used.
+    // Not be used, because in DatePicker Spinner layout not have this value.
     @Override
     public ColorStateList getYearHighlightColor() {
         return null;
     }
 
-    // TODO: Not be used.
+    // Not be used, because in DatePicker Spinner layout not have this value.
     @Override
     public void setHeaderTextColor(ColorStateList color) {
 
     }
 
-    // TODO: Not be used.
+    // Not be used, because in DatePicker Spinner layout not have this value.
     @Override
     public ColorStateList getHeaderTextColor() {
         return null;
     }
 
-    // TODO: Not be used.
+    // Not be used, because in DatePicker Spinner layout not have this value.
     @Override
     public void setHeaderBackground(Drawable background) {
 
     }
 
-    // TODO: Not be used.
+    // Not be used, because in DatePicker Spinner layout not have this value.
     @Override
     public Drawable getHeaderBackground() {
         return null;
@@ -423,7 +423,7 @@ class DatePickerSpinnerDelegate extends AbstractDatePickerDelegate {
         return mCalendarView.getCalendarTextColor();
     }
 
-    // TODO: Not be used.
+    // Not be used, because in DatePicker Spinner layout not have this value.
     @Override
     public void setChevronButtonColor(ColorStateList color) {
 
