@@ -15,6 +15,10 @@
 
     <color name="material_text_color_white_secondary_text">#8affffff</color>
 
+    <color name="material_text_color_black_text">#de000000</color>
+    <color name="material_text_color_black_secondary_text">#8a000000</color>
+
+    <color name="grey_200">#EEEEEE</color>
     <color name="grey_900">#212121</color>
 
     <color name="dark_gray">#c5c5c5</color>

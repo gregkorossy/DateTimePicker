@@ -31,6 +31,7 @@ import android.graphics.Region;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.ColorInt;
 import android.support.annotation.IntDef;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.math.MathUtils;
@@ -70,10 +71,13 @@ public class RadialTimePickerView extends View {
     public static final int HOURS = 0;
     public static final int MINUTES = 1;
 
-    /** @hide */
+    /**
+     * @hide
+     */
     @IntDef({HOURS, MINUTES})
     @Retention(RetentionPolicy.SOURCE)
-    @interface PickerType {}
+    @interface PickerType {
+    }
 
     private static final int HOURS_INNER = 2;
 
@@ -102,7 +106,9 @@ public class RadialTimePickerView extends View {
     private static final float[] COS_30 = new float[NUM_POSITIONS];
     private static final float[] SIN_30 = new float[NUM_POSITIONS];
 
-    /** "Something is wrong" color used when a color attribute is missing. */
+    /**
+     * "Something is wrong" color used when a color attribute is missing.
+     */
     private static final int MISSING_COLOR = Color.MAGENTA;
 
     static {
@@ -219,13 +225,13 @@ public class RadialTimePickerView extends View {
         /**
          * Called when the selected value at a given picker index has changed.
          *
-         * @param pickerType the type of value that has changed, one of:
-         *                   <ul>
-         *                       <li>{@link #MINUTES}
-         *                       <li>{@link #HOURS}
-         *                   </ul>
-         * @param newValue the new value as minute in hour (0-59) or hour in
-         *                 day (0-23)
+         * @param pickerType  the type of value that has changed, one of:
+         *                    <ul>
+         *                    <li>{@link #MINUTES}
+         *                    <li>{@link #HOURS}
+         *                    </ul>
+         * @param newValue    the new value as minute in hour (0-59) or hour in
+         *                    day (0-23)
          * @param autoAdvance when the picker type is {@link #HOURS},
          *                    {@code true} to switch to the {@link #MINUTES}
          *                    picker or {@code false} to stay on the current
@@ -305,10 +311,11 @@ public class RadialTimePickerView extends View {
     /**
      * Returns mapping of any input degrees (0 to 360) to one of 12 visible output degrees (all
      * multiples of 30), where the input will be "snapped" to the closest visible degrees.
-     * @param degrees The input degrees
+     *
+     * @param degrees            The input degrees
      * @param forceHigherOrLower The output may be forced to either the higher or lower step, or may
-     * be allowed to snap to whichever is closer. Use 1 to force strictly higher, -1 to force
-     * strictly lower, and 0 to snap to the closer one.
+     *                           be allowed to snap to whichever is closer. Use 1 to force strictly higher, -1 to force
+     *                           strictly lower, and 0 to snap to the closer one.
      * @return output degrees, will be a multiple of 30
      */
     private static int snapOnly30s(int degrees, int forceHigherOrLower) {
@@ -333,20 +340,20 @@ public class RadialTimePickerView extends View {
     }
 
     @SuppressWarnings("unused")
-    public RadialTimePickerView(Context context)  {
+    public RadialTimePickerView(Context context) {
         this(context, null);
     }
 
-    public RadialTimePickerView(Context context, AttributeSet attrs)  {
+    public RadialTimePickerView(Context context, AttributeSet attrs) {
         this(context, attrs, R.attr.timePickerStyle);
     }
 
-    public RadialTimePickerView(Context context, AttributeSet attrs, int defStyleAttr)  {
+    public RadialTimePickerView(Context context, AttributeSet attrs, int defStyleAttr) {
         this(context, attrs, defStyleAttr, Utils.isLightTheme(context) ? R.style.Widget_Material_Light_TimePicker : R.style.Widget_Material_TimePicker);
     }
 
     public RadialTimePickerView(
-            Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes)  {
+            Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs);
 
         applyAttributes(attrs, defStyleAttr, defStyleRes);
@@ -404,7 +411,7 @@ public class RadialTimePickerView extends View {
         ViewCompat.setAccessibilityDelegate(this, mTouchHelper);
         //setAccessibilityDelegate(mTouchHelper);
 
-        if(ViewCompat.getImportantForAccessibility(this) == ViewCompat.IMPORTANT_FOR_ACCESSIBILITY_AUTO){
+        if (ViewCompat.getImportantForAccessibility(this) == ViewCompat.IMPORTANT_FOR_ACCESSIBILITY_AUTO) {
             ViewCompat.setImportantForAccessibility(this, ViewCompat.IMPORTANT_FOR_ACCESSIBILITY_YES);
         }
         /*if (getImportantForAccessibility() == IMPORTANT_FOR_ACCESSIBILITY_AUTO) {
@@ -446,7 +453,7 @@ public class RadialTimePickerView extends View {
                     StateSet.VIEW_STATE_ENABLED | StateSet.VIEW_STATE_ACTIVATED);
             selectorActivatedColor = selectorColors.getColorForState(
                     stateSetEnabledActivated, 0);
-        }  else {
+        } else {
             selectorActivatedColor = MISSING_COLOR;
         }
 
@@ -458,8 +465,8 @@ public class RadialTimePickerView extends View {
         mSelectorColor = selectorActivatedColor;
         mSelectorDotColor = mTextColor[HOURS].getColorForState(stateSetActivated, 0);
 
-            mPaintBackground.setColor(a.getColor(R.styleable.TimePicker_numbersBackgroundColor,
-                    ContextCompat.getColor(context, R.color.timepicker_default_numbers_background_color_material)));
+        mPaintBackground.setColor(a.getColor(R.styleable.TimePicker_numbersBackgroundColor,
+                ContextCompat.getColor(context, R.color.timepicker_default_numbers_background_color_material)));
 
         a.recycle();
     }
@@ -474,8 +481,63 @@ public class RadialTimePickerView extends View {
         setCurrentMinuteInternal(minute, false);
     }
 
+    /**
+     * Set numbers text color.
+     *
+     * @param color The numbers text color.
+     */
+    public void setNumbersTextColor(ColorStateList color) {
+        if (color != null) {
+            mTextColor[HOURS] = color;
+            mTextColor[MINUTES] = mTextColor[HOURS];
+            invalidate();
+        }
+    }
+
+    /**
+     * Set numbers inner text color.
+     *
+     * @param color The numbers inner text color.
+     */
+    public void setNumbersInnerTextColor(ColorStateList color) {
+        if (color != null) {
+            mTextColor[HOURS_INNER] = color;
+            invalidate();
+        }
+    }
+
+    /**
+     * Set numbers background color.
+     *
+     * @param color The numbers background color.
+     */
+    public void setNumbersBackgroundColor(@ColorInt int color) {
+        if (color != 0) {
+            mPaintBackground.setColor(color);
+        }
+    }
+
+    /**
+     * Set numbers selector color.
+     *
+     * @param color The numbers selector color.
+     */
+    public void setNumbersSelectorColor(ColorStateList color) {
+        final int selectorActivatedColor;
+        if (color != null) {
+            final int[] stateSetEnabledActivated = StateSet.get(
+                    StateSet.VIEW_STATE_ENABLED | StateSet.VIEW_STATE_ACTIVATED);
+            selectorActivatedColor = color.getColorForState(
+                    stateSetEnabledActivated, 0);
+
+            mPaintCenter.setColor(selectorActivatedColor);
+            mSelectorColor = selectorActivatedColor;
+            invalidate();
+        }
+    }
+
     public void setCurrentItemShowing(int item, boolean animate) {
-        switch (item){
+        switch (item) {
             case HOURS:
                 showHours(animate);
                 break;
@@ -507,8 +569,8 @@ public class RadialTimePickerView extends View {
     /**
      * Sets the current hour.
      *
-     * @param hour The current hour
-     * @param callback Whether the value listener should be invoked
+     * @param hour        The current hour
+     * @param callback    Whether the value listener should be invoked
      * @param autoAdvance Whether the listener should auto-advance to the next
      *                    selection mode, e.g. hour to minutes
      */
@@ -616,7 +678,7 @@ public class RadialTimePickerView extends View {
      *
      * @param amOrPm {@link #AM} or {@link #PM}
      * @return {@code true} if the value changed from what was previously set,
-     *         or {@code false} otherwise
+     * or {@code false} otherwise
      */
     public boolean setAmOrPm(int amOrPm) {
         if (mAmOrPm == amOrPm || mIs24HourMode) {
@@ -835,8 +897,8 @@ public class RadialTimePickerView extends View {
      * 350, then the interpolated angle will be in the range [0,-10] rather
      * than [0,350].
      *
-     * @param start the starting angle in degrees
-     * @param end the ending angle in degrees
+     * @param start  the starting angle in degrees
+     * @param end    the ending angle in degrees
      * @param amount the position between start and end in the range [0,1]
      *               where 0 is the starting angle and 1 is the ending angle
      * @return the interpolated angle in degrees
@@ -934,7 +996,7 @@ public class RadialTimePickerView extends View {
      * textGridWidths parameters.
      */
     private static void calculatePositions(Paint paint, float radius, float xCenter, float yCenter,
-            float textSize, float[] x, float[] y) {
+                                           float textSize, float[] x, float[] y) {
         // Adjust yCenter to account for the text's baseline.
         paint.setTextSize(textSize);
         yCenter -= (paint.descent() + paint.ascent()) / 2;
@@ -949,8 +1011,8 @@ public class RadialTimePickerView extends View {
      * Draw the 12 text values at the positions specified by the textGrid parameters.
      */
     private void drawTextElements(Canvas canvas, float textSize, Typeface typeface,
-            ColorStateList textColor, String[] texts, float[] textX, float[] textY, Paint paint,
-            int alpha, boolean showActivated, int activatedDegrees, boolean activatedOnly) {
+                                  ColorStateList textColor, String[] texts, float[] textX, float[] textY, Paint paint,
+                                  int alpha, boolean showActivated, int activatedDegrees, boolean activatedOnly) {
         paint.setTextSize(textSize);
         paint.setTypeface(typeface);
 
@@ -1137,7 +1199,9 @@ public class RadialTimePickerView extends View {
         private final int SHIFT_VALUE = 8;
         private final int MASK_VALUE = 0xFF;
 
-        /** Increment in which virtual views are exposed for minutes. */
+        /**
+         * Increment in which virtual views are exposed for minutes.
+         */
         private final int MINUTE_INCREMENT = 5;
 
         public RadialPickerTouchHelper() {
@@ -1242,9 +1306,9 @@ public class RadialTimePickerView extends View {
         /**
          * Returns the difference in degrees between two values along a circle.
          *
-         * @param first value in the range [0,max]
+         * @param first  value in the range [0,max]
          * @param second value in the range [0,max]
-         * @param max the maximum value along the circle
+         * @param max    the maximum value along the circle
          * @return the difference in between the two values
          */
         private int getCircularDiff(int first, int second, int max) {
@@ -1258,7 +1322,7 @@ public class RadialTimePickerView extends View {
             if (mShowHours) {
                 final int min = mIs24HourMode ? 0 : 1;
                 final int max = mIs24HourMode ? 23 : 12;
-                for (int i = min; i <= max ; i++) {
+                for (int i = min; i <= max; i++) {
                     virtualViewIds.add(makeId(TYPE_HOUR, i));
                 }
             } else {
@@ -1330,7 +1394,7 @@ public class RadialTimePickerView extends View {
 
         @Override
         protected boolean onPerformActionForVirtualView(int virtualViewId, int action,
-                Bundle arguments) {
+                                                        Bundle arguments) {
             if (action == AccessibilityNodeInfo.ACTION_CLICK) {
                 final int type = getTypeFromId(virtualViewId);
                 final int value = getValueFromId(virtualViewId);
