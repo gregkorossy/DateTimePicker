@@ -331,6 +331,36 @@ class TimePickerSpinnerDelegate extends TimePicker.AbstractTimePickerDelegate {
 
     }
 
+    // Not be used, because in TimePicker Spinner layout not have this value.
+    @Override
+    public void setEditTextCursorColor(int color) {
+
+    }
+
+    // Not be used, because in TimePicker Spinner layout not have this value.
+    @Override
+    public void setEditTextHandlesColor(int color) {
+
+    }
+
+    // Not be used, because in TimePicker Spinner layout not have this value.
+    @Override
+    public void setEditTextUnderlineNormalColor(int color) {
+
+    }
+
+    // Not be used, because in TimePicker Spinner layout not have this value.
+    @Override
+    public void setEditTextUnderlineSelectorColor(int color) {
+
+    }
+
+    // Not be used, because in TimePicker Spinner layout not have this value.
+    @Override
+    public void setEditTextHighlightColor(int color) {
+
+    }
+
     @Override
     public void setHour(int hour) {
         setCurrentHour(hour, true);

@@ -189,6 +189,51 @@ public class TimePickerDialog extends AlertDialog implements OnClickListener,
     }
 
     /**
+     * Set edittext cursor color.
+     *
+     * @param color The edittext cursor color.
+     */
+    public void setEditTextCursorColor(@ColorInt int color) {
+        mTimePicker.setEditTextCursorColor(color);
+    }
+
+    /**
+     * Set edittext handles color.
+     *
+     * @param color The edittext handles color.
+     */
+    public void setEditTextHandlesColor(@ColorInt int color) {
+        mTimePicker.setEditTextHandlesColor(color);
+    }
+
+    /**
+     * Set edittext underline normal color.
+     *
+     * @param color The edittext underline highlight color.
+     */
+    public void setEditTextUnderlineNormalColor(@ColorInt int color) {
+        mTimePicker.setEditTextUnderlineNormalColor(color);
+    }
+
+    /**
+     * Set edittext underline selector color.
+     *
+     * @param color The edittext underline selector color.
+     */
+    public void setEditTextUnderlineSelectorColor(@ColorInt int color) {
+        mTimePicker.setEditTextUnderlineSelectorColor(color);
+    }
+
+    /**
+     * Set edittext highlight color.
+     *
+     * @param color The edittext highlight color.
+     */
+    public void setEditTextHighlightColor(@ColorInt int color) {
+        mTimePicker.setEditTextHighlightColor(color);
+    }
+
+    /**
      * @return the time picker displayed in the dialog
      * @hide For testing only.
      */

@@ -114,12 +114,27 @@ public class MainActivity extends AppCompatActivity {
 
                             ColorStateList numbersSelectorColor = ColorStateList.valueOf(ContextCompat.getColor(getApplicationContext(), R.color.colorBlue));
 
+                            int editTextCursorColor = ContextCompat.getColor(getApplicationContext(), R.color.colorBlue);
+
+                            int editTextHandlesColor = ContextCompat.getColor(getApplicationContext(), R.color.colorBlue);
+
+                            int editTextUnderlineNormalColor = ContextCompat.getColor(getApplicationContext(), R.color.material_text_color_black_divider);
+
+                            int editTextUnderlineSelectorColor = ContextCompat.getColor(getApplicationContext(), R.color.colorBlue);
+
+                            int editTextHighlightColor = ContextCompat.getColor(getApplicationContext(), R.color.overlay_dark_10);
+
                             tpd.setHeaderBackgroundColor(headerBackgroundColor);
                             tpd.setHeaderTextColor(headerTextColor);
                             tpd.setNumbersTextColor(numbersTextColor);
                             tpd.setNumbersInnerTextColor(numbersInnerTextColor);
                             tpd.setNumbersBackgroundColor(numbersBackgroundColor);
                             tpd.setNumbersSelectorColor(numbersSelectorColor);
+                            tpd.setEditTextCursorColor(editTextCursorColor);
+                            tpd.setEditTextHandlesColor(editTextHandlesColor);
+                            tpd.setEditTextUnderlineNormalColor(editTextUnderlineNormalColor);
+                            tpd.setEditTextUnderlineSelectorColor(editTextUnderlineSelectorColor);
+                            tpd.setEditTextHighlightColor(editTextHighlightColor);
                             tpd.setOnShowListener(dialog -> {
                                 tpd.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.colorBlue));
                                 tpd.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.colorBlue));

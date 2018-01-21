@@ -20,14 +20,12 @@ import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
-import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Parcelable;
 import android.support.annotation.ColorInt;
 import android.support.annotation.IntDef;
 import android.support.annotation.Nullable;
-import android.support.v4.content.ContextCompat;
 import android.support.v4.graphics.drawable.DrawableCompat;
 import android.support.v4.view.accessibility.AccessibilityNodeInfoCompat;
 import android.support.v7.content.res.AppCompatResources;
@@ -553,6 +551,31 @@ class TimePickerClockDelegate extends TimePicker.AbstractTimePickerDelegate {
     @Override
     public void setNumbersSelectorColor(ColorStateList color) {
         mRadialTimePickerView.setNumbersSelectorColor(color);
+    }
+
+    @Override
+    public void setEditTextCursorColor(int color) {
+        mTextInputPickerView.setEditTextCursorColor(color);
+    }
+
+    @Override
+    public void setEditTextHandlesColor(int color) {
+        mTextInputPickerView.setEditTextHandlesColor(color);
+    }
+
+    @Override
+    public void setEditTextUnderlineNormalColor(int color) {
+        mTextInputPickerView.setEditTextUnderlineNormalColor(color);
+    }
+
+    @Override
+    public void setEditTextUnderlineSelectorColor(int color) {
+        mTextInputPickerView.setEditTextUnderlineSelectorColor(color);
+    }
+
+    @Override
+    public void setEditTextHighlightColor(int color) {
+        mTextInputPickerView.setEditTextHighlightColor(color);
     }
 
     /**

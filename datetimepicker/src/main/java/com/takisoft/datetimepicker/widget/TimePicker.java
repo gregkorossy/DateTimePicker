@@ -229,6 +229,52 @@ public class TimePicker extends FrameLayout {
     }
 
     /**
+     * Set edittext cursor color
+     *
+     * @param color The edittext cursor color.
+     */
+    public void setEditTextCursorColor(@ColorInt int color) {
+        mDelegate.setEditTextCursorColor(color);
+    }
+
+
+    /**
+     * Set edittext handles color.
+     *
+     * @param color The edittext handles color.
+     */
+    public void setEditTextHandlesColor(@ColorInt int color) {
+        mDelegate.setEditTextHandlesColor(color);
+    }
+
+    /**
+     * Set edittext underline highlight color.
+     *
+     * @param color The edittext underline highlight color.
+     */
+    public void setEditTextUnderlineNormalColor(@ColorInt int color) {
+        mDelegate.setEditTextUnderlineNormalColor(color);
+    }
+
+    /**
+     * Set edittext underline selector color.
+     *
+     * @param color The edittext underline selector color.
+     */
+    public void setEditTextUnderlineSelectorColor(@ColorInt int color) {
+        mDelegate.setEditTextUnderlineSelectorColor(color);
+    }
+
+    /**
+     * Set edittext highlight color.
+     *
+     * @param color The edittext highlight color.
+     */
+    public void setEditTextHighlightColor(@ColorInt int color) {
+        mDelegate.setEditTextHighlightColor(color);
+    }
+
+    /**
      * @return the picker's presentation mode, one of {@link #MODE_CLOCK} or
      * {@link #MODE_SPINNER}
      * @attr ref android.R.styleable#TimePicker_timePickerMode
@@ -451,6 +497,16 @@ public class TimePicker extends FrameLayout {
         void setNumbersBackgroundColor(@ColorInt int color);
 
         void setNumbersSelectorColor(ColorStateList color);
+
+        void setEditTextCursorColor(@ColorInt int color);
+
+        void setEditTextHandlesColor(@ColorInt int color);
+
+        void setEditTextUnderlineNormalColor(@ColorInt int color);
+
+        void setEditTextUnderlineSelectorColor(@ColorInt int color);
+
+        void setEditTextHighlightColor(@ColorInt int color);
 
         void setHour(@IntRange(from = 0, to = 23) int hour);
 
