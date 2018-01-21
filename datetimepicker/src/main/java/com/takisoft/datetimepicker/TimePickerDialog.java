@@ -153,6 +153,42 @@ public class TimePickerDialog extends AlertDialog implements OnClickListener,
     }
 
     /**
+     * Set numbers text color.
+     *
+     * @param color The numbers text color.
+     */
+    public void setNumbersTextColor(ColorStateList color) {
+        mTimePicker.setNumbersTextColor(color);
+    }
+
+    /**
+     * Set numbers inner text color.
+     *
+     * @param color The numbers inner text color.
+     */
+    public void setNumbersInnerTextColor(ColorStateList color) {
+        mTimePicker.setNumbersInnerTextColor(color);
+    }
+
+    /**
+     * Set numbers background color.
+     *
+     * @param color The numbers background color.
+     */
+    public void setNumbersBackgroundColor(@ColorInt int color) {
+        mTimePicker.setNumbersBackgroundColor(color);
+    }
+
+    /**
+     * Set numbers selector color.
+     *
+     * @param color The numbers selector color.
+     */
+    public void setNumbersSelectorColor(ColorStateList color) {
+        mTimePicker.setNumbersSelectorColor(color);
+    }
+
+    /**
      * @return the time picker displayed in the dialog
      * @hide For testing only.
      */

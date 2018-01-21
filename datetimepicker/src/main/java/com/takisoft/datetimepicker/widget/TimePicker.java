@@ -193,6 +193,42 @@ public class TimePicker extends FrameLayout {
     }
 
     /**
+     * Set numbers text color.
+     *
+     * @param color The numbers text color.
+     */
+    public void setNumbersTextColor(ColorStateList color) {
+        mDelegate.setNumbersTextColor(color);
+    }
+
+    /**
+     * Set numbers inner text color.
+     *
+     * @param color The numbers inner text color.
+     */
+    public void setNumbersInnerTextColor(ColorStateList color) {
+        mDelegate.setNumbersInnerTextColor(color);
+    }
+
+    /**
+     * Set numbers background color.
+     *
+     * @param color The numbers background color.
+     */
+    public void setNumbersBackgroundColor(@ColorInt int color) {
+        mDelegate.setNumbersBackgroundColor(color);
+    }
+
+    /**
+     * Set numbers selector color.
+     *
+     * @param color The numbers selector color.
+     */
+    public void setNumbersSelectorColor(ColorStateList color) {
+        mDelegate.setNumbersSelectorColor(color);
+    }
+
+    /**
      * @return the picker's presentation mode, one of {@link #MODE_CLOCK} or
      * {@link #MODE_SPINNER}
      * @attr ref android.R.styleable#TimePicker_timePickerMode
@@ -407,6 +443,14 @@ public class TimePicker extends FrameLayout {
         void setHeaderBackgroundColor(@ColorInt int color);
 
         void setHeaderTextColor(ColorStateList color);
+
+        void setNumbersTextColor(ColorStateList color);
+
+        void setNumbersInnerTextColor(ColorStateList color);
+
+        void setNumbersBackgroundColor(@ColorInt int color);
+
+        void setNumbersSelectorColor(ColorStateList color);
 
         void setHour(@IntRange(from = 0, to = 23) int hour);
 

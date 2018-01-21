@@ -98,9 +98,28 @@ public class MainActivity extends AppCompatActivity {
                             final int[] headerColors = new int[]{headerSelectedTextColor, headerNormalTextColor};
                             ColorStateList headerTextColor = new ColorStateList(headerStateSet, headerColors);
 
+                            int numbersNormalTextColor = ContextCompat.getColor(getApplicationContext(), R.color.material_text_color_black_text);
+                            int numbersSelectedTextColor = ContextCompat.getColor(getApplicationContext(), R.color.colorWhite);
+                            final int[][] numbersStateSet = new int[][]{{android.R.attr.state_activated}, {}};
+                            final int[] numbersColors = new int[]{numbersSelectedTextColor, numbersNormalTextColor};
+                            ColorStateList numbersTextColor = new ColorStateList(numbersStateSet, numbersColors);
+
+                            int numbersInnerNormalTextColor = ContextCompat.getColor(getApplicationContext(), R.color.material_text_color_black_secondary_text);
+                            int numbersInnerSelectedTextColor = ContextCompat.getColor(getApplicationContext(), R.color.colorWhite);
+                            final int[][] numbersInnerStateSet = new int[][]{{android.R.attr.state_activated}, {}};
+                            final int[] numbersInnerColors = new int[]{numbersInnerSelectedTextColor, numbersInnerNormalTextColor};
+                            ColorStateList numbersInnerTextColor = new ColorStateList(numbersInnerStateSet, numbersInnerColors);
+
+                            int numbersBackgroundColor = ContextCompat.getColor(getApplicationContext(), R.color.grey_200);
+
+                            ColorStateList numbersSelectorColor = ColorStateList.valueOf(ContextCompat.getColor(getApplicationContext(), R.color.colorBlue));
 
                             tpd.setHeaderBackgroundColor(headerBackgroundColor);
                             tpd.setHeaderTextColor(headerTextColor);
+                            tpd.setNumbersTextColor(numbersTextColor);
+                            tpd.setNumbersInnerTextColor(numbersInnerTextColor);
+                            tpd.setNumbersBackgroundColor(numbersBackgroundColor);
+                            tpd.setNumbersSelectorColor(numbersSelectorColor);
                             tpd.setOnShowListener(dialog -> {
                                 tpd.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.colorBlue));
                                 tpd.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.colorBlue));

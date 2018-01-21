@@ -24,6 +24,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Parcelable;
+import android.support.annotation.ColorInt;
 import android.support.annotation.IntDef;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
@@ -532,6 +533,26 @@ class TimePickerClockDelegate extends TimePicker.AbstractTimePickerDelegate {
             mAmLabel.setTextColor(color);
             mPmLabel.setTextColor(color);
         }
+    }
+
+    @Override
+    public void setNumbersTextColor(ColorStateList color) {
+        mRadialTimePickerView.setNumbersTextColor(color);
+    }
+
+    @Override
+    public void setNumbersInnerTextColor(ColorStateList color) {
+        mRadialTimePickerView.setNumbersInnerTextColor(color);
+    }
+
+    @Override
+    public void setNumbersBackgroundColor(@ColorInt int color) {
+        mRadialTimePickerView.setNumbersBackgroundColor(color);
+    }
+
+    @Override
+    public void setNumbersSelectorColor(ColorStateList color) {
+        mRadialTimePickerView.setNumbersSelectorColor(color);
     }
 
     /**
