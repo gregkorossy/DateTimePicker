@@ -18,8 +18,11 @@ package com.takisoft.datetimepicker.widget;
 
 import android.annotation.TargetApi;
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.os.Build;
+import android.support.annotation.ColorInt;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,6 +33,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.takisoft.datetimepicker.R;
+import com.takisoft.datetimepicker.util.Utils;
 
 import java.util.Calendar;
 import java.util.Locale;
@@ -62,7 +66,7 @@ class YearPickerView extends ListView {
 
     }
 
-    private void handleAttr(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes){
+    private void handleAttr(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         final LayoutParams frame = new LayoutParams(
                 LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
         setLayoutParams(frame);
@@ -119,6 +123,14 @@ class YearPickerView extends ListView {
         mAdapter.setRange(min, max);
     }
 
+    public void setSelectorColor(ColorStateList color) {
+        mAdapter.setSelectorColor(color);
+    }
+
+    public void setHighlightColor(ColorStateList color) {
+        mAdapter.setHighlightColor(color);
+    }
+
     private static class YearAdapter extends BaseAdapter {
         private static final int ITEM_LAYOUT = R.layout.year_label_text_view;
         private static final int ITEM_TEXT_APPEARANCE =
@@ -132,8 +144,19 @@ class YearPickerView extends ListView {
         private int mMinYear;
         private int mCount;
 
+        private ColorStateList mSelectorColor;
+        private ColorStateList mHighlightColor;
+
         public YearAdapter(Context context) {
             mInflater = LayoutInflater.from(context);
+        }
+
+        public void setSelectorColor(ColorStateList color) {
+            mSelectorColor = color;
+        }
+
+        public void setHighlightColor(ColorStateList color) {
+            mHighlightColor = color;
         }
 
         public void setRange(Calendar minDate, Calendar maxDate) {
@@ -204,11 +227,19 @@ class YearPickerView extends ListView {
                 } else {
                     textAppearanceResId = ITEM_TEXT_APPEARANCE;
                 }
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                    v.setTextAppearance(textAppearanceResId);
-                } else {
-                    v.setTextAppearance(v.getContext(), textAppearanceResId);
+                Utils.setTextAppearance(v.getContext(), v, textAppearanceResId);
+
+                final ColorStateList textColorResId;
+                if (mSelectorColor != null && mHighlightColor != null) {
+                    if (activated) {
+                        textColorResId = mSelectorColor;
+                    } else {
+                        textColorResId = mHighlightColor;
+                    }
+                    v.setTextColor(textColorResId);
                 }
+
+
                 v.setActivated(activated);
             }
 

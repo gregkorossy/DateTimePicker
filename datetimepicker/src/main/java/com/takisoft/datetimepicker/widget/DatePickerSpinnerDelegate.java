@@ -17,8 +17,10 @@
 package com.takisoft.datetimepicker.widget;
 
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Parcelable;
 import android.support.annotation.NonNull;
@@ -33,12 +35,12 @@ import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import com.takisoft.datetimepicker.widget.NumberPicker.OnValueChangeListener;
 import android.widget.TextView;
 
 import com.takisoft.datetimepicker.R;
 import com.takisoft.datetimepicker.util.DateFormatFix;
 import com.takisoft.datetimepicker.widget.DatePicker.AbstractDatePickerDelegate;
+import com.takisoft.datetimepicker.widget.NumberPicker.OnValueChangeListener;
 
 import java.text.DateFormatSymbols;
 import java.text.DecimalFormatSymbols;
@@ -341,6 +343,90 @@ class DatePickerSpinnerDelegate extends AbstractDatePickerDelegate {
         final Calendar maxDate = Calendar.getInstance();
         maxDate.setTimeInMillis(mCalendarView.getMaxDate());
         return maxDate;
+    }
+
+    // Not be used, because in DatePicker Spinner layout not have this value.
+    @Override
+    public void setYearSelectorColor(ColorStateList color) {
+
+    }
+
+    // Not be used, because in DatePicker Spinner layout not have this value.
+    @Override
+    public ColorStateList getYearSelectorColor() {
+        return null;
+    }
+
+    // Not be used, because in DatePicker Spinner layout not have this value.
+    @Override
+    public void setYearHighlightColor(ColorStateList color) {
+
+    }
+
+    // Not be used, because in DatePicker Spinner layout not have this value.
+    @Override
+    public ColorStateList getYearHighlightColor() {
+        return null;
+    }
+
+    // Not be used, because in DatePicker Spinner layout not have this value.
+    @Override
+    public void setHeaderTextColor(ColorStateList color) {
+
+    }
+
+    // Not be used, because in DatePicker Spinner layout not have this value.
+    @Override
+    public ColorStateList getHeaderTextColor() {
+        return null;
+    }
+
+    // Not be used, because in DatePicker Spinner layout not have this value.
+    @Override
+    public void setHeaderBackground(Drawable background) {
+
+    }
+
+    // Not be used, because in DatePicker Spinner layout not have this value.
+    @Override
+    public Drawable getHeaderBackground() {
+        return null;
+    }
+
+    @Override
+    public void setDaySelectorColor(ColorStateList color) {
+        mCalendarView.setDaySelectorColor(color);
+    }
+
+    @Override
+    public ColorStateList getDaySelectorColor() {
+        return mCalendarView.getDaySelectorColor();
+    }
+
+    @Override
+    public void setDayHighlightColor(ColorStateList color) {
+        mCalendarView.setDayHighlightColor(color);
+    }
+
+    @Override
+    public ColorStateList getDayHighlightColor() {
+        return mCalendarView.getDayHighlightColor();
+    }
+
+    @Override
+    public void setCalendarTextColor(ColorStateList color) {
+        mCalendarView.setCalendarTextColor(color);
+    }
+
+    @Override
+    public ColorStateList getCalendarTextColor() {
+        return mCalendarView.getCalendarTextColor();
+    }
+
+    // Not be used, because in DatePicker Spinner layout not have this value.
+    @Override
+    public void setChevronButtonColor(ColorStateList color) {
+
     }
 
     @Override

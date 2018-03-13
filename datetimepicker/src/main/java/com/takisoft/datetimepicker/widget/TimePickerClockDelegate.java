@@ -23,6 +23,7 @@ import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Parcelable;
+import android.support.annotation.ColorInt;
 import android.support.annotation.IntDef;
 import android.support.annotation.Nullable;
 import android.support.v4.graphics.drawable.DrawableCompat;
@@ -196,13 +197,7 @@ class TimePickerClockDelegate extends TimePicker.AbstractTimePickerDelegate {
 
         mTextInputPickerHeader = mainView.findViewById(R.id.input_header);
 
-        if (headerTextColor != null) {
-            mHourView.setTextColor(headerTextColor);
-            mSeparatorView.setTextColor(headerTextColor);
-            mMinuteView.setTextColor(headerTextColor);
-            mAmLabel.setTextColor(headerTextColor);
-            mPmLabel.setTextColor(headerTextColor);
-        }
+        setHeaderTextColor(headerTextColor);
 
         // Set up header background, if available.
         // if (a.hasValueOrEmpty(R.styleable.TimePicker_headerBackground)) {
@@ -517,6 +512,70 @@ class TimePickerClockDelegate extends TimePicker.AbstractTimePickerDelegate {
 
             mAmPmLayout.setLayoutParams(params);
         }
+    }
+
+    @Override
+    public void setHeaderBackgroundColor(int color) {
+        if (color != 0) {
+            mRadialTimePickerHeader.setBackgroundColor(color);
+            mTextInputPickerHeader.setBackgroundColor(color);
+        }
+    }
+
+    @Override
+    public void setHeaderTextColor(ColorStateList color) {
+        if (color != null) {
+            mHourView.setTextColor(color);
+            mSeparatorView.setTextColor(color);
+            mMinuteView.setTextColor(color);
+            mAmLabel.setTextColor(color);
+            mPmLabel.setTextColor(color);
+        }
+    }
+
+    @Override
+    public void setNumbersTextColor(ColorStateList color) {
+        mRadialTimePickerView.setNumbersTextColor(color);
+    }
+
+    @Override
+    public void setNumbersInnerTextColor(ColorStateList color) {
+        mRadialTimePickerView.setNumbersInnerTextColor(color);
+    }
+
+    @Override
+    public void setNumbersBackgroundColor(@ColorInt int color) {
+        mRadialTimePickerView.setNumbersBackgroundColor(color);
+    }
+
+    @Override
+    public void setNumbersSelectorColor(ColorStateList color) {
+        mRadialTimePickerView.setNumbersSelectorColor(color);
+    }
+
+    @Override
+    public void setEditTextCursorColor(int color) {
+        mTextInputPickerView.setEditTextCursorColor(color);
+    }
+
+    @Override
+    public void setEditTextHandlesColor(int color) {
+        mTextInputPickerView.setEditTextHandlesColor(color);
+    }
+
+    @Override
+    public void setEditTextUnderlineNormalColor(int color) {
+        mTextInputPickerView.setEditTextUnderlineNormalColor(color);
+    }
+
+    @Override
+    public void setEditTextUnderlineSelectorColor(int color) {
+        mTextInputPickerView.setEditTextUnderlineSelectorColor(color);
+    }
+
+    @Override
+    public void setEditTextHighlightColor(int color) {
+        mTextInputPickerView.setEditTextHighlightColor(color);
     }
 
     /**

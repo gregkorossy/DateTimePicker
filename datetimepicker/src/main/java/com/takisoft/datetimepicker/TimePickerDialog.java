@@ -19,7 +19,9 @@ package com.takisoft.datetimepicker;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
+import android.content.res.ColorStateList;
 import android.os.Bundle;
+import android.support.annotation.ColorInt;
 import android.support.v7.app.AlertDialog;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
@@ -31,7 +33,7 @@ import com.takisoft.datetimepicker.widget.TimePicker.OnTimeChangedListener;
 /**
  * A dialog that prompts the user for the time of day using a
  * {@link TimePicker}.
- *
+ * <p>
  * <p>
  * See the <a href="{@docRoot}guide/topics/ui/controls/pickers.html">Pickers</a>
  * guide.
@@ -58,9 +60,9 @@ public class TimePickerDialog extends AlertDialog implements OnClickListener,
          * Called when the user is done setting a new time and the dialog has
          * closed.
          *
-         * @param view the view associated with this listener
+         * @param view      the view associated with this listener
          * @param hourOfDay the hour that was set
-         * @param minute the minute that was set
+         * @param minute    the minute that was set
          */
         void onTimeSet(TimePicker view, int hourOfDay, int minute);
     }
@@ -68,14 +70,14 @@ public class TimePickerDialog extends AlertDialog implements OnClickListener,
     /**
      * Creates a new time picker dialog.
      *
-     * @param context the parent context
-     * @param listener the listener to call when the time is set
-     * @param hourOfDay the initial hour
-     * @param minute the initial minute
+     * @param context      the parent context
+     * @param listener     the listener to call when the time is set
+     * @param hourOfDay    the initial hour
+     * @param minute       the initial minute
      * @param is24HourView whether this is a 24 hour view or AM/PM
      */
     public TimePickerDialog(Context context, OnTimeSetListener listener, int hourOfDay, int minute,
-            boolean is24HourView) {
+                            boolean is24HourView) {
         this(context, 0, listener, hourOfDay, minute, is24HourView);
     }
 
@@ -101,15 +103,15 @@ public class TimePickerDialog extends AlertDialog implements OnClickListener,
      * {@link android.R.attr#timePickerDialogTheme android:timePickerDialogTheme}
      * attribute on the parent {@code context}'s theme.
      *
-     * @param context the parent context
-     * @param themeResId the resource ID of the theme to apply to this dialog
-     * @param listener the listener to call when the time is set
-     * @param hourOfDay the initial hour
-     * @param minute the initial minute
+     * @param context      the parent context
+     * @param themeResId   the resource ID of the theme to apply to this dialog
+     * @param listener     the listener to call when the time is set
+     * @param hourOfDay    the initial hour
+     * @param minute       the initial minute
      * @param is24HourView Whether this is a 24 hour view, or AM/PM.
      */
     public TimePickerDialog(Context context, int themeResId, OnTimeSetListener listener,
-            int hourOfDay, int minute, boolean is24HourView) {
+                            int hourOfDay, int minute, boolean is24HourView) {
         super(context, resolveDialogTheme(context, themeResId));
 
         mTimeSetListener = listener;
@@ -130,6 +132,105 @@ public class TimePickerDialog extends AlertDialog implements OnClickListener,
         mTimePicker.setCurrentHour(mInitialHourOfDay);
         mTimePicker.setCurrentMinute(mInitialMinute);
         mTimePicker.setOnTimeChangedListener(this);
+    }
+
+    /**
+     * Set header background color.
+     *
+     * @param color The header background color.
+     */
+    public void setHeaderBackgroundColor(@ColorInt int color) {
+        mTimePicker.setHeaderBackgroundColor(color);
+    }
+
+    /**
+     * Set header text color.
+     *
+     * @param color The header text color.
+     */
+    public void setHeaderTextColor(ColorStateList color) {
+        mTimePicker.setHeaderTextColor(color);
+    }
+
+    /**
+     * Set numbers text color.
+     *
+     * @param color The numbers text color.
+     */
+    public void setNumbersTextColor(ColorStateList color) {
+        mTimePicker.setNumbersTextColor(color);
+    }
+
+    /**
+     * Set numbers inner text color.
+     *
+     * @param color The numbers inner text color.
+     */
+    public void setNumbersInnerTextColor(ColorStateList color) {
+        mTimePicker.setNumbersInnerTextColor(color);
+    }
+
+    /**
+     * Set numbers background color.
+     *
+     * @param color The numbers background color.
+     */
+    public void setNumbersBackgroundColor(@ColorInt int color) {
+        mTimePicker.setNumbersBackgroundColor(color);
+    }
+
+    /**
+     * Set numbers selector color.
+     *
+     * @param color The numbers selector color.
+     */
+    public void setNumbersSelectorColor(ColorStateList color) {
+        mTimePicker.setNumbersSelectorColor(color);
+    }
+
+    /**
+     * Set edittext cursor color.
+     *
+     * @param color The edittext cursor color.
+     */
+    public void setEditTextCursorColor(@ColorInt int color) {
+        mTimePicker.setEditTextCursorColor(color);
+    }
+
+    /**
+     * Set edittext handles color.
+     *
+     * @param color The edittext handles color.
+     */
+    public void setEditTextHandlesColor(@ColorInt int color) {
+        mTimePicker.setEditTextHandlesColor(color);
+    }
+
+    /**
+     * Set edittext underline normal color.
+     *
+     * @param color The edittext underline highlight color.
+     */
+    public void setEditTextUnderlineNormalColor(@ColorInt int color) {
+        mTimePicker.setEditTextUnderlineNormalColor(color);
+    }
+
+    /**
+     * Set edittext underline selector color.
+     *
+     * @param color The edittext underline selector color.
+     */
+    public void setEditTextUnderlineSelectorColor(@ColorInt int color) {
+        mTimePicker.setEditTextUnderlineSelectorColor(color);
+    }
+
+    /**
+     * Set edittext highlight color.
+     *
+     * @param color The edittext highlight color.
+     */
+    public void setEditTextHighlightColor(@ColorInt int color) {
+        mTimePicker.setEditTextHighlightColor(color);
     }
 
     /**
@@ -180,7 +281,7 @@ public class TimePickerDialog extends AlertDialog implements OnClickListener,
     /**
      * Sets the current time.
      *
-     * @param hourOfDay The current hour within the day.
+     * @param hourOfDay    The current hour within the day.
      * @param minuteOfHour The current minute within the hour.
      */
     public void updateTime(int hourOfDay, int minuteOfHour) {

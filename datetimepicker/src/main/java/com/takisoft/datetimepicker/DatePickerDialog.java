@@ -19,6 +19,9 @@ package com.takisoft.datetimepicker;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
+import android.content.res.ColorStateList;
+import android.graphics.drawable.Drawable;
+import android.icu.util.TimeZone;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -32,6 +35,7 @@ import android.widget.Button;
 import com.takisoft.datetimepicker.widget.DatePicker;
 import com.takisoft.datetimepicker.widget.DatePicker.OnDateChangedListener;
 import com.takisoft.datetimepicker.widget.DatePicker.ValidationCallback;
+import com.takisoft.datetimepicker.widget.NumberPicker;
 
 import java.util.Calendar;
 
@@ -202,6 +206,100 @@ public class DatePickerDialog extends AlertDialog implements OnClickListener,
      */
     public void updateDate(int year, int month, int dayOfMonth) {
         mDatePicker.updateDate(year, month, dayOfMonth);
+    }
+
+    /**
+     * Sets the minimal date supported by this {@link NumberPicker} in
+     * milliseconds since January 1, 1970 00:00:00 in
+     * {@link TimeZone#getDefault()} time zone.
+     *
+     * @param minDate The minimal supported date.
+     */
+    public void setMinDate(long minDate) {
+        mDatePicker.setMinDate(minDate);
+    }
+
+    /**
+     * Sets the maximal date supported by this {@link DatePicker} in
+     * milliseconds since January 1, 1970 00:00:00 in
+     * {@link TimeZone#getDefault()} time zone.
+     *
+     * @param maxDate The maximal supported date.
+     */
+    public void setMaxDate(long maxDate) {
+        mDatePicker.setMaxDate(maxDate);
+    }
+
+    /**
+     * Set year selector color.
+     *
+     * @param color The year selector color.
+     */
+    public void setYearSelectorColor(ColorStateList color) {
+        mDatePicker.setYearSelectorColor(color);
+    }
+
+    /**
+     * Set year highlight color.
+     *
+     * @param color The year highlight color.
+     */
+    public void setYearHighlightColor(ColorStateList color) {
+        mDatePicker.setYearHighlightColor(color);
+    }
+
+    /**
+     * Set header text color.
+     *
+     * @param color The header text color.
+     */
+    public void setHeaderTextColor(ColorStateList color) {
+        mDatePicker.setHeaderTextColor(color);
+    }
+
+    /**
+     * Set header background.
+     *
+     * @param background The header background.
+     */
+    public void setHeaderBackground(Drawable background) {
+        mDatePicker.setHeaderBackground(background);
+    }
+
+    /**
+     * Set day selector color.
+     *
+     * @param color The day select color.
+     */
+    public void setDaySelectorColor(ColorStateList color) {
+        mDatePicker.setDaySelectorColor(color);
+    }
+
+    /**
+     * Set day highlight color.
+     *
+     * @param color The day highlight color.
+     */
+    public void setDayHighlightColor(ColorStateList color) {
+        mDatePicker.setDayHighlightColor(color);
+    }
+
+    /**
+     * Set calendar text color.
+     *
+     * @param color The calendar text color.
+     */
+    public void setCalendarTextColor(ColorStateList color) {
+        mDatePicker.setCalendarTextColor(color);
+    }
+
+    /**
+     * Set chevron button color.
+     *
+     * @param color The chevron button color.
+     */
+    public void setChevronButtonColor(ColorStateList color) {
+        mDatePicker.setChevronButtonColor(color);
     }
 
     @Override

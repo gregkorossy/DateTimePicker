@@ -3,15 +3,23 @@ package com.takisoft.datetimepicker.util;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
+import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Parcel;
+import android.support.annotation.ColorInt;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.graphics.drawable.DrawableCompat;
 import android.support.v7.content.res.AppCompatResources;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import com.takisoft.datetimepicker.R;
+
+import java.lang.reflect.Field;
 
 public class Utils {
     /*public static int getColor(Context context, Resources.Theme theme, int resId) {
@@ -120,10 +128,101 @@ public class Utils {
         return drawable;
     }
 
+    public static void setTextAppearance(Context context, View view, int resId) {
+        if (TextView.class.isInstance(view)) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                ((TextView) view).setTextAppearance(resId);
+            } else {
+                ((TextView) view).setTextAppearance(context, resId);
+            }
+        }
+    }
+
     /*public static int multiplyAlphaComponent(int color, float alphaMod) {
         final int srcRgb = color & 0xFFFFFF;
         final int srcAlpha = (color >> 24) & 0xFF;
         final int dstAlpha = (int) (srcAlpha * alphaMod + 0.5f);
         return srcRgb | (dstAlpha << 24);
     }*/
+
+    /**
+     * Set cursor color for edittext.
+     *
+     * @param editText The {@link EditText} that extends.
+     * @param color    The cursor color.
+     */
+    public static void setEditTextCursorColor(EditText editText, @ColorInt int color) {
+        try {
+            Field fCursorDrawableRes = TextView.class.getDeclaredField("mCursorDrawableRes");
+            fCursorDrawableRes.setAccessible(true);
+            int mCursorDrawableRes = fCursorDrawableRes.getInt(editText);
+            Field fEditor = TextView.class.getDeclaredField("mEditor");
+            fEditor.setAccessible(true);
+            Object editor = fEditor.get(editText);
+            Class<?> clazz = editor.getClass();
+            Field fCursorDrawable = clazz.getDeclaredField("mCursorDrawable");
+            fCursorDrawable.setAccessible(true);
+            Drawable[] drawables = new Drawable[2];
+            drawables[0] = getDrawable(editText.getContext(), mCursorDrawableRes);
+            drawables[1] = getDrawable(editText.getContext(), mCursorDrawableRes);
+            drawables[0].setColorFilter(color, PorterDuff.Mode.SRC_IN);
+            drawables[1].setColorFilter(color, PorterDuff.Mode.SRC_IN);
+            fCursorDrawable.set(editor, drawables);
+        } catch (Throwable ignored) {
+            ignored.getMessage();
+        }
+    }
+
+    /**
+     * Set the color of the handles when you select text in a
+     * {@link EditText} or other view that extends {@link TextView}.
+     *
+     * @param view  The {@link TextView} or a {@link View} that extends {@link TextView}.
+     * @param color The color to set for the text handles
+     */
+    public static void setEditTextHandlesColor(TextView view, @ColorInt int color) {
+        try {
+            Field editorField = TextView.class.getDeclaredField("mEditor");
+            if (!editorField.isAccessible()) {
+                editorField.setAccessible(true);
+            }
+
+            Object editor = editorField.get(view);
+            Class<?> editorClass = editor.getClass();
+
+            String[] handleNames = {"mSelectHandleLeft", "mSelectHandleRight", "mSelectHandleCenter"};
+            String[] resNames = {"mTextSelectHandleLeftRes", "mTextSelectHandleRightRes", "mTextSelectHandleRes"};
+
+            for (int i = 0; i < handleNames.length; i++) {
+                Field handleField = editorClass.getDeclaredField(handleNames[i]);
+                if (!handleField.isAccessible()) {
+                    handleField.setAccessible(true);
+                }
+
+                Drawable handleDrawable = (Drawable) handleField.get(editor);
+
+                if (handleDrawable == null) {
+                    Field resField = TextView.class.getDeclaredField(resNames[i]);
+                    if (!resField.isAccessible()) {
+                        resField.setAccessible(true);
+                    }
+                    int resId = resField.getInt(view);
+
+                    handleDrawable = getDrawable(view.getContext(), resId);
+                }
+
+                if (handleDrawable != null) {
+                    Drawable drawable = handleDrawable.mutate();
+                    drawable.setColorFilter(color, PorterDuff.Mode.SRC_IN);
+                    handleField.set(editor, drawable);
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static Drawable getDrawable(Context context, int drawableId) {
+        return ContextCompat.getDrawable(context, drawableId);
+    }
 }

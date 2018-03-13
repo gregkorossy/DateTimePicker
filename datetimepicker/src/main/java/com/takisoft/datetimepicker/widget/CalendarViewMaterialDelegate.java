@@ -17,6 +17,7 @@
 package com.takisoft.datetimepicker.widget;
 
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.os.Build;
 import android.support.annotation.StyleRes;
 import android.util.AttributeSet;
@@ -87,6 +88,26 @@ class CalendarViewMaterialDelegate extends CalendarView.AbstractCalendarViewDele
     @Override
     public long getMaxDate() {
         return mDayPickerView.getMaxDate();
+    }
+
+    @Override
+    public void setDaySelectorColor(ColorStateList color) {
+        mDayPickerView.setDaySelectorColor(color);
+    }
+
+    @Override
+    public ColorStateList getDaySelectorColor() {
+        return mDayPickerView.getDaySelectorColor();
+    }
+
+    @Override
+    public void setDayHighlightColor(ColorStateList color) {
+        mDayPickerView.setDayHighlightColor(color);
+    }
+
+    @Override
+    public ColorStateList getDayHighlightColor() {
+        return mDayPickerView.getDayHighlightColor();
     }
 
     @Override

@@ -18,10 +18,12 @@ package com.takisoft.datetimepicker.widget;
 
 import android.annotation.TargetApi;
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
 import android.os.Build;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.support.annotation.ColorInt;
 import android.support.annotation.IntDef;
 import android.support.annotation.IntRange;
 import android.support.annotation.NonNull;
@@ -170,6 +172,106 @@ public class TimePicker extends FrameLayout {
                 }
             }
         });
+    }
+
+    /**
+     * Set header background color.
+     *
+     * @param color The header background color.
+     */
+    public void setHeaderBackgroundColor(@ColorInt int color) {
+        mDelegate.setHeaderBackgroundColor(color);
+    }
+
+    /**
+     * Set header text color.
+     *
+     * @param color The header text color.
+     */
+    public void setHeaderTextColor(ColorStateList color) {
+        mDelegate.setHeaderTextColor(color);
+    }
+
+    /**
+     * Set numbers text color.
+     *
+     * @param color The numbers text color.
+     */
+    public void setNumbersTextColor(ColorStateList color) {
+        mDelegate.setNumbersTextColor(color);
+    }
+
+    /**
+     * Set numbers inner text color.
+     *
+     * @param color The numbers inner text color.
+     */
+    public void setNumbersInnerTextColor(ColorStateList color) {
+        mDelegate.setNumbersInnerTextColor(color);
+    }
+
+    /**
+     * Set numbers background color.
+     *
+     * @param color The numbers background color.
+     */
+    public void setNumbersBackgroundColor(@ColorInt int color) {
+        mDelegate.setNumbersBackgroundColor(color);
+    }
+
+    /**
+     * Set numbers selector color.
+     *
+     * @param color The numbers selector color.
+     */
+    public void setNumbersSelectorColor(ColorStateList color) {
+        mDelegate.setNumbersSelectorColor(color);
+    }
+
+    /**
+     * Set edittext cursor color
+     *
+     * @param color The edittext cursor color.
+     */
+    public void setEditTextCursorColor(@ColorInt int color) {
+        mDelegate.setEditTextCursorColor(color);
+    }
+
+
+    /**
+     * Set edittext handles color.
+     *
+     * @param color The edittext handles color.
+     */
+    public void setEditTextHandlesColor(@ColorInt int color) {
+        mDelegate.setEditTextHandlesColor(color);
+    }
+
+    /**
+     * Set edittext underline highlight color.
+     *
+     * @param color The edittext underline highlight color.
+     */
+    public void setEditTextUnderlineNormalColor(@ColorInt int color) {
+        mDelegate.setEditTextUnderlineNormalColor(color);
+    }
+
+    /**
+     * Set edittext underline selector color.
+     *
+     * @param color The edittext underline selector color.
+     */
+    public void setEditTextUnderlineSelectorColor(@ColorInt int color) {
+        mDelegate.setEditTextUnderlineSelectorColor(color);
+    }
+
+    /**
+     * Set edittext highlight color.
+     *
+     * @param color The edittext highlight color.
+     */
+    public void setEditTextHighlightColor(@ColorInt int color) {
+        mDelegate.setEditTextHighlightColor(color);
     }
 
     /**
@@ -384,6 +486,28 @@ public class TimePicker extends FrameLayout {
      * for the real behavior.
      */
     interface TimePickerDelegate {
+        void setHeaderBackgroundColor(@ColorInt int color);
+
+        void setHeaderTextColor(ColorStateList color);
+
+        void setNumbersTextColor(ColorStateList color);
+
+        void setNumbersInnerTextColor(ColorStateList color);
+
+        void setNumbersBackgroundColor(@ColorInt int color);
+
+        void setNumbersSelectorColor(ColorStateList color);
+
+        void setEditTextCursorColor(@ColorInt int color);
+
+        void setEditTextHandlesColor(@ColorInt int color);
+
+        void setEditTextUnderlineNormalColor(@ColorInt int color);
+
+        void setEditTextUnderlineSelectorColor(@ColorInt int color);
+
+        void setEditTextHighlightColor(@ColorInt int color);
+
         void setHour(@IntRange(from = 0, to = 23) int hour);
 
         int getHour();

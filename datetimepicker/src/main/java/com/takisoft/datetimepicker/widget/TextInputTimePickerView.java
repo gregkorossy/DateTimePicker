@@ -18,8 +18,10 @@ package com.takisoft.datetimepicker.widget;
 
 import android.annotation.TargetApi;
 import android.content.Context;
+import android.graphics.PorterDuff;
 import android.os.Build;
 import android.os.IBinder;
+import android.support.annotation.ColorInt;
 import android.support.v4.math.MathUtils;
 import android.text.Editable;
 import android.text.InputFilter;
@@ -35,6 +37,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.takisoft.datetimepicker.R;
+import com.takisoft.datetimepicker.util.Utils;
 
 /**
  * View to show text input based time picker with hour and minute fields and an optional AM/PM
@@ -63,6 +66,10 @@ public class TextInputTimePickerView extends RelativeLayout {
     private OnValueTypedListener mListener;
 
     private boolean mErrorShowing;
+
+    private int mUnderLineHighlightColor;
+    private int mUnderLineSelectorColor;
+
 
     interface OnValueTypedListener {
         void onValueChanged(int inputType, int newValue);
@@ -100,6 +107,21 @@ public class TextInputTimePickerView extends RelativeLayout {
         mErrorLabel = findViewById(R.id.label_error);
         mHourLabel = findViewById(R.id.label_hour);
         mMinuteLabel = findViewById(R.id.label_minute);
+
+
+        mHourEditText.setOnFocusChangeListener(new OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                initEditTextHourUnderLineColor(hasFocus);
+            }
+        });
+
+        mMinuteEditText.setOnFocusChangeListener(new OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                initEditTextMinuteUnderLineColor(hasFocus);
+            }
+        });
 
         mHourEditText.addTextChangedListener(new TextWatcher() {
             @Override
@@ -153,6 +175,68 @@ public class TextInputTimePickerView extends RelativeLayout {
             public void onNothingSelected(AdapterView<?> adapterView) {
             }
         });
+    }
+
+    /**
+     * Set edittext cursor color
+     *
+     * @param color The edittext cursor color.
+     */
+    public void setEditTextCursorColor(@ColorInt int color) {
+        if (color != 0) {
+            Utils.setEditTextCursorColor(mHourEditText, color);
+            Utils.setEditTextCursorColor(mMinuteEditText, color);
+        }
+    }
+
+    /**
+     * Set edittext handles color.
+     *
+     * @param color The edittext handles color.
+     */
+    public void setEditTextHandlesColor(@ColorInt int color) {
+        if (color != 0) {
+            Utils.setEditTextHandlesColor(mHourEditText, color);
+            Utils.setEditTextHandlesColor(mMinuteEditText, color);
+        }
+    }
+
+    /**
+     * Set edittext underline normal color.
+     *
+     * @param color The edittext underline normal color.
+     */
+    public void setEditTextUnderlineNormalColor(@ColorInt int color) {
+        if (color != 0) {
+            mUnderLineHighlightColor = color;
+            initEditTextHourUnderLineColor(false);
+            initEditTextMinuteUnderLineColor(false);
+        }
+    }
+
+    /**
+     * Set edittext underline selector color.
+     *
+     * @param color The edittext underline selector color.
+     */
+    public void setEditTextUnderlineSelectorColor(@ColorInt int color) {
+        if (color != 0) {
+            mUnderLineSelectorColor = color;
+            initEditTextHourUnderLineColor(false);
+            initEditTextMinuteUnderLineColor(false);
+        }
+    }
+
+    /**
+     * Set edittext highlight color.
+     *
+     * @param color The edittext highlight color.
+     */
+    public void setEditTextHighlightColor(@ColorInt int color) {
+        if (color != 0) {
+            mHourEditText.setHighlightColor(color);
+            mMinuteEditText.setHighlightColor(color);
+        }
     }
 
     void changeInputMethod(boolean show) {
@@ -279,5 +363,21 @@ public class TextInputTimePickerView extends RelativeLayout {
             }
         }
         return hourOfDay;
+    }
+
+    private void initEditTextHourUnderLineColor(boolean hasFocus) {
+        if (hasFocus && mUnderLineSelectorColor != 0) {
+            mHourEditText.getBackground().setColorFilter(mUnderLineSelectorColor, PorterDuff.Mode.SRC_IN);
+        } else if (mUnderLineHighlightColor != 0) {
+            mHourEditText.getBackground().setColorFilter(mUnderLineHighlightColor, PorterDuff.Mode.SRC_IN);
+        }
+    }
+
+    private void initEditTextMinuteUnderLineColor(boolean hasFocus) {
+        if (hasFocus && mUnderLineSelectorColor != 0) {
+            mMinuteEditText.getBackground().setColorFilter(mUnderLineSelectorColor, PorterDuff.Mode.SRC_IN);
+        } else if (mUnderLineHighlightColor != 0) {
+            mMinuteEditText.getBackground().setColorFilter(mUnderLineHighlightColor, PorterDuff.Mode.SRC_IN);
+        }
     }
 }

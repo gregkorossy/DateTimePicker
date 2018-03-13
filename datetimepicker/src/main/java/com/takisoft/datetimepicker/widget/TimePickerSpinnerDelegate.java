@@ -16,10 +16,8 @@
 
 package com.takisoft.datetimepicker.widget;
 
-import static android.support.v4.view.ViewCompat.IMPORTANT_FOR_ACCESSIBILITY_AUTO;
-import static android.support.v4.view.ViewCompat.IMPORTANT_FOR_ACCESSIBILITY_YES;
-
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
 import android.os.Parcelable;
 import android.support.v4.view.MarginLayoutParamsCompat;
@@ -36,12 +34,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-// import libcore.icu.LocaleData;
-
 import com.takisoft.datetimepicker.R;
 import com.takisoft.datetimepicker.util.DateFormatFix;
 
 import java.util.Calendar;
+
+import static android.support.v4.view.ViewCompat.IMPORTANT_FOR_ACCESSIBILITY_AUTO;
+import static android.support.v4.view.ViewCompat.IMPORTANT_FOR_ACCESSIBILITY_YES;
+
+// import libcore.icu.LocaleData;
 
 /**
  * A delegate implementing the basic spinner-based TimePicker.
@@ -76,7 +77,7 @@ class TimePickerSpinnerDelegate extends TimePicker.AbstractTimePickerDelegate {
     private boolean mIsAm;
 
     public TimePickerSpinnerDelegate(TimePicker delegator, Context context, AttributeSet attrs,
-            int defStyleAttr, int defStyleRes) {
+                                     int defStyleAttr, int defStyleRes) {
         super(delegator, context);
 
         // process style attributes
@@ -265,9 +266,9 @@ class TimePickerSpinnerDelegate extends TimePicker.AbstractTimePickerDelegate {
 
     /**
      * The time separator is defined in the Unicode CLDR and cannot be supposed to be ":".
-     *
+     * <p>
      * See http://unicode.org/cldr/trac/browser/trunk/common/main
-     *
+     * <p>
      * We pass the correct "skeleton" depending on 12 or 24 hours view and then extract the
      * separator as the character which is just after the hour marker in the returned pattern.
      */
@@ -285,13 +286,79 @@ class TimePickerSpinnerDelegate extends TimePicker.AbstractTimePickerDelegate {
             separatorText = ":";
         } else {
             int minuteIndex = bestDateTimePattern.indexOf('m', hourIndex + 1);
-            if  (minuteIndex == -1) {
+            if (minuteIndex == -1) {
                 separatorText = Character.toString(bestDateTimePattern.charAt(hourIndex + 1));
             } else {
                 separatorText = bestDateTimePattern.substring(hourIndex + 1, minuteIndex);
             }
         }
         mDivider.setText(separatorText);
+    }
+
+    // Not be used, because in TimePicker Spinner layout not have this value.
+    @Override
+    public void setHeaderBackgroundColor(int color) {
+
+    }
+
+    // Not be used, because in TimePicker Spinner layout not have this value.
+    @Override
+    public void setHeaderTextColor(ColorStateList color) {
+
+    }
+
+    // Not be used, because in TimePicker Spinner layout not have this value.
+    @Override
+    public void setNumbersTextColor(ColorStateList color) {
+
+    }
+
+    // Not be used, because in TimePicker Spinner layout not have this value.
+    @Override
+    public void setNumbersInnerTextColor(ColorStateList color) {
+
+    }
+
+    // Not be used, because in TimePicker Spinner layout not have this value.
+    @Override
+    public void setNumbersBackgroundColor(int color) {
+
+    }
+
+    // Not be used, because in TimePicker Spinner layout not have this value.
+    @Override
+    public void setNumbersSelectorColor(ColorStateList color) {
+
+    }
+
+    // Not be used, because in TimePicker Spinner layout not have this value.
+    @Override
+    public void setEditTextCursorColor(int color) {
+
+    }
+
+    // Not be used, because in TimePicker Spinner layout not have this value.
+    @Override
+    public void setEditTextHandlesColor(int color) {
+
+    }
+
+    // Not be used, because in TimePicker Spinner layout not have this value.
+    @Override
+    public void setEditTextUnderlineNormalColor(int color) {
+
+    }
+
+    // Not be used, because in TimePicker Spinner layout not have this value.
+    @Override
+    public void setEditTextUnderlineSelectorColor(int color) {
+
+    }
+
+    // Not be used, because in TimePicker Spinner layout not have this value.
+    @Override
+    public void setEditTextHighlightColor(int color) {
+
     }
 
     @Override
@@ -432,25 +499,33 @@ class TimePickerSpinnerDelegate extends TimePicker.AbstractTimePickerDelegate {
         event.getText().add(selectedDateUtterance);
     }
 
-    /** @hide */
+    /**
+     * @hide
+     */
     @Override
     public View getHourView() {
         return mHourSpinnerInput;
     }
 
-    /** @hide */
+    /**
+     * @hide
+     */
     @Override
     public View getMinuteView() {
         return mMinuteSpinnerInput;
     }
 
-    /** @hide */
+    /**
+     * @hide
+     */
     @Override
     public View getAmView() {
         return mAmPmSpinnerInput;
     }
 
-    /** @hide */
+    /**
+     * @hide
+     */
     @Override
     public View getPmView() {
         return mAmPmSpinnerInput;

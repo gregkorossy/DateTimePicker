@@ -18,12 +18,15 @@ package com.takisoft.datetimepicker.widget;
 
 import android.annotation.TargetApi;
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
+import android.graphics.drawable.Drawable;
 import android.icu.util.TimeZone;
 import android.os.Build;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.support.annotation.ColorInt;
 import android.support.annotation.IntDef;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
@@ -332,6 +335,141 @@ public class DatePicker extends FrameLayout {
     }
 
     /**
+     * Get year selector color.
+     *
+     * @return The year selector color.
+     */
+    public ColorStateList getYearSelectorColor() {
+        return mDelegate.getYearSelectorColor();
+    }
+
+    /**
+     * Set year selector color.
+     *
+     * @param color The year selector color.
+     */
+    public void setYearSelectorColor(ColorStateList color) {
+        mDelegate.setYearSelectorColor(color);
+    }
+
+    /**
+     * Get header text color.
+     *
+     * @return The header text color.
+     */
+    public ColorStateList getHeaderTextColor() {
+        return mDelegate.getHeaderTextColor();
+    }
+
+    /**
+     * Set year highlight color.
+     *
+     * @param color The year highlight color.
+     */
+    public void setYearHighlightColor(ColorStateList color) {
+        mDelegate.setYearHighlightColor(color);
+    }
+
+    /**
+     * Get year highlight color.
+     *
+     * @return The year highlight color.
+     */
+    public ColorStateList getYearHighlightColor() {
+        return mDelegate.getYearHighlightColor();
+    }
+
+    /**
+     * Set header text color.
+     *
+     * @param color The header text color.
+     */
+    public void setHeaderTextColor(ColorStateList color) {
+        mDelegate.setHeaderTextColor(color);
+    }
+
+    /**
+     * Get header background.
+     *
+     * @return The header background.
+     */
+    public Drawable getHeaderBackground() {
+        return mDelegate.getHeaderBackground();
+    }
+
+    /**
+     * Set header background.
+     *
+     * @param background The header background.
+     */
+    public void setHeaderBackground(Drawable background) {
+        mDelegate.setHeaderBackground(background);
+    }
+
+    /**
+     * Get day selector color.
+     *
+     * @return The day select color.
+     */
+    public ColorStateList getDaySelectorColor() {
+        return mDelegate.getDaySelectorColor();
+    }
+
+    /**
+     * Set day selector color.
+     *
+     * @param color The day select color.
+     */
+    public void setDaySelectorColor(ColorStateList color) {
+        mDelegate.setDaySelectorColor(color);
+    }
+
+    /**
+     * Get day highlight color.
+     *
+     * @return The day highlight color.
+     */
+    public ColorStateList getDayHighlightColor() {
+        return mDelegate.getDayHighlightColor();
+    }
+
+    /**
+     * Set day highlight color.
+     *
+     * @param color The day highlight color.
+     */
+    public void setDayHighlightColor(ColorStateList color) {
+        mDelegate.setDayHighlightColor(color);
+    }
+
+    /**
+     * Get calendar text color.
+     *
+     * @return The calendar text color.
+     */
+    public ColorStateList getCalendarTextColor() {
+        return mDelegate.getCalendarTextColor();
+    }
+
+    /**
+     * Set calendar text color.
+     *
+     * @param color The calendar text color.
+     */
+    public void setCalendarTextColor(ColorStateList color) {
+        mDelegate.setCalendarTextColor(color);
+    }
+
+    /**
+     * Set chevron button color.
+     *
+     * @param color The chevron button color.
+     */
+    public void setChevronButtonColor(ColorStateList color) {
+        mDelegate.setChevronButtonColor(color);
+    }
+
+    /**
      * Sets the callback that indicates the current date is valid.
      *
      * @param callback the callback, may be null
@@ -549,6 +687,36 @@ public class DatePicker extends FrameLayout {
         void setMaxDate(long maxDate);
 
         Calendar getMaxDate();
+
+        void setYearSelectorColor(ColorStateList color);
+
+        ColorStateList getYearSelectorColor();
+
+        void setYearHighlightColor(ColorStateList color);
+
+        ColorStateList getYearHighlightColor();
+
+        void setHeaderTextColor(ColorStateList color);
+
+        ColorStateList getHeaderTextColor();
+
+        void setHeaderBackground(Drawable background);
+
+        Drawable getHeaderBackground();
+
+        void setDaySelectorColor(ColorStateList color);
+
+        ColorStateList getDaySelectorColor();
+
+        void setDayHighlightColor(ColorStateList color);
+
+        ColorStateList getDayHighlightColor();
+
+        void setCalendarTextColor(ColorStateList color);
+
+        ColorStateList getCalendarTextColor();
+
+        void setChevronButtonColor(ColorStateList color);
 
         void setEnabled(boolean enabled);
 
