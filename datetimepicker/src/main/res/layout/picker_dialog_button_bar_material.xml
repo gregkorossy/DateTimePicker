@@ -34,7 +34,7 @@
         android:paddingBottom="4dp"
         android:gravity="bottom">
 
-        <Button
+        <android.support.v7.widget.AppCompatButton
             android:id="@android:id/button3"
             style="?attr/buttonBarNeutralButtonStyle"
             android:layout_width="wrap_content"
@@ -47,13 +47,13 @@
             android:layout_weight="1"
             android:visibility="invisible" />
 
-        <Button
+        <android.support.v7.widget.AppCompatButton
             android:id="@android:id/button2"
             style="?attr/buttonBarNegativeButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
-        <Button
+        <android.support.v7.widget.AppCompatButton
             android:id="@android:id/button1"
             style="?attr/buttonBarPositiveButtonStyle"
             android:layout_width="wrap_content"
