@@ -759,14 +759,14 @@ public class RadialTimePickerView extends View {
         if (hoursAlpha > 0) {
             // Exclude the selector region, then draw inner/outer hours with no
             // activated states.
-            canvas.save();
+            canvas.save(Canvas.CLIP_SAVE_FLAG);
             canvas.clipPath(selectorPath, Region.Op.DIFFERENCE);
             drawHoursClipped(canvas, hoursAlpha, false);
             canvas.restore();
 
             // Intersect the selector region, then draw minutes with only
             // activated states.
-            canvas.save();
+            canvas.save(Canvas.CLIP_SAVE_FLAG);
             canvas.clipPath(selectorPath, Region.Op.INTERSECT);
             drawHoursClipped(canvas, hoursAlpha, true);
             canvas.restore();
@@ -792,14 +792,14 @@ public class RadialTimePickerView extends View {
         if (minutesAlpha > 0) {
             // Exclude the selector region, then draw minutes with no
             // activated states.
-            canvas.save();
+            canvas.save(Canvas.CLIP_SAVE_FLAG);
             canvas.clipPath(selectorPath, Region.Op.DIFFERENCE);
             drawMinutesClipped(canvas, minutesAlpha, false);
             canvas.restore();
 
             // Intersect the selector region, then draw minutes with only
             // activated states.
-            canvas.save();
+            canvas.save(Canvas.CLIP_SAVE_FLAG);
             canvas.clipPath(selectorPath, Region.Op.INTERSECT);
             drawMinutesClipped(canvas, minutesAlpha, true);
             canvas.restore();
