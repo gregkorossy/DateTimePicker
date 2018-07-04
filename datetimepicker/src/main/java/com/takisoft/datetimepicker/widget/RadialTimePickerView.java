@@ -31,6 +31,7 @@ import android.graphics.Region;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.animation.FloatPropertyCompat;
 import android.support.annotation.IntDef;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.math.MathUtils;
@@ -118,10 +119,10 @@ public class RadialTimePickerView extends View {
         }
     }
 
-    private final FloatProperty<RadialTimePickerView> HOURS_TO_MINUTES =
-            new FloatProperty<RadialTimePickerView>("hoursToMinutes") {
+    private final FloatPropertyCompat<RadialTimePickerView> HOURS_TO_MINUTES =
+            new FloatPropertyCompat<RadialTimePickerView>("hoursToMinutes") {
                 @Override
-                public Float get(RadialTimePickerView radialTimePickerView) {
+                public float getValue(RadialTimePickerView radialTimePickerView) {
                     return radialTimePickerView.mHoursToMinutes;
                 }
 
@@ -135,7 +136,7 @@ public class RadialTimePickerView extends View {
     private final Property<RadialTimePickerView, Float> HOURS_TO_MINUTES_OLD = new Property<RadialTimePickerView, Float>(Float.class, "hoursToMinutes") {
         @Override
         public Float get(RadialTimePickerView radialTimePickerView) {
-            return HOURS_TO_MINUTES.get(radialTimePickerView);
+            return HOURS_TO_MINUTES.getValue(radialTimePickerView);
             //return radialTimePickerView.mHoursToMinutes;
         }
 
@@ -735,7 +736,7 @@ public class RadialTimePickerView extends View {
         ObjectAnimator oldHoursToMinutes = mHoursToMinutesAnimator;
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            mHoursToMinutesAnimator = ObjectAnimator.ofFloat(this, HOURS_TO_MINUTES, target);
+            mHoursToMinutesAnimator = ObjectAnimator.ofFloat(this, HOURS_TO_MINUTES_OLD, target); // FIXME was HOURS_TO_MINUTES but it's not compatible anymore?
         } else {
             mHoursToMinutesAnimator = ObjectAnimator.ofFloat(this, HOURS_TO_MINUTES_OLD, target);
         }
@@ -759,14 +760,14 @@ public class RadialTimePickerView extends View {
         if (hoursAlpha > 0) {
             // Exclude the selector region, then draw inner/outer hours with no
             // activated states.
-            canvas.save(Canvas.CLIP_SAVE_FLAG);
+            canvas.save();
             canvas.clipPath(selectorPath, Region.Op.DIFFERENCE);
             drawHoursClipped(canvas, hoursAlpha, false);
             canvas.restore();
 
             // Intersect the selector region, then draw minutes with only
             // activated states.
-            canvas.save(Canvas.CLIP_SAVE_FLAG);
+            canvas.save();
             canvas.clipPath(selectorPath, Region.Op.INTERSECT);
             drawHoursClipped(canvas, hoursAlpha, true);
             canvas.restore();
@@ -792,14 +793,14 @@ public class RadialTimePickerView extends View {
         if (minutesAlpha > 0) {
             // Exclude the selector region, then draw minutes with no
             // activated states.
-            canvas.save(Canvas.CLIP_SAVE_FLAG);
+            canvas.save();
             canvas.clipPath(selectorPath, Region.Op.DIFFERENCE);
             drawMinutesClipped(canvas, minutesAlpha, false);
             canvas.restore();
 
             // Intersect the selector region, then draw minutes with only
             // activated states.
-            canvas.save(Canvas.CLIP_SAVE_FLAG);
+            canvas.save();
             canvas.clipPath(selectorPath, Region.Op.INTERSECT);
             drawMinutesClipped(canvas, minutesAlpha, true);
             canvas.restore();
