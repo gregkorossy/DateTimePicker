@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
      Copyright (C) 2014 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,23 +15,25 @@
 -->
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/buttonPanel"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:scrollbarAlwaysDrawVerticalTrack="true"
-            android:scrollIndicators="top|bottom"
-            android:fillViewport="true"
-            style="?attr/buttonBarStyle">
+    android:id="@+id/buttonPanel"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true"
+    android:scrollIndicators="top|bottom"
+    android:scrollbarAlwaysDrawVerticalTrack="true"
+    android:theme="?alertDialogTheme">
+
     <android.support.v7.widget.ButtonBarLayout
+        style="?attr/buttonBarStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="bottom"
         android:layoutDirection="locale"
         android:orientation="horizontal"
         android:paddingStart="12dp"
-        android:paddingEnd="12dp"
         android:paddingTop="4dp"
-        android:paddingBottom="4dp"
-        android:gravity="bottom">
+        android:paddingEnd="12dp"
+        android:paddingBottom="4dp">
 
         <Button
             android:id="@android:id/button3"
