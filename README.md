@@ -1,8 +1,8 @@
-# Material DatePicker and TimePicker dialogs from the Android framework package
+# Material DatePicker and TimePicker dialogs from the Android framework package with AndroidX
 
 This project is ported from the [Android framework](https://android.googlesource.com/platform/frameworks/base/). In order to make the pickers material themed on older devices (pre-Lollipop), the appcompat library is used for base theming and vector drawable handling. The widgets _always_ use the custom layouts, this is a complete replacement for the framework pickers. This also means that they have the same look-and-feel on all API levels.
 
-[ ![Download](https://api.bintray.com/packages/gericop/maven/com.takisoft.fix%3Adatetimepicker/images/download.svg) ](https://bintray.com/gericop/maven/com.takisoft.fix%3Adatetimepicker/_latestVersion)
+[ ![Download](https://api.bintray.com/packages/takisoft/android/com.takisoft.datetimepicker%3Adatetimepicker/images/download.svg) ](https://bintray.com/takisoft/android/com.takisoft.datetimepicker%3Adatetimepicker/_latestVersion)
 
 ### Donation
 
@@ -15,7 +15,7 @@ If you would like to support me, you may donate some small amount via PayPal.
 ## Setup
 **Add** this single line to your gradle file:
 ```gradle
-compile 'com.takisoft.fix:datetimepicker:1.0.7'
+implementation 'com.takisoft.datetimepicker:datetimepicker:1.0.0'
 ```
 And **use** one of the `Theme.AppCompat` themes (_or a custom one based on that_) as your `Activity`'s theme.
 
@@ -25,6 +25,8 @@ Now you can use the following material themed picker dialogs:
 - **`TimePickerDialog`** (from `com.takisoft.datetimepicker.TimePickerDialog`)
 
 Additionally you could _technically_ use `DatePicker` and `TimePicker` from the `com.takisoft.datetimepicker.widget` package inside a layout as an inline view, however, they do not support scrolling containers, so it's recommended to stick with the dialogs instead.
+
+> This lib now uses AndroidX. If you don't want / can't migrate to AndroidX yet, check out the `old-support` branch.
 
 ---
 
