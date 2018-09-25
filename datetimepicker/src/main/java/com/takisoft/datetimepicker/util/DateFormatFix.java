@@ -2,7 +2,7 @@ package com.takisoft.datetimepicker.util;
 
 import android.content.Context;
 import android.os.Build;
-import android.support.annotation.VisibleForTesting;
+import androidx.annotation.VisibleForTesting;
 import android.text.format.DateFormat;
 
 import com.takisoft.datetimepicker.R;

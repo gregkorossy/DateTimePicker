@@ -31,7 +31,7 @@ import com.takisoft.datetimepicker.util.StateSet;
  * {@link #setHint(CharSequence)} directly. Instead, they should call
  * {@link #setValue(int)} to modify the currently displayed value.
  */
-public class NumericTextView extends android.support.v7.widget.AppCompatTextView {
+public class NumericTextView extends androidx.appcompat.widget.AppCompatTextView {
     private static final int RADIX = 10;
     private static final double LOG_RADIX = Math.log(RADIX);
 
