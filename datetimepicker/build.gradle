@@ -10,7 +10,7 @@ android {
         versionCode 1
         versionName rootProject.libVersion
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
     }
     buildTypes {
@@ -26,11 +26,12 @@ android {
 }
 
 ext {
-    bintrayRepo = 'maven'
-    bintrayName = 'com.takisoft.fix:datetimepicker'
+    bintrayUserOrg = 'takisoft'
+    bintrayRepo = 'android'
+    bintrayName = 'com.takisoft.datetimepicker:datetimepicker'
 
-    publishedGroupId = 'com.takisoft.fix'
-    libraryName = 'Material DateTimePickers'
+    publishedGroupId = 'com.takisoft.datetimepicker'
+    libraryName = 'Material DateTimePickers with AndroidX'
     artifact = 'datetimepicker'
 
     libraryDescription = 'The framework version of the material date / time pickers of Android ported back to API 14. This library uses the AppCompat library to provide the necessary functions for new features, such as vector drawables and material design.'
@@ -46,19 +47,21 @@ ext {
 
     licenseName = 'The Apache Software License, Version 2.0'
     licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-    allLicenses = ["Apache-2.0", "Unlicense"]
+    allLicenses = ["Apache-2.0"]
 }
 
 dependencies {
-    api "com.android.support:appcompat-v7:${rootProject.supportLibraryVersion}"
-    implementation "com.android.support:support-dynamic-animation:${rootProject.supportLibraryVersion}"
+    api 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'androidx.dynamicanimation:dynamicanimation:1.0.0'
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    androidTestImplementation 'androidx.test:runner:1.1.0-alpha4'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha4'
 }
 
-apply from: 'https://raw.githubusercontent.com/numetriclabz/jcenter/master/installv.gradle'
-apply from: 'https://raw.githubusercontent.com/numetriclabz/jcenter/master/bintrayv.gradle'
+//apply from: 'https://raw.githubusercontent.com/numetriclabz/jcenter/master/installv.gradle'
+//apply from: 'https://raw.githubusercontent.com/numetriclabz/jcenter/master/bintrayv.gradle'
+apply from: '../installv.gradle'
+apply from: '../bintrayv.gradle'
 
 javadoc.doFirst {
     failOnError false

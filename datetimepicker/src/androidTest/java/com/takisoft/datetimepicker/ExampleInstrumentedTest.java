@@ -1,8 +1,8 @@
 package com.takisoft.datetimepicker;
 
 import android.content.Context;
-import android.support.test.InstrumentationRegistry;
-import android.support.test.runner.AndroidJUnit4;
+import androidx.test.InstrumentationRegistry;
+import androidx.test.runner.AndroidJUnit4;
 import android.text.TextUtils;
 import android.text.format.DateFormat;
 import android.util.Log;

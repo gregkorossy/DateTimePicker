@@ -18,7 +18,7 @@ package com.takisoft.datetimepicker.widget;
 
 import android.content.Context;
 import android.os.Build;
-import android.support.annotation.StyleRes;
+import androidx.annotation.StyleRes;
 import android.util.AttributeSet;
 
 import com.takisoft.datetimepicker.widget.DayPickerView.OnDaySelectedListener;

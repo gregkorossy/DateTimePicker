@@ -20,7 +20,7 @@ import android.annotation.TargetApi;
 import android.content.Context;
 import android.os.Build;
 import android.os.IBinder;
-import android.support.v4.math.MathUtils;
+import androidx.core.math.MathUtils;
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.TextWatcher;
