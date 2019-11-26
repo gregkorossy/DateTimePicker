@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ Copyright (C) 2013 The Android Open Source Project
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,11 +17,12 @@
 <!-- This layout is duplicated in land/time_picker_material.xml, so any
      changes made here need to be manually copied over. -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:id="@+id/time_header"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/time_header"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp">
 
     <!-- The hour should always be to the left of the separator,
          regardless of the current locale's layout direction. -->
@@ -30,26 +30,26 @@
         android:id="@+id/hours"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toLeftOf="@+id/separator"
         android:layout_alignBaseline="@+id/separator"
-        android:textAppearance="@style/TextAppearance.Material.TimePicker.TimeLabel"
+        android:layout_toLeftOf="@+id/separator"
         android:background="@drawable/time_picker_editable_background"
-        android:singleLine="true"
         android:ellipsize="none"
-        android:gravity="right"
         android:focusable="true"
+        android:gravity="right"
+        android:nextFocusForward="@id/minutes"
         android:pointerIcon="hand"
-        android:nextFocusForward="@id/minutes" />
+        android:singleLine="true"
+        android:textAppearance="@style/TextAppearance.Material.TimePicker.TimeLabel" />
 
     <TextView
         android:id="@+id/separator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
         android:layout_marginLeft="@dimen/timepicker_separator_padding"
         android:layout_marginRight="@dimen/timepicker_separator_padding"
-        android:layout_centerInParent="true"
-        android:textAppearance="@style/TextAppearance.Material.TimePicker.TimeLabel"
-        android:importantForAccessibility="no" />
+        android:importantForAccessibility="no"
+        android:textAppearance="@style/TextAppearance.Material.TimePicker.TimeLabel" />
 
     <!-- The minutes should always be to the left of the separator,
          regardless of the current locale's layout direction. -->
@@ -57,16 +57,16 @@
         android:id="@+id/minutes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/separator"
         android:layout_alignBaseline="@+id/separator"
-        android:textAppearance="@style/TextAppearance.Material.TimePicker.TimeLabel"
+        android:layout_toRightOf="@+id/separator"
         android:background="@drawable/time_picker_editable_background"
-        android:singleLine="true"
         android:ellipsize="none"
-        android:gravity="left"
         android:focusable="true"
+        android:gravity="left"
+        android:nextFocusForward="@id/am_label"
         android:pointerIcon="hand"
-        android:nextFocusForward="@id/am_label" />
+        android:singleLine="true"
+        android:textAppearance="@style/TextAppearance.Material.TimePicker.TimeLabel" />
 
     <!-- The layout alignment of this view will switch between toRightOf
          @id/minutes and toLeftOf @id/hours depending on the locale. -->
@@ -74,43 +74,47 @@
         android:id="@+id/ampm_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/minutes"
         android:layout_alignBaseline="@+id/minutes"
-        android:paddingStart="4dp"
-        android:paddingEnd="4dp"
+        android:layout_toRightOf="@+id/minutes"
+        android:baselineAlignedChildIndex="1"
         android:orientation="vertical"
-        android:baselineAlignedChildIndex="1">
+        android:paddingStart="4dp"
+        android:paddingEnd="4dp">
+
         <RadioButton
             android:id="@+id/am_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="4dp"
-            android:paddingRight="4dp"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp"
             android:layout_marginBottom="-8dp"
-            android:textAppearance="@style/TextAppearance.Material.TimePicker.AmPmLabel"
-            android:singleLine="true"
+            android:background="?selectableItemBackground"
+            android:button="@null"
             android:ellipsize="none"
             android:focusable="true"
-            android:background="?selectableItemBackground"
             android:includeFontPadding="false"
             android:nextFocusForward="@+id/pm_label"
-            android:button="@null" />
+            android:paddingLeft="4dp"
+            android:paddingTop="8dp"
+            android:paddingRight="4dp"
+            android:paddingBottom="8dp"
+            android:singleLine="true"
+            android:textAppearance="@style/TextAppearance.Material.TimePicker.AmPmLabel"
+            app:buttonCompat="@null" />
+
         <RadioButton
             android:id="@+id/pm_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="4dp"
-            android:paddingRight="4dp"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp"
-            android:textAppearance="@style/TextAppearance.Material.TimePicker.AmPmLabel"
-            android:singleLine="true"
+            android:background="?selectableItemBackground"
+            android:button="@null"
             android:ellipsize="none"
             android:focusable="true"
-            android:background="?selectableItemBackground"
             android:includeFontPadding="false"
-            android:button="@null" />
+            android:paddingLeft="4dp"
+            android:paddingTop="8dp"
+            android:paddingRight="4dp"
+            android:paddingBottom="8dp"
+            android:singleLine="true"
+            android:textAppearance="@style/TextAppearance.Material.TimePicker.AmPmLabel"
+            app:buttonCompat="@null" />
     </RadioGroup>
 </RelativeLayout>
