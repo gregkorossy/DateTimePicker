@@ -18,6 +18,24 @@
     <!-- The DatePicker dialog theme. -->
     <attr name="datePickerDialogTheme" />
 
+    <!-- Android attributes -->
+    <attr name="firstDayOfWeek" />
+    <attr name="minDate" />
+    <attr name="maxDate" />
+    <attr name="spinnersShown" />
+    <attr name="calendarViewShown" />
+    <attr name="dtp_legacyLayout" format="reference" />
+    <attr name="headerBackground" />
+    <attr name="calendarTextColor" />
+    <attr name="datePickerMode" />
+    <attr name="numbersTextColor" />
+    <attr name="numbersInnerTextColor" />
+    <attr name="numbersBackgroundColor" />
+    <attr name="numbersSelectorColor" />
+    <attr name="weekDayTextAppearance" />
+    <attr name="dateTextAppearance" />
+    <attr name="timePickerMode" />
+
     <declare-styleable name="DatePicker">
         <!-- The first day of week according to {@link java.util.Calendar}. -->
         <attr name="firstDayOfWeek" />
