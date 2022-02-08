@@ -21,7 +21,7 @@ plugins {
 project.ext.minSdkVersion = 14
 project.ext.sdkVersion = 29
 
-project.ext.libVersion = "1.0.2"
+project.ext.libVersion = "1.0.3"
 
 allprojects {
     repositories {
