@@ -2,7 +2,7 @@
 
 This project is ported from the [Android framework](https://android.googlesource.com/platform/frameworks/base/). In order to make the pickers material themed on older devices (pre-Lollipop), the appcompat library is used for base theming and vector drawable handling. The widgets _always_ use the custom layouts, this is a complete replacement for the framework pickers. This also means that they have the same look-and-feel on all API levels.
 
-[ ![Download](https://api.bintray.com/packages/takisoft/android/com.takisoft.datetimepicker%3Adatetimepicker/images/download.svg) ](https://bintray.com/takisoft/android/com.takisoft.datetimepicker%3Adatetimepicker/_latestVersion)
+[![Maven Central](https://img.shields.io/maven-central/v/com.takisoft.datetimepicker/datetimepicker.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22com.takisoft.datetimepicker%22%20AND%20a:%22datetimepicker%22)
 
 ### Donation
 
@@ -15,7 +15,7 @@ If you would like to support me, you may donate some small amount via PayPal.
 ## Setup
 **Add** this single line to your gradle file:
 ```gradle
-implementation 'com.takisoft.datetimepicker:datetimepicker:1.0.0'
+implementation 'com.takisoft.datetimepicker:datetimepicker:1.0.3'
 ```
 And **use** one of the `Theme.AppCompat` themes (_or a custom one based on that_) as your `Activity`'s theme.
 
