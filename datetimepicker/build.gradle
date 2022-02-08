@@ -6,8 +6,6 @@ android {
     defaultConfig {
         minSdkVersion rootProject.minSdkVersion
         targetSdkVersion rootProject.sdkVersion
-        versionCode 1
-        versionName rootProject.libVersion
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
@@ -25,29 +23,25 @@ android {
 }
 
 ext {
-    bintrayUserOrg = 'takisoft'
-    bintrayRepo = 'android'
-    bintrayName = 'com.takisoft.datetimepicker:datetimepicker'
-
-    publishedGroupId = 'com.takisoft.datetimepicker'
-    libraryName = 'Material DateTimePickers with AndroidX'
-    artifact = 'datetimepicker'
-
-    libraryDescription = 'The framework version of the material date / time pickers of Android ported back to API 14. This library uses the AppCompat library to provide the necessary functions for new features, such as vector drawables and material design.'
-
-    siteUrl = 'https://github.com/Gericop/DateTimePicker'
-    gitUrl = 'https://github.com/Gericop/DateTimePicker.git'
-
-    libraryVersion = rootProject.libVersion
-
-    developerId = 'gericop'
-    developerName = 'Gergely Kőrössy'
-    developerEmail = 'korossyg@takisoft.com'
-
-    licenseName = 'The Apache Software License, Version 2.0'
-    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-    allLicenses = ["Apache-2.0"]
+    PUBLISH_GROUP_ID = 'com.takisoft.datetimepicker'
+    PUBLISH_VERSION = rootProject.libVersion
+    PUBLISH_ARTIFACT_ID = 'datetimepicker'
+    PUBLISH_DESCRIPTION = 'The framework version of the material date / time pickers of Android ported back to API 14. This library uses the AppCompat library to provide the necessary functions for new features, such as vector drawables and material design.'
+    PUBLISH_URL = 'https://github.com/Gericop/DateTimePicker'
+    PUBLISH_LICENSE_NAME = 'The Apache Software License, Version 2.0'
+    PUBLISH_LICENSE_URL = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    PUBLISH_DEVELOPER_ID = 'gericop'
+    PUBLISH_DEVELOPER_NAME = 'Gergely Kőrössy'
+    PUBLISH_DEVELOPER_EMAIL = 'korossyg@takisoft.com'
+    PUBLISH_SCM_CONNECTION =
+            'scm:git:github.com/Gericop/DateTimePicker.git'
+    PUBLISH_SCM_DEVELOPER_CONNECTION =
+            'scm:git:ssh://github.com/Gericop/DateTimePicker.git'
+    PUBLISH_SCM_URL =
+            'https://github.com/Gericop/DateTimePicker/tree/master'
 }
+
+apply from: "${rootProject.projectDir}/scripts/publish-module.gradle"
 
 dependencies {
     api 'androidx.appcompat:appcompat:1.1.0'
@@ -55,13 +49,4 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.3.0-alpha02'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0-alpha02'
-}
-
-//apply from: 'https://raw.githubusercontent.com/numetriclabz/jcenter/master/installv.gradle'
-//apply from: 'https://raw.githubusercontent.com/numetriclabz/jcenter/master/bintrayv.gradle'
-apply from: '../installv.gradle'
-apply from: '../bintrayv.gradle'
-
-javadoc.doFirst {
-    failOnError false
 }
