@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name">DateTimePicker</string>
     <!-- DO NOT TRANSLATE -->
     <string name="time_placeholder">--</string>
 
